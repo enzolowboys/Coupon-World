@@ -67,12 +67,12 @@ ultimi va prevista anche la creazione);
 vengono emessi i coupon;
 § la generazione delle statistiche sull’attività del sito:
 § numero totale di coupon emessi;
-©2017 Università Politecnica delle Marche – Corso di Tecnologie WEB
 § selezionando una promozione (sia attiva che scaduta), il numero di coupon emessi
 per essa;
 § selezionando un cliente, il numero di coupon emessi a suo nome.
 § l’aggiornamento delle FAQ.
-#Funzionalità opzionali
+
+# Funzionalità opzionali
 
 L’implementazione delle funzionalità descritte nel seguito non è obbligatoria, ma se realizzata, determina un
 incremento fino ad un massimo totale di 3 punti del punteggio associato alla valutazione del progetto (solo
