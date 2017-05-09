@@ -1,0 +1,468 @@
+@charset "UTF-8";
+
+/* body del sito */
+body {
+	background-color: #FFFFFF;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	font-style: normal;
+	font-weight: 200;
+	height: 4500px;
+}
+
+/* header del sito che contiene il logo */
+header {
+	width: 100%;
+	height: 10%;
+	background-color: #FFFFFF;
+	
+}
+
+/* barra di navigazione che contiene il logo */
+nav {
+	float: right;
+	width: 50%;
+	text-align: right;
+	margin-right: 25px;
+}
+
+
+/* footer a fine pagina*/
+footer {
+	background-color: #FF0004;
+	height: 120px;
+}
+
+footer > h3{
+	font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+	color:white;
+	font-size: 15px;
+}
+
+footer > div {
+	font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+	color:white;
+	font-size: 15px;
+	position: absolute;
+	margin-left: 1100px;
+	margin-top: -114px;
+}
+
+
+
+/* container principale del sito */
+.main_container {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 1000px;
+	background-color: #FFFFFF;
+}
+
+/* banner che contiene immagine e messaggio principale */
+.banner {
+	background-color: #FFFFFF;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	background-image: url(../images/coupons.jpg);
+	height: 400px;
+	background-attachment: scroll;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/* messaggio posizionato sul banner */
+.message_onbanner {
+	color: #F10D0D;
+	text-align: center;
+	font-size: 40px;
+	position: relative;
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	letter-spacing: 5px;
+	min-width: 1200px;
+	margin: 0 auto; 
+	
+	font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+}
+
+/* container che contiene il messaggio */
+.container_message_onboard {
+	background-color: #FFFFFF;
+	margin: 0 auto;
+}
+
+/* container che contiene la lista dei brands*/
+.brands {
+	height: 650px;
+	padding-top: 50px;
+	padding-bottom: 150px;
+	background-color: #FFFFFF;
+
+}
+
+/* messaggi per i titoli delle categorie */
+.title_messages {
+	font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+	color: #FF0004;
+	font-size: 35px;
+	text-align: center;
+	background-color: #FFFFFF;
+	min-width: 1200px;
+}
+
+/* messaggi per i sottotitoli delle categorie */
+.subtitle_messages {
+	font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+	color: #FF0004;
+	font-size: 20px;
+	text-align: center;
+	background-color: #FFFFFF;
+	min-width: 1200px;
+}
+
+.button_enter{
+	background-color: #F50004;
+	text-align: center;
+	position: relative;
+	color: #FFFFFF;
+	display: block; 
+	margin: 0 auto;
+	top: 40px;
+	width: 200px;
+  	height: 50px;
+	-webkit-border-radius: 10;
+  	-moz-border-radius: 10;
+	border-radius: 10px;
+	font-size: 20px;
+	overflow: hidden;
+	font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+	
+}
+
+/* Griglia che contiene la lista dei loghi top brands */
+#griglia_brands {
+  padding: 0;
+  margin: 0;
+  background-color: #FFFFFF;
+  position: relative;
+  padding-left: 90px;
+  min-width: 1200px;
+}
+
+#griglia_brands > li {
+  display: inline-block;
+  width:  150px;
+  height: 100px;
+  margin: 0px;
+  background-color: #FFFFFF;
+}
+
+/* effetti sulle icone dei brands*/
+li:hover {
+	opacity: .5;
+	
+}
+
+/* rappresenta il pattern dove é presente l'immagine stilizzata di background */
+.pattern_img {
+	background-color: #FFFFFF;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	background-image: url(../images/background.png);
+	height: 2px;
+	background-attachment: scroll;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/* rappresentano le varie categorie*/
+.one {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/1_tecnologie.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.one:hover {
+	-webkit-filter: grayscale(0%);
+}
+
+.two {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/2_uffici.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.two:hover {
+	-webkit-filter: grayscale(0%);
+	
+}
+
+.three {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/3_cibi.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.three:hover {
+	-webkit-filter: grayscale(0%);
+	
+}
+
+.four {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/4_moda.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.four:hover {
+	-webkit-filter: grayscale(0%);
+	
+}
+
+.five {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/5_intrattenimento.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.five:hover {
+	-webkit-filter: grayscale(0%);
+	
+}
+
+.six {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/6_sport.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.six:hover {
+	-webkit-filter: grayscale(0%);
+	
+}
+
+.seven {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/7_casa.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.seven:hover {
+	-webkit-filter: grayscale(0%);
+	
+}
+
+.eight {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/8_salute.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.eight:hover {
+	-webkit-filter: grayscale(0%);
+	
+}
+
+.nine {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/9_viaggi.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.nine:hover {
+	-webkit-filter: grayscale(0%);
+	
+}
+
+.ten {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/10_auto.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.ten:hover {
+	-webkit-filter: grayscale(0%);
+	
+}
+
+.eleven {
+	background-color: #FFFFFF;
+	background-image: url(../images/img_categories/11_Animali.png);
+	background-attachment: scroll;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 240px;
+	
+	
+	/* effetti al passaggio del mouse*/
+	-webkit-filter: grayscale(100%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.eleven:hover {
+	-webkit-filter: grayscale(0%);
+	
+}
+
+/* rappresenta il testo delle categorie*/
+.categories_message {
+	font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+	color: #FF0004;
+	font-size: 35px;
+	text-align: right;
+	position: relative;
+	background-color: #FFFFFF;
+	min-width: 1200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
