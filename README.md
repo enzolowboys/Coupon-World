@@ -3,8 +3,8 @@ Progetto TW 2017
 
 # Specifiche di Progetto
 
-#Overview del Progetto
-#Obiettivo
+# Obiettivo
+
 Obiettivo del progetto è la realizzazione di un sito web per la pubblicizzazione di offerte promozionali (sconti,
 tre-per-due, ...) di prodotti e servizi e per l’emissione dei relativi coupon.
 Il sito è gestito da una società che crea una vetrina per le aziende (produttrici di beni e/o di servizi) le quali
@@ -12,7 +12,7 @@ possono pubblicare le loro offerte riservate agli utenti registrati al sito. Que
 (anche come risultato di una ricerca) le offerte di interesse ed acquisire un coupon che abilita all’acquisto della
 promozione presso i negozi/centri delle aziende. Il sito non implementa alcuna attività di e-commerce.
 
-#Specifiche
+# Specifiche
 L’applicazione Web da realizzare permetterà:
 1. la visualizzazione di informazioni generali sul sito e sui servizi offerti: modalità di accesso, funzionalità
 implementate, informazioni sulle aziende (nome, localizzazione, logo, ...), FAQ, …;
