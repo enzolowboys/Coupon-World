@@ -8,6 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Homepage</title>
 	<link rel="stylesheet" href="css/home.css">
+		<!-- SCRIPT CHE PERMETTE LA VISUALIZZAZIONE DELLO SLIDESHOW -->
+	<script>
+		var slideIndex = 0;
+		showSlides();
+		function showSlides() {
+    		var i;
+    		var slides = document.getElementsByClassName("mySlides");
+    		for (i = 0; i < slides.length; i++) {
+        		slides[i].style.display = "none"; 
+    			}
+			slideIndex++;
+    		if (slideIndex> slides.length) {slideIndex = 1} 
+				slides[slideIndex-1].style.display = "block"; 
+    			setTimeout(showSlides, 3500); // Change image every 3.5 seconds
+			}
+		</script> 
 </head>
 <body>
 	<!-- UPHEADER CONTENTENTE MENU -->
@@ -99,22 +115,6 @@
     			<img src="images/banners/animals_banner.jpg" style="width:100%">
   			</div>
 		</div>
-		<!-- SCRIPT CHE PERMETTE LA VISUALIZZAZIONE DELLO SLIDESHOW -->
-		<script>
-			var slideIndex = 0;
-			showSlides();
-			function showSlides() {
-    			var i;
-    			var slides = document.getElementsByClassName("mySlides");
-    			for (i = 0; i < slides.length; i++) {
-        		slides[i].style.display = "none"; 
-    			}
-				slideIndex++;
-    			if (slideIndex> slides.length) {slideIndex = 1} 
-					slides[slideIndex-1].style.display = "block"; 
-    				setTimeout(showSlides, 3500); // Change image every 3.5 seconds
-				}
-		</script> 
 		<!-- due container che contengono banner pubblicitari -->
 		<div id="promotion_banner_one">
 			<h2>ALL FOR HIM</h2>

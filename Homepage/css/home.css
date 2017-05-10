@@ -6,8 +6,12 @@ body {
    -moz-user-select: -moz-none;
    -khtml-user-select: none;
    -webkit-user-select: none;
-   user-select: none;
+   	user-select: none;
+	width:100em;
+	margin-left: 50px;
+	margin-right: 50px;
 }
+
 
 /* h1 usato per tutti i titoli */
 h1{
@@ -41,6 +45,7 @@ footer{
 	bottom: -9px;
 	background-color: rgb(179, 0, 0);
 	border-radius: 15px 15px 0px 0px;
+	display: block;
 }
 
 /* tutte le icone del sito */
@@ -76,6 +81,7 @@ footer{
 
 /* Menu sul upHeaderMenu*/
 #upHeaderMenu menu{
+	float:left;
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
@@ -84,8 +90,8 @@ footer{
 	text-align: center;
 	position: relative;
 	left: 1050px;
-	float: left;
 	bottom: 15px;
+	width: auto;
 }
 
 /* effetti sul menu (al passaggio del mouse) */
@@ -96,17 +102,19 @@ menu:hover{
 /* header della homepage contenente login/registrazione e il carrello */
 #header {
 	background-color: rgb(179, 0, 0);
-	width: 100%;
 	height: 104px;
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	border-radius: 0px 0px 15px 15px;
+	width: 100%;
+	
+
 }
 
 /* barra di ricerca */
 #header input{
-    width: 500px;
+    width: 31.25%;
 	height: 30px;
 	position: relative;
 	left: 240px;
@@ -126,9 +134,9 @@ input:focus {
 	background-size: cover;
 	position: relative;
 	height: 35px;
-	width: 35px;
+	width: 2.1%;
 	background-color: rgb(179, 0, 0);
-	bottom:4px;
+	bottom:-10px;
 	left: 245px;
 	border: none;
 }
@@ -142,6 +150,7 @@ input:focus {
 
 /* descrizioni di approfondimento del sito */
 #subheader descrizione{
+	
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
@@ -151,14 +160,15 @@ input:focus {
 	position: relative;
 	top: 5px;
 	left: 30px;
+	display:inline-block;
 }
 
 /* barra di navigazione contenente le categorie*/
 #navMenu{
 	background-color: white;
-	width: 450px;
-	height: auto;
-	position: absolute;
+	width: 28.125%;
+	height: 200px;
+	position: relative;
 	left: 90px;
 	
 }
@@ -168,7 +178,7 @@ input:focus {
 	position: relative;
 	top: 10px;
 	height: auto;
-	width: auto;
+
 }
 
 /* le varie categorie elencate in una lista */
@@ -197,9 +207,11 @@ input:focus {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 600px;
+  
+  max-width:40.5%;
+  height: auto;
   position: relative;
-  top: 26px;
+  top: -190px;
   left: 550px;
 }
 
@@ -230,12 +242,11 @@ input:focus {
 	background-image: url(../images/banners/man.png);
 	background-size: cover;
 	border-radius: 0px 10px 10px 0px;
-	width: 290px;
+	max-width: 18.12%;
 	height: 180px;
 	position: relative;
-	bottom: 367px;
-	left: 1160px;
-	
+	bottom: 578px;
+	left: 80%;
 	-webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
 }
@@ -244,6 +255,7 @@ input:focus {
 #promotion_banner_one:hover{
 	-webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
+	
 }
 
 
@@ -251,15 +263,14 @@ input:focus {
 #promotion_banner_two{
 	background-image: url(../images/banners/woman.png);
 	background-size: cover;
-	border-radius: 0px 10px 10px 0px;
-	width: 290px;
-	height: 173px;
 	position: relative;
-	bottom: 381px;
-	left: 1160px;
-	
+	bottom: 605px;
+	left: 80%;
 	-webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
+	max-width: 18.12%;
+	height: 180px;
+		
 }
 
 /* effetti al passaggio del mouse sul banner promozione 2*/
@@ -282,6 +293,7 @@ input:focus {
 /* Sezione che contiene lo slideshow e i promotion banner (che diventa poi dinamica al click sulle categorie) */
 #mainContent{
 	
+	width:100%;
 }
 
 /* sezione che contiene le offerte del giorno */
