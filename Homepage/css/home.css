@@ -8,8 +8,6 @@ body {
    -webkit-user-select: none;
    	user-select: none;
 	width:100em;
-	margin-left: 50px;
-	margin-right: 50px;
 }
 
 
@@ -17,7 +15,6 @@ body {
 h1{
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
-   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	font-size: 20px;
 	color: white;
 	text-align: left;
@@ -29,7 +26,6 @@ h1{
 h2 {
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
-   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	font-size: 20px;
 	color: white;
 	text-align: right;
@@ -211,8 +207,8 @@ input:focus {
   max-width:40.5%;
   height: auto;
   position: relative;
-  top: -190px;
-  left: 550px;
+  top:-190px;
+  left:600px;
 }
 
 .mySlides {
@@ -245,7 +241,7 @@ input:focus {
 	max-width: 18.12%;
 	height: 180px;
 	position: relative;
-	bottom: 578px;
+	bottom: 610px;
 	left: 80%;
 	-webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
@@ -264,7 +260,7 @@ input:focus {
 	background-image: url(../images/banners/woman.png);
 	background-size: cover;
 	position: relative;
-	bottom: 605px;
+	bottom: 602px;
 	left: 80%;
 	-webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
@@ -285,9 +281,9 @@ input:focus {
 	background-size: 25%;
 	background-color: red;
 	width: 100%;
-	height: 130px;
+	height: 150px;
 	position: relative;
-	bottom: 320px;
+	bottom: 250px;
 }
 
 /* Sezione che contiene lo slideshow e i promotion banner (che diventa poi dinamica al click sulle categorie) */
