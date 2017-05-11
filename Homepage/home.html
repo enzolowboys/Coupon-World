@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Homepage</title>
 	<link rel="stylesheet" href="css/home.css">
+		
 </head>
 <body>
 	<!-- UPHEADER CONTENTENTE MENU -->
@@ -29,10 +30,10 @@
 	<!-- SUBHEADER CONTENTENTE INFORMAZIONIA AGGIUNTIVE AL SITO -->
 	<div id="subheader">
 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-		<img src="images/icons/h24.png" class="icons"></img><descrizione>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</descrizione>
-		<img src="images/icons/brands.png" class="icons"></img><descrizione>i migliori brands a portata di click &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</descrizione>
-		<img src="images/icons/risparmio.png" class="icons"></img><descrizione>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</descrizione>
-		<img src="images/icons/FAQ.png" class="icons"></img><descrizione>dubbi? FAQ semplice e intuitiva!</descrizione>
+		<a href=""><img src="images/icons/h24.png" class="icons"></img><descrizione>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</descrizione></a>
+		<a href=""><img src="images/icons/brands.png" class="icons"></img><descrizione>i migliori brands a portata di click &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</descrizione></a>
+		<a href=""><img src="images/icons/risparmio.png" class="icons"></img><descrizione>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</descrizione></a>
+		<a href=""><img src="images/icons/FAQ.png" class="icons"></img><descrizione>dubbi? FAQ semplice e intuitiva!</descrizione></a>
 	</div>
 	<div id="navMenu">
 		<ul id="categorie">
@@ -52,9 +53,9 @@
         </ul>
 	</div>
 	<!-- Sezione che contiene lo slideshow e i promotion banner (che diventa poi dinamica al click sulle categorie) -->
-	<div id="mainContent">
+<div id="mainContent">
 		<!-- SLIDESHOW CHE CONTIENE I BANNER DELLE CATEGORIE -->
-		<div class="slideshow-container">
+  <div class="slideshow-container">
   			<div class="mySlides fade">
     			<img src="images/banners/technology_banner.jpg" style="width:100%">
   			</div>
@@ -100,20 +101,20 @@
   			</div>
 		</div>
 		<!-- SCRIPT CHE PERMETTE LA VISUALIZZAZIONE DELLO SLIDESHOW -->
-		<script>
+		<script type="text/javascript">
 			var slideIndex = 0;
 			showSlides();
 			function showSlides() {
-    			var i;
-    			var slides = document.getElementsByClassName("mySlides");
-    			for (i = 0; i < slides.length; i++) {
+    		var i;
+    		var slides = document.getElementsByClassName("mySlides");
+    		for (i = 0; i < slides.length; i++) {
         		slides[i].style.display = "none"; 
     			}
-				slideIndex++;
-    			if (slideIndex> slides.length) {slideIndex = 1} 
-					slides[slideIndex-1].style.display = "block"; 
-    				setTimeout(showSlides, 3500); // Change image every 3.5 seconds
-				}
+			slideIndex++;
+    		if (slideIndex> slides.length) {slideIndex = 1} 
+				slides[slideIndex-1].style.display = "block"; 
+    			setTimeout(showSlides, 3500); // Change image every 3.5 seconds
+			}
 		</script> 
 		<!-- due container che contengono banner pubblicitari -->
 		<div id="promotion_banner_one">
@@ -143,6 +144,7 @@
 				<button id="stampaofferta"></button>
 			</div>
 		</div>
+		<a href="">Visualizza Altre Offerte!</a>
 	</div>
 	<br>
 	<br>
@@ -166,6 +168,7 @@
 				<button id="stampaofferta"></button>
 			</div>
 		</div>
+		<a href="">Visualizza Altre Offerte!</a>
 	</div>
 	
 	<!-- FOOTER A FINE PAGINA -->
