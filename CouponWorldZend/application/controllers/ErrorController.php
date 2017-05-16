@@ -7,6 +7,8 @@ class ErrorController extends Zend_Controller_Action
     {
         $errors = $this->_getParam('error_handler');
         
+        /*Disabilito il layout in caso di errore*/
+        
         if (!$errors) {
             $this->view->message = 'You have reached the error page';
             return;

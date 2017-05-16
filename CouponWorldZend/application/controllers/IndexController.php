@@ -5,12 +5,14 @@ class IndexController extends Zend_Controller_Action
 
     public function init()
     {
-        /* Initialize action controller here */
+        
     }
 
     public function indexAction()
     {
-        // action body
+        
+        /* Reindirizzo al public controller*/
+        $this->_helper->redirector('index','public');
     }
 
 

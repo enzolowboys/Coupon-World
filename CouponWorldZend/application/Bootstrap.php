@@ -2,13 +2,12 @@
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 
-
-    function protected _initViewSettings() {
+    public function _initViewSetting() {
         
-        $this->bootstrap('view');
-        $this->_view = $this->getResource('view');
+       
         
         
     }
+
 }
 
