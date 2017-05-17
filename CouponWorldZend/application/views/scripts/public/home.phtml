@@ -1,0 +1,171 @@
+<div id="content">	
+	<!-- SUBHEADER CONTENTENTE INFORMAZIONIA AGGIUNTIVE AL SITO -->
+	<div id="subheader">
+		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+		<a href=""><img src="<?php echo $this->baseURL();?>/images/icons/h24.png" class="icons"></img><h4>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+		<a href=""><img src="<?php echo $this->baseURL();?>/images/icons/brands.png" class="icons"></img><h4>i migliori brands a portata di click &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+		<a href=""><img src="<?php echo $this->baseURL();?>/images/icons/risparmio.png" class="icons"></img><h4>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+		<a href=".<?= $this->url(array('controller'=>'public','action'=>'viewStatic','default',true));?>"><img src="<?php echo $this->baseURL();?>/images/icons/FAQ.png" class="icons"></img><h4>dubbi? FAQ semplice e intuitiva!</h4></a>
+	</div>	
+	<div id="navMenu">
+            <ul id="categorie">
+            <h1>&nbsp; &nbsp; ≡ CATEGORIE</h1>
+            <!-- lista delle categorie dei coupon presenti nel sito -->
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>1,'default',true));?>">&nbsp; &nbsp; Tecnologia</a></li>
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>2,'default',true));?>">&nbsp; &nbsp; Ufficio e servizi</a></li>
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>3,'default',true));?>">&nbsp; &nbsp; Moda e abbigliamento</a></li>
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>4,'default',true));?>">&nbsp; &nbsp; Cibi e bevande</a></li>
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>5,'default',true));?>">&nbsp; &nbsp; Giochi ed intrattenimento</a></li>
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>6,'default',true));?>">&nbsp; &nbsp; Sport e fitness</a></li>
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>7,'default',true));?>">&nbsp; &nbsp; Casa e giardino</a></li>
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>8,'default',true));?>">&nbsp; &nbsp; Salute e bellezza</a></li>
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>9,'default',true));?>">&nbsp; &nbsp; Viaggi</a></li>
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>10,'default',true));?>">&nbsp; &nbsp; Auto e moto</a></li>
+            <li><a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>11,'default',true));?>">&nbsp; &nbsp; Animali</a></li>
+        </ul>
+	</div>
+	<div id="campoCercaAzienda">
+		<h2>&nbsp; &nbsp;BRANDS</h2>
+		<input type="text" name="search" placeholder="Cerca l'offerta per azienda">
+		<button></button>
+	</div>	
+	<!-- Sezione che contiene lo slideshow e i promotion banner (che diventa poi dinamica al click sulle categorie) -->
+
+		<!-- SLIDESHOW CHE CONTIENE I BANNER DELLE CATEGORIE -->
+  <div class="slideshow-container">
+  			<div class="mySlides fade">
+                        <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>1,'default',true));?>">
+    			<img src="<?php echo $this->baseURL();?>/images/banners/technology_banner.jpg" style="width:100%">
+                        </a>
+  			</div>
+
+  			<div class="mySlides fade">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>2,'default',true));?>">
+                            <img src="<?php echo $this->baseURL();?>/images/banners/office_banner.jpg" style="width:100%">
+                            </a>
+  			</div>
+
+  			<div class="mySlides fade">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>3,'default',true));?>">
+                            <img src="<?php echo $this->baseURL();?>/images/banners/clothes_banner.jpg" style="width:100%">
+                            </a>
+  			</div>
+  
+  			<div class="mySlides fade">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>4,'default',true));?>">
+                            <img src="<?php echo $this->baseURL();?>/images/banners/food_banner.jpg" style="width:100%">
+                            </a>
+ 			</div>
+  
+  			<div class="mySlides fade">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>5,'default',true));?>">
+                            <img src="<?php echo $this->baseURL();?>/images/banners/enternaiment_banner.jpg" style="width:100%">
+                            </a>
+  			</div>
+  
+  			<div class="mySlides fade">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>6,'default',true));?>">
+                            <img src="<?php echo $this->baseURL();?>/images/banners/sportandfitness_banner.jpg" style="width:100%">
+                            </a>
+  			</div>
+  
+  			<div class="mySlides fade">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>7,'default',true));?>">
+                            <img src="<?php echo $this->baseURL();?>/images/banners/homeandgarden_banner.jpg" style="width:100%">
+                            </a>
+  			</div>
+  
+  			<div class="mySlides fade">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>8,'default',true));?>">
+                            <img src="<?php echo $this->baseURL();?>/images/banners/health_banner.jpg" style="width:100%">
+                            </a>
+  			</div>
+  
+  			<div class="mySlides fade">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>9,'default',true));?>">
+                            <img src="<?php echo $this->baseURL();?>/images/banners/travel_banner.jpg" style="width:100%">
+                            </a>
+  			</div>
+  
+  			<div class="mySlides fade">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>10,'default',true));?>">
+                            <img src="<?php echo $this->baseURL();?>/images/banners/carandmoto_banner.jpg" style="width:100%">
+                            </a>
+  			</div>
+  
+  			<div class="mySlides fade">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'home','catId'=>11,'default',true));?>">
+                            <img src="<?php echo $this->baseURL();?>/images/banners/animals_banner.jpg" style="width:100%">
+                            </a>
+  			</div>
+		</div>
+		<!-- SCRIPT CHE PERMETTE LA VISUALIZZAZIONE DELLO SLIDESHOW -->
+		<script type="text/javascript">
+			var slideIndex = 0;
+			showSlides();
+			function showSlides() {
+    		var i;
+    		var slides = document.getElementsByClassName("mySlides");
+    		for (i = 0; i < slides.length; i++) {
+        		slides[i].style.display = "none"; 
+    			}
+			slideIndex++;
+    		if (slideIndex> slides.length) {slideIndex = 1} 
+				slides[slideIndex-1].style.display = "block"; 
+    			setTimeout(showSlides, 3500); // Change image every 3.5 seconds
+			}
+		</script> 
+		<!-- due container che contengono banner pubblicitari -->
+		<div id="promotion_banner_one">
+			<h2>ALL FOR HIM</h2>
+		</div>
+		<br>
+		<div id="promotion_banner_two">
+			<h2>ALL FOR HER</h2>
+		</div>
+	
+
+	<!-- div che contiene un banner con foto, posizionato sul banner -->
+	<div id="upfooter"></div>
+	<div id="offerteDelGiorno">
+		<h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;☆ OFFERTE DEL GIORNO ☆</h1>
+		<div id="offerta">
+			<div id="infoOfferta"> 
+				<h5>NOMEPRODOTTO</h5>
+				<br>
+				<h6>CATEGORIA</h6>
+				<br>
+				<h7>BRAND</h7>
+				<br>
+				<h8>TIPOLOGIA</h8>
+				<br>
+				<h9>dal <b>08.05</b> al <b>06.06</b></h9>
+				<button id="stampaofferta"></button>
+			</div>
+		</div>
+		<a href="">Visualizza Altre Offerte!</a>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div id="offerteInScadenza">
+		<h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ❕ OFFERTE IN SCADENZA ❕</h1>
+		<div id="offerta">
+			<div id="infoOfferta"> 
+				<h5>NOMEPRODOTTO</h5>
+				<br>
+				<h6>CATEGORIA</h6>
+				<br>
+				<h7>BRAND</h7>
+				<br>
+				<h8>TIPOLOGIA</h8>
+				<br>
+				<h9>dal <b>08.05</b> al <b>06.06</b></h9>
+				<button id="stampaofferta"></button>
+			</div>
+		</div>
+		<a href="">Visualizza Altre Offerte!</a>
+	</div>
+</div>
