@@ -1,20 +1,31 @@
 body {
-	
-	
 	/* disabilita la selezione del testo */
    -ms-user-select: none; /* IE 10+ */
    -moz-user-select: -moz-none;
    -khtml-user-select: none;
    -webkit-user-select: none;
    	user-select: none;
-	width:80em;
-	margin-left:10.3%;
-	margin-right:10.3%;
+	width: 100%;
+	height: auto;
 }
 
+#mainWrapper {
+	position:relative; 
+	width: auto;
+	margin: 0 auto;
+	height: auto;
+}	
+
+/* Header che contiene up header e middle header*/
+header {
+	width: auto;
+	height: auto;
+	position: relative;
+	min-width: 80em;
+}
 
 /* h1 usato per tutti i titoli */
-h1{
+h1 {
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
 	font-size: 20px;
@@ -40,14 +51,23 @@ footer{
 	width: 100%;
 	height: 200px;
 	position: relative;
-	bottom: -100px;
 	background-color: rgb(179, 0, 0);
 	border-radius: 15px 15px 0px 0px;
-	display: block;
+	min-width: 80em;
 }
 
-a{
+/* Ancore */
+a {
 	text-decoration: none;
+}
+
+footer a {
+	color: #FFFFFF;
+}
+
+/* effetti sul menu (al passaggio del mouse) */
+a:hover{
+	-webkit-filter: drop-shadow(0.5px 0.5px 0.5px white);
 }
 
 /* tutte le icone del sito */
@@ -56,7 +76,8 @@ a{
 	height: 27px;
 	position: relative;
 	top: 12px;
-	left: 20px;
+	right: 1em;
+	
 }
 
 /* logo di Coupon World*/
@@ -70,7 +91,6 @@ a{
 
 /* la header secondaria che contiene il menu */
 #upheader {
-	
 	background-color: rgb(155, 0, 0);
 	border-bottom: inset;
 	border-bottom-color: white;
@@ -80,30 +100,34 @@ a{
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+	min-width: 80em;
 }
 
 /* Menu sul upHeaderMenu*/
-#upHeaderMenu menu{
+#upHeaderMenu h3 {
 	float:left;
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	font-size: 1.25em;
+	font-weight: 200;
 	color: white;
 	text-align: center;
 	position: relative;
-	left: 66%;;
+	left: 70%;
 	bottom: 15px;
 	width: auto;
+	margin-right: 3%;
+	
 }
 
 /* effetti sul menu (al passaggio del mouse) */
-menu:hover{
+h3:hover{
 	-webkit-filter: drop-shadow(0.5px 0.5px 0.5px white);
 }
 
 /* header della homepage contenente login/registrazione e il carrello */
-#header {
+#middleheader {
 	background-color: rgb(179, 0, 0);
 	height: 104px;
 	font-family: 'Titillium Web';
@@ -111,12 +135,12 @@ menu:hover{
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	border-radius: 0px 0px 15px 15px;
 	width: 100%;
-	
+	min-width: 80em;
 
 }
 
 /* barra di ricerca */
-#header input{
+#middleheader input{
     width: 31.25%;
 	height: 30px;
 	position: relative;
@@ -124,6 +148,7 @@ menu:hover{
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+	max-width: 45em;
 }
 
 /* effetti sulla barra di ricerca (quando si inseriscono le parole) */
@@ -136,8 +161,10 @@ input:focus {
 	background-image: url(../images/icons/iconsearch.png);
 	background-size: cover;
 	position: relative;
-	height: 36px;
-	width: 2.8%;
+	height: 34px;
+	width: 34px;
+	max-height: 34px;
+	max-width: 34px;
 	background-color: rgb(179, 0, 0);
 	bottom:4px;
 	left: 19%;
@@ -148,40 +175,41 @@ input:focus {
 #subheader {
 	background-color: #FFFFFF;
 	width: 100%;
+	min-width: 80em;
 	height: 55px;
 }
 
 /* descrizioni di approfondimento del sito */
-#subheader descrizione{
+#subheader h4 {
 	
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	font-size: 1em;
 	font-style: italic;
+	font-weight: 500;
 	color: black;
 	position: relative;
 	top: 5px;
-	left: 2.3%;
 	display:inline-block;
 }
 
 /* barra di navigazione contenente le categorie*/
-#navMenu{
+#navMenu {
 	background-color: white;
 	width: 28.125%;
 	height: 215px;
 	position: relative;
-	left: 90px;
-	
+	left: 30px;
+	min-width: 20em;
 }
 
 /* nav che contiene le categorie */
-#categorie  {
+#categorie {
 	position: relative;
 	top: 10px;
 	height: auto;
-
+	min-width: 10em;
 }
 
 /* le varie categorie elencate in una lista */
@@ -201,21 +229,22 @@ input:focus {
 }
 
 /* effetti al passaggio del mouse sulle categorie */
-#categorie li:hover{
-	background-color: rgb(179, 0, 0);;
+#categorie > li a:hover{
+	background-color: rgb(179, 0, 0);
 	color: white;
 }
 
-* {box-sizing:border-box}
 
+* {box-sizing:border-box}
 /* Slideshow container */
 .slideshow-container {
   
-  max-width:40.5%;
+  max-width:45.5%;
   height: auto;
   position: relative;
-  top:-190px;
+  top:-310px;
   left:36%;
+  min-width: 10em;
 }
 
 .mySlides {
@@ -246,12 +275,13 @@ input:focus {
 	background-size: cover;
 	border-radius: 0px 10px 10px 0px;
 	max-width: 18.12%;
-	height: 150px;
+	height: 172px;
 	position: relative;
-	bottom: 533px;
-	left: 78%;
+	bottom: 693px;
+	left: 82%;
 	-webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
+	max-width: 14em;
 }
 
 /* effetti al passaggio del mouse sul banner promozione 1*/
@@ -267,13 +297,14 @@ input:focus {
 	background-image: url(../images/banners/woman.png);
 	background-size: cover;
 	position: relative;
-	bottom: 549px;
-	left: 78%;
+	bottom: 709px;
+	left: 82%;
 	-webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
 	max-width: 18.12%;
-	height: 150px;
-		
+	height: 172px;
+	border-radius: 0px 10px 10px 0px;
+	max-width: 14em;
 }
 
 /* effetti al passaggio del mouse sul banner promozione 2*/
@@ -287,49 +318,47 @@ input:focus {
 	
 	width: 100%;
 	position: relative;
-	left: 10%;
 	top:300px;
 }
 
 #campoCercaAzienda h2 {
-	
-	width: 24%;
+	position:relative;
+	width: 24.9%;
 	text-align: left;
-	
-	
+	left: 5.2%;
 }
 
 #campoCercaAzienda input{
-    
-	width: 20%;
-	height: 30px;
+    position: relative;
+	width: 21%;
+	height: 33px;
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+	left: 5.2%;
 }
 
 #campoCercaAzienda button {
 	
 	background-image: url(../images/icons/iconsearch.png);
-	background-size: cover;
+	background-size: contain;
+	background-repeat: no-repeat;
 	position: relative;
-	height: 35px;
-	width: 2.8%;
+	height: 33px;
+	width: 1.9%;
 	background-color: #266abd;
 	bottom:4px;
-	left: 1%;
+	left: 6.9%;
 	border: none;
 	
 }
 
 #listaTipologie {
-	
 	width:27%;
 	position:relative;
 	left:7%;
 	top:200px;
-	display:none;
-	
+	display:none;	
 }
 
 #listaTipologie li {
@@ -361,8 +390,9 @@ input:focus {
 
 /* Sezione che contiene lo slideshow e i promotion banner (che diventa poi dinamica al click sulle categorie) */
 #mainContent{
-	
+	position: relative;
 	width:100%;
+	height: auto;
 }
 
 /* sezione che contiene le offerte del giorno */
@@ -403,61 +433,64 @@ input:focus {
 /* rappresenta la sezione a dx che contiene tutte le informazioni (nome prodotto, tipologia, categoria, ecc..) */
 #infoOfferta {
 	width: 75%;
-	height: auto;
+	height: 85%;
 	position: relative;
 	left: 90px;
 	text-align: right;
 	background-color: rgba(155,0,0,0.7);
 	border-radius: 0px 0px 0px 15px;
 	color: white;
+	bottom: 34px;
 }
 
-/* nomeprodotto sta ad indicare il nome del prodotto o una particolare sottocategoria (tecnologia > smartphones) */
-#infoOfferta nomeprodotto {
+/* sta ad indicare il nome del prodotto o una particolare sottocategoria (tecnologia > smartphones) */
+#infoOfferta h5 {
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	font-size: 20px;
 	font-weight: 500;
 	position: relative;
-	left: 1px;
+	right: 3px;
 }
 
-/* nomeprodotto sta ad indicare la categoria del prodotto */
-#infoOfferta categoria {
+/* sta ad indicare la categoria del prodotto */
+#infoOfferta h6 {
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	font-size: 13px;
 	position: relative;
-	left: -1px;
+	right: 6px;
+	bottom: 80px;
 }
 
-/* brand sta ad indicare il marchio del prodotto */
-#infoOfferta brand {
+/* sta ad indicare il marchio del prodotto */
+#infoOfferta h7 {
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	font-size: 13px;
 	font-weight: 500;
 	position: relative;
-	left: -1px;
-	
+	bottom: 130px;
+	right: 2px;
 }
 
-/* tipologia sta ad indicare la tipologia di offerta sul prodotto (2*1, 50% di sconto, ecc..) */
-#infoOfferta tipologia {
+/* sta ad indicare la tipologia di offerta sul prodotto (2*1, 50% di sconto, ecc..) */
+#infoOfferta h8 {
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	font-size: 18px;
 	font-weight: 500;
 	position: relative;
-	left: -1px;
+	bottom: 130px;
+	right: 1px;
 }
 
-/* periodo sta ad indicare il periodo di validitá dell'offerta */
-#infoOfferta periodo {
+/* sta ad indicare il periodo di validitá dell'offerta */
+#infoOfferta h9 {
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
@@ -465,6 +498,7 @@ input:focus {
 	font-weight: 200;
 	position: relative;
 	left: 39px;
+	bottom: 123px;
 }
 
 /*Le prossime 4 regole si riferiscono al link visualizza altre offerte delle relative sezioni*/
@@ -527,7 +561,7 @@ input:focus {
 	width:40px;
 	height: 40px;
 	position: relative;
-	top: 47px;
+	bottom: 68px;
 	right: 12px;
 	background-image: url(../images/icons/print.png);
 	background-size: contain;
@@ -559,11 +593,12 @@ input:focus {
 }
 
 /* testo nel footer */
-#footer footertext{
+#footer h10{
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
-	font-size: 20px;
+	font-size: 15px;
+	font-weight: 100;
 	color: white;
 	text-align: left;
 	background-color: transparent;
@@ -592,7 +627,6 @@ input:focus {
 	left: 48%;
 	bottom: 67%;
 }
-
 
 
 

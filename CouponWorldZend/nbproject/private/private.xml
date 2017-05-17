@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/EnzoLowboys/Desktop/MATERIALE%20CORSI/Tecnologie%20Web/Esempi%20Zend/ZPtrunk/ZendProject0/application/layouts/scripts/main.phtml</file>
+            <file>file:/C:/Users/EnzoLowboys/Desktop/MATERIALE%20CORSI/Tecnologie%20Web/Esempi%20Zend/ZPtrunk/ZendProject0/public/css/welcome.css</file>
+            <file>file:/C:/Users/EnzoLowboys/Desktop/MATERIALE%20CORSI/Tecnologie%20Web/Esempi%20Zend/ZPtrunk/ZendProject0/application/Bootstrap.php</file>
+            <file>file:/C:/Users/EnzoLowboys/Desktop/MATERIALE%20CORSI/Tecnologie%20Web/Esempi%20Zend/ZPtrunk/ZendProject0/application/controllers/IndexController.php</file>
+            <file>file:/C:/Users/EnzoLowboys/Desktop/MATERIALE%20CORSI/Tecnologie%20Web/Esempi%20Zend/ZPtrunk/ZendProject0/application/configs/application.ini</file>
+            <file>file:/C:/Users/EnzoLowboys/Desktop/MATERIALE%20CORSI/Tecnologie%20Web/Esempi%20Zend/ZPtrunk/ZendProject0/application/controllers/ErrorController.php</file>
+            <file>file:/C:/Users/EnzoLowboys/Desktop/MATERIALE%20CORSI/Tecnologie%20Web/Esempi%20Zend/ZPtrunk/ZendProject0/application/controllers/PublicController.php</file>
+            <file>file:/C:/Users/EnzoLowboys/Desktop/MATERIALE%20CORSI/Tecnologie%20Web/Esempi%20Zend/ZPtrunk/ZendProject0/application/views/scripts/public/index/index.phtml</file>
+        </group>
     </open-files>
 </project-private>

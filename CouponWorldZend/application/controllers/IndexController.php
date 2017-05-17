@@ -10,9 +10,10 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        
-        /* Reindirizzo al public controller*/
+        /*Reindirizzo al controller PUBLIC*/
         $this->_helper->redirector('index','public');
+        
+       
     }
 
 
