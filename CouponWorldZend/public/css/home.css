@@ -9,6 +9,21 @@ body {
 	height: auto;
 }
 
+.titolocategoria{
+        font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+	font-size: 30px;
+        font-weight: 100;
+        width: 500px;
+	color: red;
+	text-align: center;
+	background-color: white;
+	font-weight: 400;
+        position: relative;
+        left: 650px;
+        bottom:220px;
+}
+
 #mainWrapper {
 	position:relative; 
 	width: auto;
@@ -54,11 +69,15 @@ footer{
 	background-color: rgb(179, 0, 0);
 	border-radius: 15px 15px 0px 0px;
 	min-width: 80em;
+        top:400px;
 }
 
 /* Ancore */
 a {
 	text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
 }
 
 footer a {
@@ -356,25 +375,47 @@ input:focus {
 #listaTipologie {
 	width:27%;
 	position:relative;
-	left:7%;
+	left:5%;
 	top:200px;
-	display:none;	
+		
 }
 
-#listaTipologie li {
+#listaTipologie fieldset {
 	
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	font-size: 20px;
 	font-weight: 400;
-	color: black;
+	color: #266abd;
 	list-style-type: none;
-	width: 95%;
+	width: 93%;
 	height: auto;
 	border-bottom: inset;
 	border-bottom-color: darkgrey;
 	border-bottom-width: 1px; 
+}
+
+#listaTipologie h1 {
+	width: 382px;
+}
+
+/* Bottone conferma nei filtri delle tipologie */
+#bottoneConferma {
+       font-family: 'Titillium Web';
+       src: url(../fonts/TitilliumWeb-Regular.ttf);
+       src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+       width: auto;
+       height: auto;
+       position: relative;
+       bottom: 0px;
+       left: 200px;
+       border: 2px;
+       border-color: #266abd;
+       background-color: #266abd;
+       color: white;
+       border-radius: 8px 8px 8px 8px;
+	
 }
 
 /* div che contiene un pattern immagine sopra il footer */
@@ -628,12 +669,81 @@ input:focus {
 	bottom: 67%;
 }
 
+/* Sezione FAQ: Frequently Asked Question */
+#FAQsection {
+  position: relative;
+  top:10px;
+  color:blue;
+  font-family: 'Titillium Web';
+  src: url(../fonts/TitilliumWeb-Regular.ttf);
+  src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+}
+#FAQsection h1 {
+   text-align: center;
+   font-size: 22px;
+   font-weight: 700;
+   /* line-height: 1px; */
+}
+#FAQsection h2 {
+  text-align: center;
+  font-size: 19px;
+  font-weight: 400;
+  
+}
+#FAQsection h3 { 
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 600;
+}
+#FAQsection h4 { 
+  text-align: justify;
+  font-size: 14px;
+  font-weight: 400;
+}
 
+/* Sezione My Accont */
+#MyAccount {
+  position: relative;
+  top:10px;
+  color:blue;
+  font-family: 'Titillium Web';
+  src: url(../fonts/TitilliumWeb-Regular.ttf);
+  src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+}
+#MyAccount h1 {
+   text-align: center;
+   font-size: 22px;
+   font-weight: 700;
+   /* line-height: 1px; */
+}
+#MyAccount h2 {
+  text-align: center;
+  font-size: 19px;
+  font-weight: 400;
+  
+}
 
-
-
-
-
+/* Sezione Registrazione */
+#Registrazione {
+  position: relative;
+  top:10px;
+  color:blue;
+  font-family: 'Titillium Web';
+  src: url(../fonts/TitilliumWeb-Regular.ttf);
+  src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+}
+#Registrazione h1 {
+   text-align: center;
+   font-size: 22px;
+   font-weight: 700;
+   /* line-height: 1px; */
+}
+#Registrazione h2 {
+  text-align: center;
+  font-size: 19px;
+  font-weight: 400;
+  
+}
 
 
 

@@ -15,13 +15,14 @@
 	<!-- UPHEADER CONTENTENTE MENU -->
 	<div id="upheader">
 		<div id="upHeaderMenu">
-			<h3><b>M</b>y Account</h3>
-			<h3><b>R</b>egistrazione</h3>
+                    <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'myaccount','default',true));?>"><h3><b>M</b>y Account</h3></a>
+		    <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'registrazione','default',true));?>"><h3><b>R</b>egistrazione</h3></a>
 		</div>
 	</div>
 	<!-- HEADER CONTENTENTE BARRA DI RICERCA E BOTTONE -->
 	<div id="middleheader">
-		<img id="logo" src="<?php echo $this->baseURL();?>/images/LogoCWwhite.png"></img>
+		<img id="logo" onClick="window.location.href='<?=$this->url(array('controller'=>'public','action'=>'home','default',true));
+                                                               ?>';" src="<?php echo $this->baseURL();?>/images/LogoCWwhite.png"></img>
 		<!-- barra di ricerca -->
 		<input type="text" name="search" placeholder="Cerca la tipologia dell'offerta o il prodotto...">
 		<!-- bottone cerca -->
