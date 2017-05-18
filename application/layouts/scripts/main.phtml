@@ -1,0 +1,61 @@
+<?php echo $this->doctype();?>
+<html lang="it-IT">
+<head>
+	<!-- compatibilitá per browser come Internet Explorer -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<!-- fa sì che il sito web venga visualizzato a tutto schermo, senza ridimensionare nulla --> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- imposto i placeholders -->
+        <?= $this->headMeta(); ?>
+        <?= $this->headLink(); ?>
+	<title>Homepage</title>
+</head>
+<body>
+<header>
+	<!-- UPHEADER CONTENTENTE MENU -->
+	<div id="upheader">
+		<div id="upHeaderMenu">
+                    <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'myaccount','default',true));?>"><h3><b>M</b>y Account</h3></a>
+		    <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'registrazione','default',true));?>"><h3><b>R</b>egistrazione</h3></a>
+		</div>
+	</div>
+	<!-- HEADER CONTENTENTE BARRA DI RICERCA E BOTTONE -->
+	<div id="middleheader">
+		<img id="logo" onClick="window.location.href='<?=$this->url(array('controller'=>'public','action'=>'home','default',true));
+                                                               ?>';" src="<?php echo $this->baseURL();?>/images/LogoCWwhite.png"></img>
+		<!-- barra di ricerca -->
+		<input type="text" name="search" placeholder="Cerca la tipologia dell'offerta o il prodotto...">
+		<!-- bottone cerca -->
+		<button id="cerca"></button>
+	</div>
+</header>
+<div id="mainContent">	
+	<?php echo $this->layout()->content;?>
+</div>
+	<!-- FOOTER A FINE PAGINA -->
+	<footer id="footer">
+		<div id="footersx">
+			<img src="<?php echo $this->baseURL();?>/images/LogoCWwhite.png"height="30%" width="30%">
+			<br>
+			<h10>© Copyright 2017 Coupon World SRL. All Rights Reserved</h10>
+			<br>
+			<h10>trova tutti gli ultimi coupon stampabili e offerte speciali online </h10>
+			<br>
+			<h10>seguici su: </h10>
+			<br>
+			<img class="footericon" src="<?php echo $this->baseURL();?>/images/icons/facebook.png" width="30px" height="30px">
+			<img class="footericon" src="<?php echo $this->baseURL();?>/images/icons/instagram.png" width="30px" height="30px">
+			<img class="footericon" src="<?php echo $this->baseURL();?>/images/icons/twitter.png" width="30px" height="30px">
+		</div>
+		<div id="footerdx">
+			<h10><b>Chi siamo</b>&nbsp; &nbsp; &nbsp; &nbsp;Piattaforma che offre i coupon da Aprile 2017</h10>
+			<br>
+			<h10><b>Dove siamo</b>&nbsp; &nbsp;Via Brecce Bianche, 32, Ancona, IT</h10>
+			<br>
+			<h10><b>Contatti</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;07 345 678</h10>
+			<br>
+			<h10><b>Email</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a href="mailto:staff@couponworld.it">staff@couponworld.it</a></h10>
+		</div>
+	</footer>
+</body>
+</html>
