@@ -123,7 +123,13 @@
 		<div id="promotion_banner_two">
 			<h2>ALL FOR HER</h2>
 		</div>
-	
+                
+                <!--paginazione  -->
+	  <?php if($this->products instanceof Zend_Paginator) {
+	  		echo $this->paginationControl($this->products,'Sliding','public/_paginator.phtml');
+	  } 
+	  ?>
+
 
 	<!-- div che contiene un banner con foto, posizionato sul banner -->
 	<div id="upfooter"></div>
@@ -131,7 +137,10 @@
 		<h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;☆ OFFERTE DEL GIORNO ☆</h1>
 		<div id="offerta">
 			<div id="infoOfferta"> 
-				<h5>NOMEPRODOTTO</h5>
+                        
+                               <?php 
+                                     echo'<h5>'.$this->prodotto['nomeprodotto']->nomeprodotto.'</h5>';
+                                    ?>
 				<br>
 				<h6>CATEGORIA</h6>
 				<br>

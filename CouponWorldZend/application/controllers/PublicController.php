@@ -4,12 +4,15 @@ class PublicController extends Zend_Controller_Action {
     
     protected $_logger;
     protected $topId;
+    protected $_publicModel;
     
     public function init() {
         
         /*Abilito il layout*/
         $this->_helper->layout->setLayout('main');
         $this->_logger = Zend_Registry::get("log"); //file log
+        /* istanzio in model*/
+        $this->_PublicModel = new Application_Model_Public(); //model
        
     }
     
@@ -26,9 +29,9 @@ class PublicController extends Zend_Controller_Action {
         
       
         //log
-        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
-        
-        
+       $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+       $cat=$this->_PublicModel->getpromozioneByid();
+       $this->view->assign(array('prodotto'=>$cat));
     }
     
    public function categorieAction () {
