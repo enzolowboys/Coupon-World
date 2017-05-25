@@ -151,15 +151,67 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
        
         return $this->fetchAll($select);
     }
+    /* estrae le promozioni piu in scadenza cioè quando manca meno di due giorni alla scadenza*/
+    public function getPromozioniInscadenza($paged=null,$order=null){
+         $data = Zend_Date::now();
+         $select=$this->select()
+                ->where('datafine-'. $data. '> 2');
+        if(true === is_array($order)){
+            $select->order($order);
+        }
+            if(null !=$order){
+                $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
+			$paginator = new Zend_Paginator($adapter);
+			$paginator->setItemCountPerPage(1)
+		          	  ->setCurrentPageNumber((int) $paged);
+			return $paginator;
     
+    }                   
+       
+        return $this->fetchAll($select);
+        
+        
+         /* estrae le promozioni piu recenti cioè quando manca piu di due giorni alla scadenza*/
+    }
+ 
     
-   
+     public function getPromozioniInsRecenti($paged=null,$order=null){
+          $data = Zend_Date::now();
+         $select=$this->select()
+                ->where('datainizio-'. $data. '>= 1');
+        if(true === is_array($order)){
+            $select->order($order);
+        }
+            if(null !=$order){
+                $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
+			$paginator = new Zend_Paginator($adapter);
+			$paginator->setItemCountPerPage(1)
+		          	  ->setCurrentPageNumber((int) $paged);
+			return $paginator;
     
-    
-   
-    
-    
-    
+    }                   
+       
+        return $this->fetchAll($select);
+        
+        
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*inserisce promozioni*/
     public function insertPromozione($info){
         $this->insert($info);

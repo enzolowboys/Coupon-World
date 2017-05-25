@@ -29,9 +29,11 @@ class PublicController extends Zend_Controller_Action {
         
       
         //log
-       $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
        $cat=$this->_PublicModel->getpromozioneByid();
-       $this->view->assign(array('prodotto'=>$cat));
+       $this->view->assign(array('offerta'=>$cat)
+        );
+        
     }
     
    public function categorieAction () {
