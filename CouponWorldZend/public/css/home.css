@@ -745,6 +745,19 @@ input:focus {
   
 }
 
+#pagination {
+    
+    border: black;
+    color: black;
+    position:relative;
+    left:10%;
+}
 
 
-
+#offerta {
+	
+	position:relative;
+	left:35%;
+	top: -200px;
+	
+}

@@ -28,9 +28,27 @@
         <!--Sezione dinamica che in base al click sulla categoria apre la pagina della categoria giusta --> 
         <?php 
          switch($this->categoria){
-             case "tecnologia": 
-                echo '<h1 class="titolocategoria">TECNOLOGIA</h1>';      
+             case "tecnologia":{ 
+                echo '<h1 class="titolocategoria">TECNOLOGIA</h1>';
+                foreach ($this->offertaPerCategoria as $offertaCategoria) {
+                        echo'<div id="offerta">';
+			echo'<div id="infoOfferta">'; 
+                        echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>';
+                        echo '<br>';
+			echo '<h6>'. $offertaCategoria->categoria.'</h6>';
+			echo '<br>';
+			echo '<h7>'. $offertaCategoria->azienda_idazienda.'</h7>';
+			echo '<br>';
+			echo '<h8>'. $offertaCategoria->azienda_idazienda.'</h8>';
+                        echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
+                                        $offertaCategoria->datafine.'</b>'.'</h8>';
+			echo '<button id="stampaofferta"></button>';
+			echo '</div>';
+                        echo '</div>';
+                }
+                
                 break;
+             }
              case "ufficioeservizi": 
                 echo '<h1 class="titolocategoria">UFFICIO E SERVIZI</h1>';      
                break;    

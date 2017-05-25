@@ -12,7 +12,7 @@ class PublicController extends Zend_Controller_Action {
         $this->_helper->layout->setLayout('main');
         $this->_logger = Zend_Registry::get("log"); //file log
         /* istanzio in model*/
-        $this->_PublicModel = new Application_Model_Public(); //model
+        $this->_publicModel = new Application_Model_Public(); //model
        
     }
     
@@ -30,10 +30,15 @@ class PublicController extends Zend_Controller_Action {
       
         //log
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
-       $cat=$this->_PublicModel->getpromozioneByid();
-       $this->view->assign(array('offerta'=>$cat)
-        );
-        
+        /*Prendo la pagina da offerte del giorno e offerte in scadenza*/
+        $pagedDelGiorno = $this->_getParam('pagedDelGiorno',1);
+        $pagedScadenza = $this->_getParam('pageScadenza',1);
+        //Estraggo dal DB la promozione per data odierna e in scadenza
+        $offerteDelGiorno = $this->_publicModel->getPromozioneByDate($pagedDelGiorno,null);
+        $offertaInScadenza = $this->_publicModel->getPromozioneByLastDate($pagedScadenza,null);
+        //Assegno alla view i prodotto da visualizzare
+        $this->view->assign(array('offerteDelGiorno'=>$offerteDelGiorno,'offerteInScadenza'=>$offertaInScadenza));
+
     }
     
    public function categorieAction () {
@@ -44,6 +49,14 @@ class PublicController extends Zend_Controller_Action {
         $this->view->assign(array(
             'categoria' => $catId)
         );
+        /*Prendo pagina e la categoria selezionata dal database*/
+        $pagedCategoria = $this->_getParam('pageCategoria',1);
+        $offertaPerCategoria = $this->_publicModel->getPromozioneByCategoria($catId);
+        $this->view->assign(array('offertaPerCategoria'=>$offertaPerCategoria));
+        
+        
+        
+        
         
         
    }

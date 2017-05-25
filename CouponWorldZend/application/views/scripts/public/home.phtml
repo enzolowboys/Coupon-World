@@ -34,67 +34,67 @@
 		<!-- SLIDESHOW CHE CONTIENE I BANNER DELLE CATEGORIE -->
   <div class="slideshow-container">
   			<div class="mySlides fade">
-                        <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>1,'default',true));?>">
+                        <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'tecnologia','default',true));?>">
     			<img src="<?php echo $this->baseURL();?>/images/banners/technology_banner.jpg" style="width:100%">
                         </a>
   			</div>
 
   			<div class="mySlides fade">
-                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>2,'default',true));?>">
+                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'ufficioeservizi','default',true));?>">
                             <img src="<?php echo $this->baseURL();?>/images/banners/office_banner.jpg" style="width:100%">
                             </a>
   			</div>
 
   			<div class="mySlides fade">
-                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>3,'default',true));?>">
+                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'modaeabbigliamento','default',true));?>">
                             <img src="<?php echo $this->baseURL();?>/images/banners/clothes_banner.jpg" style="width:100%">
                             </a>
   			</div>
   
   			<div class="mySlides fade">
-                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>4,'default',true));?>">
+                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'ciboebevande','default',true));?>">
                             <img src="<?php echo $this->baseURL();?>/images/banners/food_banner.jpg" style="width:100%">
                             </a>
  			</div>
   
   			<div class="mySlides fade">
-                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>5,'default',true));?>">
+                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'giochieintrattenimento','default',true));?>">
                             <img src="<?php echo $this->baseURL();?>/images/banners/enternaiment_banner.jpg" style="width:100%">
                             </a>
   			</div>
   
   			<div class="mySlides fade">
-                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>6,'default',true));?>">
+                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'sportefitness','default',true));?>">
                             <img src="<?php echo $this->baseURL();?>/images/banners/sportandfitness_banner.jpg" style="width:100%">
                             </a>
   			</div>
   
   			<div class="mySlides fade">
-                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>7,'default',true));?>">
+                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'casaegiardino','default',true));?>">
                             <img src="<?php echo $this->baseURL();?>/images/banners/homeandgarden_banner.jpg" style="width:100%">
                             </a>
   			</div>
   
   			<div class="mySlides fade">
-                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>8,'default',true));?>">
+                            <a href=".<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'saluteebellezza','default',true));?>">
                             <img src="<?php echo $this->baseURL();?>/images/banners/health_banner.jpg" style="width:100%">
                             </a>
   			</div>
   
   			<div class="mySlides fade">
-                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>9,'default',true));?>">
+                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'viaggi','default',true));?>">
                             <img src="<?php echo $this->baseURL();?>/images/banners/travel_banner.jpg" style="width:100%">
                             </a>
   			</div>
   
   			<div class="mySlides fade">
-                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>10,'default',true));?>">
+                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'autoemoto','default',true));?>">
                             <img src="<?php echo $this->baseURL();?>/images/banners/carandmoto_banner.jpg" style="width:100%">
                             </a>
   			</div>
   
   			<div class="mySlides fade">
-                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>11,'default',true));?>">
+                            <a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'animali','default',true));?>">
                             <img src="<?php echo $this->baseURL();?>/images/banners/animals_banner.jpg" style="width:100%">
                             </a>
   			</div>
@@ -130,54 +130,57 @@
 	<div id="upfooter"></div>
 	<div id="offerteDelGiorno">
 		<h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;☆ OFFERTE DEL GIORNO ☆</h1>
+                <?php foreach ($this->offerteDelGiorno as $offertaDelGiorno) :?>
 		<div id="offerta">
 			<div id="infoOfferta"> 
-				<?php foreach ($this->offerta as $prodotto) :?>
-                               <?php echo '<h5>ciao'. $prodotto->nomeprodotto.'</h5>'?>
-                               <?php endforeach ?>
+                                <?php echo '<h5>'. $offertaDelGiorno->nomeprodotto.'</h5>'?>
+                                <br>
+				<?php echo '<h6>'. $offertaDelGiorno->categoria.'</h6>'?>
 				<br>
-				<h6>CATEGORIA</h6>
+				<?php echo '<h7>'. $offertaDelGiorno->azienda_idazienda.'</h7>'?>
 				<br>
-				<h7>BRAND</h7>
+				<?php echo '<h8>'. $offertaDelGiorno->azienda_idazienda.'</h8>'?>
 				<br>
-				<h8>TIPOLOGIA</h8>
-				<br>
-				<h9>dal <b>08.05</b> al <b>06.06</b></h9>
+                                <?php echo '<h8>dal '.'<b>'.$offertaDelGiorno->datainizio.'</b> al <b>'.
+                                        $offertaDelGiorno->datafine.'</b>'.'</h8>'?>
 				<button id="stampaofferta"></button>
 			</div>
 		</div>
-		<a href="">Visualizza Altre Offerte!</a>
-                
-	</div>
-        
-        
-              
-                <!--paginazione  -->
+                <?php endforeach ?>
+            
+          <!--paginazione  -->
 	  <?php if($this->offerta instanceof Zend_Paginator) {
-	  		echo $this->paginationControl($this->offerta,'Sliding','public/_paginator.phtml');
+                echo $this->paginationControl($this->offerta,'Sliding','public/_paginatorOfferteDelGiorno.phtml');
 	  } 
 	  ?>
-	<br>
+              </div>
+        <br>
 	<br>
 	<br>
 	<br>
 	<br>
 	<div id="offerteInScadenza">
 		<h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ❕ OFFERTE IN SCADENZA ❕</h1>
+                <?php foreach ($this->offerteInScadenza as $offertaInScadenza) :?>
 		<div id="offerta">
 			<div id="infoOfferta"> 
-				<h5>NOMEPRODOTTO</h5>
+                                <?php echo '<h5>'. $offertaInScadenza->nomeprodotto.'</h5>'?>
+                                <br>
+				<?php echo '<h6>'. $offertaInScadenza->categoria.'</h6>'?>
 				<br>
-				<h6>CATEGORIA</h6>
+				<?php echo '<h7>'. $offertaInScadenza->azienda_idazienda.'</h7>'?>
 				<br>
-				<h7>BRAND</h7>
+				<?php echo '<h8>'. $offertaInScadenza->azienda_idazienda.'</h8>'?>
 				<br>
-				<h8>TIPOLOGIA</h8>
-				<br>
-				<h9>dal <b>08.05</b> al <b>06.06</b></h9>
+                                <?php echo '<h8>dal '.'<b>'.$offertaInScadenza->datainizio.'</b> al <b>'.
+                                        $offertaInScadenza->datafine.'</b>'.'</h8>'?>
 				<button id="stampaofferta"></button>
 			</div>
 		</div>
-		<a href="">Visualizza Altre Offerte!</a>
+                <?php endforeach ?>
+                <?php if($this->offerta instanceof Zend_Paginator) {
+	  		echo $this->paginationControl($this->offerta,'Sliding','public/_paginatorInScadenza.phtml');
+                   } 
+                 ?>
 	</div>
 </div>
