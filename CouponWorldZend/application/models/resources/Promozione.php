@@ -18,7 +18,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$order){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect(find($id));
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
+			$paginator->setItemCountPerPage(2)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                 
@@ -36,7 +36,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$order){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
+			$paginator->setItemCountPerPage(2)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                 
@@ -57,7 +57,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$order){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
+			$paginator->setItemCountPerPage(2)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                 
@@ -77,7 +77,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$order){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
+			$paginator->setItemCountPerPage(2)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                 
@@ -104,7 +104,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$order){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
+			$paginator->setItemCountPerPage(2)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                 
@@ -124,7 +124,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$order){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
+			$paginator->setItemCountPerPage(2)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
     
@@ -143,7 +143,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$order){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
+			$paginator->setItemCountPerPage(2)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
     
@@ -184,7 +184,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$order){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
+			$paginator->setItemCountPerPage(2)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
     

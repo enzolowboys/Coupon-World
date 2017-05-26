@@ -51,7 +51,7 @@ class PublicController extends Zend_Controller_Action {
         );
         /*Prendo pagina e la categoria selezionata dal database*/
         $pagedCategoria = $this->_getParam('pageCategoria',1);
-        $offertaPerCategoria = $this->_publicModel->getPromozioneByCategoria($catId);
+        $offertaPerCategoria = $this->_publicModel->getPromozioneByCategoria($catId,$pagedCategoria);
         $this->view->assign(array('offertaPerCategoria'=>$offertaPerCategoria));
         
         

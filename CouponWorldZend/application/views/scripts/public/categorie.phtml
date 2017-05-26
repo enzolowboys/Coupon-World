@@ -82,6 +82,10 @@
 			</div>
 		</div>
                 <?php endforeach ?>
+          <?php if($this->offertaPerCategoria instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->offertaPerCategoria,'Sliding','public/_paginatorCategoria.phtml');
+	  } 
+	  ?>
       
     
         <!-- lista delle tipologie delle offerte presenti nel sito -->
