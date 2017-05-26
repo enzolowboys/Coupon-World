@@ -29,24 +29,7 @@
         <?php 
          switch($this->categoria){
              case "tecnologia":{ 
-                echo '<h1 class="titolocategoria">TECNOLOGIA</h1>';
-                foreach ($this->offertaPerCategoria as $offertaCategoria) {
-                        echo'<div id="offerta">';
-			echo'<div id="infoOfferta">'; 
-                        echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>';
-                        echo '<br>';
-			echo '<h6>'. $offertaCategoria->categoria.'</h6>';
-			echo '<br>';
-			echo '<h7>'. $offertaCategoria->azienda_idazienda.'</h7>';
-			echo '<br>';
-			echo '<h8>'. $offertaCategoria->azienda_idazienda.'</h8>';
-                        echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
-                                        $offertaCategoria->datafine.'</b>'.'</h8>';
-			echo '<button id="stampaofferta"></button>';
-			echo '</div>';
-                        echo '</div>';
-                }
-                
+                echo '<h1 class="titolocategoria">TECNOLOGIA</h1>'; 
                 break;
              }
              case "ufficioeservizi": 
@@ -82,6 +65,23 @@
             
          }
         ?>
+        <?php foreach ($this->offertaPerCategoria as $offertaCategoria) :?>
+		<div id="offertaCategoria">
+			<div id="infoOfferta"> 
+                                <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
+                                <br>
+				<?php echo '<h6>'. $offertaCategoria->categoria.'</h6>'?>
+				<br>
+				<?php echo '<h7>'. $offertaCategoria->azienda_idazienda.'</h7>'?>
+				<br>
+				<?php echo '<h8>'. $offertaCategoria->azienda_idazienda.'</h8>'?>
+				<br>
+                                <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
+                                        $offertaCategoria->datafine.'</b>'.'</h8>'?>
+				<button id="stampaofferta"></button>
+			</div>
+		</div>
+                <?php endforeach ?>
       
     
         <!-- lista delle tipologie delle offerte presenti nel sito -->

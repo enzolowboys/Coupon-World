@@ -754,10 +754,21 @@ input:focus {
 }
 
 
-#offerta {
+#offertaCategoria {
 	
 	position:relative;
 	left:35%;
 	top: -200px;
+        background-image: url(../images/monitor.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 360px;
+	height: 180px;
+	background-color: white;
+	border: double 2px;
+	border-style: inset;
+	border-color: rgb(179, 0, 0);
+	float: left;
+	margin-right: 10px;
 	
 }
