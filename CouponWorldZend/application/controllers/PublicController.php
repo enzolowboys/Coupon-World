@@ -11,8 +11,9 @@ class PublicController extends Zend_Controller_Action {
         /*Abilito il layout*/
         $this->_helper->layout->setLayout('main');
         $this->_logger = Zend_Registry::get("log"); //file log
-        /* istanzio in model*/
-        $this->_publicModel = new Application_Model_Public(); //model
+
+        /* istanzio il form */
+        $this->_PublicModel = new Application_Model_Public(); //model
         $this->view->accediForm = $this->getAccediForm();
        
     }
@@ -31,6 +32,7 @@ class PublicController extends Zend_Controller_Action {
       
         //log
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+
         /*Prendo la pagina da offerte del giorno e offerte in scadenza*/
         $pagedDelGiorno = $this->_getParam('pagedDelGiorno',1);
         $pagedScadenza = $this->_getParam('pageScadenza',1);
@@ -40,6 +42,8 @@ class PublicController extends Zend_Controller_Action {
         //Assegno alla view i prodotto da visualizzare
         $this->view->assign(array('offerteDelGiorno'=>$offerteDelGiorno,'offerteInScadenza'=>$offertaInScadenza));
 
+
+      
     }
     
    public function categorieAction () {
@@ -79,7 +83,7 @@ class PublicController extends Zend_Controller_Action {
         $this->render($page);
     
     }
-            
+
     private function getAccediForm()
 	{
 		$urlHelper = $this->_helper->getHelper('url');
@@ -91,6 +95,7 @@ class PublicController extends Zend_Controller_Action {
 				));
 		return $this->_form;
 	}
-    
+
+  
 }
 

@@ -722,6 +722,75 @@ input:focus {
   font-weight: 400;
   
 }
+/* Form accedi contenuto in My Account*/
+#MyAccount Form {
+    position: relative;
+    top: 40px;
+    left: 550px;
+    width: 425px;
+    height: 200px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    border-radius: 10px;
+}
+/* bottone di conferma nel form*/
+#accedi td #accedi {
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    left: 105px;
+    width: 200px;
+    height: 30px;
+    top: 10px;
+    
+    -webkit-filter: grayscale(50%); 
+    filter: grayscale(100%);
+}
+
+#accedi td #accedi:hover{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    -webkit-filter: drop-shadow(2px 2px 2px black);
+}
+
+/* campi di input */
+#accedi td input{
+	border-radius: 5px;
+	border-color: #266abd;
+}
+/* campo inserimento dell username */
+#accedi tr #username{
+	border-radius: 5px;
+	border-color: #266abd;
+	background-color: white;
+	margin-bottom: 10px;
+	margin-left: -30px;
+	
+}
+/* campo inserimento della password */
+#accedi tr #password{
+	border-radius: 5px;
+	border-color: #266abd;
+	background-color: white;
+	margin-bottom: 10px;
+	margin-left: -30px;
+}
+/* tutte le label della form */
+#accedi tr label{
+	margin-left: 80px;
+	position: relative;
+	color: black;
+}
+/* tutto il contenuto della form centrato */
+#accedi td {
+	position: relative;
+	top: 35px;
+	left: 5px;
+}
 
 /* Sezione Registrazione */
 #Registrazione {
