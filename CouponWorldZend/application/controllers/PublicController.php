@@ -11,8 +11,9 @@ class PublicController extends Zend_Controller_Action {
         /*Abilito il layout*/
         $this->_helper->layout->setLayout('main');
         $this->_logger = Zend_Registry::get("log"); //file log
-        /* istanzio in model*/
+        /* istanzio il form */
         $this->_PublicModel = new Application_Model_Public(); //model
+        $this->view->accediForm = $this->getAccediForm();
        
     }
     
@@ -30,9 +31,6 @@ class PublicController extends Zend_Controller_Action {
       
         //log
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
-       $cat=$this->_PublicModel->getpromozioneByid();
-       $this->view->assign(array('offerta'=>$cat)
-        );
         
     }
     
@@ -64,5 +62,17 @@ class PublicController extends Zend_Controller_Action {
         $page = $this->_getParam('staticPage');
         $this->render($page);
     }
+    
+    private function getAccediForm()
+	{
+		$urlHelper = $this->_helper->getHelper('url');
+		$this->_form = new Application_Form_Public_MyAccount_Accedi();
+		$this->_form->setAction($urlHelper->url(array(
+				'controller' => 'public',
+				'action' => 'home'),
+				'default'
+				));
+		return $this->_form;
+	}
 }
 

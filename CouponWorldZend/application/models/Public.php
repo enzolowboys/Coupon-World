@@ -7,11 +7,8 @@ class Application_Model_Public extends App_Model_Abstract
     {
 		$this->_logger = Zend_Registry::get('log');  	
 	}
-        /*funzione di prova*/
-        public function getpromozioneByid(){
-            return $this->getResource('Promozione')->getPromo();
-        }
         
+       
         /*estrae gli elementi in bae alla categoria*/
         public function getPromozioneByCategoria($categoria,$paged=null,$order=null){
              return $this->getResource('Promozione')->getPromozioneByCategoria($categoria,$paged,$order);
