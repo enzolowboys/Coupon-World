@@ -28,9 +28,10 @@
         <!--Sezione dinamica che in base al click sulla categoria apre la pagina della categoria giusta --> 
         <?php 
          switch($this->categoria){
-             case "tecnologia": 
-                echo '<h1 class="titolocategoria">TECNOLOGIA</h1>';      
+             case "tecnologia":{ 
+                echo '<h1 class="titolocategoria">TECNOLOGIA</h1>'; 
                 break;
+             }
              case "ufficioeservizi": 
                 echo '<h1 class="titolocategoria">UFFICIO E SERVIZI</h1>';      
                break;    
@@ -64,6 +65,27 @@
             
          }
         ?>
+        <?php foreach ($this->offertaPerCategoria as $offertaCategoria) :?>
+		<div id="offertaCategoria">
+			<div id="infoOfferta"> 
+                                <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
+                                <br>
+				<?php echo '<h6>'. $offertaCategoria->categoria.'</h6>'?>
+				<br>
+				<?php echo '<h7>'. $offertaCategoria->azienda_idazienda.'</h7>'?>
+				<br>
+				<?php echo '<h8>'. $offertaCategoria->azienda_idazienda.'</h8>'?>
+				<br>
+                                <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
+                                        $offertaCategoria->datafine.'</b>'.'</h8>'?>
+				<button id="stampaofferta"></button>
+			</div>
+		</div>
+                <?php endforeach ?>
+          <?php if($this->offertaPerCategoria instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->offertaPerCategoria,'Sliding','public/_paginatorCategoria.phtml');
+	  } 
+	  ?>
       
     
         <!-- lista delle tipologie delle offerte presenti nel sito -->
