@@ -13,6 +13,7 @@ class PublicController extends Zend_Controller_Action {
         $this->_logger = Zend_Registry::get("log"); //file log
         /* istanzio in model*/
         $this->_publicModel = new Application_Model_Public(); //model
+        $this->view->accediForm = $this->getAccediForm();
        
     }
     
@@ -76,6 +77,20 @@ class PublicController extends Zend_Controller_Action {
         
         $page = $this->_getParam('staticPage');
         $this->render($page);
+    
     }
+            
+    private function getAccediForm()
+	{
+		$urlHelper = $this->_helper->getHelper('url');
+		$this->_form = new Application_Form_Public_MyAccount_Accedi();
+		$this->_form->setAction($urlHelper->url(array(
+				'controller' => 'public',
+				'action' => 'home'),
+				'default'
+				));
+		return $this->_form;
+	}
+    
 }
 
