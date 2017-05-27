@@ -1,4 +1,4 @@
-body {
+﻿body {
 	/* disabilita la selezione del testo */
    -ms-user-select: none; /* IE 10+ */
    -moz-user-select: -moz-none;
@@ -64,12 +64,11 @@ h2 {
 /* footer a fine pagina */
 footer{
 	width: 100%;
-	height: 200px;
 	position: relative;
 	background-color: rgb(179, 0, 0);
 	border-radius: 15px 15px 0px 0px;
 	min-width: 80em;
-        top:400px;
+     
 }
 
 /* Ancore */
@@ -630,7 +629,7 @@ input:focus {
 	border-right-style: inset;
 	border-right-color: rgb(255, 255, 255);
 	left: 8%;
-	top: 7%;
+	top: 6em;
 }
 
 /* testo nel footer */
@@ -868,7 +867,7 @@ input:focus {
 #MyAccount Form {
     position: relative;
     top: 40px;
-    left: 550px;
+    left: 39%;
     width: 425px;
     height: 200px;
     border-style: solid;
