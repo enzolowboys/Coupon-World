@@ -11,7 +11,6 @@
 	<title>Homepage</title>
 </head>
 <body>
-<div id ="mainWrapper">
 <header>
 	<!-- UPHEADER CONTENTENTE MENU -->
 	<div id="upheader">
@@ -24,10 +23,6 @@
 	<div id="middleheader">
 		<img id="logo" onClick="window.location.href='<?=$this->url(array('controller'=>'public','action'=>'home','default',true));
                                                                ?>';" src="<?php echo $this->baseURL();?>/images/LogoCWwhite.png"></img>
-		<!-- barra di ricerca -->
-		<input type="text" name="search" placeholder="Cerca la tipologia dell'offerta o il prodotto...">
-		<!-- bottone cerca -->
-		<button id="cerca"></button>
 	</div>
 </header>
 <div id="mainContent">	
@@ -58,6 +53,5 @@
 			<h10><b>Email</b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a href="mailto:staff@couponworld.it">staff@couponworld.it</a></h10>
 		</div>
 	</footer>
-    </div>
 </body>
 </html>
