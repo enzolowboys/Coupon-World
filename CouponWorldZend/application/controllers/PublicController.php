@@ -16,7 +16,12 @@ class PublicController extends Zend_Controller_Action {
         $this->_PublicModel = new Application_Model_Public(); //model
        
         $this->view->accediForm = $this->getAccediForm();
+
+        $this->view->ricercaOffertaForm = $this->getRicercaForm();
+       
+
         $this->view->SearchBrandsForm = $this->getSearchBrandsForm();
+
     }
     
     /*Override del metodo di IndexController*/
@@ -125,7 +130,43 @@ class PublicController extends Zend_Controller_Action {
 				));
 		return $this->_form;
 	}
-
+        
+    public function searchOfferta() {
+            
+        //va a controllare il request object se c`è una richiesta post
+        if(!$this->getRequest()->isPost()) {
+            $this->_helper->redirector('home');
+                
+            }
+            $form=$this->_form;
+            if(!$form->isValid($_POST)) {
+                $form->setDescription('Dati inseriti non validi!');
+                return $this->render('home');
+            }
+              
+            $values = $form->getValues();
+         
+              
+              
+                          
+            }
+      
+    private function getRicercaForm() {
+        
+        $urlHelper = $this->_helper->getHelper('url');
+        $this->_form = new Application_Form_Public_Search_Searchofferta();
+        $this->_form->setAction($urlHelper->url(array(
+            'controller'=>'public',
+            'action'=>'offerteRicercate'),
+            'default'));
+        return $this->_form;
+        
+    }
+    
+    public function offertericercateAction () {
+        
+        
+    }
   
-}
 
+}
