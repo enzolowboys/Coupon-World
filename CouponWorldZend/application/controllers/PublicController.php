@@ -16,7 +16,7 @@ class PublicController extends Zend_Controller_Action {
         $this->_PublicModel = new Application_Model_Public(); //model
        
         $this->view->accediForm = $this->getAccediForm();
-       
+        $this->view->SearchBrandsForm = $this->getSearchBrandsForm();
     }
     
     /*Override del metodo di IndexController*/
@@ -48,7 +48,30 @@ class PublicController extends Zend_Controller_Action {
       
     }
     
-   public function categorieAction () {
+    
+    
+    public function searchAction(){
+        
+    }
+
+    public function getSearchBrandsForm(){
+       
+       
+        $urlHelper = $this->_helper->getHelper('url');
+        $this->_helper->layout->setLayout('layoutstatic');
+        $this->_form = new Application_Form_Public_Search_SearchBrands();
+        $this->_form->setAction($urlHelper->url(array(
+				'controller' => 'public',
+				'action' => 'search'),
+				'default'
+				));
+	return $this->_form;
+        
+        
+    }
+
+
+    public function categorieAction () {
        
        //log
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');

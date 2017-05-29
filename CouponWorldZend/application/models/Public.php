@@ -48,11 +48,12 @@ class Application_Model_Public extends App_Model_Abstract
             return $this->getResource('promozione')->getPromozioneByAzienda($idazienda,$paged,$order);
         }
         
-    public function getAziendaById($id){
+   
+        /*registragione*/
         
-        return $this->getResource('Azienda')->getAziendaById($id);
-    }
-
+        public function insertUser($info){
+            return $this->getResource('User')->insertUser($info);
+        }
 
 
 

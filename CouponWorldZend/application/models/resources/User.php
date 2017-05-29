@@ -11,6 +11,12 @@ class Application_Resource_User extends Zend_Db_Table_Abstract
     {
     }
     
+     public function getAllUser()
+    {
+         $select= $this->select();
+         return $this->fetchAll($select);
+     }
+    
     // Estrae gli utenti in base all' $id
     public function getUserById($id)
     {
@@ -35,8 +41,9 @@ class Application_Resource_User extends Zend_Db_Table_Abstract
     	$this->insert($info);
     }
     /*elimina un utante usando il suo username*/
-    public function deleteUser($username){
-        $this->delete($username);
+    public function deleteUser($iduser){
+        $this->delete('iduser = ? ',$iduser);
+        
     }
     
     /*modifica utente*/
