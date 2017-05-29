@@ -22,12 +22,7 @@
 	</div>
 	<!-- HEADER CONTENTENTE BARRA DI RICERCA E BOTTONE -->
 	<div id="middleheader">
-		<img id="logo" onClick="window.location.href='<?=$this->url(array('controller'=>'public','action'=>'home','default',true));
-                                                               ?>';" src="<?php echo $this->baseURL();?>/images/LogoCWwhite.png"></img>
-		<!-- barra di ricerca -->
-		<input type="text" name="search" placeholder="Cerca la tipologia dell'offerta o il prodotto...">
-		<!-- bottone cerca -->
-		<button id="cerca"></button>
+		<?php echo $this->ricercaOffertaForm; ?>
 	</div>
 </header>
 <div id="mainContent">	
