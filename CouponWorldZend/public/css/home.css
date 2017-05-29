@@ -1,4 +1,4 @@
-body {
+﻿body {
 	/* disabilita la selezione del testo */
    -ms-user-select: none; /* IE 10+ */
    -moz-user-select: -moz-none;
@@ -6,7 +6,7 @@ body {
    -webkit-user-select: none;
    	user-select: none;
 	width: 100%;
-	height: auto;
+	
 }
 
 .titolocategoria{
@@ -25,10 +25,10 @@ body {
 }
 
 #mainWrapper {
-	position:relative; 
-	width: auto;
-	margin: 0 auto;
-	height: auto;
+	 height: auto;
+         min-height: 100%;
+         position: relative;
+         margin: 0 auto -60px;
 }	
 
 /* Header che contiene up header e middle header*/
@@ -63,13 +63,14 @@ h2 {
 
 /* footer a fine pagina */
 footer{
-	width: 100%;
-	height: 200px;
-	position: relative;
-	background-color: rgb(179, 0, 0);
+        width: 100%;
+        background-color: rgb(179, 0, 0);
 	border-radius: 15px 15px 0px 0px;
-	min-width: 80em;
-        top:400px;
+	position:relative;
+        top:600px;
+	
+        
+     
 }
 
 /* Ancore */
@@ -138,11 +139,6 @@ a:hover{
 	width: auto;
 	margin-right: 3%;
 	
-}
-
-/* effetti sul menu (al passaggio del mouse) */
-h3:hover{
-	-webkit-filter: drop-shadow(0.5px 0.5px 0.5px white);
 }
 
 /* header della homepage contenente login/registrazione e il carrello */
@@ -328,7 +324,7 @@ input:focus {
 
 /* effetti al passaggio del mouse sul banner promozione 2*/
 #promotion_banner_two:hover{
-	-webkit-filter: grayscale(0%); 
+    -webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
 }
 
@@ -456,7 +452,6 @@ input:focus {
 
 /* offerta rappresenta il singolo spazio dedicato */
 #offerta {
-	background-image: url(../images/monitor.jpg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 360px;
@@ -481,7 +476,7 @@ input:focus {
 	background-color: rgba(155,0,0,0.7);
 	border-radius: 0px 0px 0px 15px;
 	color: white;
-	bottom: 34px;
+	bottom: 215px;
 }
 
 /* sta ad indicare il nome del prodotto o una particolare sottocategoria (tecnologia > smartphones) */
@@ -630,7 +625,7 @@ input:focus {
 	border-right-style: inset;
 	border-right-color: rgb(255, 255, 255);
 	left: 8%;
-	top: 7%;
+	top: 3em;
 }
 
 /* testo nel footer */
@@ -666,7 +661,7 @@ input:focus {
 	border-right-style: inset;
 	border-right-color: rgb(255, 255, 255);
 	left: 48%;
-	bottom: 67%;
+        bottom:4em;
 }
 
 /* Sezione FAQ: Frequently Asked Question */
@@ -726,16 +721,21 @@ input:focus {
 #MyAccount Form {
     position: relative;
     top: 40px;
-    left: 550px;
     width: 425px;
     height: 200px;
     border-style: solid;
     border-width: 1px;
     border-color: lightgrey;
     border-radius: 10px;
+    background-color: white;
+}
+/* div che contiene tutto il form */
+#FormAccedi{
+    position: relative;
+    left:-40px;
 }
 /* bottone di conferma nel form*/
-#accedi td #accedi {
+#accedi {
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -746,24 +746,15 @@ input:focus {
     width: 200px;
     height: 30px;
     top: 10px;
-    
-    -webkit-filter: grayscale(50%); 
-    filter: grayscale(100%);
 }
-
-#accedi td #accedi:hover{
-    -webkit-filter: grayscale(0%); 
-    filter: grayscale(0%);
-    -webkit-filter: drop-shadow(2px 2px 2px black);
-}
-
 /* campi di input */
 #accedi td input{
 	border-radius: 5px;
 	border-color: #266abd;
 }
+
 /* campo inserimento dell username */
-#accedi tr #username{
+#username{
 	border-radius: 5px;
 	border-color: #266abd;
 	background-color: white;
@@ -772,7 +763,7 @@ input:focus {
 	
 }
 /* campo inserimento della password */
-#accedi tr #password{
+#password{
 	border-radius: 5px;
 	border-color: #266abd;
 	background-color: white;
@@ -813,6 +804,53 @@ input:focus {
   font-weight: 400;
   
 }
+#Registrazione form{
+	background-color:white;
+	position: relative;
+	left:32%;
+	position: left;
+	width: 100px;
+        color: black;
+        height:25%;
+}
+/* campi di input */
+#registra input{
+	border-radius: 5px;
+	border-color: #266abd;
+}
+/* menu a tendina sesso */
+#discounted{
+	border-radius: 5px;
+	border-color: #266abd;
+	
+}
+/* tasto per caricare immagine*/
+#image{
+	color: black;
+	font-style: italic;
+        border-radius: 5px;
+	border-color: #266abd;
+	font-family: 'Titillium Web';
+        src: url(../fonts/TitilliumWeb-Regular.ttf);
+        src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+}
+/* captcha */
+#captcha-element{
+    position: relative;
+    left:1px;
+}
+/* tasto di conferma per la registrazione*/
+#registrati   {
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 10px;
+}
 
 #pagination {
     
@@ -828,7 +866,6 @@ input:focus {
 	position:relative;
 	left:35%;
 	top: -200px;
-        background-image: url(../images/monitor.jpg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 360px;
@@ -868,7 +905,7 @@ input:focus {
 #MyAccount Form {
     position: relative;
     top: 40px;
-    left: 550px;
+    left: 39%;
     width: 425px;
     height: 200px;
     border-style: solid;
@@ -877,7 +914,7 @@ input:focus {
     border-radius: 10px;
 }
 /* bottone di conferma nel form*/
-#accedi td #accedi {
+#accedi {
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -888,16 +925,8 @@ input:focus {
     width: 200px;
     height: 30px;
     top: 10px;
-    
-    -webkit-filter: grayscale(50%); 
-    filter: grayscale(100%);
 }
 
-#accedi td #accedi:hover{
-    -webkit-filter: grayscale(0%); 
-    filter: grayscale(0%);
-    -webkit-filter: drop-shadow(2px 2px 2px black);
-}
 
 /* campi di input */
 #accedi td input{
@@ -905,7 +934,7 @@ input:focus {
 	border-color: #266abd;
 }
 /* campo inserimento dell username */
-#accedi tr #username{
+#username{
 	border-radius: 5px;
 	border-color: #266abd;
 	background-color: white;
@@ -914,7 +943,7 @@ input:focus {
 	
 }
 /* campo inserimento della password */
-#accedi tr #password{
+#password{
 	border-radius: 5px;
 	border-color: #266abd;
 	background-color: white;
@@ -957,3 +986,14 @@ input:focus {
 }
 
 
+#pagination {
+	
+	margin-top:10%;
+}
+
+.immagineOfferta {
+	
+	background-repeat: none;
+	width: 49%;
+
+}
