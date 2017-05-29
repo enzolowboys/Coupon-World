@@ -155,7 +155,7 @@ a:hover{
 }
 
 /* barra di ricerca */
-#middleheader input{
+#ricercaOfferta input{
     width: 31.25%;
 	height: 30px;
 	position: relative;
@@ -172,20 +172,17 @@ input:focus {
 }
 
 /* bottone cerca */
-#cerca {
+#ricercaOfferta tr td #cerca {
 	background-image: url(../images/icons/iconsearch.png);
 	background-size: cover;
+	background-repeat: no-repeat;
 	position: relative;
-	height: 34px;
-	width: 34px;
-	max-height: 34px;
-	max-width: 34px;
+	left:97em;
+	top:-8px;
 	background-color: rgb(179, 0, 0);
-	bottom:4px;
-	left: 19%;
-	border: none;
+  border:none;
+	width:190%;
 }
-
 /* subheader che contiene delle informazioni aggiuntive del sito */
 #subheader {
 	background-color: #FFFFFF;
@@ -721,6 +718,7 @@ input:focus {
 #MyAccount Form {
     position: relative;
     top: 40px;
+    left: 39%;
     width: 425px;
     height: 200px;
     border-style: solid;
@@ -746,6 +744,7 @@ input:focus {
     width: 200px;
     height: 30px;
     top: 10px;
+
 }
 /* campi di input */
 #accedi td input{
@@ -928,6 +927,7 @@ input:focus {
 }
 
 
+
 /* campi di input */
 #accedi td input{
 	border-radius: 5px;
@@ -984,6 +984,16 @@ input:focus {
   font-weight: 400;
   
 }
+
+#pagination {
+	
+	margin-top:10%;
+}
+
+.immagineOfferta {
+	
+	background-repeat: none;
+	width: 49%;
 
 
 #pagination {
