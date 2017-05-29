@@ -50,7 +50,25 @@ public function SearchPromozioneByBrands($nome, $paged=null, $order=null){
 }
 
 
+        /*inserisci  il coupon nella tabella */
         
+        public function insertCoupuon($info){
+            return $this->getResource('Coupon')->insertCoupuon($info);
+        }
+        
+        /*modifica utente*/
+         public function updateUser($info,$username){
+        return $this->getResource('User')->updateUser($info, $username);
+    }
+    
+    
+    /*estrae i dati dell'utente */
+    public function getUserById($id)
+    {
+        return $this->getResource('User')->getUserById($id);
+    }
+
+
         
         
         
