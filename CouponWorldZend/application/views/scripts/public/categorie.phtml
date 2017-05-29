@@ -67,14 +67,16 @@
         ?>
         <?php foreach ($this->offertaPerCategoria as $offertaCategoria) :?>
 		<div id="offertaCategoria">
+                     <?php echo $this->offertaImg($offertaCategoria->immagine,array('class' => 'immagineOfferta'));?>
 			<div id="infoOfferta"> 
+                               
                                 <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
                                 <br>
 				<?php echo '<h6>'. $offertaCategoria->categoria.'</h6>'?>
 				<br>
 				<?php echo '<h7>'. $offertaCategoria->azienda_idazienda.'</h7>'?>
 				<br>
-				<?php echo '<h8>'. $offertaCategoria->azienda_idazienda.'</h8>'?>
+				<?php echo '<h8>'. $offertaCategoria->tipologia.'</h8>'?>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
                                         $offertaCategoria->datafine.'</b>'.'</h8>'?>

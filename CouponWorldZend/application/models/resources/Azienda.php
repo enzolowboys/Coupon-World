@@ -11,7 +11,8 @@ class Application_Resource_Azineda extends Zend_Db_Table_Abstract
     }
     /*estrae le aziende in base all'id*/
     public function getAziendaById($id){
-        return $this->find($id);
+        $azienda = $this->find($id);
+        return $this->fetchAll($azienda);
     }
     /*estrae le aziende in base la partita iva*/
     public function getAziendaBypartitaiva($partitaiva){
