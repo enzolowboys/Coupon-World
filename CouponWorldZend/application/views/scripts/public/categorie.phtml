@@ -67,7 +67,9 @@
         ?>
         <?php foreach ($this->offertaPerCategoria as $offertaCategoria) :?>
 		<div id="offertaCategoria">
+                     <?php echo $this->offertaImg($offertaCategoria->immagine,array('class' => 'immagineOfferta'));?>
 			<div id="infoOfferta"> 
+                               
                                 <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
                                 <br>
 				<?php echo '<h6>'. $offertaCategoria->categoria.'</h6>'?>
