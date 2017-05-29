@@ -6,7 +6,7 @@
    -webkit-user-select: none;
    	user-select: none;
 	width: 100%;
-	height: auto;
+	
 }
 
 .titolocategoria{
@@ -25,10 +25,10 @@
 }
 
 #mainWrapper {
-	position:relative; 
-	width: auto;
-	margin: 0 auto;
-	height: auto;
+	 height: auto;
+         min-height: 100%;
+         position: relative;
+         margin: 0 auto -60px;
 }	
 
 /* Header che contiene up header e middle header*/
@@ -63,11 +63,13 @@ h2 {
 
 /* footer a fine pagina */
 footer{
-	width: 100%;
-	position: relative;
-	background-color: rgb(179, 0, 0);
+        width: 100%;
+        background-color: rgb(179, 0, 0);
 	border-radius: 15px 15px 0px 0px;
-	min-width: 80em;
+	position:relative;
+        top:600px;
+	
+        
      
 }
 
@@ -455,7 +457,6 @@ input:focus {
 
 /* offerta rappresenta il singolo spazio dedicato */
 #offerta {
-	background-image: url(../images/monitor.jpg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 360px;
@@ -480,7 +481,7 @@ input:focus {
 	background-color: rgba(155,0,0,0.7);
 	border-radius: 0px 0px 0px 15px;
 	color: white;
-	bottom: 34px;
+	bottom: 215px;
 }
 
 /* sta ad indicare il nome del prodotto o una particolare sottocategoria (tecnologia > smartphones) */
@@ -629,7 +630,7 @@ input:focus {
 	border-right-style: inset;
 	border-right-color: rgb(255, 255, 255);
 	left: 8%;
-	top: 6em;
+	top: 3em;
 }
 
 /* testo nel footer */
@@ -665,7 +666,7 @@ input:focus {
 	border-right-style: inset;
 	border-right-color: rgb(255, 255, 255);
 	left: 48%;
-	bottom: 67%;
+        bottom:4em;
 }
 
 /* Sezione FAQ: Frequently Asked Question */
@@ -734,7 +735,7 @@ input:focus {
     border-radius: 10px;
 }
 /* bottone di conferma nel form*/
-#accedi td #accedi {
+#accedi {
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -750,7 +751,7 @@ input:focus {
     filter: grayscale(100%);
 }
 
-#accedi td #accedi:hover{
+#accedi:hover{
     -webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
     -webkit-filter: drop-shadow(2px 2px 2px black);
@@ -762,7 +763,7 @@ input:focus {
 	border-color: #266abd;
 }
 /* campo inserimento dell username */
-#accedi tr #username{
+#username{
 	border-radius: 5px;
 	border-color: #266abd;
 	background-color: white;
@@ -771,7 +772,7 @@ input:focus {
 	
 }
 /* campo inserimento della password */
-#accedi tr #password{
+#password{
 	border-radius: 5px;
 	border-color: #266abd;
 	background-color: white;
@@ -827,7 +828,6 @@ input:focus {
 	position:relative;
 	left:35%;
 	top: -200px;
-        background-image: url(../images/monitor.jpg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	width: 360px;
@@ -876,7 +876,7 @@ input:focus {
     border-radius: 10px;
 }
 /* bottone di conferma nel form*/
-#accedi td #accedi {
+#accedi {
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -892,7 +892,7 @@ input:focus {
     filter: grayscale(100%);
 }
 
-#accedi td #accedi:hover{
+#accedi:hover{
     -webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
     -webkit-filter: drop-shadow(2px 2px 2px black);
@@ -904,7 +904,7 @@ input:focus {
 	border-color: #266abd;
 }
 /* campo inserimento dell username */
-#accedi tr #username{
+#username{
 	border-radius: 5px;
 	border-color: #266abd;
 	background-color: white;
@@ -913,7 +913,7 @@ input:focus {
 	
 }
 /* campo inserimento della password */
-#accedi tr #password{
+#password{
 	border-radius: 5px;
 	border-color: #266abd;
 	background-color: white;
@@ -955,4 +955,14 @@ input:focus {
   
 }
 
+#pagination {
+	
+	margin-top:10%;
+}
 
+.immagineOfferta {
+	
+	background-repeat: none;
+	width: 49%;
+
+}
