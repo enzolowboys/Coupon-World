@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_Public extends App_Model_Abstract
+class Application_Model_User extends App_Model_Abstract
 { 
 
 	public function __construct()
@@ -8,7 +8,8 @@ class Application_Model_Public extends App_Model_Abstract
 		$this->_logger = Zend_Registry::get('log');  	
 	}
         
-       
+        
+        
         /*estrae gli elementi in bae alla categoria*/
         public function getPromozioneByCategoria($categoria,$paged=null,$order=null){
              return $this->getResource('Promozione')->getPromozioneByCategoria($categoria,$paged,$order);
@@ -40,32 +41,17 @@ class Application_Model_Public extends App_Model_Abstract
             return $this->getResource('Promozione')->getPromozioniInsRecenti($paged,$order);
       }
               
-
+        
         /*una volta inserito il nome del brand carica l'id di quest'ultimo nella variabile idazienda 
  poi usa la funzione getpromobyazienda per estrarre tutte le promozioni  di quell'azienda       */
-        public function SearchPromozioneByAzienda($nome, $paged=null, $order=null){
-            $idazienda= $this->getResource('Azienda')->getAziendaByNome($nome);
-            return $this->getResource('promozione')->getPromozioneByAzienda($idazienda,$paged,$order);
+public function SearchPromozioneByBrands($nome, $paged=null, $order=null){
+    $idazienda= $this->getResource('Azienda')->getAziendaByNome($nome);
+    return $this->getResource('promozione')->getPromozioneByAzienda($idazienda,$paged,$order);
+}
 
-        }
+
         
-    public function getAziendaById($id){
         
-        return $this->getResource('Azienda')->getAziendaById($id);
-    }
-
-        }
         
-   
-        /*registragione*/
         
-        public function insertUser($info){
-            return $this->getResource('User')->insertUser($info);
-        }
-
-
-
-
-
-
 }

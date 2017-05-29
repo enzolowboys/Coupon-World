@@ -14,20 +14,10 @@ class PublicController extends Zend_Controller_Action {
 
         /* istanzio il form */
         $this->_PublicModel = new Application_Model_Public(); //model
-
        
         $this->view->accediForm = $this->getAccediForm();
         
         $this->view->registraForm = $this->getRegistraForm();
-
-       
-
-        $this->view->ricercaOffertaForm = $this->getRicercaForm();
-       
-
-        $this->view->SearchBrandsForm = $this->getSearchBrandsForm();
-
-
     }
     
     /*Override del metodo di IndexController*/
@@ -59,30 +49,7 @@ class PublicController extends Zend_Controller_Action {
       
     }
     
-    
-    
-    public function searchAction(){
-        
-    }
-
-    public function getSearchBrandsForm(){
-       
-       
-        $urlHelper = $this->_helper->getHelper('url');
-        $this->_helper->layout->setLayout('layoutstatic');
-        $this->_form = new Application_Form_Public_Search_SearchBrands();
-        $this->_form->setAction($urlHelper->url(array(
-				'controller' => 'public',
-				'action' => 'search'),
-				'default'
-				));
-	return $this->_form;
-        
-        
-    }
-
-
-    public function categorieAction () {
+   public function categorieAction () {
        
        //log
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
@@ -123,7 +90,6 @@ class PublicController extends Zend_Controller_Action {
     
     }
 
-
     private function getAccediForm() {
 	$urlHelper = $this->_helper->getHelper('url');
         $this->_helper->layout->setLayout('layoutstatic');
@@ -141,45 +107,13 @@ class PublicController extends Zend_Controller_Action {
         $this->_helper->layout->setLayout('layoutstatic');
 	$this->_form = new Application_Form_Public_Registrazione_Registra();
         $this->_form->setAction($urlHelper->url(array(
-
-
-        
-    public function searchOfferta() {
-            
-        //va a controllare il request object se c`è una richiesta post
-        if(!$this->getRequest()->isPost()) {
-            $this->_helper->redirector('home');
-                
-            }
-            $form=$this->_form;
-            if(!$form->isValid($_POST)) {
-                $form->setDescription('Dati inseriti non validi!');
-                return $this->render('home');
-            }
-              
-            $values = $form->getValues();
-         
-              
-              
-                          
-            }
-      
-    private function getRicercaForm() {
-        
-        $urlHelper = $this->_helper->getHelper('url');
-        $this->_form = new Application_Form_Public_Search_Searchofferta();
-        $this->_form->setAction($urlHelper->url(array(
-            'controller'=>'public',
-            'action'=>'offerteRicercate'),
-            'default'));
-        return $this->_form;
-        
+				'controller' => 'public',
+				'action' => 'home'),
+				'default'
+				));
+	return $this->_form;
     }
-    
-    public function offertericercateAction () {
-        
-        
-    }
+
   
-
 }
+

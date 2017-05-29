@@ -7,15 +7,13 @@ class Zend_View_Helper_OffertaImg extends Zend_View_Helper_HtmlElement {
       if (empty($imgFile)) {
 			$imgFile = 'default.jpg';
 		}
-      if (null !== $_attrs) {
-			$_attrs = $this->_htmlAttribs($_attrs);
+      if (null !== $attrs) {
+			$_attrs = $this->_htmlAttribs($attrs);
         }
         else {
 			$_attrs = '';
 		}
-
-      $tag = '<img src="' . $this->view->baseUrl('images/offerte/' . $imgFile) . '" ' . $_attrs . '>';
-
+      $tag = '<img src="' . $this->view->baseUrl('images/products/' . $imgFile) . '" ' . $_attrs . '>';
       return $tag;
     }
 }

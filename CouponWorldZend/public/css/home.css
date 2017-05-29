@@ -141,11 +141,6 @@ a:hover{
 	
 }
 
-/* effetti sul menu (al passaggio del mouse) */
-h3:hover{
-	-webkit-filter: drop-shadow(0.5px 0.5px 0.5px white);
-}
-
 /* header della homepage contenente login/registrazione e il carrello */
 #middleheader {
 	background-color: rgb(179, 0, 0);
@@ -326,7 +321,7 @@ input:focus {
 
 /* effetti al passaggio del mouse sul banner promozione 2*/
 #promotion_banner_two:hover{
-	-webkit-filter: grayscale(0%); 
+    -webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
 }
 
@@ -730,6 +725,12 @@ input:focus {
     border-width: 1px;
     border-color: lightgrey;
     border-radius: 10px;
+    background-color: white;
+}
+/* div che contiene tutto il form */
+#FormAccedi{
+    position: relative;
+    left:-40px;
 }
 /* bottone di conferma nel form*/
 #accedi {
@@ -743,22 +744,14 @@ input:focus {
     width: 200px;
     height: 30px;
     top: 10px;
-    
-    -webkit-filter: grayscale(50%); 
-    filter: grayscale(100%);
-}
 
-#accedi:hover{
-    -webkit-filter: grayscale(0%); 
-    filter: grayscale(0%);
-    -webkit-filter: drop-shadow(2px 2px 2px black);
 }
-
 /* campi di input */
 #accedi td input{
 	border-radius: 5px;
 	border-color: #266abd;
 }
+
 /* campo inserimento dell username */
 #username{
 	border-radius: 5px;
@@ -809,6 +802,53 @@ input:focus {
   font-size: 19px;
   font-weight: 400;
   
+}
+#Registrazione form{
+	background-color:white;
+	position: relative;
+	left:32%;
+	position: left;
+	width: 100px;
+        color: black;
+        height:25%;
+}
+/* campi di input */
+#registra input{
+	border-radius: 5px;
+	border-color: #266abd;
+}
+/* menu a tendina sesso */
+#discounted{
+	border-radius: 5px;
+	border-color: #266abd;
+	
+}
+/* tasto per caricare immagine*/
+#image{
+	color: black;
+	font-style: italic;
+        border-radius: 5px;
+	border-color: #266abd;
+	font-family: 'Titillium Web';
+        src: url(../fonts/TitilliumWeb-Regular.ttf);
+        src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+}
+/* captcha */
+#captcha-element{
+    position: relative;
+    left:1px;
+}
+/* tasto di conferma per la registrazione*/
+#registrati   {
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 10px;
 }
 
 #pagination {
@@ -884,16 +924,9 @@ input:focus {
     width: 200px;
     height: 30px;
     top: 10px;
-    
-    -webkit-filter: grayscale(50%); 
-    filter: grayscale(100%);
 }
 
-#accedi:hover{
-    -webkit-filter: grayscale(0%); 
-    filter: grayscale(0%);
-    -webkit-filter: drop-shadow(2px 2px 2px black);
-}
+
 
 /* campi di input */
 #accedi td input{
@@ -951,6 +984,17 @@ input:focus {
   font-weight: 400;
   
 }
+
+#pagination {
+	
+	margin-top:10%;
+}
+
+.immagineOfferta {
+	
+	background-repeat: none;
+	width: 49%;
+
 
 #pagination {
 	
