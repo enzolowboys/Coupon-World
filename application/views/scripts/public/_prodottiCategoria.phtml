@@ -1,0 +1,23 @@
+<!--Carico le offerte qui e poi lo metto nel file categorie.phtml-->
+<?php foreach ($this->offertaPerCategoria as $offertaCategoria) :?>
+		<div id="offerta">
+			<div id="infoOfferta"> 
+                                <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
+                                <br>
+				<?php echo '<h6>'. $offertaCategoria->categoria.'</h6>'?>
+				<br>
+				<?php echo '<h7>'. $offertaCategoria->tipologia.'</h7>'?>
+				<br>
+				<?php echo '<h8>'. $offertaCategoria->azienda_idazienda.'</h8>'?>
+				<br>
+                                <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
+                                        $offertaCategoria->datafine.'</b>'.'</h8>'?>
+				<button id="stampaofferta"></button>
+			</div>
+		</div>
+<?php endforeach ?>
+<!--paginazione
+<?php if($this->offerta instanceof Zend_Paginator) {
+    echo $this->paginationControl($this->offerta,'Sliding','public/_paginatorOfferteDelGiorno.phtml');
+}
+?>
