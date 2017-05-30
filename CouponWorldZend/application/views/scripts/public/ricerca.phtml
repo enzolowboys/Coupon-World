@@ -26,68 +26,37 @@
 	</div>
         
         <!--Sezione dinamica che in base al click sulla categoria apre la pagina della categoria giusta --> 
-        <?php 
-         switch($this->categoria){
-             case "tecnologia":{ 
-                echo '<h1 class="titolocategoria">TECNOLOGIA</h1>'; 
-                break;
-             }
-             case "ufficioeservizi": 
-                echo '<h1 class="titolocategoria">UFFICIO E SERVIZI</h1>';      
-               break;    
-            case "modaeabbigliamento": 
-                echo '<h1 class="titolocategoria">MODA E ABBIGLIAMENTO</h1>';      
-                break;
-            case "cibiebevande":
-                echo '<h1 class="titolocategoria">CIBI E BEVANDE</h1>';      
-                break;
-             case "giochiedintrattenimento": 
-                echo '<h1 class="titolocategoria">GIOCHI ED INTRATTENIMENTO</h1>';      
-                break;    
-            case "sportefitness": 
-                echo '<h1 class="titolocategoria">SPORT E FITNESS</h1>';      
-                break;
-            case "casaegiardino": 
-                echo '<h1 class="titolocategoria">CASA E GIARDINO</h1>';      
-                break;
-             case "saluteebellezza": 
-                echo '<h1 class="titolocategoria">SALUTE E BELLEZZA</h1>';      
-                break;    
-            case "viaggi": 
-                echo '<h1 class="titolocategoria">VIAGGI</h1>';      
-                break;
-            case "autoemoto": 
-                echo '<h1 class="titolocategoria">AUTO E MOTO</h1>';      
-                break;
-             case "animali": 
-                echo '<h1 class="titolocategoria">ANIMALI</h1>';      
-                break;    
-            
-         }
+        <?php  if($this->flag) :?>
+            <?php echo '<h1 class="titolocategoria">Risultati trovati per '.$this->nomeDaCercare.'</h1>';?>
+  
         ?>
-        <?php foreach ($this->offertaPerCategoria as $offertaCategoria) :?>
+        <?php foreach ($this->offertaRicercata as $offertaRicercata) :?>
 		<div id="offertaCategoria">
-                     <?php echo $this->offertaImg($offertaCategoria->immagine,array('class' => 'immagineOfferta'));?>
+                     <?php echo $this->offertaImg($offertaRicercata->immagine,array('class' => 'immagineOfferta'));?>
 			<div id="infoOfferta"> 
                                
-                                <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
+                                <?php echo '<h5>'. $offertaRicercata->nomeprodotto.'</h5>'?>
                                 <br>
-				<?php echo '<h6>'. $offertaCategoria->categoria.'</h6>'?>
+				<?php echo '<h6>'. $offertaRicercata->categoria.'</h6>'?>
 				<br>
-				<?php echo '<h7>'. $offertaCategoria->nome.'</h7>'?>
+				<?php echo '<h7>'. $offertaRicercata->azienda_idazienda.'</h7>'?>
 				<br>
-				<?php echo '<h8>'. $offertaCategoria->tipologia.'</h8>'?>
+				<?php echo '<h8>'. $offertaRicercata->tipologia.'</h8>'?>
 				<br>
-                                <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
-                                        $offertaCategoria->datafine.'</b>'.'</h8>'?>
+                                <?php echo '<h8>dal '.'<b>'.$offertaRicercata->datainizio.'</b> al <b>'.
+                                        $offertaRicercata->datafine.'</b>'.'</h8>'?>
 				<button id="stampaofferta"></button>
 			</div>
 		</div>
                 <?php endforeach ?>
-          <?php if($this->offertaPerCategoria instanceof Zend_Paginator) {
-                echo $this->paginationControl($this->offertaPerCategoria,'Sliding','public/_paginatorCategoria.phtml');
+          <?php if($this->offertaRicercata instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->offertaRicercata,'Sliding','public/_paginatorRicerca.phtml');
 	  } 
 	  ?>
+        <?php endif ?>
+        <?php if(!$this->flag) :?>
+            <?php echo '<h1 class="titolocategoria">Nessun Risultato trovato</h1>';?>
+        <?php endif ?>
       
     
         <!-- lista delle tipologie delle offerte presenti nel sito -->

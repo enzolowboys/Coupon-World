@@ -6,7 +6,7 @@ abstract class App_Model_Abstract
 	
 	public function getResource($name) 
 	{
-		if (!isset($this->_resources[$name])) {
+        if (!isset($this->_resources[$name])) {
             $class = implode('_', array(
                     $this->_getNamespace(),
                     'Resource',

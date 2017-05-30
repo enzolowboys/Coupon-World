@@ -23,7 +23,7 @@ class Application_Resource_Azineda extends Zend_Db_Table_Abstract
     /*estrae le aziende in base al nome*/
     public function getAziendaByNome($nome){
         
-        return $this->select()->where( 'nome ='.$nome);
+        return $this->select('azienda.idazienda')->where( 'nome = ?',$nome);
         
     }
     /*resctituisce id dellazienda con quel nome */
