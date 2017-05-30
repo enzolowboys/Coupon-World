@@ -804,13 +804,14 @@ input:focus {
   
 }
 #Registrazione form{
-	background-color:white;
-	position: relative;
-	left:32%;
-	position: left;
-	width: 100px;
-        color: black;
-        height:25%;
+  background-color:white;
+  position: relative;
+  left:32%;
+  position: left;
+  width: 100px;
+  color: black;
+  height:20px;
+	
 }
 /* campi di input */
 #registra input{
@@ -818,7 +819,7 @@ input:focus {
 	border-color: #266abd;
 }
 /* menu a tendina sesso */
-#discounted{
+#sesso{
 	border-radius: 5px;
 	border-color: #266abd;
 	
@@ -833,10 +834,12 @@ input:focus {
         src: url(../fonts/TitilliumWeb-Regular.ttf);
         src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 }
-/* captcha */
-#captcha-element{
+/* tabella generata da Zend che contiene tutti gli elementi (campi, label, ecc.)*/
+#FormRegistra table{
     position: relative;
-    left:1px;
+    bottom: 150px;
+    right: 100px;
+    top:3em;
 }
 /* tasto di conferma per la registrazione*/
 #registrati   {
@@ -848,7 +851,48 @@ input:focus {
     position:relative;
     width: 200px;
     height: 30px;
-    top: 10px;
+    top: 4em;
+    left: 93px; 
+}
+/* campo di inserimento dell'username */
+#username{
+	position: relative;
+	left: 30px;
+}
+/* campo di inserimento della password */
+#password{
+	position: relative;
+	left: 30px;
+}
+/* div che contiene tutto il form*/
+#FormRegistra{
+	width: 500px;
+	height: 1300px;
+	border-style: solid;
+  border-width: 1px;
+  border-color: lightgrey;
+  border-radius: 10px;
+  background-color: white;
+	position: relative;
+	left: 500px;
+}
+/* gestione grafica della schermata di errore */
+#FormRegistra li{
+	width: 240px;
+	position: relative;
+	top: 10px;
+        list-style-type: none;
+        color:red;
+        
+}
+.formerror {
+  width: 400px;
+  height: 1px;
+  font-weight: 700;
+  font-size:20px;
+  position: relative;
+  right: 50px;
+  color: red;
 }
 
 #pagination {

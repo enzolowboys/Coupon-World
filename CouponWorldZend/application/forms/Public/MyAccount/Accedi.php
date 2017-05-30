@@ -15,7 +15,7 @@ class Application_Form_Public_MyAccount_Accedi extends App_Form_Abstract {
         $this->setAttrib('enctype', 'multipart/form-data');
         
         //elemento grafico relativo all`username
-        $this->addElement('text', 'username', array(
+        $this->addElement('text', 'username_accedi', array(
             'label' => 'Username',
             'filters' => array('StringTrim'),
             'required' => true,
@@ -25,7 +25,7 @@ class Application_Form_Public_MyAccount_Accedi extends App_Form_Abstract {
         ));
         
         //elemento grafico relativo alla password
-        $this->addElement('text', 'password', array(
+        $this->addElement('text', 'password_accedi', array(
             'label' => 'Password',
             'filters' => array('StringTrim'),
             'required' => true,

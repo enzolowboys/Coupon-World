@@ -88,17 +88,17 @@ class PublicController extends Zend_Controller_Action {
     
     public function registrautenteAction(){
         if (!$this->getRequest()->isPost()) {
-			$this->_helper->redirector('home');
+            $this->_helper->redirector('home');
 	}
         $form=$this->_form;
         
         if (!$form->isValid($_POST)) {
-		$form->setDescription('Attenzione! dati inseriti non validi');
-		return $this->render('registrazione');
+            $form->setDescription('ATTENZIONE! dati inseriti non validi!');
+            return $this->render('registrazione');
         }
         
         $values = $form->getValues();
-        $this->_adminModel->salvaUtente($values);
+        $this->_PublicModel->salvaUtente($values);
         $this->_helper->redirector('home');
     }
     
