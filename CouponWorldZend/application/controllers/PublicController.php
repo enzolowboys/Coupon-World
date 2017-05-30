@@ -127,10 +127,9 @@ class PublicController extends Zend_Controller_Action {
             $offertaRicercata = $this->_PublicModel->SearchPromozioneByAzienda($nomeDaCercare,$pagedRicerca);
         else if($scelta==='nomeprodotto')
             $offertaRicercata = $this->_PublicModel->searchPromozioneByNome($nomeDaCercare,$pagedRicerca);
-        if(!is_null($offertaRicercata))
-            $this->view->assign(array('offertaRicercata'=>$offertaRicercata,'flag'=>true,'nomeDaCercare'=>$nomeDaCercare));
-        else
-            $this->view->assign(array('flag'=>false));
+       
+        $this->view->assign(array('offertaRicercata'=>$offertaRicercata,'flag'=>true,'nomeDaCercare'=>$nomeDaCercare));
+
         
 
         

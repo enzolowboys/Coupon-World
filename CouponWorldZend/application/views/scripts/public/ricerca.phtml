@@ -26,10 +26,10 @@
 	</div>
         
         <!--Sezione dinamica che in base al click sulla categoria apre la pagina della categoria giusta --> 
-        <?php  if($this->flag) :?>
+        <?php  if(!empty($this->offertaRicercata)) :?>
             <?php echo '<h1 class="titolocategoria">Risultati trovati per '.$this->nomeDaCercare.'</h1>';?>
-  
-        ?>
+        <?php endif ?>
+     
         <?php foreach ($this->offertaRicercata as $offertaRicercata) :?>
 		<div id="offertaCategoria">
                      <?php echo $this->offertaImg($offertaRicercata->immagine,array('class' => 'immagineOfferta'));?>
@@ -39,7 +39,7 @@
                                 <br>
 				<?php echo '<h6>'. $offertaRicercata->categoria.'</h6>'?>
 				<br>
-				<?php echo '<h7>'. $offertaRicercata->azienda_idazienda.'</h7>'?>
+				<?php echo '<h7>'. $offertaRicercata->nome.'</h7>'?>
 				<br>
 				<?php echo '<h8>'. $offertaRicercata->tipologia.'</h8>'?>
 				<br>
@@ -53,8 +53,8 @@
                 echo $this->paginationControl($this->offertaRicercata,'Sliding','public/_paginatorRicerca.phtml');
 	  } 
 	  ?>
-        <?php endif ?>
-        <?php if(!$this->flag) :?>
+        
+        <?php if(empty($this->offertaRicercata)) :?>
             <?php echo '<h1 class="titolocategoria">Nessun Risultato trovato</h1>';?>
         <?php endif ?>
       
@@ -74,11 +74,5 @@
                     </form>
             </div>
  
-       
-        
-	<div id="campoCercaAzienda">
-		<h2>&nbsp; &nbsp;BRANDS</h2>
-		<input type="text" name="search" placeholder="Cerca l'offerta per azienda">
-		<button></button>
-	</div>	
+   
 </div>
