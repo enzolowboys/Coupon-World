@@ -46,23 +46,17 @@ class Application_Model_Public extends App_Model_Abstract
         public function SearchPromozioneByAzienda($nome, $paged=null, $order=null){
             $idazienda= $this->getResource('Azienda')->getAziendaByNome($nome);
             return $this->getResource('promozione')->getPromozioneByAzienda($idazienda,$paged,$order);
-
         }
         
     public function getAziendaById($id){
         
         return $this->getResource('Azienda')->getAziendaById($id);
     }
-
-        
-        
-   
-        /*registragione*/
-        
-        public function insertUser($info){
-            return $this->getResource('User')->insertUser($info);
-        }
-
+    
+    public function salvaUtente ($info)
+    {
+    	return $this->getResource('User')->insertUser($info);
+    }
 
 
 
