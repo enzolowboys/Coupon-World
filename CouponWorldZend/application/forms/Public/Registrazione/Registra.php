@@ -20,7 +20,7 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'label' => 'Nome',
             'filters' => array('StringTrim'),
             'required' => true,
-            'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
+            'validators' => array(array('StringLenght', true, array(1,20))), //false perché non deve proseguire se non é soddisfatto
             'description' => 'Inserisci il tuo nome',
             'decorators' => $this ->elementDecorators,
         ));
@@ -30,7 +30,7 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'label' => 'Cognome',
             'filters' => array('StringTrim'),
             'required' => true,
-            'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
+            'validators' => array(array('StringLenght', true, array(1,20))), //false perché non deve proseguire se non é soddisfatto
             'description' => 'Inserisci il tuo cognome',
             'decorators' => $this ->elementDecorators,
         ));
@@ -42,9 +42,16 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
 			'decorators' => $this->elementDecorators,
 	));
         
-        //elemento grafico relativo alla data di nascita
-        
-        
+        //elemento grafico relativo all' etá
+        $this->addElement('text', 'eta', array(
+            'label' => 'Etá',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'validators' => array(array('StringLenght', true, array(1,20))), //false perché non deve proseguire se non é soddisfatto
+            'description' => 'Inserisci il tuo cognome',
+            'decorators' => $this ->elementDecorators,
+        ));
+         
         //elemento grafico relativo al numero di telefono
         $this->addElement('text', 'telefono', array(
             'label' => 'Telefono',
@@ -107,7 +114,7 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
         ));
         
         //elemento grafico relativo alla foto profilo
-        $this->addElement('file', 'image', array(
+        $this->addElement('file', 'foto', array(
 			'label' => 'Immagine',
 			'destination' => APPLICATION_PATH . '/../public/images/offerte',
 			'validators' => array( 

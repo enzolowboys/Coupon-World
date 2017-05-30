@@ -26,7 +26,8 @@
 	</div>
 	<div id="campoCercaAzienda">
 		<h2>&nbsp; &nbsp;BRANDS</h2>
-		 <?php echo $this-> SearchBrandsForm ?> 
+		<input type="text" name="search" placeholder="Cerca l'offerta per azienda">
+		<button></button>
 	</div>	
 	<!-- Sezione che contiene lo slideshow e i promotion banner (che diventa poi dinamica al click sulle categorie) -->
 
@@ -140,7 +141,7 @@
 				<br>
 				<?php echo '<h7>'. $offertaDelGiorno->tipologia.'</h7>'?>
 				<br>
-				<?php echo '<h8>'. $offertaDelGiorno->nome.'</h8>'?>
+				<?php echo '<h8>'. $offertaDelGiorno->azienda_idazienda.'</h8>'?>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaDelGiorno->datainizio.'</b> al <b>'.
                                         $offertaDelGiorno->datafine.'</b>'.'</h8>'?>
@@ -171,7 +172,7 @@
 				<br>
 				<?php echo '<h7>'. $offertaInScadenza->azienda_idazienda.'</h7>'?>
 				<br>
-				<?php echo '<h8>'. $offertaInScadenza->nome.'</h8>'?>
+				<?php echo '<h8>'. $offertaInScadenza->azienda_idazienda.'</h8>'?>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaInScadenza->datainizio.'</b> al <b>'.
                                         $offertaInScadenza->datafine.'</b>'.'</h8>'?>
