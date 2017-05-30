@@ -135,12 +135,18 @@ class PublicController extends Zend_Controller_Action {
 				));
 	return $this->_form;
     }
-    
+   
     private function getRegistraForm() {
 	$urlHelper = $this->_helper->getHelper('url');
         $this->_helper->layout->setLayout('layoutstatic');
 	$this->_form = new Application_Form_Public_Registrazione_Registra();
         $this->_form->setAction($urlHelper->url(array(
+				'controller' => 'public',
+				'action' => 'home'),
+				'default'
+				));
+	return $this->_form;
+    }
 
 
         
