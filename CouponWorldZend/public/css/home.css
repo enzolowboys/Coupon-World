@@ -180,7 +180,7 @@ input:focus {
 	left:97em;
 	top:-8px;
 	background-color: rgb(179, 0, 0);
-  border:none;
+        border:none;
 	width:190%;
 }
 /* subheader che contiene delle informazioni aggiuntive del sito */
@@ -994,16 +994,10 @@ input:focus {
 	
 	background-repeat: none;
 	width: 49%;
-
+}
 
 #pagination {
 	
 	margin-top:10%;
 }
 
-.immagineOfferta {
-	
-	background-repeat: none;
-	width: 49%;
-
-}
