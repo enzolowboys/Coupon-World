@@ -18,8 +18,6 @@ class PublicController extends Zend_Controller_Action {
         $this->view->accediForm = $this->getAccediForm();
         
         $this->view->registraForm = $this->getRegistraForm();
-        
-        $this->view->searchForm = $this->getSearchForm();
     }
     
     /*Override del metodo di IndexController*/
@@ -104,36 +102,6 @@ class PublicController extends Zend_Controller_Action {
         $this->_helper->redirector('home');
     }
     
-    public function ricercaAction() {
-        
-        if (!$this->getRequest()->isPost()) {
-            $this->_helper->redirector('home');
-	}
-        $form=$this->_form;
-        
-        if (!$form->isValid($_POST)) {
-		$form->setDescription('Attenzione! dati inseriti non validi');
-		return $this->render('home');
-        }
-        
-        $this->_helper->layout->setLayout('main');
-        $pagedRicerca = $this->_getParam('pageRicerca',1);
-        $nomeDaCercare = $form->getValue('cercaOfferta');
-        $scelta = $form->getValue('selezione');
-        $offertaRicercata = null;
-        if($scelta==='tipologia')
-            $offertaRicercata = $this->_PublicModel->getPromozioneByTipologia($nomeDaCercare,$pagedRicerca);
-        else if($scelta==='azienda')
-            $offertaRicercata = $this->_PublicModel->SearchPromozioneByAzienda($nomeDaCercare,$pagedRicerca);
-        else if($scelta==='nomeprodotto')
-            $offertaRicercata = $this->_PublicModel->searchPromozioneByNome($nomeDaCercare,$pagedRicerca);
-       
-        $this->view->assign(array('offertaRicercata'=>$offertaRicercata,'flag'=>true,'nomeDaCercare'=>$nomeDaCercare));
-
-        
-
-        
-    }
 
     private function getAccediForm() {
 	$urlHelper = $this->_helper->getHelper('url');
@@ -158,24 +126,6 @@ class PublicController extends Zend_Controller_Action {
 				));
 	return $this->_form;
     }
-    
-    private function getSearchForm() {
-        
-        $urlHelper = $this->_helper->getHelper('url');
-	$this->_form = new Application_Form_Public_Search_Searchofferta();
-        $this->_form->setAction($urlHelper->url(array(
-				'controller' => 'public',
-				'action' => 'ricerca'),
-				'default'
-				));
-	return $this->_form;
-    }
-    
-    
-    
-    
-    
-    
 
   
 }
