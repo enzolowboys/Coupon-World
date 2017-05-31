@@ -44,13 +44,31 @@ class Application_Model_User extends App_Model_Abstract
         
         /*una volta inserito il nome del brand carica l'id di quest'ultimo nella variabile idazienda 
  poi usa la funzione getpromobyazienda per estrarre tutte le promozioni  di quell'azienda       */
-public function SearchPromozioneByBrands($nome, $paged=null, $order=null){
-    $idazienda= $this->getResource('Azienda')->getAziendaByNome($nome);
-    return $this->getResource('promozione')->getPromozioneByAzienda($idazienda,$paged,$order);
-}
+        public function SearchPromozioneByAzienda($nome, $paged=null, $order=null){
+   
+            return $this->getResource('Promozione')->getPromozioneByAzienda($nome,$paged,$order);
 
+        }
 
+        /*inserisci  il coupon nella tabella */
         
+        public function insertCoupuon($info){
+            return $this->getResource('Coupon')->insertCoupuon($info);
+        }
+        
+        /*modifica utente*/
+         public function updateUser($info,$username){
+        return $this->getResource('User')->updateUser($info, $username);
+    }
+    
+    
+    /*estrae i dati dell'utente */
+    public function getUserById($id)
+    {
+        return $this->getResource('User')->getUserById($id);
+    }
+
+
         
         
         

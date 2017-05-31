@@ -17,9 +17,15 @@ class Application_Form_Public_Search_Searchofferta extends App_Form_Abstract {
             'filters'=>array('StringTrim'),
             'required'=>true,
             'description'=>'ricerca un offerta per categoria e tipologia',
-            'validators'=>array(array('StringLenght',true,array(1,20))),
             'decorators'=>$this->elementDecorators,
             ));
+        
+        $this->addElement('select', 'selezione', array(
+            'label' => 'Ricerca per',
+            'required'=>true,
+            'multiOptions' => array('tipologia' => 'Tipologia', 'azienda' => 'Azienda','nomeprodotto'=>'Nome Offerta'),
+			'decorators' => $this->elementDecorators,
+	));
         
          //bottone di conferma per accedere
         $this->addElement('submit', 'cerca', array(

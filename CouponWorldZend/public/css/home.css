@@ -154,17 +154,52 @@ a:hover{
 
 }
 
+/*Barra di Ricerca*/
+#ricercaOfferta {
+	
+	position:relative;
+	width:30%;
+	left:70%;
+	bottom:40%;
+		font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
+	
+	
+}
+
 /* barra di ricerca */
 #ricercaOfferta input{
-    width: 31.25%;
+	 width: 150%;
 	height: 30px;
-	position: relative;
-	left: 19%;
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	max-width: 45em;
 }
+#ricerca-label{
+	position:relative;
+	right:13%;
+	bottom:2.8em;
+	font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+	color: white;
+	
+	
+}
+
+#ricercaOfferta select {
+	
+	position:relative;
+	bottom:1.8em;
+  right:8em;
+		font-family: 'Titillium Web';
+   	src: url(../fonts/TitilliumWeb-Regular.ttf);
+   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+}
+
 
 /* effetti sulla barra di ricerca (quando si inseriscono le parole) */
 input:focus {
