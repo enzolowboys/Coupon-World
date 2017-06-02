@@ -35,13 +35,13 @@
                      <?php echo $this->offertaImg($offertaRicercata->immagine,array('class' => 'immagineOfferta'));?>
 			<div id="infoOfferta"> 
                                
-                                <?php echo '<h5>'. $offertaRicercata->nomeprodotto.'</h5>'?>
+                                <?php echo '<h5>Nome Prodotto: '. $offertaRicercata->nomeprodotto.'</h5>'?>
                                 <br>
-				<?php echo '<h6>'. $offertaRicercata->categoria.'</h6>'?>
+				<?php echo '<h6>Categoria: '. $offertaRicercata->categoria.'</h6>'?>
 				<br>
-				<?php echo '<h7>'. $offertaRicercata->nome.'</h7>'?>
+				<?php echo '<h7>Azienda: '. $offertaRicercata->nome.'</h7>'?>
 				<br>
-				<?php echo '<h8>'. $offertaRicercata->tipologia.'</h8>'?>
+				<?php echo '<h8>Offerta: '. $offertaRicercata->tipologia.'</h8>'?>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaRicercata->datainizio.'</b> al <b>'.
                                         $offertaRicercata->datafine.'</b>'.'</h8>'?>
@@ -58,21 +58,6 @@
             <?php echo '<h1 class="titolocategoria">Nessun Risultato trovato</h1>';?>
         <?php endif ?>
       
-    
-        <!-- lista delle tipologie delle offerte presenti nel sito -->
-            <div id="listaTipologie">
-                <h1>&nbsp; &nbsp; ≡ TIPOLOGIE</h1>
-                    <form action="">
-                        <fieldset>
-                            <input type="checkbox" name="Percentuale" value="Percentuale"/> Percentuale
-                            <br/> 
-                            <input type="checkbox" name="Combo" value="Combo"/> Combo
-                            <br/>
-                            <input type="checkbox" name="Altro" value="Altro"/> Altro 
-                            <button id="bottoneConferma">CONFERMA</button>
-                        </fieldset>
-                    </form>
-            </div>
  
    
 </div>

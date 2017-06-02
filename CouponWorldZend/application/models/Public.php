@@ -44,19 +44,26 @@ class Application_Model_Public extends App_Model_Abstract
         /*una volta inserito il nome del brand carica l'id di quest'ultimo nella variabile idazienda 
  poi usa la funzione getpromobyazienda per estrarre tutte le promozioni  di quell'azienda       */
         public function SearchPromozioneByAzienda($nome, $paged=null, $order=null){
-            $idazienda= $this->getResource('Azienda')->getAziendaByNome($nome);
-            return $this->getResource('promozione')->getPromozioneByAzienda($idazienda,$paged,$order);
+   
+            return $this->getResource('Promozione')->getPromozioneByAzienda($nome,$paged,$order);
+
         }
         
-    public function getAziendaById($id){
+        public function searchPromozioneByNome($nome,$paged=null,$order=null) {
+            
+            return $this->getResource('Promozione')->getPromozioneByName($nome,$paged,$order);
+        }
         
-        return $this->getResource('Azienda')->getAziendaById($id);
-    }
-    
-    public function salvaUtente ($info)
-    {
-    	return $this->getResource('User')->insertUser($info);
-    }
+        public function getAziendaById($id){
+        
+            return $this->getResource('Azienda')->getAziendaById($id);
+        }
+
+        
+         public function insertUser($info){
+           return $this->getResource('User')->insertUser($info);
+        }
+
 
 
 

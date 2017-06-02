@@ -1,4 +1,4 @@
-﻿body {
+body {
 	/* disabilita la selezione del testo */
    -ms-user-select: none; /* IE 10+ */
    -moz-user-select: -moz-none;
@@ -178,7 +178,7 @@ a:hover{
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 	max-width: 45em;
 }
-#ricerca-label{
+#ricercaOfferta tr td .required{
 	position:relative;
 	right:13%;
 	bottom:2.8em;
@@ -193,9 +193,9 @@ a:hover{
 #ricercaOfferta select {
 	
 	position:relative;
-	bottom:1.8em;
-  right:8em;
-		font-family: 'Titillium Web';
+	bottom:2em;
+        right:8.4em;
+        font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
    	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
 }
@@ -289,7 +289,7 @@ input:focus {
   max-width:45.5%;
   height: auto;
   position: relative;
-  top:-310px;
+  top:-200px;
   left:36%;
   min-width: 10em;
 }
@@ -557,7 +557,7 @@ input:focus {
 	right: 1px;
 }
 
-/* sta ad indicare il periodo di validitá dell'offerta */
+/* sta ad indicare il periodo di validit� dell'offerta */
 #infoOfferta h9 {
 	font-family: 'Titillium Web';
    	src: url(../fonts/TitilliumWeb-Regular.ttf);
@@ -873,7 +873,7 @@ input:focus {
 #FormRegistra table{
     position: relative;
     bottom: 150px;
-    right: 100px;
+    right: 50px;
     top:3em;
 }
 /* tasto di conferma per la registrazione*/
@@ -1080,3 +1080,45 @@ input:focus {
 	margin-top:10%;
 }
 
+/* Profilo Brands */
+#ProfiloBrands {
+    position: relative;
+    width: 450px;
+    left:550px;
+}
+#ProfiloBrands  h1 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    font-weight: 600;
+}
+#ProfiloBrands  h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    font-weight: 600;
+}
+#ProfiloBrands  h3 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 27px;
+    color: #266abd;
+    background-color: white;
+    text-align: left;
+    font-weight: 700;
+}
+#ProfiloBrands p{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 16px;
+    color: black;
+    text-align: justify;
+    text-align: left;
+    word-wrap: break-word; /* manda a capo se supera la lunghezza max nel suo spazio*/
+}

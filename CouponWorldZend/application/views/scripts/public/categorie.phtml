@@ -71,12 +71,13 @@
 			<div id="infoOfferta"> 
                                
                                 <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
+				<br>
+                                <?php echo '<h6>Dove? : '. $offertaCategoria->localita.'</h5>'?>
                                 <br>
-				<?php echo '<h6>'. $offertaCategoria->categoria.'</h6>'?>
+                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'profilobrands','default',true));?>">
+                                <?php echo '<h7>Brand: '. $offertaCategoria->nome.'</h6>'?></a>
 				<br>
-				<?php echo '<h7>'. $offertaCategoria->azienda_idazienda.'</h7>'?>
-				<br>
-				<?php echo '<h8>'. $offertaCategoria->tipologia.'</h8>'?>
+				<?php echo '<h8>Tipo: '. $offertaCategoria->tipologia.'</h7>'?>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
                                         $offertaCategoria->datafine.'</b>'.'</h8>'?>
@@ -88,28 +89,7 @@
                 echo $this->paginationControl($this->offertaPerCategoria,'Sliding','public/_paginatorCategoria.phtml');
 	  } 
 	  ?>
-      
-    
-        <!-- lista delle tipologie delle offerte presenti nel sito -->
-            <div id="listaTipologie">
-                <h1>&nbsp; &nbsp; ≡ TIPOLOGIE</h1>
-                    <form action="">
-                        <fieldset>
-                            <input type="checkbox" name="Percentuale" value="Percentuale"/> Percentuale
-                            <br/> 
-                            <input type="checkbox" name="Combo" value="Combo"/> Combo
-                            <br/>
-                            <input type="checkbox" name="Altro" value="Altro"/> Altro 
-                            <button id="bottoneConferma">CONFERMA</button>
-                        </fieldset>
-                    </form>
-            </div>
+     
  
-       
-        
-	<div id="campoCercaAzienda">
-		<h2>&nbsp; &nbsp;BRANDS</h2>
-		<input type="text" name="search" placeholder="Cerca l'offerta per azienda">
-		<button></button>
-	</div>	
+
 </div>

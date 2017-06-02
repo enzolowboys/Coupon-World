@@ -24,11 +24,6 @@
             <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'animali','default',true));?>">&nbsp; &nbsp; Animali</a></li>
             </ul>
 	</div>
-	<div id="campoCercaAzienda">
-		<h2>&nbsp; &nbsp;BRANDS</h2>
-		<input type="text" name="search" placeholder="Cerca l'offerta per azienda">
-		<button></button>
-	</div>	
 	<!-- Sezione che contiene lo slideshow e i promotion banner (che diventa poi dinamica al click sulle categorie) -->
 
 		<!-- SLIDESHOW CHE CONTIENE I BANNER DELLE CATEGORIE -->
@@ -132,16 +127,17 @@
 		<h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;☆ OFFERTE DEL GIORNO ☆</h1>
                 <?php foreach ($this->offerteDelGiorno as $offertaDelGiorno) :?>
 		<div id="offerta">
+                    <?php echo $this->offertaImg($offertaDelGiorno->immagine,array('class' => 'immagineOfferta'));?>
 			<div id="infoOfferta"> 
 
                                 <?php echo '<h5>'. $offertaDelGiorno->nomeprodotto.'</h5>'?>
                                 <br>
 				<?php echo '<h6>'. $offertaDelGiorno->categoria.'</h6>'?>
-
 				<br>
 				<?php echo '<h7>'. $offertaDelGiorno->tipologia.'</h7>'?>
+                             
 				<br>
-				<?php echo '<h8>'. $offertaDelGiorno->azienda_idazienda.'</h8>'?>
+				<?php echo '<h8>'. $offertaDelGiorno->nome.'</h8>'?>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaDelGiorno->datainizio.'</b> al <b>'.
                                         $offertaDelGiorno->datafine.'</b>'.'</h8>'?>
@@ -165,14 +161,15 @@
 		<h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ❕ OFFERTE IN SCADENZA ❕</h1>
                 <?php foreach ($this->offerteInScadenza as $offertaInScadenza) :?>
 		<div id="offerta">
+                     <?php echo $this->offertaImg($offertaInScadenza->immagine,array('class' => 'immagineOfferta'));?>
 			<div id="infoOfferta"> 
                                 <?php echo '<h5>'. $offertaInScadenza->nomeprodotto.'</h5>'?>
                                 <br>
 				<?php echo '<h6>'. $offertaInScadenza->categoria.'</h6>'?>
 				<br>
-				<?php echo '<h7>'. $offertaInScadenza->azienda_idazienda.'</h7>'?>
-				<br>
-				<?php echo '<h8>'. $offertaInScadenza->azienda_idazienda.'</h8>'?>
+				<?php echo '<h7>'. $offertaInScadenza->nome.'</h7>'?>
+                                <br>
+                                <?php echo '<h7>'. $offertaInScadenza->tipologia.'</h7>'?>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaInScadenza->datainizio.'</b> al <b>'.
                                         $offertaInScadenza->datafine.'</b>'.'</h8>'?>

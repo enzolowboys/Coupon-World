@@ -21,7 +21,7 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'filters' => array('StringTrim'),
             'required' => true,
             //'validators' => array(array('StringLenght', true, array(1,20))),
-            //'description' => 'Inserisci il tuo nome',
+            'description' => 'Inserisci il tuo nome',
             'decorators' => $this ->elementDecorators,
         ));
         
@@ -30,8 +30,8 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'label' => 'Cognome',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', true, array(1,20))), 
-            //'description' => 'Inserisci il tuo cognome',
+           // 'validators' => array(array('StringLenght', true, array(1,20))), 
+            'description' => 'Inserisci il tuo cognome',
             'decorators' => $this ->elementDecorators,
         ));
         
@@ -47,7 +47,7 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'label' => 'Etá',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
+           // 'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
             'description' => 'Inserisci il tuo cognome',
             'decorators' => $this ->elementDecorators,
         ));
@@ -57,7 +57,7 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'label' => 'Telefono',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
+          //  'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
             'description' => 'Inserisci il tuo numero di telefono',
             'decorators' => $this ->elementDecorators,
         ));
@@ -67,7 +67,7 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'label' => 'Indirizzo',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
+           // 'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
             'description' => 'Inserisci il tuo indirizzo',
             'decorators' => $this ->elementDecorators,
         ));
@@ -77,7 +77,7 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'label' => 'Città',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', false, array(1,20))), 
+           // 'validators' => array(array('StringLenght', false, array(1,20))), 
             'description' => 'Inserisci la tua città',
             'decorators' => $this ->elementDecorators,
         ));
@@ -88,9 +88,9 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'required'   => true,
             'filters'    => array('StringTrim'),
             'decorators' => $this ->elementDecorators,
-            //'validators' => array(
-            //    'EmailAddress',
-            //)
+           // 'validators' => array(
+             //  'EmailAddress',
+          //  )
         ));
         
         //elemento grafico relativo all'username
@@ -98,7 +98,7 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'label' => 'Username',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', true, array(1,20))), 
+           // 'validators' => array(array('StringLenght', true, array(1,20))), 
             'description' => 'Inserisci il tuo username scelto',
             'decorators' => $this ->elementDecorators,
         ));
@@ -108,7 +108,7 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'label' => 'Password',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', true, array(1,20))), 
+           // 'validators' => array(array('StringLenght', true, array(1,20))), 
             'description' => 'Inserisci la tua password scelta',
             'decorators' => $this ->elementDecorators,
         ));
@@ -117,11 +117,11 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
         $this->addElement('file', 'foto', array(
             'label' => 'Immagine',
             'destination' => APPLICATION_PATH . '/../public/images/fotoutenti',
-            //'validators' => array( 
-           // array('Count', false, 1),
-            //array('Size', false, 902400), //9 mb per l'img
-           // array('Extension', false, array('jpg', 'gif', 'png'))),
-            'decorators' => $this->fileDecorators,
+          //  'validators' => array( 
+          // array('Count', false, 1),
+          //  array('Size', false, 202400), //9 mb per l'img
+         //  array('Extension', false, array('jpg', 'gif'))),
+           'decorators' => $this->fileDecorators,
 	));
         
         //elemento grafico relativo al bottone conferma

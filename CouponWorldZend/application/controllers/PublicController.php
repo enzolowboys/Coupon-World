@@ -1,23 +1,30 @@
 <?php
-
+/*Controller da copiare*/
 class PublicController extends Zend_Controller_Action {
     
     protected $_logger;
-    protected $topId;
     protected $_PublicModel;
+    protected $_authService;
+    protected $formRegistrazione;
+    
+    
     
     public function init() {
         
-        /*Abilito il layout*/
-    
+
+        $this->_helper->layout->setLayout('layoutstatic');
         $this->_logger = Zend_Registry::get("log"); //file log
 
-        /* istanzio il form */
+        /* istanzio le form */
         $this->_PublicModel = new Application_Model_Public(); //model
-       
+       /* istanzio le form */
         $this->view->accediForm = $this->getAccediForm();
         
         $this->view->registraForm = $this->getRegistraForm();
+        
+        $this->view->searchForm = $this->getSearchForm();
+        //Creo l'oggetto Auth
+        $this->_authService = new Application_Service_Auth();
     }
     
     /*Override del metodo di IndexController*/
@@ -41,7 +48,7 @@ class PublicController extends Zend_Controller_Action {
         $pagedScadenza = $this->_getParam('pageScadenza',1);
         //Estraggo dal DB la promozione per data odierna e in scadenza
         $offerteDelGiorno = $this->_PublicModel->getPromozioneByDate($pagedDelGiorno,null);
-        $offertaInScadenza = $this->_PublicModel->getPromozioneByLastDate($pagedScadenza,null);
+        $offertaInScadenza = $this->_PublicModel->getPromozioniInscadenza($pagedScadenza,null);
         //Assegno alla view i prodotto da visualizzare
         $this->view->assign(array('offerteDelGiorno'=>$offerteDelGiorno,'offerteInScadenza'=>$offertaInScadenza));
 
@@ -85,39 +92,71 @@ class PublicController extends Zend_Controller_Action {
     
     }
     
+    /* Azione che attiva il profilo del brands selezionato*/
     
+    
+    /*Collegato alla pagina registrazione*/
+    public function registrazioneAction(){
+        
+        
+    }
+    
+    //funzione per la registrazione
     public function registrautenteAction(){
+        
+        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+       
+     
         if (!$this->getRequest()->isPost()) {
             $this->_helper->redirector('home');
-	}
-        $form=$this->_form;
-        
-        if (!$form->isValid($_POST)) {
-            $form->setDescription('ATTENZIONE! dati inseriti non validi!');
-            return $this->render('registrazione');
         }
+        $formRegistrazione =  new Application_Form_Public_Registrazione_Registra();
         
-        $values = $form->getValues();
-        $this->_PublicModel->salvaUtente($values);
+        if (!$formRegistrazione->isValid($_POST)){
+            
+            $formRegistrazione->setDescription('ATTENZIONE! dati inseriti non validi!');
+            $this->_logger->info('Attivato If della form registrazione');
+            $formRegistrazione->setDescription('Attenzione: alcuni dati inseriti sono errati.');
+            $this->_logger->debug(print_r($formRegistrazione->getErrors(), true));
+            return $this->render('registrazione');
+            
+        
+        }
+        $values = $formRegistrazione->getValues();
+        $this->_PublicModel->insertUser($values);
         $this->_helper->redirector('home');
     }
     
-
-    private function getAccediForm() {
-	$urlHelper = $this->_helper->getHelper('url');
-        $this->_helper->layout->setLayout('layoutstatic');
-	$this->_form = new Application_Form_Public_MyAccount_Accedi();
-        $this->_form->setAction($urlHelper->url(array(
-				'controller' => 'public',
-				'action' => 'home'),
-				'default'
-				));
-	return $this->_form;
-    }
-    
+    //funzione per la ricerca
+    public function ricercaAction() {
+        
+        if (!$this->getRequest()->isPost()) {
+            $this->_helper->redirector('home');
+	}
+        $formRicerca=new Application_Form_Public_Search_Searchofferta();
+        
+        if (!$formRicerca->isValid($_POST)) {
+		$formRicerca->setDescription('Attenzione! dati inseriti non validi');
+		return $this->render('home');
+        }
+        $this->_helper->layout->setLayout('main');
+        $pagedRicerca = $this->_getParam('pageRicerca',1);
+        $nomeDaCercare = $formRicerca->getValue('cercaOfferta');
+        $scelta = $formRicerca->getValue('selezione');
+        $offertaRicercata = null;
+        if($scelta==='tipologia')
+            $offertaRicercata = $this->_PublicModel->getPromozioneByTipologia($nomeDaCercare,$pagedRicerca);
+        else if($scelta==='azienda')
+            $offertaRicercata = $this->_PublicModel->SearchPromozioneByAzienda($nomeDaCercare,$pagedRicerca);
+        else if($scelta==='nomeprodotto')
+            $offertaRicercata = $this->_PublicModel->searchPromozioneByNome($nomeDaCercare,$pagedRicerca);
+       
+        $this->view->assign(array('offertaRicercata'=>$offertaRicercata,'flag'=>true,'nomeDaCercare'=>$nomeDaCercare));
+ }
+ 
+    //funzione per ottenere la form registra
     private function getRegistraForm() {
 	$urlHelper = $this->_helper->getHelper('url');
-        $this->_helper->layout->setLayout('layoutstatic');
 	$this->_form = new Application_Form_Public_Registrazione_Registra();
         $this->_form->setAction($urlHelper->url(array(
 				'controller' => 'public',
@@ -126,7 +165,64 @@ class PublicController extends Zend_Controller_Action {
 				));
 	return $this->_form;
     }
+    
+    //funzione per la form ricerca
+    private function getSearchForm() {
+        
+        $urlHelper = $this->_helper->getHelper('url');
+	$this->_form = new Application_Form_Public_Search_Searchofferta();
+        $this->_form->setAction($urlHelper->url(array(
+				'controller' => 'public',
+				'action' => 'ricerca'),
+				'default'
+				));
+	return $this->_form;
+    }
+    
+    /*Pagina di login*/
+    public function loginAction() {
+        
+       
+    }
+    
+    //Funzione che fa l'autenticazione prendendo i valori dalla form
+    public function autenticazioneAction() {        
+        
+        $request = $this->getRequest();
+        
+        if (!$request->isPost()) {
+            return $this->_helper->redirector('login');
+        }
+        $formLogin =  new Application_Form_Public_Login_Accedi();
+        
+        if (!$formLogin->isValid($this->getRequest()->getPost())) {
+            $this->_logger->info('Attivato If della form login');
+            $this->_logger->info($formLogin->getValues());
+            $formLogin->setDescription('Attenzione: alcuni dati inseriti sono errati.');
+        	    return $this->render('login');
+        }
+        if (false === $this->_authService->authenticate($formLogin->getValues())) {
+            $formLogin->setDescription('Autenticazione fallita. Riprova');
+            return $this->render('login');
+        }
+        //reindirizza all'index del controller del tipo di utente che ha fatto login
+        return $this->_helper->redirector('index', $this->_authService->getIdentity()->role);
+	}
+	
 
-  
+    /*Metrodo che ritorna la form*/    
+    private function getAccediForm() {
+	$urlHelper = $this->_helper->getHelper('url');
+	$this->_form = new Application_Form_Public_Login_Accedi();
+        $this->_form->setAction($urlHelper->url(array(
+				'controller' => 'public',
+				'action' => 'autenticazione'),
+				'default'
+				));
+	return $this->_form;
+    }
+    
+	
+ 
 }
 
