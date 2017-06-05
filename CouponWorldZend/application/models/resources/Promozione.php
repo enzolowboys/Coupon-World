@@ -36,8 +36,8 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
      
            $select= $this->select('promozione.*')
                    ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
-                 
-                ->where('categoria = ?',$categoria)
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
+                ->where('tipologia.nometipologia = ?',$categoria)
                    ->setIntegrityCheck(false); 
         if(true === is_array($order)){
             $select->order($order);
@@ -59,8 +59,8 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
     /*estrae le promozioni in base alla tipologia*/
     public function getPromozioneByTipologia($tipologia,$paged=null,$order=null){
            $select= $this->select('promozione.*')
-              ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
-             
+                   ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
                 ->where('tipologia = ?', $tipologia) ->setIntegrityCheck(false);
            if(true === is_array($order)){
             $select->order($order);
@@ -81,8 +81,8 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
     
        public function getPromozioneByName($nome,$paged=null,$order=null){
            $select= $this->select('promozione.*')
-              ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
-             
+                ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
                 ->where('promozione.nomeprodotto = ?', $nome) ->setIntegrityCheck(false);
            if(true === is_array($order)){
             $select->order($order);
@@ -103,7 +103,8 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
     /*estrae le promozioni in base all'azienda*/
     public function getPromozioneByAzienda($nomeAzienda,$paged=null,$order=null){
            $select= $this->select('promozione.*')
-               ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                   ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
              ->where( 'azienda.nome = ?',$nomeAzienda)->setIntegrityCheck(false);
         if(true === is_array($order)){
             $select->order($order);
@@ -129,8 +130,8 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
     public function Searchpromozione($tipologia,$categoria,$paged=null,$order=null){
         //STA SBAGLIATA LA QUERY
         $select= $this->select('promozione.*')
-                 ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
-                 
+                   ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
                 ->where('tipologia = ?',$tipologia&&'categoria ='. $categoria) ->setIntegrityCheck(false);
                
          if(true === is_array($order)){
@@ -152,8 +153,8 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
     /*estrae le promozioni con la data corrente*/
     public function getPromozioneByDate($paged=null,$order=null){
         $select= $this->select('promozione.*')
-                  ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
-                 
+                   ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
                 ->where('promozione.datainizio = CURDATE()') ->setIntegrityCheck(false);
          if(true === is_array($order)){
             $select->order($order);
@@ -173,8 +174,8 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
     /*estrae le promozioni in scadenza con la data corrente*/
     public function getPromozioneByLastDate($paged=null,$order=null){
         $select= $this->select('promozione.*')
-                  ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
-                 
+                   ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
                 ->where('promozione.datafine =  CURRENT_DATE()') ->setIntegrityCheck(false);
          if(true === is_array($order)){
             $select->order($order);
@@ -194,7 +195,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
        
          $select=$this->select('promozione.*')
                    ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
-                 
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
                 ->where('promozione.datafine-CURDATE() < 2') ->setIntegrityCheck(false);
         if(true === is_array($order)){
             $select->order($order);
@@ -219,6 +220,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
           $data = Zend_Date::now();
          $select=$this->select('promozione.*')
                    ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
                  ->where('promozione.datafine > ?',$data)
                 ->where('promozione.datainizio-'. $data. '>= 0') ->setIntegrityCheck(false);
         if(true === is_array($order)){

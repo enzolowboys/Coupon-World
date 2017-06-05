@@ -132,9 +132,9 @@
 
                                 <?php echo '<h5>'. $offertaDelGiorno->nomeprodotto.'</h5>'?>
                                 <br>
-				<?php echo '<h6>'. $offertaDelGiorno->categoria.'</h6>'?>
+				<?php echo '<h6>'. $offertaDelGiorno->nometipologia.'</h6>'?>
 				<br>
-				<?php echo '<h7>'. $offertaDelGiorno->tipologia.'</h7>'?>
+				<?php echo '<h7>'. $offertaDelGiorno->tipo.'</h7>'?>
                              
 				<br>
 				<?php echo '<h8>'. $offertaDelGiorno->nome.'</h8>'?>
@@ -142,6 +142,7 @@
                                 <?php echo '<h8>dal '.'<b>'.$offertaDelGiorno->datainizio.'</b> al <b>'.
                                         $offertaDelGiorno->datafine.'</b>'.'</h8>'?>
 				<button id="stampaofferta"></button>
+                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
 			</div>
 		</div>
                 <?php endforeach ?>
@@ -165,15 +166,16 @@
 			<div id="infoOfferta"> 
                                 <?php echo '<h5>'. $offertaInScadenza->nomeprodotto.'</h5>'?>
                                 <br>
-				<?php echo '<h6>'. $offertaInScadenza->categoria.'</h6>'?>
+				<?php echo '<h6>'. $offertaInScadenza->tipo.'</h6>'?>
 				<br>
 				<?php echo '<h7>'. $offertaInScadenza->nome.'</h7>'?>
                                 <br>
-                                <?php echo '<h7>'. $offertaInScadenza->tipologia.'</h7>'?>
+                                <?php echo '<h7>'. $offertaInScadenza->nometipologia.'</h7>'?>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaInScadenza->datainizio.'</b> al <b>'.
                                         $offertaInScadenza->datafine.'</b>'.'</h8>'?>
 				<button id="stampaofferta"></button>
+                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
 			</div>
 		</div>
                 <?php endforeach ?>

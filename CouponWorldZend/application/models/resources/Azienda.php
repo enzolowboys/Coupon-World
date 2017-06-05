@@ -1,6 +1,6 @@
 <?php
 
-class Application_Resource_Azineda extends Zend_Db_Table_Abstract
+class Application_Resource_Azienda extends Zend_Db_Table_Abstract
 {
     protected $_name    = 'azienda';
     protected $_primary  = 'idazienda';
