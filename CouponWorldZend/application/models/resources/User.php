@@ -49,7 +49,7 @@ class Application_Resource_User extends Zend_Db_Table_Abstract
      public function insertUser($info)
     {
     	$this->insert($info);
-    }
+    } 
     
     /*elimina un utante usando il suo username*/
     public function deleteUser($iduser){
