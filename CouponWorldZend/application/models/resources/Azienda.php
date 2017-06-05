@@ -38,6 +38,11 @@ class Application_Resource_Azienda extends Zend_Db_Table_Abstract
         return $this->fetchAll($this->select('idazienda')->where( 'nome'.$nome));
  
     }
+    public function getAzienda() {
+        
+        $select= $this->select();
+        return $this->fetchAll($select);
+    }
     
     /*inserisci azienda*/
     public function insertAzienda($info){

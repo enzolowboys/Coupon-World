@@ -1,0 +1,20 @@
+<div id="content">	
+    <div id="navMenu">
+        <ul id="categorie">
+            <?php if($this->nomedelfiltro=="tipologia"):?>
+            <h1>&nbsp; &nbsp; ≡ CATEGORIE</h1>
+            <!-- lista delle categorie dei prodotti presenti nel sito -->
+            <?php foreach ($this->tipologie as $tipologia) :?>
+            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'filtra','catId'=>$tipologia->nometipologia,'default',true));?>">&nbsp; &nbsp;<?php echo $tipologia->nometipologia ?></a></li>
+            <?php endforeach;?>
+            <?php endif ?>
+            <?php if($this->nomedelfiltro=="azienda"):?>
+            <?php foreach ($this->azienda as $tipologia) :?>
+            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'filtra','azienda'=>$azienda->nome,'default',true));?>">&nbsp; &nbsp;<?php echo $azienda->nome ?></a></li>
+            <?php endforeach;?>
+            <?php endif ?>
+        </ul>
+    </div>
+    <?php echo '<h1 class="titolocategoria">Filtra per '.$this->nomedelfiltro.' scegliendo nel menù alla tua sinistra</h1>';?>
+    
+</div>

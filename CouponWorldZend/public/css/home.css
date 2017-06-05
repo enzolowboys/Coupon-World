@@ -1212,6 +1212,35 @@ input:focus {
 }
 
 
+
+#filtraForm {
+	float:left;
+}
+#filtraForm .optional {
+  font-family: 'Titillium Web';
+  src: url(../fonts/TitilliumWeb-Regular.ttf);
+	float:left;
+	position:relative;
+	right:5em;
+	top:-2em;
+	color: white;
+	
+	
+}
+
+#filtraForm select {
+	font-family: 'Titillium Web';
+  src: url(../fonts/TitilliumWeb-Regular.ttf);
+	float:left;
+	position: relative;
+	top: -0.2 em;
+	right: 9.1em;
+}
+
+#filtraForm .button {
+	positio:relative;
+	left:8em;
+
 /* Gestione navbar della pagina amministratore*/
 #navMenuAdmin {
     font-family: 'Titillium Web';
@@ -1371,4 +1400,5 @@ li.title a span {
     height: 30px;
     top: 4em;
     left: 260px; 
+
 }
