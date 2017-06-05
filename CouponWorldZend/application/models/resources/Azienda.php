@@ -1,6 +1,6 @@
 <?php
 
-class Application_Resource_Azineda extends Zend_Db_Table_Abstract
+class Application_Resource_Azienda extends Zend_Db_Table_Abstract
 {
     protected $_name    = 'azienda';
     protected $_primary  = 'idazienda';
@@ -37,6 +37,11 @@ class Application_Resource_Azineda extends Zend_Db_Table_Abstract
         
         return $this->fetchAll($this->select('idazienda')->where( 'nome'.$nome));
  
+    }
+    public function getAzienda() {
+        
+        $select= $this->select();
+        return $this->fetchAll($select);
     }
     
     /*inserisci azienda*/

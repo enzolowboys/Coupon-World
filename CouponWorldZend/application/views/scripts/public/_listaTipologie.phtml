@@ -1,0 +1,3 @@
+<?php foreach ($this->tipologie as $tipologia) :?>
+ <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>$tipologia->nomeTipologia,'default',true));?>">&nbsp; &nbsp;<?php echo $tipologia->nomeTipologia ?></a></li>
+<?php endforeach;?>
