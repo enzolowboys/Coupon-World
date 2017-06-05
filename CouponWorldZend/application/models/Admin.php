@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_Staff extends App_Model_Abstract
+class Application_Model_Admin extends App_Model_Abstract
 { 
 
 	public function __construct()
@@ -76,6 +76,10 @@ class Application_Model_Staff extends App_Model_Abstract
             return $this->getResource('Faq')->updateFaq($id);
             
             
+        }
+        
+        public function insertAzienda($azienda){
+            return $this->getResource('Azienda')->insertAzienda($azienda);
         }
         
         /*prende il nome dell'azoenda l'username dell utente e i li mette in relazione */

@@ -15,7 +15,7 @@ class PublicController extends Zend_Controller_Action {
         $this->_helper->layout->setLayout('layoutstatic');
         $this->_logger = Zend_Registry::get("log"); //file log
 
-        /* istanzio le form */
+        
         $this->_PublicModel = new Application_Model_Public(); //model
        /* istanzio le form */
         $this->view->accediForm = $this->getAccediForm();

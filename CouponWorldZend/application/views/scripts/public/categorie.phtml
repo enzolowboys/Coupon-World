@@ -26,16 +26,19 @@
                                
                                 <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
 				<br>
-                                <?php echo '<h6>Dove? : '. $offertaCategoria->localita.'</h5>'?>
+                                <?php echo '<h6>'. $offertaCategoria->localita.'</h6>'?>
                                 <br>
                                 <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'profilobrands','default',true));?>">
-                                <?php echo '<h7>Brand: '. $offertaCategoria->nome.'</h6>'?></a>
+                                <?php echo '<h7>'. $offertaCategoria->nome.'</h7>'?></a>
 				<br>
-				<?php echo '<h8>Tipo: '. $offertaCategoria->nometipologia.'</h7>'?>
+
+				<?php echo '<h8>'. $offertaCategoria->tipo.'</h8>'?>
+>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
                                         $offertaCategoria->datafine.'</b>'.'</h8>'?>
 				<button id="stampaofferta"></button>
+                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
 			</div>
 		</div>
                 <?php endforeach ?>

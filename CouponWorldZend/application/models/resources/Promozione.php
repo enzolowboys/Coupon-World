@@ -133,10 +133,11 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
         $select= $this->select('promozione.*')
                    ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
                    ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
+
                 ->where("nomeprodotto = $ricerca" || "azienda.nome=$ricerca "|| "tipo=$ricerca")
                 ->where('nometipologia = ?',$tipologia)
                 ->setIntegrityCheck(false);
-               
+
          if(true === is_array($order)){
             $select->order($order);
         }
