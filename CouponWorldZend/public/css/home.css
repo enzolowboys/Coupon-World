@@ -1446,10 +1446,10 @@ li.title a span {
     border-color: #266abd;
 }
 #NuovoStaff td #inserisci {
-
+    
 }
 #NuovaTipologia td #inserisci {
-
+    
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     border: 2px;
@@ -1593,6 +1593,8 @@ li.title a span {
     top: 4em;
     left: 260px; 
 }
+
+/* Form per i filtri */
 .filtraForm {
     
     width:191px !important;  width /**/:200px;
@@ -1605,20 +1607,14 @@ li.title a span {
     bottom:8%;
     display:none;
 }
-
-
 .espandi {
     
     position:relative;
     left:30%;
     bottom:8%;
     color: white;
-    cursor: pointer;
-    
-   
-    
+    cursor: pointer; 
 }
-
 .espandi2 {
     
     position:relative;
@@ -1626,9 +1622,7 @@ li.title a span {
     bottom:11.8%;
     color: white;
     cursor: pointer;
-    
 }
-
 .filtraForm2{
     
     font-size: small;
@@ -1639,9 +1633,457 @@ li.title a span {
     overflow:auto;
     position:relative;
     left:37%;
-    bottom:8%;
-   
-    
+    bottom:8%; 
+}
 
+/* Gestione navbar della pagina amministratore*/
+#navMenuUser {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    list-style-type: none;
+    position:relative;
+    left:30px;
+}
+#navMenuUser h1{
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    background-color: #266abd;
+    font-weight: 400;
+    width: 300px;
+}
+#navMenuUser ul {
+    list-style-type: none;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare le aziende */
+#ModificaEliminaAzienda table {
+    position:relative;
+    left: 20px;
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+    bottom: 50px;
+}
+#ModificaEliminaAzienda h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaAzienda p {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaAzienda th {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaAzienda td {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
     
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaAzienda button{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare le tipologie */
+#ModificaEliminaTipologia table {
+    position:relative;
+    left: 500px;
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+    bottom: 50px;
+}
+#ModificaEliminaTipologia h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaTipologia p {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaTipologia th {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaTipologia td {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaTipologia button{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare i membri dello staff */
+#ModificaEliminaStaff table {
+    position:relative;
+    left: 220px;
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+    bottom: 50px;
+}
+#ModificaEliminaStaff h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaStaff p {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaStaff th {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaStaff td {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaStaff button{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare domande e risposte della FAQ */
+#ModificaEliminaDomandaRisposta table {
+    position:relative;
+    left: 510px;
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+    bottom: 50px;
+}
+#ModificaEliminaDomandaRisposta h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaDomandaRisposta p {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaDomandaRisposta th {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaDomandaRisposta td {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaDomandaRisposta button{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare gli utenti */
+#ModificaEliminaUtente table {
+    position:relative;
+    left: 220px;
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+    bottom: 50px;
+}
+#ModificaEliminaUtente h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaUtente p {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaUtente th {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaUtente td {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaUtente button{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare le promozioni */
+#ModificaEliminaPromozione table {
+    position:relative;
+    left: 90px;
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+    bottom: 50px;
+}
+#ModificaEliminaPromozione h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaPromozione p {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaPromozione th {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaPromozione td {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaPromozione button{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene il form della modifca profilo staff */
+#ModificaProfiloStaff h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaProfiloStaff td {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 16px;
+    color: black;  
+}
+#ModificaProfiloStaff td input{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#ModificaProfiloStaff td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#ModificaProfiloStaff td #inserisci{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
 }

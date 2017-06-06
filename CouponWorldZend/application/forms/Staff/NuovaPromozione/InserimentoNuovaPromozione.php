@@ -54,7 +54,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
         
         //elemento grafico relativo al tipo di promozione (3x2,50%,..)
         $this->addElement('text', 'tipo', array(
-            'label' => 'Tipologia (3x2, 50%,..)',
+            'label' => 'Tipo (3x2, 50%,..)',
             'filters' => array('StringTrim'),
             'required' => true,
             //'validators' => array(array('StringLenght', true, array(1,20))),

@@ -75,12 +75,29 @@
 </div>
 
 <div id="content">
-     <div id="NuovoStaff">
-        <h2>qui puoi aggiungere un nuovo membro staff. inserisci le credenziali per l'accesso</h2>
-        <div class="Forms">
-            <!-- qui é presente la form Tipologia -->
-            <?php echo $this->nuovostaffForm ?> 
-        </div>
+    <div id="ModificaEliminaUtente">
+        <h2>qui puoi modificare o eliminare un utente.</h2>
+        <table>
+            <caption>
+                <p>Qui di sotto tutti gli utenti di Coupon World</p>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Nome</th><th>Cognome</th><th>Indirizzo</th><th>Città</th>
+                    <th>La sua email</th><th>Username</th><th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class='border_bottom'>
+                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td><button>Modifica</button></td><td><button>Elimina</button></td>
+                    <br>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
