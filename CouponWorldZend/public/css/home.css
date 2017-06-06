@@ -169,6 +169,7 @@ a:hover{
     
 }
 
+
 /* barra di ricerca */
 #ricercaOfferta input{
     width: 150%;
@@ -180,8 +181,9 @@ a:hover{
 }
 #ricercaOfferta tr td .required{
     position:relative;
-    right:13%;
+    right:40%;
     bottom:2.8em;
+    font-size:medium; 
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
@@ -192,6 +194,7 @@ a:hover{
 
 #ricercaOfferta select {
     
+    width:70%;
     position:relative;
     bottom:2em;
     right:8.4em;
@@ -212,11 +215,11 @@ input:focus {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    left:97em;
-    top:-8px;
+    left:22em;
+    top:-60px;
     background-color: rgb(179, 0, 0);
     border:none;
-    width:190%;
+    width:61%;
 }
 /* subheader che contiene delle informazioni aggiuntive del sito */
 #subheader {
@@ -471,6 +474,7 @@ input:focus {
     position: relative;
     background-color: white;
     bottom: 300px;
+ 
 }
 
 /* sezione che contiene le offerte del giorno */
@@ -480,6 +484,7 @@ input:focus {
     position: relative;
     background-color: white;
     bottom: 400px;
+
 }
 
 /* offerta rappresenta il singolo spazio dedicato */
@@ -496,6 +501,7 @@ input:focus {
     left: 55px;
     float: left;
     margin-right: 10px;
+    z-index:1; 
 }
 #offerta #visualizzaofferta{
     width:40px;
@@ -530,6 +536,7 @@ input:focus {
     border-radius: 0px 0px 0px 15px;
     color: white;
     bottom: 215px;
+ 
 }
 
 /* sta ad indicare il nome del prodotto o una particolare sottocategoria (tecnologia > smartphones) */
@@ -1604,6 +1611,7 @@ li.title a span {
     left:28.5%;
     bottom:8%;
     display:none;
+    z-index:10; 
 }
 
 
@@ -1614,6 +1622,7 @@ li.title a span {
     bottom:8%;
     color: white;
     cursor: pointer;
+    width:8%;
     
    
     
@@ -1622,10 +1631,12 @@ li.title a span {
 .espandi2 {
     
     position:relative;
-    left:40%;
+    left:50%;
     bottom:11.8%;
     color: white;
     cursor: pointer;
+    width:8%;
+    
     
 }
 
@@ -1638,10 +1649,74 @@ li.title a span {
     background:url(gradient.png) repeat-x fixed top left;
     overflow:auto;
     position:relative;
-    left:37%;
+    left:47%;
     bottom:8%;
-   
+    display:none;
+    z-index:10; 
     
 
     
+}
+
+.filtraForm3 {
+    
+    font-size: small;
+    width:191px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    background:url(gradient.png) repeat-x fixed top left;
+    overflow:auto;
+    position:relative;
+    left:28.5%;
+    bottom:7%;
+    display:none;
+    z-index:10; 
+    
+    
+}
+
+
+.espandi3 {
+    
+    position:relative;
+    left:30%;
+    bottom:8%;
+    color: white;
+    cursor: pointer;
+    width:8%;
+   
+    
+}
+
+.filtraForm4{
+    
+    font-size: small;
+    width:191px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    background:url(gradient.png) repeat-x fixed top left;
+    overflow:auto;
+    position:relative;
+    left:47%;
+    bottom:7%;
+    display:none;
+    z-index:10; 
+}
+
+.espandi4{
+    position:relative;
+    left:50%;
+    bottom:11.8%;
+    color: white;
+    cursor: pointer;
+    width:8%;
+}
+
+#filtroazienda{
+    font-size: small;
+    width:191px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    background:url(gradient.png) repeat-x fixed top left;
+    overflow:auto;
 }
