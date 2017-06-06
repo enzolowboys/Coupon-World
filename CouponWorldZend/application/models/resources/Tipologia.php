@@ -18,7 +18,11 @@ class Application_Resource_Tipologia extends Zend_Db_Table_Abstract {
     public function getAllTipologie() {
          $select= $this->select();
          return $this->fetchAll($select);
-     }
+    }
+    
+    public function insertTipologia($info){
+        $this->insert($info);
+    }
      
     
     

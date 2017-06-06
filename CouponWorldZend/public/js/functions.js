@@ -52,7 +52,48 @@ $(document).ready(function() {
             //change text of header based on visibility of content div
             $espandi.text(function () {
                 //change text based on condition
+                return $filtraForm.is(":visible") ? "Filtra per tipologia -" : "Filtra per tipologia +";
+            });
+        });
+        
+    });
+});
+
+$(document).ready(function() {
+    
+    $(".espandi3").click(function () {
+        
+        $espandi = $(this);
+        //getting the next element
+        $filtraForm = $(".filtraForm3");
+        //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+        $filtraForm.slideToggle(500, function () {
+            //execute this after slideToggle is done
+            //change text of header based on visibility of content div
+            $espandi.text(function () {
+                //change text based on condition
                 return $filtraForm.is(":visible") ? "Filtra per azienda -" : "Filtra per azienda +";
+            });
+        });
+        
+    });
+});
+
+
+$(document).ready(function() {
+    
+    $(".espandi4").click(function () {
+        
+        $espandi = $(this);
+        //getting the next element
+        $filtraForm = $(".filtraForm4");
+        //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+        $filtraForm.slideToggle(500, function () {
+            //execute this after slideToggle is done
+            //change text of header based on visibility of content div
+            $espandi.text(function () {
+                //change text based on condition
+                return $filtraForm.is(":visible") ? "Filtra per tipologia -" : "Filtra per tipologia +";
             });
         });
         

@@ -103,15 +103,15 @@
     <div id="upfooter"></div>
     <div id="offerteDelGiorno">
         <h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;☆ OFFERTE DEL GIORNO ☆</h1>
-
+        
         <div class="espandi"><span>Filtra per azienda +</span></div>
         <div class="filtraForm">
             <?php echo $this->filtraAziendaForm ?>
         </div>
         <div class="espandi2"><span>Filtra per tipologia +</span></div>
-                <div class="filtraForm2">
+        <div class="filtraForm2">
             <?php echo $this->filtraTipologiaForm ?>
-
+            
         </div>
                <?php foreach ($this->offerteDelGiorno as $offertaDelGiorno) :?>
         <div id="offerta">
@@ -119,19 +119,20 @@
             <div id="infoOfferta"> 
                 
                                 <?php echo '<h5>'. $offertaDelGiorno->nomeprodotto.'</h5>'?>
-
+                
                 
                 
                 <br>
-
+                
 				<?php echo '<h6>'. $offertaDelGiorno->nometipologia.'</h6>'?>
                 <br>
-				
+
                 
      <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaDelGiorno->nome,'default',true));?>">
                     
 				<?php echo '<h8>'. $offertaDelGiorno->nome.'</h8>'?>
                 <br>
+
                     <?php echo '<h7>'. $offertaDelGiorno->tipo.'</h7>'?>
 
                 
@@ -144,6 +145,7 @@
                                 <a href="<?= $this->url(array(  'controller'=>'public','action'=>'informazioneofferta','offertaid' => $offertaDelGiorno->idpromozione ,'default',true));?>"><button id="visualizzaofferta"></button></a>
 			</div>
 		</div>
+
 
 
                 <?php endforeach ?>
@@ -161,18 +163,29 @@
     <br>
     <div id="offerteInScadenza">
         <h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ❕ OFFERTE IN SCADENZA ❕</h1>
-                <?php foreach ($this->offerteInScadenza as $offertaInScadenza) :?>
+        <div class="espandi3"><span>Filtra per azienda +</span></div>
+        <div class="filtraForm3">
+            
+            <?php echo $this->filtraAziendaFormS ?>
+        </div>
+        <div class="espandi4"><span>Filtra per tipologia +</span></div>
+        <div class="filtraForm4">
+            <?php echo $this->filtraTipologiaFormS ?>
+            
+        </div>
+        
+            <?php foreach ($this->offerteInScadenza as $offertaInScadenza) :?>
         <div id="offerta">
                      <?php echo $this->offertaImg($offertaInScadenza->immagine,array('class' => 'immagineOfferta'));?>
             <div id="infoOfferta"> 
                                 <?php echo '<h5>'. $offertaInScadenza->nomeprodotto.'</h5>'?>
-
-
-                                <br>
-
+                
                 
                 <br>
-
+                
+                
+                <br>
+                
 				<?php echo '<h6>'. $offertaInScadenza->tipo.'</h6>'?>
                 <br>
    <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaInScadenza->nome,'default',true));?>">
@@ -183,10 +196,12 @@
                                 <?php echo '<h8>dal '.'<b>'.$offertaInScadenza->datainizio.'</b> al <b>'.
                                         $offertaInScadenza->datafine.'</b>'.'</h8>'?>
 
+
 				<button id="stampaofferta"></button>
                                 <a href="<?php echo $this->url(array('controller'=>'public','action'=>'informazioneofferta','offertaid' => $offertaInScadenza->idpromozione ,'default',true));?>"><button id="visualizzaofferta"></button></a>
 			</div>
 		</div>
+
 
 
                 <?php endforeach ?>

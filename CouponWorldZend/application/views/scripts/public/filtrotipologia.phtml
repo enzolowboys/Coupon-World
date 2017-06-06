@@ -1,8 +1,8 @@
 <div id="content">	
     <div id="navMenu">
     </div>
-    <?php echo '<h1 class="titolocategoria">Offerte del giorno per la tipologia: '.$this->nomecercato.' </h1>';?>
-    <?php foreach ($this->offertedelgiorno as $offertaGiorno) :?>
+    <?php echo '<h1 class="titolocategoria">Offerte'.$this->tipoofferta.' per la tipologia: '.$this->nomecercato.' </h1>';?>
+    <?php foreach ($this->offerte as $offertaGiorno) :?>
 		<div id="offertaCategoria">
                      <?php echo $this->offertaImg($offertaGiorno->immagine,array('class' => 'immagineOfferta'));?>
 			<div id="infoOfferta"> 
@@ -26,8 +26,8 @@
 			</div>
 		</div>
                 <?php endforeach ?>
-          <?php if($this->offertedelgiorno instanceof Zend_Paginator) {
-                echo $this->paginationControl($this->offertedelgiorno,'Sliding','public/_paginatorFiltraAzienda.phtml');
+          <?php if($this->offerte instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->offerte,'Sliding','public/_paginatorFiltraAzienda.phtml');
 	  } 
 	  ?>
     

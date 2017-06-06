@@ -82,6 +82,10 @@ class Application_Model_Admin extends App_Model_Abstract
             return $this->getResource('Azienda')->insertAzienda($azienda);
         }
         
+        public function insertTipologia($info){
+            return $this->getResource('Tipologia')->insertTipologia ($info);
+        }
+        
         /*prende il nome dell'azoenda l'username dell utente e i li mette in relazione */
         public function insertRelazione($nome,$username){
             $idazienda= $this->getResource('Azienda')->getIdAziendaByNome($nome);

@@ -7,8 +7,7 @@
             <li class="sub-menu">
                 <ul>
                     <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'nuovaazienda','default',true));?>">inserisci nuova azienda</a></li> 
-                    <li>modifica azienda</li>
-                    <li>elimina azienda</li>
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'modificaeliminaazienda','default',true));?>">modifica/elimina azienda</a></li>                   
                 </ul>
             </li>
         </ul> 
@@ -19,8 +18,7 @@
             <li class="title"><a href="#">&nbsp; &nbsp; gestione utenti</a></li>
             <li class="sub-menu">
                 <ul>
-                    <li>modifica utente</li> 
-                    <li>cancella utente</li>
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'modificaeliminautente','default',true));?>">modifica/elimina utente</a></li> 
                 </ul>
             </li>
         </ul> 
@@ -32,8 +30,7 @@
             <li class="sub-menu">
                 <ul>
                     <li><li><a href="<?= $this->url(array('controller'=>'admin','action'=>'nuovostaff','default',true));?>">inserisci nuovo staff</a></li> 
-                    <li>modifica staff</li> 
-                    <li>cancella staff</li>
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'modificaeliminastaff','default',true));?>">modifica/elimina staff</a></li>  
                 </ul>
             </li>
         </ul> 
@@ -45,8 +42,7 @@
             <li class="sub-menu">
                 <ul>
                     <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'nuovatipologia','default',true));?>">inserisci nuova tipologia</a></li> 
-                    <li>modifica tipologia</li>
-                    <li>elimina tipologia</li>
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'modificaeliminatipologia','default',true));?>">modifica/elimina tipologia</a></li> 
                 </ul>
             </li>
         </ul> 
@@ -58,8 +54,7 @@
             <li class="sub-menu">
                 <ul>
                     <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'nuovadomandarisposta','default',true));?>">inserisci nuova domanda e nuova risposta</a></li> 
-                    <li>modifica domanda e risposta</li>
-                    <li>elimina domanda e risposta</li>
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'modificaeliminadomandarisposta','default',true));?>">modifica/elimina domanda e risposta</a></li> 
                 </ul>
             </li>
         </ul> 

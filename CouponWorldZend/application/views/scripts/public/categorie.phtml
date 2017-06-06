@@ -1,4 +1,5 @@
 <div id="content">	
+
 	<!-- SUBHEADER CONTENTENTE INFORMAZIONIA AGGIUNTIVE AL SITO -->
 	<div id="subheader">
 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -9,45 +10,54 @@
 	</div>	
 	<div id="navMenu">
             <ul id="categorie">
+
             <h1>&nbsp; &nbsp; ≡ CATEGORIE</h1>
             <!-- lista delle categorie dei prodotti presenti nel sito -->
             <?php foreach ($this->tipologie as $tipologia) :?>
-                <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>$tipologia->nometipologia,'default',true));?>">&nbsp; &nbsp;<?php echo $tipologia->nometipologia ?></a></li>
+            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>$tipologia->nometipologia,'default',true));?>">&nbsp; &nbsp;<?php echo $tipologia->nometipologia ?></a></li>
             <?php endforeach;?>
-            </ul>
-	</div>
+        </ul>
+        <h1>&nbsp; &nbsp; ≡ Filtra per azienda: </h1>
+        <div id="filtraazienda">
+            <?php echo $this->filtraAziendaTipologia; ?>
+        </div>
+        </div>
         
         <!--Sezione dinamica che in base al click sulla categoria apre la pagina della categoria giusta --> 
         <?php echo '<h1 class="titolocategoria">'.$this->categoria.'</h1>'; ?>
         <?php foreach ($this->offertaPerCategoria as $offertaCategoria) :?>
-		<div id="offertaCategoria">
+        <div id="offertaCategoria">
                      <?php echo $this->offertaImg($offertaCategoria->immagine,array('class' => 'immagineOfferta'));?>
-			<div id="infoOfferta"> 
-                               
+            <div id="infoOfferta"> 
+                
                                 <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
-				<br>
+                <br>
                                 <?php echo '<h6>'. $offertaCategoria->localita.'</h6>'?>
+
                                 <br>
  
                     <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaCategoria->nome,'default',true));?>">
                       <?php echo '<h7>'. $offertaCategoria->nome.'</h7>'?></a>
 				<br>
 
+
 				<?php echo '<h8>'. $offertaCategoria->tipo.'</h8>'?>
->
-				<br>
+                
+                <br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
                                         $offertaCategoria->datafine.'</b>'.'</h8>'?>
+
 				<button id="stampaofferta"></button>
                                 <a href="<?= $this->url(array('controller'=>'public','action'=>'informazioneofferta','offertaid' => $offertaCategoria->idpromozione ,'default',true));?>"><button id="visualizzaofferta"></button></a>
 			</div>
 		</div>
+
                 <?php endforeach ?>
           <?php if($this->offertaPerCategoria instanceof Zend_Paginator) {
                 echo $this->paginationControl($this->offertaPerCategoria,'Sliding','public/_paginatorCategoria.phtml');
 	  } 
 	  ?>
-     
- 
-
-</div>
+        
+        
+</div>        
+   

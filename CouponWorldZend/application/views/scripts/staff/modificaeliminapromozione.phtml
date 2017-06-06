@@ -1,0 +1,52 @@
+<div id="navMenuStaff">
+    <h1>&nbsp; &nbsp; ≡ STAFF</h1>
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione profilo</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'staff','action'=>'modificaprofilo','default',true));?>">modifica profilo</a></li>               
+                </ul>
+            </li>
+        </ul> 
+    </li> 
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione promozioni</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'staff','action'=>'nuovapromozione','default',true));?>">inserisci nuova promozione</a></li>  
+                    <li><a href="<?= $this->url(array('controller'=>'staff','action'=>'modificaeliminapromozione','default',true));?>">modifica/elimina promozione</a></li>
+                </ul>
+            </li>
+        </ul> 
+    </li> 
+</div>
+
+<div id="content">
+    <div id="ModificaEliminaPromozione">
+        <h2>qui puoi modificare o eliminare una promozione della tua azienda.</h2>
+        <table>
+            <caption>
+                <p>Qui di sotto tutte le promozioni della tua azienda</p>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Nome Prodotto</th><th>Tipologia</th><th>Brand</th><th>Descrizione</th>
+                    <th>Tipo Offerta</th><th>Modalità di fruizione</th><th>Località</th><th>Data Inizio</th><th>Data Fine</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class='border_bottom'>
+                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td><button>Modifica</button></td><td><button>Elimina</button></td>
+                    <br>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

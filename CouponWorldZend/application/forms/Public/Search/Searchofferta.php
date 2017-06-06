@@ -32,7 +32,7 @@ class Application_Form_Public_Search_Searchofferta extends App_Form_Abstract {
         }
             
         $this->addElement('select', 'selezione', array(
-            'label' => 'Ricerca per',
+            'label' => 'Ricerca',
             'required'=>true,
             'multiOptions' =>$listaTipologie,
             'decorators' => $this->elementDecorators,
