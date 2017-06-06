@@ -9,6 +9,11 @@ class Application_Model_Public extends App_Model_Abstract
 	}
         
        
+        /*prende la promozione in base al nome */
+        public function getPromozioneById($id){
+            return $this->getResource('Promozione')->getPromozioneById($id);
+        }
+        
         /*estrae gli elementi in bae alla categoria*/
         public function getPromozioneByCategoria($categoria,$paged=null,$order=null){
              return $this->getResource('Promozione')->getPromozioneByCategoria($categoria,$paged,$order);
@@ -63,6 +68,11 @@ class Application_Model_Public extends App_Model_Abstract
             
             return $this->getResource('Azienda')->getAzienda();
         }
+        public function getAziendaByNome($nome) {
+            
+            return $this->getResource('Azienda')->getAziendaByNome($nome);
+        }
+
 
         
         public function insertUser($info){

@@ -1,25 +1,27 @@
 <!-- sezione dedicata al profilo del Brands selezionato -->
 <div id="ProfiloBrands">
-  <h1>Benvenuto nel profilo dell'azienda <h3>AZIENDA_SELEZIONATA</h3></h1>
-  <img>LOGO_AZIENDA_SELEZIONATA</img>
+    <?php foreach($this->infoazienda as $azienda) :?>
+  <?php endforeach ?>
+  <h1>Benvenuto nel profilo dell'azienda <?php echo '<h3>'. $azienda->nome.'</h3>'?></h1>
+  <img><?php echo  $this->offertaImg($azienda->logo,array('class' => 'immagineOfferta'));?></img>
   <br>
   <br>
-  <h2>Nome: </h2><p>NOME_AZIENDA_SELEZIONATA</p>
+  <h2>Nome: </h2><?php echo '<h7>'. $azienda->nome.'</h7>'?>
   <br>
-  <h2>Ragione Sociale: </h2><p>RAGIONESOCIALE_AZIENDA_SELEZIONATA</p>
+  <h2>Settore: </h2><?php echo '<h7>'. $azienda->nome.'</h7>'?>
   <br>
-  <h2>Settore: </h2><p>SETTORE_AZIENDA_SELEZIONATA</p>
+  <h2>Descrizione: </h2><?php echo '<h7>'. $azienda->descrizione.'</h7>'?>
   <br>
-  <h2>Descrizione: </h2><p>DESCRIZIONE_AZIENDA_SELEZIONATA</p>
+  <h2>Indirizzo: </h2><?php echo '<h7>'. $azienda->indirizzo.'</h7>'?>
   <br>
-  <h2>Indirizzo: </h2><p>INDIRIZZO_AZIENDA_SELEZIONATA</p>
+  <h2>Cittá: </h2><?php echo '<h7>'. $azienda->citta.'</h7>'?>
   <br>
-  <h2>Cittá: </h2><p>CITTA_AZIENDA_SELEZIONATA</p>
+  <h2>Paese: </h2><?php echo '<h7>'. $azienda->paese.'</h7>'?>
   <br>
-  <h2>Paese: </h2><p>PAESE_AZIENDA_SELEZIONATA</p>
+  <h2>Telefono: </h2><?php echo '<h7>'. $azienda->telefono.'</h7>'?>
   <br>
-  <h2>Telefono: </h2><p>TELEFONO_AZIENDA_SELEZIONATA</p>
-  <br>
-  <h2>Email: </h2><p>EMAIL_AZIENDA_SELEZIONATA</p>
+
+  <h2>Email: </h2><?php echo '<h7>'. $azienda->email.'</h7>'?>
+
   <br>
 </div>

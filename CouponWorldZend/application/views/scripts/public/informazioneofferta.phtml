@@ -1,23 +1,27 @@
-<!-- sezione dedicata all'offerta selezionata-->
+ 
+
 <div id="InformazioneOfferta">
-  <h1>Informazioni sulla promozione del prodotto: <h3>NOMEPRODOTTO_SELEZIONATO</h3></h1>
-  <img>FOTO_OFFERTA_SELEZIONATA</img>
+  <?php foreach($this->infofferta as $offerta) :?>
+  <?php endforeach ?>
+  <h1>Informazioni sulla promozione del prodotto: <?php echo '<h3>'. $offerta->nomeprodotto.'</h3>'?></h1>
+  
+  <img><?php echo  $this->offertaImg($offerta->immagine,array('class' => 'immagineOfferta'));?></img>
   <br>
   <br>
-  <h2>Nome prodotto: </h2><p>NOMEPRODOTTO_SELEZIONATO</p>
+  <h2>Nome prodotto: </h2><?php echo '<h7>'. $offerta->nomeprodotto.'</h7>'?>
   <br>
-  <h2>Categoria prodotto: </h2><p>CATEGORIAPRODOTTO_SELEZIONATO</p>
+  <h2>Tipologia prodotto: </h2><?php echo '<h7>'. $offerta->nometipologia.'</h7>'?>
   <br>
-  <h2>Brand prodotto:</h2><p>BRANDPRODOTTO_SELEZIONATO</p>
+  <h2>Brand prodotto:</h2><?php echo '<h7>'. $offerta->nome.'</h7>'?>
   <br>
-  <h2>Descrizione del prodotto: </h2><p>DESCRIZIONEPRODOTTO_SELEZIONATO</p> 
+  <h2>Descrizione del prodotto: </h2><?php echo '<h7>'. $offerta->descrizione.'</h7>'?>
   <br>
-  <h2>Tipologia Offerta:</h2><p>TIPOLOGIAPRODOTTO_SELEZIONATO</p>
+  <h2>Tipologia Offerta:</h2><?php echo '<h7>'. $offerta->tipo.'</h7>'?>
   <br>
-  <h2>Modalità di fruizione</h2><p>MODALITADIFRUIZIONE_SELEZIONATO</p>
+  <h2>Modalità di fruizione</h2><?php echo '<h7>'. $offerta->modalita.'</h7>'?>
   <br>
-  <h2>Località: </h2><p>LOCALITA_SELEZIONATO</p>
+  <h2>Località: </h2><?php echo '<h7>'. $offerta->localita.'</h7>'?>
   <br>
   <h2>Validità: </h2>
-  <h2>dal </h2><p>DATAINIZIO</p><h2> al </h2><p>DATAFINE</p>
+  <h2>dal </h2><?php echo '<h7>'. $offerta->datainizio .'</h7>'?><h2> al </h2><?php echo '<h7>'. $offerta->datafine.'</h7>'?>
 </div>

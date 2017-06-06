@@ -11,19 +11,19 @@ class Application_Resource_Azienda extends Zend_Db_Table_Abstract
     }
     /*estrae le aziende in base all'id*/
     public function getAziendaById($id){
-        $azienda = $this->find($id);
-        return $this->fetchAll($azienda);
+     
+        return $this->find($id);
     }
     /*estrae le aziende in base la partita iva*/
     public function getAziendaBypartitaiva($partitaiva){
-        
-        return $this->fetchAll($this->select()->where( 'partitaiva='.$partitaiva));
+        $select=$this->select('')->where( 'partitaiva='.$partitaiva);
+        return $this->fetchAll($select);
         
     }
     /*estrae le aziende in base al nome*/
     public function getAziendaByNome($nome){
-        
-        return $this->fetchAll($this->select()->where( 'nome ='.$nome));
+        $select=$this->select('azienda.*')->where( 'nome = ?',$nome);
+        return $this->fetchAll($select);
         
     }
     /* prende lid dell'azienda dal nome */
@@ -39,9 +39,9 @@ class Application_Resource_Azienda extends Zend_Db_Table_Abstract
  
     }
     public function getAzienda() {
-        
         $select= $this->select();
         return $this->fetchAll($select);
+
     }
     
     /*inserisci azienda*/
