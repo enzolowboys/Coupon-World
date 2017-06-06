@@ -1,0 +1,33 @@
+<div id="content">	
+    <div id="navMenu">
+    </div>
+    <?php echo '<h1 class="titolocategoria">Offerte del giorno del brand '.$this->nomecercato.' </h1>';?>
+    <?php foreach ($this->offertedelgiorno as $offertaGiorno) :?>
+		<div id="offertaCategoria">
+                     <?php echo $this->offertaImg($offertaGiorno->immagine,array('class' => 'immagineOfferta'));?>
+			<div id="infoOfferta"> 
+                               
+                                <?php echo '<h5>'. $offertaGiorno->nomeprodotto.'</h5>'?>
+				<br>
+                                <?php echo '<h6>'. $offertaGiorno->localita.'</h6>'?>
+                                <br>
+                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'profilobrands','default',true));?>">
+                                <?php echo '<h7>'. $offertaGiorno->nome.'</h7>'?></a>
+				<br>
+
+				<?php echo '<h8>'. $offertaGiorno->tipo.'</h8>'?>
+>
+				<br>
+                                <?php echo '<h8>dal '.'<b>'.$offertaGiorno->datainizio.'</b> al <b>'.
+                                        $offertaGiorno->datafine.'</b>'.'</h8>'?>
+				<button id="stampaofferta"></button>
+                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
+			</div>
+		</div>
+                <?php endforeach ?>
+          <?php if($this->offertedelgiorno instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->offertedelgiorno,'Sliding','public/_paginatorFiltraAzienda.phtml');
+	  } 
+	  ?>
+    
+</div>

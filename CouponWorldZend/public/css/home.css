@@ -1214,32 +1214,33 @@ input:focus {
 
 
 #filtraForm {
-	float:left;
+    float:left;
 }
 #filtraForm .optional {
-  font-family: 'Titillium Web';
-  src: url(../fonts/TitilliumWeb-Regular.ttf);
-	float:left;
-	position:relative;
-	right:5em;
-	top:-2em;
-	color: white;
-	
-	
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    float:left;
+    position:relative;
+    right:5em;
+    top:-2em;
+    color: white;
+    
+    
 }
 
 #filtraForm select {
-	font-family: 'Titillium Web';
-  src: url(../fonts/TitilliumWeb-Regular.ttf);
-	float:left;
-	position: relative;
-	top: -0.2 em;
-	right: 9.1em;
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    float:left;
+    position: relative;
+    top: -0.2 em;
+    right: 9.1em;
 }
 
 #filtraForm .button {
-	positio:relative;
-	left:8em;
+    positio:relative;
+    left:8em;
+}
 
 /* Gestione navbar della pagina amministratore*/
 #navMenuAdmin {
@@ -1387,7 +1388,8 @@ li.title a span {
     border-radius: 5px;
     border-color: #266abd;
 }
-#NuovaTipologia td #inserisci{
+
+#NuovaTipologia td #inserisci {
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     border: 2px;
@@ -1400,5 +1402,57 @@ li.title a span {
     height: 30px;
     top: 4em;
     left: 260px; 
+    
+}
 
+.filtraForm {
+    
+    width:191px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    background:url(gradient.png) repeat-x fixed top left;
+    overflow:auto;
+    position:relative;
+    left:28.5%;
+    bottom:8%;
+    display:none;
+}
+
+
+.espandi {
+    
+    position:relative;
+    left:30%;
+    bottom:8%;
+    color: white;
+    cursor: pointer;
+    
+   
+    
+}
+
+.espandi2 {
+    
+    position:relative;
+    left:40%;
+    bottom:11.8%;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.filtraForm2{
+    
+    font-size: small;
+    width:191px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    background:url(gradient.png) repeat-x fixed top left;
+    overflow:auto;
+    position:relative;
+    left:37%;
+    bottom:8%;
+   
+    
+    
 }

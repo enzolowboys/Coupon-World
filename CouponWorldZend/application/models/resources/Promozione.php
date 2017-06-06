@@ -174,6 +174,48 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
        
         return $this->fetchAll($select);
     }
+        /*estrae le promozioni con la data corrente e azienda*/
+    public function getPromozioneByDateAzienda($nomeAzienda,$paged=null,$order=null){
+        $select= $this->select('promozione.*')
+                   ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
+                ->where('promozione.datainizio = CURDATE()' && "azienda.nome=$nomeAzienda") ->setIntegrityCheck(false);
+         if(true === is_array($order)){
+            $select->order($order);
+        }
+            if(null !=$paged){
+                $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
+			$paginator = new Zend_Paginator($adapter);
+			$paginator->setItemCountPerPage(1)
+		          	  ->setCurrentPageNumber((int) $paged);
+			return $paginator;
+    
+    }                   
+       
+        return $this->fetchAll($select);
+    }
+    
+            /*estrae le promozioni con la data corrente e azienda*/
+    public function getPromozioneByDateTipologia($nomeTipologia,$paged=null,$order=null){
+        $select= $this->select('promozione.*')
+                   ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
+                ->where('promozione.datainizio = CURDATE()'&& 'tipologia.nometipologia=?',$nomeTipologia) ->setIntegrityCheck(false);
+         if(true === is_array($order)){
+            $select->order($order);
+        }
+            if(null !=$paged){
+                $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
+			$paginator = new Zend_Paginator($adapter);
+			$paginator->setItemCountPerPage(1)
+		          	  ->setCurrentPageNumber((int) $paged);
+			return $paginator;
+    
+    }                   
+       
+        return $this->fetchAll($select);
+    }
+    
     
     /*estrae le promozioni in scadenza con la data corrente*/
     public function getPromozioneByLastDate($paged=null,$order=null){
