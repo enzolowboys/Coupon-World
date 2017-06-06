@@ -32,6 +32,15 @@ class StaffController extends Zend_Controller_Action {
         
     }
     
+    /*Azione sulla pagine modifica profilo user*/
+    public function modificaprofiloAction(){
+        
+    }
+    
+    /*Azione sulla pagina modifica/elimina della promozione*/
+    public function modificaeliminapromozioneAction(){
+        
+    }
     
     //funzione per l'inserimento di una nuova azienda
     public function inserimentopromozioneAction(){

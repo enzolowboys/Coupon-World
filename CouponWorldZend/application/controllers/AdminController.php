@@ -31,6 +31,7 @@ class AdminController extends Zend_Controller_Action {
         
     }
     
+  
     /* Pagina per l'inserimento dell'azienda */
     public function nuovaaziendaAction(){
         
@@ -49,6 +50,32 @@ class AdminController extends Zend_Controller_Action {
     /* Pagina per l'inserimento della faq (domanda e risposta) */
     public function nuovadomandarispostaAction(){
         
+    }
+    
+    
+    /*Azione sulla pagina modifica/elimina azienda*/
+    public function modificaeliminaaziendaAction() {
+
+    }
+    
+    /*Azione sulla pagina modifica/elimina tipologie*/
+    public function modificaeliminatipologiaAction() {
+
+    }
+    
+    /*Azione sulla pagina modifica/elimina staff*/
+    public function modificaeliminastaffAction() {
+
+    }
+    
+    /*Azione sulla pagina modifica/elimina domanda e risposta*/
+    public function modificaeliminadomandarispostaAction() {
+
+    }
+    
+    /*Azione sulla pagina modifica/elimina un utente*/
+    public function modificaeliminautenteAction() {
+
     }
     
     
@@ -86,20 +113,20 @@ class AdminController extends Zend_Controller_Action {
         if (!$this->getRequest()->isPost()) {
             $this->_helper->redirector('home');
         }
-        $formInserimentoNuovaAzienda =  new Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda();
+        $formInserimentoTipologia =  new Application_Form_Admin_NuovaTipologia_InserimentoNuovaTipologia();
         
-        if (!$formInserimentoNuovaAzienda->isValid($_POST)){
+        if (!$formInserimentoTipologia->isValid($_POST)){
             
-            $formInserimentoNuovaAzienda->setDescription('ATTENZIONE! dati inseriti non validi!');
+            $formInserimentoTipologia->setDescription('ATTENZIONE! dati inseriti non validi!');
             $this->_logger->info('Attivato If della form registrazione');
-            $formInserimentoNuovaAzienda->setDescription('Attenzione: alcuni dati inseriti sono errati.');
-            $this->_logger->debug(print_r($formInserimentoNuovaAzienda->getErrors(), true));
+            $formInserimentoTipologia->setDescription('Attenzione: alcuni dati inseriti sono errati.');
+            $this->_logger->debug(print_r($formInserimentoTipologia->getErrors(), true));
             return $this->render('nuovaazienda');
             
         
         }
-        $values = $formInserimentoNuovaAzienda->getValues();
-        $this->_AdminModel->insertAzienda($values);
+        $values = $formInserimentoTipologia->getValues();
+        $this->_AdminModel->insertTipologia($values);
         $this->_helper->redirector('index');
     }
     
