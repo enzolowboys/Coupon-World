@@ -22,7 +22,10 @@ class PublicController extends Zend_Controller_Action {
         
         $this->view->registraForm = $this->getRegistraForm();
         
-        $this->view->filtraForm = $this->getFiltraForm();
+
+        $this->view->filtraAziendaForm = $this->getFiltraAziendaForm();
+        $this->view->filtraTipologiaForm = $this->getFiltraTipologiaForm();
+
         
         $this->view->searchForm = $this->getSearchForm();
         //Creo l'oggetto Auth
@@ -52,7 +55,9 @@ class PublicController extends Zend_Controller_Action {
         //Estraggo dal DB la promozione per data odierna e in scadenza
         $offerteDelGiorno = $this->_PublicModel->getPromozioneByDate($pagedDelGiorno,null);
         $offertaInScadenza = $this->_PublicModel->getPromozioniInscadenza($pagedScadenza,null);
+
         //Estraggo le tipologie
+
         $tipologie = $this->_PublicModel->getTipologie();
         //Assegno alla view i prodotto da visualizzare
         $this->view->assign(array('offerteDelGiorno'=>$offerteDelGiorno,'offerteInScadenza'=>$offertaInScadenza,'tipologie'=>$tipologie));
@@ -220,43 +225,71 @@ class PublicController extends Zend_Controller_Action {
 				));
 	return $this->_form;
     }
-    /*Azione della form filtra*/
-    public function filtraAction() {
+
+    /*Azione della form filtra per azienda le offerte del giorno*/
+    public function filtroaziendaAction() {
+
         
         if (!$this->getRequest()->isPost()) {
             $this->_helper->redirector('home');
 	}
-        $formFiltro=new Application_Form_Public_Filtro_Filtro();
+
+        $formFiltro=new Application_Form_Public_Filtro_FiltroAzienda();
         
         if (!$formFiltro->isValid($_POST)) {
 		$formRicerca->setDescription('Attenzione! dati inseriti non validi');
 		return $this->render('home');
         }
-        $pagedRicerca = $this->_getParam('pageRicerca',1);
-        $nomeDaCercare = $formFiltro->getValue('cercaOfferta');
-        $tipologie = $this->_PublicModel->getTipologie();
-        $azienda = $this->_PublicModel->getAzienda();
-        $scelta = $formFiltro->getValue('nomedelfiltro');
+        $nomeDaCercare = $formFiltro->getValue('Filtro');
+        $this->_logger->info($nomeDaCercare);
         $pagedDelGiorno = $this->_getParam('pagedDelGiorno',1);
-        $offerteDelGiorno = $this->_PublicModel->getPromozioneByDate($pagedDelGiorno,null);
-        if($scelta=="tipologia") {
-
-            $this->view->assign(array('nomedelfiltro'=>$scelta,'tipologie'=>$tipologie,'offerteDelGiorno'=>$offerteDelGiorno));
-        }
-        else if($scelta=="azienda"){
-
-            $this->view->assign(array('nomedelfiltro'=>$scelta,'azienda'=>$azienda,'offerteDelGiorno'=>$offerteDelGiorno));
-        }
-
+        $offerteDelGiorno = $this->_PublicModel->getPromozioneByDateAzienda($nomeDaCercare,$pagedDelGiorno,null);
+        $this->view->assign(array('offertedelgiorno'=>$offerteDelGiorno,'nomecercato'=>$nomeDaCercare));
+        
         
   }
+  
+    public function filtrotipologiaAction() {
+        
+                
+        if (!$this->getRequest()->isPost()) {
+            $this->_helper->redirector('home');
+	}
+        $formFiltro=new Application_Form_Public_Filtro_FiltroTipologia();
+        
+        if (!$formFiltro->isValid($_POST)) {
+		$formRicerca->setDescription('Attenzione! dati inseriti non validi');
+		return $this->render('home');
+        }
+        $nomeDaCercare = $formFiltro->getValue('Filtro');
+        $this->_logger->info($nomeDaCercare);
+        $pagedDelGiorno = $this->_getParam('pagedDelGiorno',1);
+        $offerteDelGiorno = $this->_PublicModel->getPromozioneByDateTipologia($nomeDaCercare,$pagedDelGiorno,null);
+        $this->view->assign(array('offertedelgiorno'=>$offerteDelGiorno,'nomecercato'=>$nomeDaCercare));
+        
+        
+    }
     
-    private function getFiltraForm() {
+    private function getFiltraAziendaForm() {
+        
         $urlHelper = $this->_helper->getHelper('url');
-	$this->_form = new Application_Form_Public_Filtro_Filtro();
+	$this->_form = new Application_Form_Public_Filtro_FiltroAzienda();
         $this->_form->setAction($urlHelper->url(array(
 				'controller' => 'public',
-				'action' => 'filtra'),
+				'action' => 'filtroazienda'),
+				'default'
+				));
+	return $this->_form;
+    }
+    
+    public function getFiltraTipologiaForm() {
+                
+        $urlHelper = $this->_helper->getHelper('url');
+	$this->_form = new Application_Form_Public_Filtro_FiltroTipologia();
+        $this->_form->setAction($urlHelper->url(array(
+				'controller' => 'public',
+				'action' => 'filtrotipologia'),
+
 				'default'
 				));
 	return $this->_form;

@@ -1440,11 +1440,16 @@ li.title a span {
     border-radius: 5px;
     border-color: #266abd;
 }
+
 #NuovoStaff td #descrizionetipologia{
     border-radius: 5px;
     border-color: #266abd;
 }
 #NuovoStaff td #inserisci {
+
+}
+#NuovaTipologia td #inserisci {
+
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     border: 2px;
@@ -1459,7 +1464,6 @@ li.title a span {
     left: 260px; 
     
 }
-
 
 /* pagina che contiene il form delle nuove domande e risposte */
 #NuovaDomandaRisposta h2 {
@@ -1588,5 +1592,56 @@ li.title a span {
     height: 30px;
     top: 4em;
     left: 260px; 
+}
+.filtraForm {
+    
+    width:191px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    background:url(gradient.png) repeat-x fixed top left;
+    overflow:auto;
+    position:relative;
+    left:28.5%;
+    bottom:8%;
+    display:none;
+}
+
+
+.espandi {
+    
+    position:relative;
+    left:30%;
+    bottom:8%;
+    color: white;
+    cursor: pointer;
+    
+   
+    
+}
+
+.espandi2 {
+    
+    position:relative;
+    left:40%;
+    bottom:11.8%;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.filtraForm2{
+    
+    font-size: small;
+    width:191px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    background:url(gradient.png) repeat-x fixed top left;
+    overflow:auto;
+    position:relative;
+    left:37%;
+    bottom:8%;
+   
+    
+
     
 }
