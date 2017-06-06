@@ -21,4 +21,5 @@ class Application_Resource_Tipologia extends Zend_Db_Table_Abstract {
      }
      
     
+    
 }

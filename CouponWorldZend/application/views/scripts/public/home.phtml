@@ -2,9 +2,9 @@
     <!-- SUBHEADER CONTENTENTE INFORMAZIONIA AGGIUNTIVE AL SITO -->
     <div id="subheader">
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <a href=""><img src="<?php echo $this->baseURL();?>/images/icons/h24.png" class="icons"></img><h4>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-        <a href=""><img src="<?php echo $this->baseURL();?>/images/icons/brands.png" class="icons"></img><h4>i migliori brands a portata di click &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-        <a href=""><img src="<?php echo $this->baseURL();?>/images/icons/risparmio.png" class="icons"></img><h4>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        <a ><img src="<?php echo $this->baseURL();?>/images/icons/h24.png" class="icons"></img><h4>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        <a><img src="<?php echo $this->baseURL();?>/images/icons/brands.png" class="icons"></img><h4>i migliori brands a portata di click &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        <a ><img src="<?php echo $this->baseURL();?>/images/icons/risparmio.png" class="icons"></img><h4>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
         <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'faq','default',true));?>"><img src="<?php echo $this->baseURL();?>/images/icons/FAQ.png" class="icons"></img><h4>dubbi? FAQ semplice e intuitiva!</h4></a>
     </div>	
     <div id="navMenu">
@@ -126,20 +126,22 @@
 
 				<?php echo '<h6>'. $offertaDelGiorno->nometipologia.'</h6>'?>
                 <br>
-				<?php echo '<h7>'. $offertaDelGiorno->tipo.'</h7>'?>
-
+				
                 
-                <br>
-                
-
+     <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaDelGiorno->nome,'default',true));?>">
+                    
 				<?php echo '<h8>'. $offertaDelGiorno->nome.'</h8>'?>
+                <br>
+                    <?php echo '<h7>'. $offertaDelGiorno->tipo.'</h7>'?>
+
+                
                 <br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaDelGiorno->datainizio.'</b> al <b>'.
                                         $offertaDelGiorno->datafine.'</b>'.'</h8>'?>
 
 
 				<button id="stampaofferta"></button>
-                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
+                                <a href="<?= $this->url(array(  'controller'=>'public','action'=>'informazioneofferta','offertaid' => $offertaDelGiorno->idpromozione ,'default',true));?>"><button id="visualizzaofferta"></button></a>
 			</div>
 		</div>
 
@@ -173,6 +175,7 @@
 
 				<?php echo '<h6>'. $offertaInScadenza->tipo.'</h6>'?>
                 <br>
+   <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaInScadenza->nome,'default',true));?>">
 				<?php echo '<h7>'. $offertaInScadenza->nome.'</h7>'?>
                 <br>
                                 <?php echo '<h7>'. $offertaInScadenza->nometipologia.'</h7>'?>
@@ -181,7 +184,7 @@
                                         $offertaInScadenza->datafine.'</b>'.'</h8>'?>
 
 				<button id="stampaofferta"></button>
-                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
+                                <a href="<?php echo $this->url(array('controller'=>'public','action'=>'informazioneofferta','offertaid' => $offertaInScadenza->idpromozione ,'default',true));?>"><button id="visualizzaofferta"></button></a>
 			</div>
 		</div>
 

@@ -11,8 +11,9 @@
 				<br>
                                 <?php echo '<h6>'. $offertaGiorno->localita.'</h6>'?>
                                 <br>
-                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'profilobrands','default',true));?>">
-                                <?php echo '<h7>'. $offertaGiorno->nome.'</h7>'?></a>
+                     <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaGiorno->nome,'default',true));?>">
+                                   
+                           <?php echo '<h7>'. $offertaGiorno->nome.'</h7>'?></a>
 				<br>
 
 				<?php echo '<h8>'. $offertaGiorno->tipo.'</h8>'?>
