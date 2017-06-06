@@ -11,17 +11,9 @@
             <ul id="categorie">
             <h1>&nbsp; &nbsp; ≡ CATEGORIE</h1>
             <!-- lista delle categorie dei prodotti presenti nel sito -->
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'tecnologia','default',true));?>">&nbsp; &nbsp; Tecnologia</a></li>
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'ufficioeservizi','default',true));?>">&nbsp; &nbsp; Ufficio e servizi</a></li>
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'modaeabbigliamento','default',true));?>">&nbsp; &nbsp; Moda e abbigliamento</a></li>
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'cibiebevande','default',true));?>">&nbsp; &nbsp; Cibi e bevande</a></li>
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'giochiedintrattenimento','default',true));?>">&nbsp; &nbsp; Giochi ed intrattenimento</a></li>
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'sportefitness','default',true));?>">&nbsp; &nbsp; Sport e fitness</a></li>
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'casaegiardino','default',true));?>">&nbsp; &nbsp; Casa e giardino</a></li>
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'saluteebellezza','default',true));?>">&nbsp; &nbsp; Salute e bellezza</a></li>
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'viaggi','default',true));?>">&nbsp; &nbsp; Viaggi</a></li>
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'autoemoto','default',true));?>">&nbsp; &nbsp; Auto e moto</a></li>
-            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>'animali','default',true));?>">&nbsp; &nbsp; Animali</a></li>
+            <?php foreach ($this->tipologie as $tipologia) :?>
+                <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>$tipologia->nometipologia,'default',true));?>">&nbsp; &nbsp;<?php echo $tipologia->nometipologia ?></a></li>
+            <?php endforeach;?>
             </ul>
 	</div>
         
@@ -37,11 +29,11 @@
                                
                                 <?php echo '<h5>Nome Prodotto: '. $offertaRicercata->nomeprodotto.'</h5>'?>
                                 <br>
-				<?php echo '<h6>Categoria: '. $offertaRicercata->categoria.'</h6>'?>
+				<?php echo '<h6>Categoria: '. $offertaRicercata->nometipologia.'</h6>'?>
 				<br>
-				<?php echo '<h7>Azienda: '. $offertaRicercata->nome.'</h7>'?>
+				<?php echo '<h7>Azienda: '. $offertaRicercata->tipo.'</h7>'?>
 				<br>
-				<?php echo '<h8>Offerta: '. $offertaRicercata->tipologia.'</h8>'?>
+				<?php echo '<h8>Offerta: '. $offertaRicercata->nome.'</h8>'?>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaRicercata->datainizio.'</b> al <b>'.
                                         $offertaRicercata->datafine.'</b>'.'</h8>'?>

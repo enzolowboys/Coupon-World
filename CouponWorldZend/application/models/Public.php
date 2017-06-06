@@ -58,10 +58,24 @@ class Application_Model_Public extends App_Model_Abstract
         
             return $this->getResource('Azienda')->getAziendaById($id);
         }
+        
+        public function getAzienda() {
+            
+            return $this->getResource('Azienda')->getAzienda();
+        }
 
         
-         public function insertUser($info){
+        public function insertUser($info){
            return $this->getResource('User')->insertUser($info);
+        }
+        
+        public function cercaPromozione($tipologia,$ricerca,$paged=null,$order=null){
+            return $this->getResource('Promozione')->Searchpromozione($tipologia,$ricerca,$paged,$order);
+        }   
+        
+        public function getTipologie() {
+            
+            return $this->getResource('Tipologia')->getAllTipologie();
         }
 
 

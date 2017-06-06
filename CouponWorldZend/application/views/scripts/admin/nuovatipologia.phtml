@@ -31,7 +31,7 @@
             <li class="title"><a href="#">&nbsp; &nbsp; gestione staff</a></li>
             <li class="sub-menu">
                 <ul>
-                    <li>inserisci nuovo staff</li> 
+                    <li><li><a href="<?= $this->url(array('controller'=>'admin','action'=>'nuovostaff','default',true));?>">inserisci nuovo staff</a></li> 
                     <li>modifica staff</li> 
                     <li>cancella staff</li>
                 </ul>
@@ -57,7 +57,7 @@
             <li class="title"><a href="#">&nbsp; &nbsp; gestione FAQ</a></li>
             <li class="sub-menu">
                 <ul>
-                    <li>inserisci nuova domanda e nuova risposta</li> 
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'nuovadomandarisposta','default',true));?>">inserisci nuova domanda e nuova risposta</a></li>
                     <li>modifica domanda e risposta</li>
                     <li>elimina domanda e risposta</li>
                 </ul>
@@ -78,6 +78,7 @@
         </ul> 
     </li>
 </div>
+
 
 <div id="content">
      <div id="NuovaTipologia">

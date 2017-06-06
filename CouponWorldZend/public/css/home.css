@@ -986,6 +986,8 @@ input:focus {
 }
 /* div che contiene tutto il form*/
 .Forms{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
     width: 800px;
     height: 1300px;
     border-style: solid;
@@ -1212,6 +1214,36 @@ input:focus {
 }
 
 
+
+#filtraForm {
+    float:left;
+}
+#filtraForm .optional {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    float:left;
+    position:relative;
+    right:5em;
+    top:-2em;
+    color: white;
+    
+    
+}
+
+#filtraForm select {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    float:left;
+    position: relative;
+    top: -0.2 em;
+    right: 9.1em;
+}
+
+#filtraForm .button {
+    positio:relative;
+    left:8em;
+}
+
 /* Gestione navbar della pagina amministratore*/
 #navMenuAdmin {
     font-family: 'Titillium Web';
@@ -1295,6 +1327,8 @@ li.title a span {
     background-color: red;
     color: white;
 }
+
+
 /* pagina che contiene il form della nuova azienda */
 #NuovaAzienda h2 {
     font-family: 'Titillium Web';
@@ -1312,6 +1346,8 @@ li.title a span {
     color: black;  
 }
 #NuovaAzienda td input{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
     border-radius: 5px;
     border-color: #266abd;
 }
@@ -1351,14 +1387,18 @@ li.title a span {
     color: black;  
 }
 #NuovaTipologia td input{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
     border-radius: 5px;
     border-color: #266abd;
 }
 #NuovaTipologia td #descrizionetipologia{
     border-radius: 5px;
     border-color: #266abd;
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
 }
-#NuovaTipologia td #inserisci{
+#NuovaTipologia td #inserisci {
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     border: 2px;
@@ -1371,4 +1411,182 @@ li.title a span {
     height: 30px;
     top: 4em;
     left: 260px; 
+    
+}
+
+/* pagina che contiene il form del nuovo membro staff */
+#NuovoStaff h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#NuovoStaff table{
+    position: relative;
+    left: 200px;
+}
+#NuovoStaff td {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 16px;
+    color: black;  
+}
+#NuovoStaff td input{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#NuovoStaff td #descrizionetipologia{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#NuovoStaff td #inserisci {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+    
+}
+
+
+/* pagina che contiene il form delle nuove domande e risposte */
+#NuovaDomandaRisposta h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#NuovaDomandaRisposta table{
+    position: relative;
+    left: 20px;
+}
+#NuovaDomandaRisposta td {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 16px;
+    color: black;  
+}
+#NuovaDomandaRisposta td input{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#NuovaDomandaRisposta td #risposta{
+    border-radius: 5px;
+    border-color: #266abd;
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+}
+#NuovaDomandaRisposta td #inserisci {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+    
+}
+
+
+/* Gestione navbar della pagina staff*/
+#navMenuStaff {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    list-style-type: none;
+    position:relative;
+    left:30px;
+}
+#navMenuStaff h1{
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    background-color: #266abd;
+    font-weight: 400;
+    width: 300px;
+}
+#navMenuStaff ul {
+    list-style-type: none;
+}
+
+
+/* pagina che contiene il form delle nuove promozioni */
+#NuovaPromozione h2 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#NuovaPromozione table{
+    position: relative;
+    left: 20px;
+}
+#NuovaPromozione td {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 16px;
+    color: black;  
+}
+#NuovaPromozione td input{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#NuovaPromozione td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+}
+#NuovaPromozione td #selezionetipologie{
+    border-radius: 5px;
+    border-color: #266abd;
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+}
+#NuovaPromozione td #selezionebrands{
+    border-radius: 5px;
+    border-color: #266abd;
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+}
+#NuovaPromozione td #inserisci {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+    
 }

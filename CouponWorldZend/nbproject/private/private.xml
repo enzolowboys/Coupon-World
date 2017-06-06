@@ -4,9 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/umber/Desktop/CouponWorldZend/public/css/home.css</file>
-            <file>file:/C:/Users/umber/Desktop/CouponWorldZend/application/views/scripts/admin/nuovaazienda.phtml</file>
-            <file>file:/C:/Users/umber/Desktop/CouponWorldZend/application/views/scripts/admin/index.phtml</file>
-            <file>file:/C:/Users/umber/Desktop/CouponWorldZend/application/views/scripts/admin/nuovatipologia.phtml</file>
+            <file>file:/C:/Users/umber/Desktop/CouponWorldZend/application/views/scripts/staff/index.phtml</file>
+            <file>file:/C:/Users/umber/Desktop/CouponWorldZend/application/controllers/StaffController.php</file>
+            <file>file:/C:/Users/umber/Desktop/CouponWorldZend/application/views/scripts/staff/nuovapromozione.phtml</file>
         </group>
     </open-files>
 </project-private>

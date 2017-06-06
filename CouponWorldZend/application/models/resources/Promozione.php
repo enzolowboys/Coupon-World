@@ -8,6 +8,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
     
 	public function init()
     {
+        $this->_logger = Zend_Registry::get("log"); //file log
     }
     
     public function getAllPromozione(){
@@ -127,13 +128,16 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
    
    /*estrae le promozioni in base alla categorie e tipologia 
     * viene utilizzata nelle ricerca per categoria e tipologia */ 
-    public function Searchpromozione($tipologia,$categoria,$paged=null,$order=null){
+    public function Searchpromozione($tipologia,$ricerca,$paged=null,$order=null){
         //STA SBAGLIATA LA QUERY
         $select= $this->select('promozione.*')
                    ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
                    ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
-                ->where('tipologia = ?',$tipologia&&'categoria ='. $categoria) ->setIntegrityCheck(false);
-               
+
+                ->where("nomeprodotto = $ricerca" || "azienda.nome=$ricerca "|| "tipo=$ricerca")
+                ->where('nometipologia = ?',$tipologia)
+                ->setIntegrityCheck(false);
+
          if(true === is_array($order)){
             $select->order($order);
         }
@@ -240,6 +244,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
         
         
     }
+    
 
     /*inserisce promozioni*/
     public function insertPromozione($info){
