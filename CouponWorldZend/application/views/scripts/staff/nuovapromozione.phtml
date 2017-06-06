@@ -1,0 +1,37 @@
+<div id="navMenuStaff">
+    <h1>&nbsp; &nbsp; ≡ STAFF</h1>
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione profilo</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li>modifica profilo</li>
+                </ul>
+            </li>
+        </ul> 
+    </li> 
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione promozioni</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'staff','action'=>'nuovapromozione','default',true));?>">inserisci nuova promozione</a></li>  
+                    <li>modifica promozione</li> 
+                    <li>cancella promozione</li>
+                </ul>
+            </li>
+        </ul> 
+    </li> 
+</div>
+
+<div id="content">
+     <div id="NuovaPromozione">
+        <h2>qui puoi aggiungere una nuova promozione. inserisci tutti i dati della promozione</h2>
+        <div class="Forms">
+            <!-- qui é presente la form Nuova Promozione -->
+            <?php echo $this->nuovapromozioneForm ?> 
+        </div>
+    </div>
+</div>

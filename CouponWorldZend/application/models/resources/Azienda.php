@@ -29,7 +29,7 @@ class Application_Resource_Azienda extends Zend_Db_Table_Abstract
     /* prende lid dell'azienda dal nome */
     public function getIdAziendaByNome($nome){
         
-        return $this->fetchAll($this->select('azienda.idazienda')->where( 'nome ='.$nome));
+        return $this->fetchAll($this->select('azienda.idazienda')->where( 'nome =?',$nome));
         
     }
     /*resctituisce id dellazienda con quel nome */

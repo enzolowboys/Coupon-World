@@ -3,7 +3,7 @@
 class Application_Resource_Faq extends Zend_Db_Table_Abstract
 {
     protected $_name    = 'Faq';
-    protected $_primary  = 'idFaq';
+    protected $_primary  = 'idfaq';
     protected $_rowClass = 'Application_Resource_Faq_Item';
     
 	public function init()
@@ -25,10 +25,6 @@ class Application_Resource_Faq extends Zend_Db_Table_Abstract
         $this->updateFaq($id);
     }
             
-
-
-
-
     /* elimina le faq */
     public function deleteFaq($id){
         $this->delete($id);

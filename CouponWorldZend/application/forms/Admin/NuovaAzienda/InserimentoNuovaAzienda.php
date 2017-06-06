@@ -38,7 +38,7 @@ class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Fo
             'decorators' => $this ->elementDecorators,
         ));
             
-        //elemento grafico relativo alla ragione sociale
+        //elemento grafico relativo al settore
         $this->addElement('text', 'settore', array(
             'label' => 'Settore',
             'filters' => array('StringTrim'),
@@ -47,6 +47,18 @@ class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Fo
                 array('StringLength', true, array(3, 25))
             ),
             'description' => 'Inserisci il nome dell`azienda',
+            'decorators' => $this ->elementDecorators,
+        ));
+        
+         //elemento grafico relativo alla partita iva
+        $this->addElement('text', 'partitaiva', array(
+            'label' => 'Partita Iva',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'validators' => array(
+                array('StringLength', true, array(3, 25))
+            ),
+            'description' => 'Inserisci la partita IVA dell`azienda',
             'decorators' => $this ->elementDecorators,
         ));
         

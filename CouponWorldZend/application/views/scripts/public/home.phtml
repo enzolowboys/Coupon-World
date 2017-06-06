@@ -103,6 +103,7 @@
     <div id="upfooter"></div>
     <div id="offerteDelGiorno">
         <h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;☆ OFFERTE DEL GIORNO ☆</h1>
+
         <div class="espandi"><span>Filtra per azienda +</span></div>
         <div class="filtraForm">
             <?php echo $this->filtraAziendaForm ?>
@@ -110,6 +111,7 @@
         <div class="espandi2"><span>Filtra per tipologia +</span></div>
                 <div class="filtraForm2">
             <?php echo $this->filtraTipologiaForm ?>
+
         </div>
                <?php foreach ($this->offerteDelGiorno as $offertaDelGiorno) :?>
         <div id="offerta">
@@ -117,25 +119,31 @@
             <div id="infoOfferta"> 
                 
                                 <?php echo '<h5>'. $offertaDelGiorno->nomeprodotto.'</h5>'?>
+
                 
                 
                 <br>
+
 				<?php echo '<h6>'. $offertaDelGiorno->nometipologia.'</h6>'?>
                 <br>
 				<?php echo '<h7>'. $offertaDelGiorno->tipo.'</h7>'?>
+
                 
                 <br>
                 
+
 				<?php echo '<h8>'. $offertaDelGiorno->nome.'</h8>'?>
                 <br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaDelGiorno->datainizio.'</b> al <b>'.
                                         $offertaDelGiorno->datafine.'</b>'.'</h8>'?>
-                
-                <button id="stampaofferta"></button>
-                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
-            </div>
-        </div>
-        
+
+
+				<button id="stampaofferta"></button>
+                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
+			</div>
+		</div>
+
+
                 <?php endforeach ?>
         
         <!--paginazione  -->
@@ -156,8 +164,13 @@
                      <?php echo $this->offertaImg($offertaInScadenza->immagine,array('class' => 'immagineOfferta'));?>
             <div id="infoOfferta"> 
                                 <?php echo '<h5>'. $offertaInScadenza->nomeprodotto.'</h5>'?>
+
+
+                                <br>
+
                 
                 <br>
+
 				<?php echo '<h6>'. $offertaInScadenza->tipo.'</h6>'?>
                 <br>
 				<?php echo '<h7>'. $offertaInScadenza->nome.'</h7>'?>
@@ -166,11 +179,13 @@
                 <br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaInScadenza->datainizio.'</b> al <b>'.
                                         $offertaInScadenza->datafine.'</b>'.'</h8>'?>
-                <button id="stampaofferta"></button>
-                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
-            </div>
-        </div>
-        
+
+				<button id="stampaofferta"></button>
+                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
+			</div>
+		</div>
+
+
                 <?php endforeach ?>
                 <?php if($this->offerta instanceof Zend_Paginator) {
 	  		echo $this->paginationControl($this->offerta,'Sliding','public/_paginatorOffertaInScadenza.phtml');

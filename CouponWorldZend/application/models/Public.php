@@ -77,7 +77,7 @@ class Application_Model_Public extends App_Model_Abstract
             
             return $this->getResource('Tipologia')->getAllTipologie();
         }
-        
+
         public function getPromozioneByDateAzienda($nome) {
             
             return $this->getResource('Promozione')->getPromozioneByDateAzienda($nome);
@@ -87,6 +87,7 @@ class Application_Model_Public extends App_Model_Abstract
             
             return $this->getResource('Promozione')->getPromozioneByDateTipologia($nome);
         }
+
 
 
 
