@@ -86,17 +86,28 @@
                     <th>Nome</th><th>Cognome</th><th>Indirizzo</th><th>Città</th>
                     <th>La sua email</th><th>Username</th><th>Password</th>
                 </tr>
-            </thead>
-            <tbody>
+             </thead>
+            <?php foreach($this->staff as $staff): ?>
                 <tr class='border_bottom'>
-                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
-                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
-                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
-                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
-                    <td><button>Modifica</button></td><td><button>Elimina</button></td>
+                    <td><?php echo $staff->nome;?></td>
+                    <td><?php echo $staff->cognome;?></td>
+                    <td><?php echo $staff->indirizzo;?></td>
+                    <td><?php echo $staff->citta;?></td>
+                    <td><?php echo $staff->email;?></td>
+                    <td><?php echo $staff->username;?></td>
+                    <td><?php echo $staff->password;?></td>
+                    <td><button>Modifica</button></td><td><button 
+                    onClick="window.location.href='<?=
+                    $this->url(array('controller'=>'admin','action'=>'eliminastaff','idutente'=>$staff->iduser,'default',true));
+                    ?>';">Elimina</button></td>
                     <br>
                 </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
+         <?php if($this->staff instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->staff,'Sliding','admin/paginator/_paginatormodificastaff.phtml');
+	  } 
+	  ?>
     </div>
 </div>

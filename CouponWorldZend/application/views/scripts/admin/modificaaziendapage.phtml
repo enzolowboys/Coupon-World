@@ -73,43 +73,9 @@
         </ul> 
     </li>
 </div>
-
 <div id="content">
-    <div id="ModificaEliminaUtente">
-        <h2>qui puoi modificare o eliminare un utente.</h2>
-        <table>
-            <caption>
-                <p>Qui di sotto tutti gli utenti di Coupon World</p>
-            </caption>
-            <thead>
-                <tr>
-                    <th>Nome</th><th>Cognome</th><th>Indirizzo</th><th>Città</th>
-                    <th>La sua email</th><th>Username</th><th>Password</th>
-                </tr>
-            </thead>
-            <?php foreach($this->utenti as $utente): ?>
-            <tr class='border_bottom'>
-                <td><?php echo $utente->nome;?></td>
-                <td><?php echo $utente->cognome;?></td>
-                <td><?php echo $utente->indirizzo;?></td>
-                <td><?php echo $utente->citta;?></td>
-                <td><?php echo $utente->email;?></td>
-                <td><?php echo $utente->username;?></td>
-                <td><?php echo $utente->password;?></td>
-                <td><button>Modifica</button></td>
-                <td><button 
-                    onClick="window.location.href='<?=
-                    $this->url(array('controller'=>'admin','action'=>'eliminautente','idutente'=>$utente->iduser,'default',true));
-                    ?>';">Elimina</button></td>
-            <br>
-            </tr>
-                <?php endforeach ?>
-            </tbody>
-        </table>
-         <?php if($this->utenti instanceof Zend_Paginator) {
-                echo $this->paginationControl($this->utenti,'Sliding','admin/paginator/_paginatormodificautente.phtml');
-	  } 
-	  ?>
+    <div id="ModificaEliminaAzienda">
+        <h2>qui puoi modificare o eliminare un' azienda.</h2>
+        <?php echo $this->modificaFormAzienda; ?>   
     </div>
 </div>
-
