@@ -151,6 +151,7 @@ class AdminController extends Zend_Controller_Action {
         
         }
         $values = $formInserimentoStaff->getValues();
+        $values['role']="staff"; 
         $this->_AdminModel->insertUser($values);
         $this->_helper->redirector('index');
     }

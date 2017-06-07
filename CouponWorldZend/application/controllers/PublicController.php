@@ -49,6 +49,8 @@ class PublicController extends Zend_Controller_Action {
     
     
     public function informazioneoffertaAction(){
+      
+        
       $this->_logger->info('Attivato ' . __METHOD__ . ' ');
         
         $param= $this->_getParam('offertaid');
@@ -60,6 +62,8 @@ class PublicController extends Zend_Controller_Action {
           $this->view->assign(array('infofferta'=>$infofferta));
 
     }
+    
+    
 
      public function profilobrandsAction(){
       $this->_logger->info('Attivato ' . __METHOD__ . ' ');
@@ -195,6 +199,7 @@ class PublicController extends Zend_Controller_Action {
         
         }
         $values = $formRegistrazione->getValues();
+        $values['role']="user"; 
         $this->_PublicModel->insertUser($values);
         $this->_helper->redirector('home');
     }
@@ -317,7 +322,7 @@ class PublicController extends Zend_Controller_Action {
         else if($parametro=="filtroaziendascaduti"){
             $paged = $this->_getParam('pagedDelGiorno',1);
             $offerte = $this->_PublicModel->getPromozioneByDateAzienda($nomeDaCercare,$paged,null);
-            $this->view->assign(array('offerte'=>$offerte,'nomecercato'=>$nomeDaCercare,'tipoofferta'=>'scadute'));
+            $this->view->assign(array('offerte'=>$offerte,'nomecercato'=>$nomeDaCercare,'tipoofferta'=>'in scadenza'));
         }
         
         

@@ -29,6 +29,7 @@ body {
     min-height: 100%;
     position: relative;
     margin: 0 auto -60px;
+  
 }	
 
 /* Header che contiene up header e middle header*/
@@ -181,8 +182,8 @@ a:hover{
 }
 #ricercaOfferta tr td .required{
     position:relative;
-    right:40%;
-    bottom:2.8em;
+    right:22%;
+    bottom: 3.3em;
     font-size:medium; 
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
@@ -194,10 +195,10 @@ a:hover{
 
 #ricercaOfferta select {
     
-    width:70%;
+     width:70%;
     position:relative;
-    bottom:2em;
-    right:8.4em;
+    bottom:2.2em;
+    right:9.4em;
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
@@ -215,8 +216,8 @@ input:focus {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    left:22em;
-    top:-60px;
+    left:23em;
+    top:-63px;
     background-color: rgb(179, 0, 0);
     border:none;
     width:61%;
@@ -252,6 +253,23 @@ input:focus {
     position: relative;
     left: 30px;
     min-width: 20em;
+}
+#navMenu #categorie h1{
+    position: relative;
+    left: -10px;
+    width: 427px;
+}
+#navMenu h1{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    background-color: #266abd;
+    font-weight: 400;
+    position: relative;
+    top:10px;
+    left:30px;
 }
 
 /* nav che contiene le categorie */
@@ -457,7 +475,7 @@ input:focus {
     width: 100%;
     height: 150px;
     position: relative;
-    bottom: 250px;
+    bottom: 550px;
 }
 
 /* Sezione che contiene lo slideshow e i promotion banner (che diventa poi dinamica al click sulle categorie) */
@@ -468,22 +486,12 @@ input:focus {
 }
 
 /* sezione che contiene le offerte del giorno */
-#offerteDelGiorno {
-    width: 100%;
-    height: 500px;
-    position: relative;
-    background-color: white;
-    bottom: 300px;
- 
-}
-
-/* sezione che contiene le offerte del giorno */
 #offerteInScadenza {
     width: 100%;
     height: 500px;
     position: relative;
     background-color: white;
-    bottom: 400px;
+    margin-top: -460px;
 
 }
 
@@ -632,16 +640,15 @@ input:focus {
 #offerteInScadenza a {
     
     position:relative;
-    left:57%;
-    top:500px;
+    
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype'); 
-    color: black;
+    color: white;
     
 }
 
-#offerteInScadenza a:visited {
+#offerteInScadenza a:hoover {
     
     position:relative;
     left:57%;
@@ -652,7 +659,8 @@ input:focus {
     color: red;
     
 }
-/* bottone che permette la generazione del coupon legato all'offerta e la sua stampa */
+/* bottone che permette la generazione del coupon legato all'offerta e la sua stampa
+(la versione due è di quelle in scadenza)*/
 #stampaofferta {
     width:40px;
     height: 40px;
@@ -668,12 +676,43 @@ input:focus {
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
 }
-/* bottone che permette la visualizzazione del coupon legato all'offerta */
+#stampaofferta2 {
+    width:40px;
+    height: 40px;
+    position: relative;
+    bottom: 118px;
+    left: 40px;
+    background-image: url(../images/icons/print.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+/* bottone che permette la visualizzazione del coupon legato all'offerta 
+(la versione due è di quelle in scadenza) */
 #visualizzaofferta {
     width:40px;
     height: 40px;
     position: relative;
     bottom: 93px;
+    right: 50px;
+    background-image: url(../images/icons/info.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+#visualizzaofferta2 {
+    width:40px;
+    height: 40px;
+    position: relative;
+    bottom: 118px;
     right: 50px;
     background-image: url(../images/icons/info.png);
     background-size: contain;
@@ -690,12 +729,23 @@ input:focus {
     filter: grayscale(0%);
     -webkit-filter: drop-shadow(2px 2px 2px red);
 }
+#stampaofferta2:hover{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    -webkit-filter: drop-shadow(2px 2px 2px red);
+}
 /* effetti al passaggio del mouse sul bottone */
 #visualizzaofferta:hover{
     -webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
     -webkit-filter: drop-shadow(2px 2px 2px red);
 }
+#visualizzaofferta2:hover{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    -webkit-filter: drop-shadow(2px 2px 2px red);
+}
+
 
 /* informazioni sull'offerta selezionata premendo il bottone info offerta */
 #InformazioneOfferta {
@@ -1220,7 +1270,28 @@ input:focus {
     word-wrap: break-word; /* manda a capo se supera la lunghezza max nel suo spazio*/
 }
 
-
+#filtraazienda{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 16px;
+    color: black;
+}
+.button #filtra{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+    width: auto;
+    height: auto;
+    position: relative;
+    top: 18px;
+    left: 60px;
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 8px 8px 8px 8px;
+    font-size: 16px;
+}
 
 #filtraForm {
     float:left;
@@ -1602,8 +1673,31 @@ li.title a span {
 }
 
 /* Form per i filtri */
-.filtraForm {
+.espandi3 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    position:relative;
+    left:30%;
+    bottom:8%;
+    color: white;
+    cursor: pointer;
+    width:220px;
     
+}
+.espandi4{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    position:relative;
+    left:50%;
+    bottom:12.8%;
+    color: white;
+    cursor: pointer;
+    width:220px;
+}
+.filtraForm3 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: small;
     width:191px !important;  width /**/:200px;
     height:190px !important; height /**/: 200px;
     padding: 4px;
@@ -1614,42 +1708,44 @@ li.title a span {
     bottom:8%;
     display:none;
     z-index:10; 
-}
-.espandi {
+    border: 2px solid;
+    border-color: #266abd;
+    border-radius: 2px 2px 2px 2px;
     
+}
+.filtraForm3 table{
     position:relative;
-    left:30%;
-    bottom:8%;
-    color: white;
-
-
-    cursor: pointer;
-    width:8%;
-
+    right: 20px;
 }
-.espandi2 {
-    
+.filtraForm4{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: small;
+    width:191px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    overflow:auto;
     position:relative;
-    left:50%;
-    bottom:11.8%;
-    color: white;
-    cursor: pointer;
-
-    width:8%;
-
+    left:48%;
+    bottom:12.9%;
+    display:none;
+    z-index:10;
+    border: 2px solid;
+    border-color: #266abd;
+    border-radius: 2px 2px 2px 2px;
 }
-.filtraForm2{
-    
+.filtraForm4 table{
+    position:relative;
+    right: 20px;
+}
+#filtroazienda{
     font-size: small;
     width:191px !important;  width /**/:200px;
     height:190px !important; height /**/: 200px;
     padding: 4px;
     background:url(gradient.png) repeat-x fixed top left;
     overflow:auto;
-    position:relative;
 
-    left:37%;
-    bottom:8%; 
 }
 
 /* Gestione navbar della pagina amministratore*/
@@ -2106,72 +2202,107 @@ tr.border_bottom td {
     left:47%;
     bottom:8%;
     display:none;
-    z-index:10; 
-    
-
-    
-}
-
-.filtraForm3 {
-    
-    font-size: small;
-    width:191px !important;  width /**/:200px;
-    height:190px !important; height /**/: 200px;
-    padding: 4px;
-    background:url(gradient.png) repeat-x fixed top left;
-    overflow:auto;
-    position:relative;
-    left:28.5%;
-    bottom:7%;
-    display:none;
-    z-index:10; 
-    
-    
+    z-index:10;  
 }
 
 
-.espandi3 {
-    
+/*Pagina della stampa del Coupon relativo all'offerta'*/
+#StampaOfferta{
     position:relative;
+    left: 400px;
+    width: 500px;
+    height: auto;
+}
+.immagineOfferta{
+    position:relative;
+    left:250px;
+}
+#StampaOfferta h1 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+    width: 650px;
+}
+#StampaOfferta p {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: black;
+    text-align: left;
+    background-color: white;
+    font-weight: 400;
+    width: 640px;
+    text-align: center;
+    margin: 0px;
+}
+.containerCoupon {
+    border: 2px dashed black;
+    width: 650px;
+    height: 750px;
+    background-color: white;
+}
+.containerCoupon h2{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 17px;
+    color: #266abd;
+    text-align: left;
+    background-color: white;
+    font-weight: 400;
+    position:relative;
+    left:43%;
+    width: 200px;
+}
+.containerCoupon p2{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 40px;
+    color: white;
+    text-align: left;
+    background-color: red;
+    font-weight: 600;
+    position: relative;
     left:30%;
-    bottom:8%;
-    color: white;
-    cursor: pointer;
-    width:8%;
-   
-    
+}
+.containerCoupon img{
+    width: 145px;
+    height: 145px;
 }
 
-.filtraForm4{
-    
-    font-size: small;
-    width:191px !important;  width /**/:200px;
-    height:190px !important; height /**/: 200px;
-    padding: 4px;
-    background:url(gradient.png) repeat-x fixed top left;
-    overflow:auto;
-    position:relative;
-    left:47%;
-    bottom:7%;
-    display:none;
-    z-index:10; 
+
+/* Lo snackbar di errore in caso di accesso alla pagina della generazione del coupon */
+#snackbar {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 15px;
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: -125px; 
+    background-color: #666666; 
+    color: white; 
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px;
+    position: fixed;
+    z-index: 1; 
+    left: 50%; 
+    bottom: 30px; 
 }
+#snackbar.show {
+    visibility: visible; 
 
-.espandi4{
-    position:relative;
-    left:50%;
-    bottom:11.8%;
-    color: white;
-    cursor: pointer;
-    width:8%;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-
-#filtroazienda{
-    font-size: small;
-    width:191px !important;  width /**/:200px;
-    height:190px !important; height /**/: 200px;
-    padding: 4px;
-    background:url(gradient.png) repeat-x fixed top left;
-    overflow:auto;
-
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
 }

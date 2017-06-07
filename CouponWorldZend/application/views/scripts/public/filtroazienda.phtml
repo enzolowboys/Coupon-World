@@ -1,7 +1,7 @@
 <div id="content">	
     <div id="navMenu">
     </div>
-    <?php echo '<h1 class="titolocategoria">Offerte '.$this->tipoofferta.'del brand'.$this->nomecercato.' </h1>';?>
+    <?php echo '<h1 class="titolocategoria">Offerte '.$this->tipoofferta.' del brand '.$this->nomecercato.' </h1>';?>
     <?php foreach ($this->offerte as $offertaGiorno) :?>
 		<div id="offertaCategoria">
                      <?php echo $this->offertaImg($offertaGiorno->immagine,array('class' => 'immagineOfferta'));?>

@@ -1,0 +1,58 @@
+/*Pagina della stampa del Coupon relativo all'offerta'*/
+#StampaOfferta{
+    position:relative;
+    left: 1200px;
+    width: auto;
+    height: auto;
+}
+#StampaOfferta h1 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 40pt;
+    color: white;
+    text-align: left;
+    background-color: #266abd;
+    font-weight: 400;
+    width: 400px;
+}
+#StampaOfferta p {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20pt;
+    color: black;
+    text-align: left;
+    background-color: white;
+    font-weight: 400;
+    width: 400px;
+}
+.containerCoupon {
+    border: 2px dashed black;
+    width: 650px;
+    height: 550px;
+    background-color: white;
+}
+.containerCoupon h2{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 17pt;
+    color: #266abd;
+    text-align: left;
+    background-color: white;
+    font-weight: 400;
+    position:relative;
+    left:43%;
+    width: 200px;
+}
+.containerCoupon p2{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 40pt;
+    color: white;
+    text-align: left;
+    background-color: red;
+    font-weight: 600;
+    position: relative;
+    left:30%;
+}
+
+.title, .links, .banner {display:none;}
