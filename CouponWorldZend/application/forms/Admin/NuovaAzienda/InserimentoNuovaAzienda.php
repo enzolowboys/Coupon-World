@@ -120,17 +120,7 @@ class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Fo
             'decorators' => $this ->elementDecorators,
         ));
         
-        //elemento grafico relativo al fax
-        $this->addElement('text', 'fax', array(
-            'label' => 'Fax',
-            'filters' => array('StringTrim'),
-            'required' => true,
-            'validators' => array(
-                array('StringLength', true, array(3, 25))
-            ),
-            'description' => 'Inserisci l`indirizzo dell`azienda',
-            'decorators' => $this ->elementDecorators,
-        ));
+        
         
         // elemento grafico relativo alla email
         $this->addElement('text', 'email', array(
