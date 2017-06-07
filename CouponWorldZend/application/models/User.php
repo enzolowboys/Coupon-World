@@ -68,9 +68,14 @@ class Application_Model_User extends App_Model_Abstract
         return $this->getResource('User')->getUserById($id);
     }
     
-     public function getUserByName($username)
+     public function getUserByName($info)
     {
-        return $this->getResource('User')->getUserByName($username);
+        return $this->getResource('User')->getUserByName($info);
+    }
+    
+    public function getStaff($paged=null){
+        
+        return $this->getResource('User')->getStaff($paged);
     }
 
         
