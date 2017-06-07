@@ -96,7 +96,10 @@
                     <td><?php echo $staff->email;?></td>
                     <td><?php echo $staff->username;?></td>
                     <td><?php echo $staff->password;?></td>
-                    <td><button>Modifica</button></td><td><button>Elimina</button></td>
+                    <td><button>Modifica</button></td><td><button 
+                    onClick="window.location.href='<?=
+                    $this->url(array('controller'=>'admin','action'=>'eliminastaff','idutente'=>$staff->iduser,'default',true));
+                    ?>';">Elimina</button></td>
                     <br>
                 </tr>
                 <?php endforeach ?>

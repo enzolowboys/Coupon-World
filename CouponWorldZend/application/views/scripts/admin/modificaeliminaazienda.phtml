@@ -101,7 +101,16 @@
                     <td><?php echo $azienda->paese;?></td>
                     <td><?php echo $azienda->telefono;?></td>
                     <td><?php echo $azienda->email;?></td>
-                    <td><button>Modifica</button></td><td><button>Elimina</button></td>
+                    <td><button 
+                    onClick="window.location.href='<?=
+                    $this->url(array('controller'=>'admin','action'=>'modificaaziendapage','idazienda'=>$azienda->idazienda,'default',true));
+                    ?>';"
+                            >Modifica</button></td>
+                    <td>
+                    <button 
+                    onClick="window.location.href='<?=
+                    $this->url(array('controller'=>'admin','action'=>'eliminaazienda','idazienda'=>$azienda->idazienda,'default',true));
+                    ?>';">Elimina</button></td></td>
                     <br>
                 </tr>
                 <?php endforeach ?>

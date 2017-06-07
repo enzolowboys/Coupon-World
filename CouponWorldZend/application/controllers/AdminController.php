@@ -22,6 +22,7 @@ class AdminController extends Zend_Controller_Action {
         $this->view->nuovatipologiaForm = $this->getInserisciTipologiaForm();
         $this->view->nuovostaffForm = $this->getInserisciStaffForm();
         $this->view->nuovadomandarispostaForm = $this->getInserisciDomandaRispostaForm();
+       
         
         //Creo l'oggetto Auth
         $this->_authService = new Application_Service_Auth();
@@ -50,6 +51,12 @@ class AdminController extends Zend_Controller_Action {
     /* Pagina per l'inserimento della faq (domanda e risposta) */
     public function nuovadomandarispostaAction(){
         
+    }
+   /* Pagina per la modifica dell'azienda */
+    public function modificaaziendapageAction(){
+        
+         $id = $this->_getParam('idazienda');  
+         $this->view->modificaFormAzienda = $this->getModificaAziendaForm($id);
     }
     
     
@@ -101,22 +108,24 @@ class AdminController extends Zend_Controller_Action {
     
     /*Azione che elimina un'azienda*/
     public function eliminaaziendaAction() {
+        
         $id = $this->_getParam('idazienda');
-        $this->_AdminModel->deleteUser($id);
+        $this->_AdminModel->deleteAzienda($id);
         $this->_helper->redirector('modificaeliminaazienda');
     }
     
     /*Azione che elimina una faq*/
     public function eliminafaqAction() {
+        
         $id = $this->_getParam('idfaq');
-        $this->_AdminModel->deleteUser($id);
+        $this->_AdminModel->deleteFaq($id);
         $this->_helper->redirector('modificaeliminadomandarisposta');
     }
     
     
     /*Azione che elimina uno staff*/    
     public function eliminastaffAction() {
-        $id = $this->_getParam('idstaff');
+        $id = $this->_getParam('idutente');
         $this->_AdminModel->deleteUser($id);
         $this->_helper->redirector('modificaeliminastaff');
     }
@@ -124,8 +133,15 @@ class AdminController extends Zend_Controller_Action {
     /*Azione che elimina una tipologia*/    
     public function eliminatipologiaAction() {
         $id= $this->_getParam('idtipologia');
-        $this->_AdminModel->deleteUser($id);
+        $this->_AdminModel->deleteTipologia($id);
         $this->_helper->redirector('modificaeliminatipologia');
+    }
+    
+ 
+    /*Azione che modifica una tipologia*/  
+    public function modificaaziendaAction() {
+        
+
     }
     
     
@@ -274,6 +290,24 @@ class AdminController extends Zend_Controller_Action {
         $this->_form->setAction($urlHelper->url(array(
 				'controller' => 'admin',
 				'action' => 'inserimentodomandarisposta'),
+				'default'
+				));
+	return $this->_form;
+    }
+    
+    
+        /*Metrodo che ritorna la form*/
+    private function getModificaAziendaForm($id) {
+        
+        $azienda = $this->_AdminModel->getAziendaById($id);
+        $azienda = $azienda->toArray();
+        $this->_logger->debug(print_r($azienda, true));
+	$urlHelper = $this->_helper->getHelper('url');
+	$this->_form = new Application_Form_Admin_ModificaAzienda_ModificaAzienda();
+        $this->_form->populate($azienda);
+        $this->_form->setAction($urlHelper->url(array(
+				'controller' => 'admin',
+				'action' => 'modificaazienda'),
 				'default'
 				));
 	return $this->_form;

@@ -64,10 +64,7 @@ class Application_Model_Admin extends App_Model_Abstract
             return $this->getResource('Faq')->insertFaq($info);
         }
         /*eleimina faq */
-        public function deleteFaq($id){
-            return $this->getResource('Faq')->deleteFaq($id);
-            
-        }
+
         
         /*modifca faq*/
         
@@ -109,4 +106,23 @@ class Application_Model_Admin extends App_Model_Abstract
             return $this->getResource('User')->getStaff($paged,$order);
         }
         
+        public function deleteAzienda($id){
+            
+            return $this->getResource('Azienda')->deleteAzienda($id);
+        }
+        
+        public function deleteFaq($id){
+            
+            return $this->getResource('Faq')->deleteFaq($id);
+        }
+        
+        public function deleteTipologia($id){
+            
+            return $this->getResource('Tipologia')->deleteTipologia($id);
+        }
+        
+        public function getAziendaById($id){
+            
+            return $this->getResource('Azienda')->getAziendaById($id);
+        }
 }

@@ -40,7 +40,7 @@ class Application_Resource_Faq extends Zend_Db_Table_Abstract
         
     /* elimina le faq */
     public function deleteFaq($id){
-        $this->delete($id);
+        $this->delete(Array("idfaq = ?" => $id));
             
     }
         

@@ -12,7 +12,10 @@ class Application_Resource_Azienda extends Zend_Db_Table_Abstract
     /*estrae le aziende in base all'id*/
     public function getAziendaById($id){
         
-        return $this->find($id);
+      
+        $rowset = $this->find($id);
+        $row = $rowset->current();
+        return $row;
     }
     /*estrae le aziende in base la partita iva*/
     public function getAziendaBypartitaiva($partitaiva){
@@ -74,7 +77,7 @@ class Application_Resource_Azienda extends Zend_Db_Table_Abstract
     }
     /*elimina azienda */
     public function deleteAzienda($id){
-        $this->delete($id);
+        $this->delete(Array("idazienda = ?" => $id));
     }
         
         

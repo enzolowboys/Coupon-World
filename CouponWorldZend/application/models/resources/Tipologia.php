@@ -42,6 +42,13 @@ class Application_Resource_Tipologia extends Zend_Db_Table_Abstract {
         return $this->fetchAll($select);
     }
         
+    
+        public function deleteTipologia($id){
+    
+    
+        $this->delete(Array("idtipologia = ?" => $id));
+            
+    }
         
         
 }

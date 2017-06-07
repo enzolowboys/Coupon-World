@@ -85,8 +85,9 @@ class Application_Resource_User extends Zend_Db_Table_Abstract
     }
     
     public function getStaff($paged=null,$order=null){
-               $select= $this->select()
-                       ->where('user.role=?',"staff");
+        $role="staff";       
+        $select= $this->select()
+                       ->where('user.role=?',$role);
         if(true === is_array($order)){
             $select->order($order);
         }
