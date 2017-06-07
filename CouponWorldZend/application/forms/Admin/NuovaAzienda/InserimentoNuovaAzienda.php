@@ -119,9 +119,7 @@ class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Fo
             'description' => 'Inserisci l`indirizzo dell`azienda',
             'decorators' => $this ->elementDecorators,
         ));
-        
-        
-        
+
         // elemento grafico relativo alla email
         $this->addElement('text', 'email', array(
             'label'      => 'La mail dell`azienda',

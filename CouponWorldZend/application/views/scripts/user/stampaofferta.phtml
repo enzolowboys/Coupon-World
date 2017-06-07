@@ -1,0 +1,53 @@
+<?php echo $this->doctype();?>
+<html lang="it-IT">
+    <head>
+        <!-- compatibilitá per browser come Internet Explorer -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <!-- fa sì che il sito web venga visualizzato a tutto schermo, senza ridimensionare nulla --> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->baseURL();?>/css/print.css" media="print">
+     
+        <!-- imposto i placeholders -->
+        <?= $this->headLink(); ?>
+   
+        
+        <title>Pagina Coupon</title>
+    </head>
+    <body>
+        
+        
+        
+        
+        
+        
+        
+        <div id="StampaOfferta">
+            <img src="<?php echo $this->baseURL();?>/images/LogoCW.png"height="50%" width="50%">
+            <h1>PAGINA DEL COUPON</h1>
+            <div class="containerCoupon">
+                <?php foreach($this->stampaofferta as $offerta) :?>
+                <?php endforeach ?>
+                <img><?php echo  $this->offertaImg($offerta->immagine,array('class' => 'immagineOfferta'));?></img>
+                <?php echo '<p>'. $offerta->nomeprodotto.'</p>'?>
+                <?php echo '<p>'. $offerta->nome.'</p>'?>
+                <?php echo '<p>'. $offerta->tipo.'</p>'?>
+                <?php echo '<p>'. $offerta->modalita.'</p>'?>
+                <?php echo '<p>'. $offerta->localita.'</p>'?>
+                <p>dal </h2><?php echo '<p>'. $offerta->datainizio .'</p>'?><p> al </p><?php echo '<p>'. $offerta->datafine.'</p>'?>
+                
+                <h2>codice coupon</h2>
+                <p2>C0D1C3PR0V4</p2>
+                <br>
+                <h2>per il cliente</h2>
+                <?php echo '<p>'. $nome=$this->authInfo('nome').'</p>'?>
+                <?php echo '<p>'. $nome=$this->authInfo('cognome').'</p>'?>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+    </body>
+</html>

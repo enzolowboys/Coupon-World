@@ -38,6 +38,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $this->_view->headMeta()->setCharset('UTF-8');
         $this->_view->headMeta()->appendHttpEquiv('Content-Language', 'it-IT');
 	$this->_view->headLink()->appendStylesheet($this->_view->baseUrl('css/home.css'));
+        
         $this->_view->headScript()->appendFile($this->_view->baseUrl().'/js/jquery.min.js');
         $this->_view->headScript()->appendFile($this->_view->baseUrl().'/js/functions.js');
 

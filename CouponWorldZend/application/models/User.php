@@ -40,6 +40,11 @@ class Application_Model_User extends App_Model_Abstract
       public function getPromozioniInsRecenti($paged=null,$order=null){
             return $this->getResource('Promozione')->getPromozioniInsRecenti($paged,$order);
       }
+      
+      /*prende la promozione in base al nome */
+        public function getPromozioneById($id){
+            return $this->getResource('Promozione')->getPromozioneById($id);
+        }
               
         
         /*una volta inserito il nome del brand carica l'id di quest'ultimo nella variabile idazienda 
