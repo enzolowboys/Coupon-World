@@ -8,7 +8,7 @@
         <!-- imposto i placeholders -->
         <?= $this->headMeta(); ?>
         <?= $this->headLink(); ?>
-         <?= $this->headScript(); ?>
+        <?= $this->headScript(); ?>
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet"> 
 	<title>Homepage</title>
 </head>
@@ -17,16 +17,14 @@
 	<!-- UPHEADER CONTENTENTE MENU -->
 	<div id="upheader">
 		<div id="upHeaderMenu">
-                    <a href="<?= $this->url(array('controller'=>'public','action'=>'login','default',true));?>"><h3><b>M</b>y Account</h3></a>
-		    <a href="<?= $this->url(array('controller'=>'public','action'=>'registrazione','default',true));?>"><h3><b>R</b>egistrazione</h3></a>
+                    <h3>Benvenuto, <?php echo $this->authInfo('username'); ?></h3>
+		    <a href="<?= $this->url(array('controller'=>'admin','action'=>'logout','default',true));?>"><h3>Logout</h3></a>
 		</div>
 	</div>
 	<!-- HEADER CONTENTENTE BARRA DI RICERCA E BOTTONE -->
 	<div id="middleheader">
 		<img id="logo" onClick="window.location.href='<?=$this->url(array('controller'=>'public','action'=>'home','default',true));
                                                                ?>';" src="<?php echo $this->baseURL();?>/images/LogoCWwhite.png"></img>
-		<!-- barra di ricerca -->
-             <?php echo $this->searchForm; ?>
 	</div>
 </header>
 <div id="mainContent">	

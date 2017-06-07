@@ -6,12 +6,13 @@ body {
     -webkit-user-select: none;
     user-select: none;
     width: 100%;
+    font-family: 'Titillium Web', sans-serif;
+
     
 }
 
 .titolocategoria{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
     font-size: 30px;
     font-weight: 100;
     width: 500px;
@@ -42,8 +43,7 @@ header {
 
 /* h1 usato per tutti i titoli */
 h1 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: left;
@@ -53,8 +53,7 @@ h1 {
 
 /* h2 usato per le scritte nei banner laterali */
 h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: right;
@@ -118,18 +117,14 @@ a:hover{
     border-bottom-width: thin;
     width: 100%;
     height: 40px;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+    
     min-width: 80em;
 }
 
 /* Menu sul upHeaderMenu*/
 #upHeaderMenu h3 {
     float:left;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+    
     font-size: 1.25em;
     font-weight: 200;
     color: white;
@@ -146,9 +141,7 @@ a:hover{
 #middleheader {
     background-color: rgb(179, 0, 0);
     height: 104px;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+ 
     border-radius: 0px 0px 15px 15px;
     width: 100%;
     min-width: 80em;
@@ -162,9 +155,8 @@ a:hover{
     width:30%;
     left:70%;
     bottom:40%;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
+
     
     
     
@@ -175,9 +167,7 @@ a:hover{
 #ricercaOfferta input{
     width: 150%;
     height: 30px;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+ 
     max-width: 45em;
 }
 #ricercaOfferta tr td .required{
@@ -185,9 +175,7 @@ a:hover{
     right:22%;
     bottom: 3.3em;
     font-size:medium; 
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+   
     color: white;
     
     
@@ -197,11 +185,13 @@ a:hover{
     
      width:70%;
     position:relative;
+
     bottom:2.2em;
     right:9.4em;
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 }
 
 
@@ -233,9 +223,7 @@ input:focus {
 /* descrizioni di approfondimento del sito */
 #subheader h4 {
     
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
     font-size: 1em;
     font-style: italic;
     font-weight: 500;
@@ -282,9 +270,7 @@ input:focus {
 
 /* le varie categorie elencate in una lista */
 #categorie li {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
     font-size: 20px;
     font-weight: 400;
     color: black;
@@ -400,9 +386,7 @@ input:focus {
     position: relative;
     width: 21%;
     height: 33px;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
     left: 5.2%;
 }
 
@@ -431,9 +415,7 @@ input:focus {
 
 #listaTipologie fieldset {
     
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+   
     font-size: 20px;
     font-weight: 400;
     color: #266abd;
@@ -451,9 +433,7 @@ input:focus {
 
 /* Bottone conferma nei filtri delle tipologie */
 #bottoneConferma {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
     width: auto;
     height: auto;
     position: relative;
@@ -549,9 +529,7 @@ input:focus {
 
 /* sta ad indicare il nome del prodotto o una particolare sottocategoria (tecnologia > smartphones) */
 #infoOfferta h5 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
     font-size: 20px;
     font-weight: 500;
     position: relative;
@@ -560,9 +538,7 @@ input:focus {
 
 /* sta ad indicare la categoria del prodotto */
 #infoOfferta h6 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
     font-size: 13px;
     position: relative;
     right: 6px;
@@ -571,9 +547,7 @@ input:focus {
 
 /* sta ad indicare il marchio del prodotto */
 #infoOfferta h7 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
     font-size: 13px;
     font-weight: 500;
     position: relative;
@@ -583,9 +557,7 @@ input:focus {
 
 /* sta ad indicare la tipologia di offerta sul prodotto (2*1, 50% di sconto, ecc..) */
 #infoOfferta h8 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
     font-size: 18px;
     font-weight: 500;
     position: relative;
@@ -595,9 +567,7 @@ input:focus {
 
 /* sta ad indicare il periodo di validit� dell'offerta */
 #infoOfferta h9 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
     font-size: 15px;
     font-weight: 200;
     position: relative;
@@ -611,9 +581,6 @@ input:focus {
     position:relative;
     left:57%;
     top:500px;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype'); 
     color: black;
     
     
@@ -624,9 +591,6 @@ input:focus {
     position:relative;
     left:57%;
     top:500px;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype'); 
     color: red;
     
 }
@@ -640,11 +604,10 @@ input:focus {
 #offerteInScadenza a {
     
     position:relative;
-    
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype'); 
-    color: white;
+    left:57%;
+    top:500px;
+    color: black;
+
     
 }
 
@@ -653,9 +616,6 @@ input:focus {
     position:relative;
     left:57%;
     top:500px;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype'); 
     color: red;
     
 }
@@ -754,8 +714,7 @@ input:focus {
     left:550px;
 }
 #InformazioneOfferta h1 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: black;
     background-color: white;
@@ -763,8 +722,7 @@ input:focus {
     font-weight: 600;
 }
 #InformazioneOfferta h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 18px;
     color: black;
     background-color: white;
@@ -772,8 +730,7 @@ input:focus {
     font-weight: 600;
 }
 #InformazioneOfferta h3 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 27px;
     color: #266abd;
     background-color: white;
@@ -781,8 +738,7 @@ input:focus {
     font-weight: 700;
 }
 #InformazioneOfferta p{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+ 
     font-size: 16px;
     color: black;
     text-align: justify;
@@ -804,9 +760,7 @@ input:focus {
 
 /* testo nel footer */
 #footer h10{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
     font-size: 15px;
     font-weight: 100;
     color: white;
@@ -843,9 +797,7 @@ input:focus {
     position: relative;
     top:10px;
     color:blue;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+   
 }
 #FAQsection h1 {
     text-align: center;
@@ -875,9 +827,7 @@ input:focus {
     position: relative;
     top:10px;
     color:blue;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 }
 #MyAccount h1 {
     text-align: center;
@@ -964,9 +914,7 @@ input:focus {
     position: relative;
     top:10px;
     color:blue;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 }
 #Registrazione h1 {
     text-align: center;
@@ -1007,9 +955,7 @@ input:focus {
     font-style: italic;
     border-radius: 5px;
     border-color: #266abd;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 }
 /* tabella generata da Zend che contiene tutti gli elementi (campi, label, ecc.)*/
 .Forms table{
@@ -1043,8 +989,7 @@ input:focus {
 }
 /* div che contiene tutto il form*/
 .Forms{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     width: 800px;
     height: 1300px;
     border-style: solid;
@@ -1079,7 +1024,7 @@ input:focus {
     border: black;
     color: black;
     position:relative;
-    left:10%;
+    left:40%;
 }
 
 
@@ -1110,9 +1055,7 @@ input:focus {
     position: relative;
     top:10px;
     color:blue;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 }
 #MyAccount h1 {
     text-align: center;
@@ -1194,9 +1137,7 @@ input:focus {
     position: relative;
     top:10px;
     color:blue;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 }
 #Registrazione h1 {
     text-align: center;
@@ -1234,8 +1175,7 @@ input:focus {
     left:550px;
 }
 #ProfiloBrands  h1 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: black;
     background-color: white;
@@ -1243,8 +1183,7 @@ input:focus {
     font-weight: 600;
 }
 #ProfiloBrands  h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+ 
     font-size: 18px;
     color: black;
     background-color: white;
@@ -1252,8 +1191,7 @@ input:focus {
     font-weight: 600;
 }
 #ProfiloBrands  h3 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 27px;
     color: #266abd;
     background-color: white;
@@ -1261,8 +1199,7 @@ input:focus {
     font-weight: 700;
 }
 #ProfiloBrands p{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
     font-size: 16px;
     color: black;
     text-align: justify;
@@ -1297,8 +1234,7 @@ input:focus {
     float:left;
 }
 #filtraForm .optional {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+ 
     float:left;
     position:relative;
     right:5em;
@@ -1309,8 +1245,7 @@ input:focus {
 }
 
 #filtraForm select {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     float:left;
     position: relative;
     top: -0.2 em;
@@ -1324,8 +1259,7 @@ input:focus {
 
 /* Gestione navbar della pagina amministratore*/
 #navMenuAdmin {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     list-style-type: none;
     position:relative;
     left:30px;
@@ -1409,8 +1343,7 @@ li.title a span {
 
 /* pagina che contiene il form della nuova azienda */
 #NuovaAzienda h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -1418,14 +1351,12 @@ li.title a span {
     font-weight: 400;
 }
 #NuovaAzienda td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
     font-size: 16px;
     color: black;  
 }
 #NuovaAzienda td input{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+   
     border-radius: 5px;
     border-color: #266abd;
 }
@@ -1434,8 +1365,7 @@ li.title a span {
     border-color: #266abd;
 }
 #NuovaAzienda td #inserisci{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -1450,8 +1380,7 @@ li.title a span {
 
 /* pagina che contiene il form della nuova tipologia */
 #NuovaTipologia h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -1459,26 +1388,21 @@ li.title a span {
     font-weight: 400;
 }
 #NuovaTipologia td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 16px;
     color: black;  
 }
 #NuovaTipologia td input{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border-radius: 5px;
     border-color: #266abd;
 }
 #NuovaTipologia td #descrizionetipologia{
     border-radius: 5px;
-    border-color: #266abd;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
 }
 #NuovaTipologia td #inserisci {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -1494,8 +1418,7 @@ li.title a span {
 
 /* pagina che contiene il form del nuovo membro staff */
 #NuovoStaff h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -1507,14 +1430,12 @@ li.title a span {
     left: 200px;
 }
 #NuovoStaff td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 16px;
     color: black;  
 }
 #NuovoStaff td input{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border-radius: 5px;
     border-color: #266abd;
 }
@@ -1528,8 +1449,7 @@ li.title a span {
 }
 #NuovaTipologia td #inserisci {
     
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -1545,8 +1465,7 @@ li.title a span {
 
 /* pagina che contiene il form delle nuove domande e risposte */
 #NuovaDomandaRisposta h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -1558,26 +1477,22 @@ li.title a span {
     left: 20px;
 }
 #NuovaDomandaRisposta td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 16px;
     color: black;  
 }
 #NuovaDomandaRisposta td input{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border-radius: 5px;
     border-color: #266abd;
 }
 #NuovaDomandaRisposta td #risposta{
     border-radius: 5px;
     border-color: #266abd;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+ 
 }
 #NuovaDomandaRisposta td #inserisci {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+   
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -1594,8 +1509,7 @@ li.title a span {
 
 /* Gestione navbar della pagina staff*/
 #navMenuStaff {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     list-style-type: none;
     position:relative;
     left:30px;
@@ -1615,8 +1529,7 @@ li.title a span {
 
 /* pagina che contiene il form delle nuove promozioni */
 #NuovaPromozione h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -1628,38 +1541,32 @@ li.title a span {
     left: 20px;
 }
 #NuovaPromozione td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 16px;
     color: black;  
 }
 #NuovaPromozione td input{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border-radius: 5px;
     border-color: #266abd;
 }
 #NuovaPromozione td #descrizione{
     border-radius: 5px;
     border-color: #266abd;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
 }
 #NuovaPromozione td #selezionetipologie{
     border-radius: 5px;
     border-color: #266abd;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
 }
 #NuovaPromozione td #selezionebrands{
     border-radius: 5px;
     border-color: #266abd;
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
 }
 #NuovaPromozione td #inserisci {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -1750,8 +1657,7 @@ li.title a span {
 
 /* Gestione navbar della pagina amministratore*/
 #navMenuUser {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     list-style-type: none;
     position:relative;
     left:30px;
@@ -1772,16 +1678,16 @@ li.title a span {
 /* pagina che contiene la tabella per modificare/eliminare le aziende */
 #ModificaEliminaAzienda table {
     position:relative;
-    left: 20px;
+    left: 24%;
     display: table;
     width: 30%;
-    border-collapse: separate; 
-    border-spacing: 0px;
+    border-collapse: collapse; 
+    border-spacing: 20px;
+    border-color: grey;
     bottom: 50px;
 }
 #ModificaEliminaAzienda h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -1789,40 +1695,38 @@ li.title a span {
     font-weight: 400;
 }
 #ModificaEliminaAzienda p {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
     font-size: 18px;
     position:relative;
     left: 20px;
     color: black;
 }
 #ModificaEliminaAzienda th {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 18px;
     font-weight: 600;
+    width:150px;
+    height : 40px;
     vertical-align: top;
     padding: 2px;
     text-align: left;
 }
 #ModificaEliminaAzienda td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 15px;
     font-weight: 300;
     vertical-align: top;
     padding: 2px;
     text-align: left;
-    
-    max-width: 130px;
+    width: 150px;
+    height : 40px; 
     white-space:nowrap;
     overflow:hidden;
     text-overflow:ellipsis;
     
 }
 #ModificaEliminaAzienda button{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -1845,8 +1749,7 @@ tr.border_bottom td {
     bottom: 50px;
 }
 #ModificaEliminaTipologia h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -1854,16 +1757,14 @@ tr.border_bottom td {
     font-weight: 400;
 }
 #ModificaEliminaTipologia p {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
     font-size: 18px;
     position:relative;
     left: 20px;
     color: black;
 }
 #ModificaEliminaTipologia th {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 18px;
     font-weight: 600;
     vertical-align: top;
@@ -1871,8 +1772,7 @@ tr.border_bottom td {
     text-align: left;
 }
 #ModificaEliminaTipologia td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 15px;
     font-weight: 300;
     vertical-align: top;
@@ -1886,8 +1786,7 @@ tr.border_bottom td {
     
 }
 #ModificaEliminaTipologia button{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -1910,8 +1809,7 @@ tr.border_bottom td {
     bottom: 50px;
 }
 #ModificaEliminaStaff h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -1919,16 +1817,14 @@ tr.border_bottom td {
     font-weight: 400;
 }
 #ModificaEliminaStaff p {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 18px;
     position:relative;
     left: 20px;
     color: black;
 }
 #ModificaEliminaStaff th {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 18px;
     font-weight: 600;
     vertical-align: top;
@@ -1936,8 +1832,7 @@ tr.border_bottom td {
     text-align: left;
 }
 #ModificaEliminaStaff td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 15px;
     font-weight: 300;
     vertical-align: top;
@@ -1951,8 +1846,7 @@ tr.border_bottom td {
     
 }
 #ModificaEliminaStaff button{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -1975,8 +1869,7 @@ tr.border_bottom td {
     bottom: 50px;
 }
 #ModificaEliminaDomandaRisposta h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
     font-size: 20px;
     color: white;
     text-align: center;
@@ -1984,16 +1877,14 @@ tr.border_bottom td {
     font-weight: 400;
 }
 #ModificaEliminaDomandaRisposta p {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 18px;
     position:relative;
     left: 20px;
     color: black;
 }
 #ModificaEliminaDomandaRisposta th {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 18px;
     font-weight: 600;
     vertical-align: top;
@@ -2001,8 +1892,7 @@ tr.border_bottom td {
     text-align: left;
 }
 #ModificaEliminaDomandaRisposta td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 15px;
     font-weight: 300;
     vertical-align: top;
@@ -2016,8 +1906,7 @@ tr.border_bottom td {
     
 }
 #ModificaEliminaDomandaRisposta button{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -2040,8 +1929,7 @@ tr.border_bottom td {
     bottom: 50px;
 }
 #ModificaEliminaUtente h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -2049,16 +1937,14 @@ tr.border_bottom td {
     font-weight: 400;
 }
 #ModificaEliminaUtente p {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 18px;
     position:relative;
     left: 20px;
     color: black;
 }
 #ModificaEliminaUtente th {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+   
     font-size: 18px;
     font-weight: 600;
     vertical-align: top;
@@ -2066,8 +1952,7 @@ tr.border_bottom td {
     text-align: left;
 }
 #ModificaEliminaUtente td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    
     font-size: 15px;
     font-weight: 300;
     vertical-align: top;
@@ -2081,8 +1966,7 @@ tr.border_bottom td {
     
 }
 #ModificaEliminaUtente button{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -2105,8 +1989,7 @@ tr.border_bottom td {
     bottom: 50px;
 }
 #ModificaEliminaPromozione h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+   
     font-size: 20px;
     color: white;
     text-align: center;
@@ -2114,16 +1997,14 @@ tr.border_bottom td {
     font-weight: 400;
 }
 #ModificaEliminaPromozione p {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+   
     font-size: 18px;
     position:relative;
     left: 20px;
     color: black;
 }
 #ModificaEliminaPromozione th {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 18px;
     font-weight: 600;
     vertical-align: top;
@@ -2131,8 +2012,7 @@ tr.border_bottom td {
     text-align: left;
 }
 #ModificaEliminaPromozione td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
     font-size: 15px;
     font-weight: 300;
     vertical-align: top;
@@ -2146,8 +2026,7 @@ tr.border_bottom td {
     
 }
 #ModificaEliminaPromozione button{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;
@@ -2161,8 +2040,7 @@ tr.border_bottom td {
 
 /* pagina che contiene il form della modifca profilo staff */
 #ModificaProfiloStaff h2 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -2170,14 +2048,13 @@ tr.border_bottom td {
     font-weight: 400;
 }
 #ModificaProfiloStaff td {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+ 
     font-size: 16px;
     color: black;  
 }
 #ModificaProfiloStaff td input{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
+  
     border-radius: 5px;
     border-color: #266abd;
 }
@@ -2186,8 +2063,8 @@ tr.border_bottom td {
     border-color: #266abd;
 }
 #ModificaProfiloStaff td #inserisci{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+  
+
     border: 2px;
     border-color: #266abd;
     background-color: #266abd;

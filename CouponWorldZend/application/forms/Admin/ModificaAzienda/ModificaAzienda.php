@@ -1,6 +1,6 @@
 <?php
     
-class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Form_Abstract {
+class Application_Form_Admin_ModificaAzienda_ModificaAzienda extends App_Form_Abstract {
     
     //definisco la variabile per la connessione al database
     protected $_adminModel;
@@ -119,7 +119,19 @@ class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Fo
             'description' => 'Inserisci l`indirizzo dell`azienda',
             'decorators' => $this ->elementDecorators,
         ));
-
+        
+        //elemento grafico relativo al fax
+        $this->addElement('text', 'fax', array(
+            'label' => 'Fax',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'validators' => array(
+                array('StringLength', true, array(3, 25))
+            ),
+            'description' => 'Inserisci l`indirizzo dell`azienda',
+            'decorators' => $this ->elementDecorators,
+        ));
+        
         // elemento grafico relativo alla email
         $this->addElement('text', 'email', array(
             'label'      => 'La mail dell`azienda',
@@ -133,7 +145,7 @@ class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Fo
         
         //elemento grafico relativo al bottone conferma
         $this->addElement('submit', 'inserisci', array(
-            'label' => 'Conferma e Inserisci',
+            'label' => 'Aggiorna',
 			'decorators' => $this->buttonDecorators,
 	));
         
@@ -145,5 +157,7 @@ class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Fo
             'Form'
 	));
     }
-}
+   
 
+   
+}

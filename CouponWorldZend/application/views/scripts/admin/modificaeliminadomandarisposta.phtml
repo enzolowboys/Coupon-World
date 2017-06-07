@@ -86,13 +86,22 @@
                     <th>Domanda</th><th>Risposta</th>
                 </tr>
             </thead>
-            <tbody>
+            <?php foreach($this->faq as $faq): ?>
                 <tr class='border_bottom'>
-                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
-                    <td><button>Modifica</button></td><td><button>Elimina</button></td>
+                    <td><?php echo $faq->domanda;?></td>
+                    <td><?php echo $faq->risposta;?></td>
+                    <td><button>Modifica</button></td><td><button 
+                    onClick="window.location.href='<?=
+                    $this->url(array('controller'=>'admin','action'=>'eliminafaq','idfaq'=>$faq->idfaq,'default',true));
+                    ?>';">Elimina</button></td>
                     <br>
                 </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
+         <?php if($this->faq instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->faq,'Sliding','admin/paginator/_paginatormodificafaq.phtml');
+	  } 
+	  ?>
     </div>
 </div>

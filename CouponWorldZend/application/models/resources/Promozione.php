@@ -30,7 +30,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(1)
+			$paginator->setItemCountPerPage(10)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             
@@ -47,6 +47,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
     }
     /*modifica promozione*/
         
+
     public function updatePromozione($idpromozione,$info){
         $this->update($idpromozione,$info);
     }
@@ -54,6 +55,52 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
     /*elimina promozione*/
     public function deletePromozione($idpromozione){
         $this->delete($idpromozione);
+
+    /*estrae le promozioni in base alla tipologia*/
+    public function getPromozioneByTipologiaAzienda($tipologia,$nome,$paged=null,$order=null){
+           $select= $this->select('promozione.*')
+                   ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
+                ->where('tipologia.nometipologia = ?', $tipologia) 
+                ->where('azienda.nome=?',$nome)->setIntegrityCheck(false);
+           if(true === is_array($order)){
+            $select->order($order);
+        }
+            if(null !=$paged){
+                $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
+			$paginator = new Zend_Paginator($adapter);
+			$paginator->setItemCountPerPage(10)
+		          	  ->setCurrentPageNumber((int) $paged);
+			return $paginator;
+                            
+                            
+            }
+                
+           return $this->fetchAll($select);
+               
+    }
+        
+       public function getPromozioneByName($nome,$paged=null,$order=null){
+           $select= $this->select('promozione.*')
+                ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
+                ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
+                ->where('promozione.nomeprodotto = ?', $nome) ->setIntegrityCheck(false);
+           if(true === is_array($order)){
+            $select->order($order);
+        }
+            if(null !=$paged){
+                $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
+			$paginator = new Zend_Paginator($adapter);
+			$paginator->setItemCountPerPage(10)
+		          	  ->setCurrentPageNumber((int) $paged);
+			return $paginator;
+                            
+                            
+            }
+                
+           return $this->fetchAll($select);
+               
+
     }
     
     /* */    
@@ -67,10 +114,14 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
         $select= $this->select('promozione.*')
                   ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
                    ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
+
                        
                 ->where('promozione.idpromozione = ?',$id) ->setIntegrityCheck(false); ;
                     
         return $this->fetchAll($select);
+
+               
+
     }
         
     /*estre le promozioni in base alla categoria*/
@@ -87,7 +138,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(1)
+			$paginator->setItemCountPerPage(10)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             
@@ -110,7 +161,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(1)
+			$paginator->setItemCountPerPage(10)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             
@@ -132,7 +183,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(1)
+			$paginator->setItemCountPerPage(10)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             
@@ -142,6 +193,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
     }
         
     /*estrae le promozioni con la data corrente e azienda*/
+
     public function getPromozioneByDateTipologia($nomeTipologia,$paged=null,$order=null){
     //   $nomeTipologia='tecnologia';
         
@@ -156,7 +208,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(1)
+			$paginator->setItemCountPerPage(10)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             
@@ -177,7 +229,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(1)
+			$paginator->setItemCountPerPage(10)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             
@@ -191,7 +243,8 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
          $select=$this->select('promozione.*')
                    ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
                    ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
-                ->where('promozione.datafine-CURDATE() < 3') //3 GIORNI PRIMA
+
+                ->where('promozione.datafine-CURDATE() < 3') 
                  ->where('promozione.datafine > CURDATE()')
                  ->setIntegrityCheck(false);
         if(true === is_array($order)){
@@ -200,7 +253,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(1)
+			$paginator->setItemCountPerPage(10)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             
@@ -221,7 +274,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(1)
+			$paginator->setItemCountPerPage(10)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             
@@ -246,7 +299,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(1)
+			$paginator->setItemCountPerPage(10)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             

@@ -9,13 +9,16 @@
         <?= $this->headMeta(); ?>
         <?= $this->headLink(); ?>
         <?= $this->headScript(); ?>
-        <title>Homepage</title>
-    </head>
-    <body>
-        <header>
-            <!-- UPHEADER CONTENTENTE MENU -->
-            <div id="upheader">
-                <div id="upHeaderMenu">
+
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet"> 
+	<title>Homepage</title>
+</head>
+<body>
+<header>
+	<!-- UPHEADER CONTENTENTE MENU -->
+	<div id="upheader">
+		<div id="upHeaderMenu">
+
                     <a href="<?= $this->url(array('controller'=>'public','action'=>'login','default',true));?>"><h3><b>M</b>y Account</h3></a>
                     <a href="<?= $this->url(array('controller'=>'public','action'=>'registrazione','default',true));?>"><h3><b>R</b>egistrazione</h3></a>
                 </div>
