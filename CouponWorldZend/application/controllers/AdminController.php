@@ -13,7 +13,7 @@ class AdminController extends Zend_Controller_Action {
    public function init()
     {
         $this->_logger = Zend_Registry::get("log"); //file log
-        $this->_helper->layout->setLayout('layoutstatic');
+        $this->_helper->layout->setLayout('layoutadmin');
         
         $this->_AdminModel = new Application_Model_Admin(); //model
         
@@ -55,27 +55,77 @@ class AdminController extends Zend_Controller_Action {
     
     /*Azione sulla pagina modifica/elimina azienda*/
     public function modificaeliminaaziendaAction() {
-
+        
+        $paged = $this->_getParam('page',1); 
+        $listaAziende =  $this->_AdminModel->getAziende($paged);
+        $this->view->assign(array('aziende'=>$listaAziende));
     }
     
     /*Azione sulla pagina modifica/elimina tipologie*/
     public function modificaeliminatipologiaAction() {
-
+        $paged = $this->_getParam('page',1);
+        $listatipologie = $this->_AdminModel->getTipologie($paged);
+        $this->view->assign(array('tipologie'=>$listatipologie));
     }
     
     /*Azione sulla pagina modifica/elimina staff*/
     public function modificaeliminastaffAction() {
+        $paged = $this->_getParam('page',1);
+        $listastaff = $this->_AdminModel->getStaff($paged);
+        $this->view->assign(array('staff'=>$listastaff));
 
     }
     
     /*Azione sulla pagina modifica/elimina domanda e risposta*/
     public function modificaeliminadomandarispostaAction() {
+        $paged = $this->_getParam('page',1);
+        $listafaq = $this->_AdminModel->getFaq($paged);
+        $this->view->assign(array('faq'=>$listafaq));
 
     }
     
     /*Azione sulla pagina modifica/elimina un utente*/
     public function modificaeliminautenteAction() {
-
+        $paged = $this->_getParam('page',1);
+        $listaUtenti = $this->_AdminModel->getAllUser($paged);
+        $this->view->assign(array('utenti'=>$listaUtenti));
+    }
+    
+    /*Azione che elimina un utente*/
+    public function eliminautenteAction() {
+        $iduser = $this->_getParam('idutente');
+        $this->_logger->info('id utente '.$iduser);
+        $this->_AdminModel->deleteUser($iduser);
+        $this->_helper->redirector('modificaeliminautente');
+    }
+    
+    /*Azione che elimina un'azienda*/
+    public function eliminaaziendaAction() {
+        $id = $this->_getParam('idazienda');
+        $this->_AdminModel->deleteUser($id);
+        $this->_helper->redirector('modificaeliminaazienda');
+    }
+    
+    /*Azione che elimina una faq*/
+    public function eliminafaqAction() {
+        $id = $this->_getParam('idfaq');
+        $this->_AdminModel->deleteUser($id);
+        $this->_helper->redirector('modificaeliminadomandarisposta');
+    }
+    
+    
+    /*Azione che elimina uno staff*/    
+    public function eliminastaffAction() {
+        $id = $this->_getParam('idstaff');
+        $this->_AdminModel->deleteUser($id);
+        $this->_helper->redirector('modificaeliminastaff');
+    }
+    
+    /*Azione che elimina una tipologia*/    
+    public function eliminatipologiaAction() {
+        $id= $this->_getParam('idtipologia');
+        $this->_AdminModel->deleteUser($id);
+        $this->_helper->redirector('modificaeliminatipologia');
     }
     
     
@@ -227,5 +277,11 @@ class AdminController extends Zend_Controller_Action {
 				'default'
 				));
 	return $this->_form;
+    }
+    
+    public function logoutAction() {
+        
+        $this->_authService->clear();
+        return $this->_helper->redirector('home','public');
     }
 }

@@ -89,14 +89,27 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach($this->aziende as $azienda): ?>
                 <tr class='border_bottom'>
-                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
-                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
-                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td><?php echo $azienda->nome;?></td>
+                    <td><?php echo $azienda->ragionesociale;?></td>
+                    <td><?php echo $azienda->settore;?></td>
+                    <td><?php echo $azienda->partitaiva;?></td>
+                    <td><?php echo $azienda->descrizione;?></td>
+                    <td><?php echo $azienda->indirizzo;?></td>
+                    <td><?php echo $azienda->citta;?></td>
+                    <td><?php echo $azienda->paese;?></td>
+                    <td><?php echo $azienda->telefono;?></td>
+                    <td><?php echo $azienda->email;?></td>
                     <td><button>Modifica</button></td><td><button>Elimina</button></td>
                     <br>
                 </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
+         <?php if($this->aziende instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->aziende,'Sliding','admin/paginator/_paginatormodificaazienda.phtml');
+	  } 
+	  ?>
     </div>
 </div>

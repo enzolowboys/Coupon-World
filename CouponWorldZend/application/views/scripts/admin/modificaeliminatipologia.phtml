@@ -85,14 +85,20 @@
                 <tr>
                     <th>Nome Tipologia</th><th>Descrizione</th>
                 </tr>
-            </thead>
-            <tbody>
+              </thead>
+            <?php foreach($this->tipologie as $tipologia): ?>
                 <tr class='border_bottom'>
-                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td><?php echo $tipologia->nometipologia;?></td>
+                    <td><?php echo $tipologia->descrizionetipologia;?></td>
                     <td><button>Modifica</button></td><td><button>Elimina</button></td>
                     <br>
                 </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
+         <?php if($this->tipologie instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->tipologie,'Sliding','admin/paginator/_paginatormodificatipologia.phtml');
+	  } 
+	  ?>
     </div>
 </div>

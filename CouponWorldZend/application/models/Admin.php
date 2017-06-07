@@ -40,9 +40,9 @@ class Application_Model_Admin extends App_Model_Abstract
     }
     
     /*estrae tutti utenti  */
-    public function getAllUser()
+    public function getAllUser($paged)
     {
-        return $this->getResource('User')->getAllUser();
+        return $this->getResource('User')->getAllUser($paged);
         
     }
     
@@ -53,8 +53,8 @@ class Application_Model_Admin extends App_Model_Abstract
      }
      
      /*visualizza tutte le faq*/
-      public function getFaq($id){
-            return $this->getResource('Faq')->getFaq();
+      public function getFaq($paged){
+            return $this->getResource('Faq')->getFaq($paged);
             
         }
      
@@ -92,6 +92,21 @@ class Application_Model_Admin extends App_Model_Abstract
             $iduser= $this->getResource('User')->getIdUser($username);
            /**/ $info= array('',$idazienda,$iduser);
             return $this->getResource('Relazione')->isertRelazione($info);
+        }
+        
+        public function getAziende($paged) {
+            
+            return $this->getResource('Azienda')->getAziende($paged);
+            
+        }
+        
+        public function getTipologie($paged){
+            
+            return $this->getResource('Tipologia')->getTipologie($paged);
+        }
+        public function getStaff($paged=null,$order=null) {
+            
+            return $this->getResource('User')->getStaff($paged,$order);
         }
         
 }
