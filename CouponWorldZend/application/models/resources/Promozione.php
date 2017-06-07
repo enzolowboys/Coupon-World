@@ -194,7 +194,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
         return $this->fetchAll($select);
     }
         
-            /*estrae le promozioni con la data corrente e azienda*/
+            /*estrae le promozioni con la data corrente e tipologia*/
     public function getPromozioneByDateTipologia($nomeTipologia,$paged=null,$order=null){
     //   $nomeTipologia='tecnologia';
         
@@ -244,7 +244,9 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
          $select=$this->select('promozione.*')
                    ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
                    ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
-                ->where('promozione.datafine-CURDATE() < 2') ->setIntegrityCheck(false);
+                ->where('promozione.datafine-CURDATE() < 3') 
+                 ->where('promozione.datafine > CURDATE()')
+                 ->setIntegrityCheck(false);
         if(true === is_array($order)){
             $select->order($order);
         }

@@ -44,7 +44,7 @@
 				<?php echo '<h8>'. $offertaCategoria->tipo.'</h8>'?>
                 
                 <br>
-                                <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
+                                <?php echo '<h8>dal '.'<b>'. date_format($offertaCategoria->datainizio,'%m/%d/%Y') .'</b> al <b>'.
                                         $offertaCategoria->datafine.'</b>'.'</h8>'?>
 
 				<button id="stampaofferta"></button>
