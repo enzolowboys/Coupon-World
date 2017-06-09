@@ -43,8 +43,12 @@ class Application_Resource_User extends Zend_Db_Table_Abstract
     // Estrae gli utenti in base all' $id
     public function getUserById($id)
     {
-        return $this->find($id)->current();
+        $rowset = $this->find($id);
+        $row = $rowset->current();
+        return $row;
     }
+    
+    
      // Estrae gli utenti in base alla tipologia 
     public function getUserByTipe($t)
     {
@@ -80,8 +84,11 @@ class Application_Resource_User extends Zend_Db_Table_Abstract
     }
         
     /*modifica utente*/
-    public function updateUser($info,$username){
-        $this->update($info, $username);
+    public function updateUser($info,$id){
+        
+        $adapter = $this->getAdapter();
+        $where = $adapter->quoteInto("iduser = ?", $id);
+        $this->update($info,$where);
     }
     
     public function getStaff($paged=null,$order=null){

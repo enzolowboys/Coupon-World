@@ -1,0 +1,67 @@
+<div id="content">
+    <div id="StatistichePromozioni">
+        <h2>Numero Coupon Totali</h2>
+        <?php echo'<h3>Il numero di Coupon emessi fino ad ora è '.$this->numerocoupontotali; ?>
+        <h2>Statistiche promozioni e coupon</h2>
+        <table>
+            <caption>
+                <p>Lista delle promozioni</p>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Nome Prodotto</th><th>Data Fine</th><th>Descrizione</th>
+                    <th>Luogo Fruizione</th><th>Modalità</th><th>Tipo Offerta</th><th>Nome Azienda</th>
+                    <th>Numero Coupon emessi</th>
+                </tr>
+            </thead>
+            <?php foreach($this->promozione as $promozione): ?>
+            <tr class='border_bottom'>
+                <td><?php echo $promozione->nomeprodotto;?></td>
+                <td><?php echo $promozione->datafine;?></td>
+                <td><?php echo $promozione->descrizione;?></td>
+                <td><?php echo $promozione->localita;?></td>
+                <td><?php echo $promozione->modalita;?></td>
+                <td><?php echo $promozione->tipo;?></td>
+                <td><?php echo $promozione->nome;?></td>
+                <td><?php echo $this->numerocouponpromo[$promozione->idpromozione]?></td>    
+            </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+         <?php if($this->promozioni instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->promozioni,'Sliding','admin/paginator/_paginatorstatistichepromozioni.phtml');
+	  } 
+	  ?>
+        <div id="StatisticheUtenti">
+        <h2>Statistiche Utenti e Coupon</h2>
+        <table>
+            <caption>
+                Lista Utenti
+            </caption>
+            <thead>
+                <tr>
+                    <th>Nome</th><th>Cognome</th><th>Indirizzo</th><th>Città</th>
+                    <th>La sua email</th><th>Username</th><th>Coupon emessi</th>
+                </tr>
+            </thead>
+            <?php foreach($this->utenti as $utente): ?>
+            <tr class='border_bottom'>
+                <td><?php echo $utente->nome;?></td>
+                <td><?php echo $utente->cognome;?></td>
+                <td><?php echo $utente->indirizzo;?></td>
+                <td><?php echo $utente->citta;?></td>
+                <td><?php echo $utente->email;?></td>
+                <td><?php echo $utente->username;?></td>
+                <td><?php echo $this->numerocouponutenti[$utente->iduser]?></td>
+            <br>
+            </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+         <?php if($this->utenti instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->utenti,'Sliding','admin/paginator/_paginatorstatisticheutenti.phtml');
+	  } 
+	  ?>
+    </div>
+    </div>
+</div>

@@ -107,6 +107,7 @@ class Application_Model_Public extends App_Model_Abstract
              
              return $this->getResource('Promozione')->getPromozioneByTipologiaAzienda($tipologia,$nome,$paged);
          }
+      
 
 
 

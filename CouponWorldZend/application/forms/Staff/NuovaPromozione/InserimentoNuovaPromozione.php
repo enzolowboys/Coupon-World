@@ -19,7 +19,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'label' => 'Nome Prodotto',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', true, array(1,20))),
+            'validators' => array(array('StringLength', true, array(1,20))),
             'description' => 'Inserisci il nome del prodotto',
             'decorators' => $this ->elementDecorators,
         ));
@@ -57,7 +57,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'label' => 'Tipo (3x2, 50%,..)',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', true, array(1,20))),
+            'validators' => array(array('StringLength', true, array(1,20))),
             'description' => 'Inserisci la tipologia dell`offerta (3x2, 50%,..)',
             'decorators' => $this ->elementDecorators,
         ));
@@ -77,7 +77,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'label' => 'Modalità di fruizione',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', true, array(1,20))),
+            'validators' => array(array('StringLength', true, array(1,20))),
             'description' => 'Inserisci la modalità di fruizione',
             'decorators' => $this ->elementDecorators,
         ));
@@ -90,10 +90,10 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
         $this->addElement('file', 'immagine', array(
             'label' => 'Immagine Prodotto',
             'destination' => APPLICATION_PATH . '/../public/images/fotoutenti',
-          //  'validators' => array( 
-          // array('Count', false, 1),
-          //  array('Size', false, 202400), //9 mb per l'img
-         //  array('Extension', false, array('jpg', 'gif'))),
+            'validators' => array( 
+          array('Count', false, 1),
+          array('Size', false, 202400), //9 mb per l'img
+         array('Extension', false, array('jpg', 'gif'))),
            'decorators' => $this->fileDecorators,
 	));
         
@@ -102,7 +102,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'label' => 'Locaitá',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', true, array(1,20))),
+            'validators' => array(array('StringLength', true, array(1,20))),
             'description' => 'Inserisci la localitá interessata della promozione',
             'decorators' => $this ->elementDecorators,
         ));
