@@ -1,0 +1,18 @@
+
+<!-- 
+    Spazio dedicato alla Form di modifica dei dettagli dell' utente 
+    ovvero la modificata di dati di una form popolata tramite collegamento
+    al database
+-->
+<div id="content">
+     <div id="ModificaProfiloStaff">
+        <h2>qui puoi modificare il tuo profilo.</h2>
+        <div class="FormModificaProfiloStaff">
+            <div id="immagineprofilostaff">
+                <h3>Foto Profilo: </h3>
+                <?= $this->userimg($this->utente['foto']) ?>
+            </div>
+            <?= $this->modificaProfiloForm ?>
+        </div>
+    </div>
+</div>

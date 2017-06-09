@@ -1,0 +1,20 @@
+<div id="navMenuUser">
+    <h1>&nbsp; &nbsp; ≡ USER</h1>
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione profilo</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'user','action'=>'modificaprofilopage','default',true));?>">modifica profilo</a></li>                  
+                </ul>
+            </li>
+            <li class="title"><a href="#">&nbsp; &nbsp;coupon</a></li>
+              <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'user','action'=>'visualizzacoupon','default',true));?>">visualizza coupon acquisiti</a></li>                  
+                </ul>
+            </li>
+        </ul> 
+    </li> 
+</div>

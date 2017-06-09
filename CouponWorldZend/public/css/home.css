@@ -2265,6 +2265,7 @@ tr.border_bottom td {
 
 
 
+
 /* pagina dei brands generale */
 #PaginaDeiBrands{
     width: 300px;
@@ -2363,4 +2364,68 @@ tr.border_bottom td {
     bottom: 200px;
     overflow-y: no-content;
     
+}
+=======
+/*Form modifica in sezione admin*/
+#ModificaForm h2 {
+    
+    text-align: center;
+}
+
+#ModificaForm form{
+    position:relative;
+    top:5%;
+    left:40%;
+}
+
+/*pagina statistiche in sezione admin*/
+/*pagina statistiche in sezione admin*/
+#StatistichePromozioni h3{
+    
+    text-align: center;
+}
+
+
+#StatistichePromozioni h2 {
+    text-align: center;
+}
+
+#StatistichePromozioni table{
+    
+   
+    position:relative;
+    left:25em;
+    margin-bottom:15%;
+}
+#StatisticheUtenti caption{
+    
+    margin-bottom:4%;
+}
+
+#StatisticheUtenti table {
+    
+    position:relative;
+    left:33em;
+  
+}
+
+/*Sezione modifica profilo staff*/
+.FormModificaProfiloStaff h3 {
+    
+    text-align: center;
+}
+
+.FormModificaProfiloStaff img {
+    
+    position:relative;
+    left:45em;
+    
+}
+
+.FormModificaProfiloStaff form {
+    
+    width:40%;
+    position:relative;
+    left:50em;
+   
 }
