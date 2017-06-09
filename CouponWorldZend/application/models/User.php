@@ -82,11 +82,6 @@ class Application_Model_User extends App_Model_Abstract
         
         return $this->getResource('User')->getStaff($paged);
     }
-    
-    public function getCouponByUser($id,$paged){
-        
-        return $this->getResource('Coupon')->getCouponByUser($id,$paged);
-    }
 
         
         

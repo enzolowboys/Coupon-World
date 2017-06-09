@@ -1,46 +1,52 @@
+<div id="navMenuStaff">
+    <h1>&nbsp; &nbsp; ≡ STAFF</h1>
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione profilo</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'staff','action'=>'modificaprofilo','default',true));?>">modifica profilo</a></li>               
+                </ul>
+            </li>
+        </ul> 
+    </li> 
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione promozioni</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'staff','action'=>'nuovapromozione','default',true));?>">inserisci nuova promozione</a></li>  
+                    <li><a href="<?= $this->url(array('controller'=>'staff','action'=>'modificaeliminapromozione','default',true));?>">modifica/elimina promozione</a></li>
+                </ul>
+            </li>
+        </ul> 
+    </li> 
+</div>
 
 <div id="content">
     <div id="ModificaEliminaPromozione">
-     <h2>qui puoi modificare o eliminare una promozione.</h2>
+        <h2>qui puoi modificare o eliminare una promozione della tua azienda.</h2>
         <table>
             <caption>
-                <p>Lista delle promozioni</p>
+                <p>Qui di sotto tutte le promozioni della tua azienda</p>
             </caption>
             <thead>
                 <tr>
-                    <th>Nome Prodotto</th><th>Data Fine</th><th>Descrizione</th>
-                    <th>Luogo Fruizione</th><th>Modalità</th><th>Tipo Offerta</th><th>Nome Azienda</th>
-                    <th>Tipologia</th>
+                    <th>Nome Prodotto</th><th>Tipologia</th><th>Brand</th><th>Descrizione</th>
+                    <th>Tipo Offerta</th><th>Modalità di fruizione</th><th>Località</th><th>Data Inizio</th><th>Data Fine</th>
                 </tr>
             </thead>
-            <?php foreach($this->promozione as $promozione): ?>
-            <tr class='border_bottom'>
-                <td><?php echo $promozione->nomeprodotto;?></td>
-                <td><?php echo $promozione->datafine;?></td>
-                <td><?php echo $promozione->descrizione;?></td>
-                <td><?php echo $promozione->localita;?></td>
-                <td><?php echo $promozione->modalita;?></td>
-                <td><?php echo $promozione->tipo;?></td>
-                <td><?php echo $promozione->nome;?></td>
-                <td><?php echo $promozione->nometipologia?></td>
-                 <td><button 
-                    onClick="window.location.href='<?=
-                    $this->url(array('controller'=>'staff','action'=>'modificapromozione','idpromo'=>$promozione->idpromozione,'default',true));
-                    ?>';"
-                            >Modifica</button></td>
-                    <td>
-                <td><button 
-                    onClick="window.location.href='<?=
-                    $this->url(array('controller'=>'admin','action'=>'eliminautente','idpromo'=>$promozione->idpromozione,'default',true));
-                    ?>';">Elimina</button></td>
-            <br>
-            </tr>
-                <?php endforeach ?>
+            <tbody>
+                <tr class='border_bottom'>
+                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td><td>PROVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</td>
+                    <td><button>Modifica</button></td><td><button>Elimina</button></td>
+                    <br>
+                </tr>
             </tbody>
         </table>
-         <?php if($this->utenti instanceof Zend_Paginator) {
-                echo $this->paginationControl($this->utenti,'Sliding','staff/paginator/_paginatormodificpromozione.phtml');
-	  } 
-	  ?>
     </div>
 </div>

@@ -41,14 +41,12 @@ class Application_Resource_Azienda extends Zend_Db_Table_Abstract
         return $this->fetchAll($this->select('idazienda')->where( 'nome'.$nome));
             
     }
-    /*Senza paginator*/
     public function getAzienda() {
         $select= $this->select();
         return $this->fetchAll($select);
             
     }
-     
-    /*Con paginator*/
+        
     public function getAziende($paged=null,$order=null) {
         
        $select= $this->select();
@@ -75,10 +73,7 @@ class Application_Resource_Azienda extends Zend_Db_Table_Abstract
         
     /*modifica aziende */
     public function updateAzienda($info,$id){
-        
-        $adapter = $this->getAdapter();
-        $where = $adapter->quoteInto("idazienda = ?", $id);
-        $this->update($info,$where);
+        $this->update($info, $id);
     }
     /*elimina azienda */
     public function deleteAzienda($id){

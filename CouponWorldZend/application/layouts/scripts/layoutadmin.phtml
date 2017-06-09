@@ -19,7 +19,6 @@
 		<div id="upHeaderMenu">
                     <h3>Benvenuto, <?php echo $this->authInfo('username'); ?></h3>
 		    <a href="<?= $this->url(array('controller'=>'admin','action'=>'logout','default',true));?>"><h3>Logout</h3></a>
-                    <a href="<?= $this->url(array('controller'=>'public','action'=>'home','default',true));?>"><h3>Home</h3></a>
 		</div>
 	</div>
 	<!-- HEADER CONTENTENTE BARRA DI RICERCA E BOTTONE -->
@@ -29,7 +28,6 @@
 	</div>
 </header>
 <div id="mainContent">	
-        <?= $this->render('_navbaradmin.phtml') ?>
 	<?php echo $this->layout()->content;?>
 </div>
 	<!-- FOOTER A FINE PAGINA -->

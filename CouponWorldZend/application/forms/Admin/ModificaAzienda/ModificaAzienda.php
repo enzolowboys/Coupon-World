@@ -8,7 +8,7 @@ class Application_Form_Admin_ModificaAzienda_ModificaAzienda extends App_Form_Ab
     public function init(){
         $this->_adminModel = new Application_Model_Admin();
         $this->setMethod('post');
-        $this->setName('odificaazienda');
+        $this->setName('nuovaazienda');
         $this->setAction(''); //vuota in quanto si genera nel Controller
             
         //per la gestione degli elementi di tipo file
@@ -67,7 +67,7 @@ class Application_Form_Admin_ModificaAzienda_ModificaAzienda extends App_Form_Ab
             'label' => 'Descrizione',
             'cols' => '60', 'rows' => '20',
             'filters' => array('StringTrim'),
-            'required' => false,
+            'required' => true,
             'validators' => array(array('StringLength',true, array(1,2500))),
 			'decorators' => $this->elementDecorators,
 	));
@@ -120,6 +120,17 @@ class Application_Form_Admin_ModificaAzienda_ModificaAzienda extends App_Form_Ab
             'decorators' => $this ->elementDecorators,
         ));
         
+        //elemento grafico relativo al fax
+        $this->addElement('text', 'fax', array(
+            'label' => 'Fax',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'validators' => array(
+                array('StringLength', true, array(3, 25))
+            ),
+            'description' => 'Inserisci l`indirizzo dell`azienda',
+            'decorators' => $this ->elementDecorators,
+        ));
         
         // elemento grafico relativo alla email
         $this->addElement('text', 'email', array(

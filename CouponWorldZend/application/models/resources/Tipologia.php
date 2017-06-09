@@ -15,7 +15,6 @@ class Application_Resource_Tipologia extends Zend_Db_Table_Abstract {
        return $this->fetchRow($this->select()->where('nometipologia = ?', $tipologia));
     }
     
-    /*Senza Paginator*/
     public function getAllTipologie() {
          $select= $this->select();
          return $this->fetchAll($select);
@@ -24,8 +23,7 @@ class Application_Resource_Tipologia extends Zend_Db_Table_Abstract {
     public function insertTipologia($info){
         $this->insert($info);
     }
-    
-    /*Con Paginator*/  
+        
     public function getTipologie($paged=null,$order=null) {
         
         $select= $this->select();
@@ -45,27 +43,11 @@ class Application_Resource_Tipologia extends Zend_Db_Table_Abstract {
     }
         
     
-    public function deleteTipologia($id){
+        public function deleteTipologia($id){
     
     
         $this->delete(Array("idtipologia = ?" => $id));
             
-    }
-    
-    public function getTipologiaById($id){
-        
-        $rowset = $this->find($id);
-        $row = $rowset->current();
-        return $row;
-    }
-    
-    public function updateTipologia($value,$id){
-        
-        $adapter = $this->getAdapter();
-        $where = $adapter->quoteInto("idtipologia = ?", $id);
-        $this->update($value,$where);
-        
-        
     }
         
      /* prende lid dell'azienda dal nome */
