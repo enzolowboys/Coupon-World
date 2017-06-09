@@ -45,14 +45,13 @@ class StaffController extends Zend_Controller_Action {
     //funzione per l'inserimento di una nuova azienda
     public function inserimentopromozioneAction(){
         
-        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
-       
-     
+        $this->_logger->info('Attivato ' . METHOD . ' ');
+            
         if (!$this->getRequest()->isPost()) {
             $this->_helper->redirector('home');
         }
         $formInserimentoNuovaPromozione =  new Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione();
-        
+            
         if (!$formInserimentoNuovaPromozione->isValid($_POST)){
             
             $formInserimentoNuovaPromozione->setDescription('ATTENZIONE! dati inseriti non validi!');
@@ -60,11 +59,35 @@ class StaffController extends Zend_Controller_Action {
             $formInserimentoNuovaPromozione->setDescription('Attenzione: alcuni dati inseriti sono errati.');
             $this->_logger->debug(print_r($formInserimentoNuovaPromozione->getErrors(), true));
             return $this->render('nuovaazienda');
-            
-        
+                
+                
         }
+            
+        /*estraggo le i valori dalle form */
         $values = $formInserimentoNuovaPromozione->getValues();
-        $this->_AdminModel->insertPromozione($values);
+         $this->_logger->debug(print_r($values, true));
+        $tipologia=$formInserimentoNuovaPromozione->getValue('selezionetipologie');
+        $nome=$formInserimentoNuovaPromozione->getValue('selezionebrands');
+      $this->_logger->debug(print_r($tipologia, true));
+        $this->_logger->debug(print_r($nome, true));
+            
+        /*estraggo gli  id dell'azienda selezionata e della tipologia selezionata */
+        $idazienda= $this->_StaffModel->getIdAziendaByNome($nome);
+        $idtipologia=$this->_StaffModel->getIdTipologiaByNome($tipologia);
+       $myid1=$idazienda->idazienda;
+       $myid2=$idtipologia->idtipologia;
+           /*cabia  il nomi dei indici dentro e values e elimina i vecchi*/
+     $values['azienda_idazienda']=$values['selezionebrands'];
+     unset($values['selezionebrands']);
+    $values['tipologia_idtipologia']=$values['selezionetipologie'];
+    unset($values['selezionetipologie']);
+    unset($values['validita']);
+        
+    /*inseriscie dentro values gli id dell'azienda selezionata e della tipologia selezionata */
+    $values['azienda_idazienda']=$myid1;
+    $values['tipologia_idtipologia']=$myid2;
+        
+    $this->_StaffModel->insertPromozione($values);
         $this->_helper->redirector('index');
     }
     

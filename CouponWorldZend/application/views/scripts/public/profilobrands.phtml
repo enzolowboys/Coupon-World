@@ -1,6 +1,6 @@
 <!-- sezione dedicata al profilo del Brands selezionato -->
 <div id="ProfiloBrands">
-    <?php foreach($this->infoazienda as $azienda) :?>
+  <?php foreach($this->infoazienda as $azienda) :?>
   <?php endforeach ?>
   <h1>Benvenuto nel profilo dell'azienda <?php echo '<h3>'. $azienda->nome.'</h3>'?></h1>
   <img><?php echo  $this->offertaImg($azienda->logo,array('class' => 'immagineOfferta'));?></img>
