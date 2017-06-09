@@ -19,6 +19,7 @@
 		<div id="upHeaderMenu">
                     <h3>Benvenuto, <?php echo $this->authInfo('username'); ?></h3>
 		    <a href="<?= $this->url(array('controller'=>'admin','action'=>'logout','default',true));?>"><h3>Logout</h3></a>
+                    <a href="<?= $this->url(array('controller'=>'public','action'=>'home','default',true));?>"><h3>Home</h3></a>
 		</div>
 	</div>
 	<!-- HEADER CONTENTENTE BARRA DI RICERCA E BOTTONE -->
@@ -28,6 +29,7 @@
 	</div>
 </header>
 <div id="mainContent">	
+        <?= $this->render('_navbaradmin.phtml') ?>
 	<?php echo $this->layout()->content;?>
 </div>
 	<!-- FOOTER A FINE PAGINA -->
@@ -46,8 +48,6 @@
 			<img class="footericon" src="<?php echo $this->baseURL();?>/images/icons/twitter.png" width="30px" height="30px">
 		</div>
 		<div id="footerdx">
-                        <h10><b>Documentazione</b></h10>
-                        <br>
 			<h10><b>Chi siamo</b>&nbsp; &nbsp; &nbsp; &nbsp;Piattaforma che offre i coupon da Aprile 2017</h10>
 			<br>
 			<h10><b>Dove siamo</b>&nbsp; &nbsp;Via Brecce Bianche, 32, Ancona, IT</h10>

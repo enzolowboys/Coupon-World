@@ -72,7 +72,7 @@ $(document).ready(function() {
             //change text of header based on visibility of content div
             $espandi.text(function () {
                 //change text based on condition
-                return $filtraForm.is(":visible") ? "FILTRA PER AZIENDA -" : "FILTRA PER AZIENDA +";
+                return $filtraForm.is(":visible") ? "Filtra per azienda -" : "Filtra per azienda +";
             });
         });
         
@@ -93,7 +93,7 @@ $(document).ready(function() {
             //change text of header based on visibility of content div
             $espandi.text(function () {
                 //change text based on condition
-                return $filtraForm.is(":visible") ? "FILTRA PER TIPOLOGIA -" : "FILTRA PER TIPOLOGIA +";
+                return $filtraForm.is(":visible") ? "Filtra per tipologia -" : "Filtra per tipologia +";
             });
         });
         
@@ -110,48 +110,4 @@ function myFunction() {
 
     // After 3 seconds, remove the show class from DIV
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
-}
-
-/* funzione per la pagina dei brands generale */
-function myFunctionTwo() {
-    // Declare variables
-    var input, filter, ul, li, a, i;
-    input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName('li');
-
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-
-/* Snackbar per gestione della funzionalità stampa (fa comparire il messaggio idoneo)*/
-function myFunctionThree() {
-    // Get the snackbar DIV
-    var x = document.getElementById("snackbartwo")
-
-    // Add the "show" class to DIV
-    x.className = "show";
-
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
-
-/* Snackbar per gestione della funzionalità stampa (fa comparire il messaggio idoneo)*/
-function myFunctionFour() {
-    // Get the snackbar DIV
-    var x = document.getElementById("snackbarthree")
-
-    // Add the "show" class to DIV
-    x.className = "show";
-
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
