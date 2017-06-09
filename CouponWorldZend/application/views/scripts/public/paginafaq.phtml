@@ -1,0 +1,13 @@
+<!-- Sezione FAQ: Frequently Asked Question -->
+<div id="FAQsection">
+    <h1>Benvenuto nella sezione FAQ di Coupon World</h1>
+    <h2>qui potrai trovare tutte le informazioni utili per la vostra assistenza nella navigazione</h2>
+    <div id="FAQsubsection">
+        <?php foreach($this->paginafaq as $faq) :?>
+        <br>
+        <?php echo '<h3>'. $faq->domanda.'</h3>'?>
+        <?php echo '<h4>'. $faq->risposta.'</h4>'?>
+        <?php endforeach ?>
+    </div>
+    <h2>Lo staff di Coupon World</h2>
+</div>
