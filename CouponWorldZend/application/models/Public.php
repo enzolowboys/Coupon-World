@@ -109,10 +109,8 @@ class Application_Model_Public extends App_Model_Abstract
          }
       
 
-
-
-
-
-
-
+        public function getFaq(){
+        
+            return $this->getResource('Faq')->getFaq();
+        }
 }

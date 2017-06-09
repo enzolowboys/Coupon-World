@@ -56,6 +56,12 @@ class Application_Model_Staff extends App_Model_Abstract
         
     }
     
+         public function getIdTipologiaByNome($nome){
+        
+        return $this->getResource('Tipologia')->getIdTipologiaByNome($nome);
+        
+    }
+    
     public function getAziende(){
         
         return $this->getResource('Azienda')->getAzienda();
