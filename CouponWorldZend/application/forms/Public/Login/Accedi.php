@@ -18,11 +18,10 @@ class Application_Form_Public_Login_Accedi extends App_Form_Abstract {
         $this->addElement('text', 'username', array(
             'label' => 'Username',
             'filters' => array('StringTrim'),
-            
+            'required' => true,
             'validators' => array(
                 array('StringLength', true, array(3, 25))
             ),
-            'required' => true,
             'description' => 'Inserisci l`username scelto durante la registrazione',
             'decorators' => $this ->elementDecorators,
         ));
@@ -31,11 +30,10 @@ class Application_Form_Public_Login_Accedi extends App_Form_Abstract {
         $this->addElement('text', 'password', array(
             'label' => 'Password',
             'filters' => array('StringTrim'),
-            
+            'required' => true,
             'validators' => array(
                 array('StringLength', true, array(3, 25))
             ),
-            'required' => true,
             'description' => 'Inserisci la password scelta durante la registrazione',
             'decorators' => $this ->elementDecorators,
             

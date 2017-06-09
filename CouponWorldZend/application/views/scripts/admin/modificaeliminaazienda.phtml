@@ -1,3 +1,79 @@
+<div id="navMenuAdmin">
+    <h1>&nbsp; &nbsp; ≡ AMMINISTRATORE</h1>
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione aziende</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'nuovaazienda','default',true));?>">inserisci nuova azienda</a></li> 
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'modificaeliminaazienda','default',true));?>">modifica/elimina azienda</a></li>                   
+                </ul>
+            </li>
+        </ul> 
+    </li> 
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione utenti</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'modificaeliminautente','default',true));?>">modifica/elimina utente</a></li> 
+                </ul>
+            </li>
+        </ul> 
+    </li>
+     <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione staff</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><li><a href="<?= $this->url(array('controller'=>'admin','action'=>'nuovostaff','default',true));?>">inserisci nuovo staff</a></li> 
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'modificaeliminastaff','default',true));?>">modifica/elimina staff</a></li>  
+                </ul>
+            </li>
+        </ul> 
+    </li>
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione tipologie</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'nuovatipologia','default',true));?>">inserisci nuova tipologia</a></li> 
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'modificaeliminatipologia','default',true));?>">modifica/elimina tipologia</a></li> 
+                </ul>
+            </li>
+        </ul> 
+    </li>
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione FAQ</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'nuovadomandarisposta','default',true));?>">inserisci nuova domanda e nuova risposta</a></li> 
+                    <li><a href="<?= $this->url(array('controller'=>'admin','action'=>'modificaeliminadomandarisposta','default',true));?>">modifica/elimina domanda e risposta</a></li> 
+                </ul>
+            </li>
+        </ul> 
+    </li>
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; statistiche del sito</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li>numero totale coupon emessi</li> 
+                    <li>numero coupon emessi per quella promozione selezionato</li>
+                    <li>numero coupon emessi per utente selezionato</li>
+                </ul>
+            </li>
+        </ul> 
+    </li>
+</div>
+
 <div id="content">
     <div id="ModificaEliminaAzienda">
         <h2>qui puoi modificare o eliminare un' azienda.</h2>

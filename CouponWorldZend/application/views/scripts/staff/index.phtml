@@ -1,0 +1,26 @@
+<div id="navMenuStaff">
+    <h1>&nbsp; &nbsp; ≡ STAFF</h1>
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione profilo</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'staff','action'=>'modificaprofilo','default',true));?>">modifica profilo</a></li>               
+                </ul>
+            </li>
+        </ul> 
+    </li> 
+    <li class="menu"> <!-- costituisce ogni sezione del menu principale -->
+        <ul>
+            <!-- titolo della sezione che fa aprire il sotto menu -->
+            <li class="title"><a href="#">&nbsp; &nbsp; gestione promozioni</a></li>
+            <li class="sub-menu">
+                <ul>
+                    <li><a href="<?= $this->url(array('controller'=>'staff','action'=>'nuovapromozione','default',true));?>">inserisci nuova promozione</a></li>  
+                    <li><a href="<?= $this->url(array('controller'=>'staff','action'=>'modificaeliminapromozione','default',true));?>">modifica/elimina promozione</a></li>
+                </ul>
+            </li>
+        </ul> 
+    </li> 
+</div>

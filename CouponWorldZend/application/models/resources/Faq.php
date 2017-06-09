@@ -32,22 +32,10 @@ class Application_Resource_Faq extends Zend_Db_Table_Abstract
         return $this->fetchAll($select);
             
     }
-    
-    //Ritorna la faq corrispondente all'id
-    public function getFaqById($id){
-        
-        $rowset = $this->find($id);
-        $row = $rowset->current();
-        return $row;
-        
-    }
         
     /* modifica faq*/
-    public function updateFaq($value,$id){
-                
-        $adapter = $this->getAdapter();
-        $where = $adapter->quoteInto("idfaq = ?", $id);
-        $this->update($value,$where);
+    public function updateFaq($id){
+        $this->updateFaq($id);
     }
         
     /* elimina le faq */

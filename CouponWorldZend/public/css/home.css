@@ -12,7 +12,7 @@ body {
 }
 
 .titolocategoria{
-  
+    
     font-size: 30px;
     font-weight: 100;
     width: 500px;
@@ -21,8 +21,10 @@ body {
     background-color: white;
     font-weight: 400;
     position: relative;
-    left: 650px;
-    bottom:220px;
+    left: 580px;
+    bottom: 225px;
+    
+    
 }
 
 #mainWrapper {
@@ -331,7 +333,7 @@ input:focus {
     max-width: 18.12%;
     height: 172px;
     position: relative;
-    bottom: 693px;
+    bottom: 650px;
     left: 82%;
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
@@ -351,7 +353,7 @@ input:focus {
     background-image: url(../images/banners/woman.png);
     background-size: cover;
     position: relative;
-    bottom: 709px;
+    bottom: 608px;
     left: 82%;
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
@@ -462,7 +464,7 @@ input:focus {
 #mainContent{
     position: relative;
     width:100%;
-    height: auto;
+    
 }
 
 /* sezione che contiene le offerte del giorno */
@@ -486,9 +488,10 @@ input:focus {
     border: double 2px;
     border-style: inset;
     border-color: rgb(179, 0, 0);
-    left: 55px;
+    left: 10px;
     float: left;
-    margin-right: 10px;
+    margin-right: 12px;
+    margin-bottom: 40px;
     z-index:1; 
 }
 #offerta #visualizzaofferta{
@@ -545,7 +548,7 @@ input:focus {
     bottom: 80px;
 }
 
-/* sta ad indicare il marchio del prodotto */
+
 #infoOfferta h7 {
 
     font-size: 13px;
@@ -553,6 +556,17 @@ input:focus {
     position: relative;
     bottom: 127px;
     right: 2px;
+}
+
+/* sta ad indicare il marchio del prodotto */
+#infoOfferta h9 {
+    
+    font-size: 15px;
+    font-weight: 200;
+    position: relative;
+    right: 155px;
+    bottom: 630px;
+    color: white;
 }
 
 /* sta ad indicare la tipologia di offerta sul prodotto (2*1, 50% di sconto, ecc..) */
@@ -565,7 +579,7 @@ input:focus {
     right: 1px;
 }
 
-/* sta ad indicare il periodo di validit� dell'offerta */
+/* sta ad indicare il periodo di validit� dell'offerta 
 #infoOfferta h9 {
 
     font-size: 15px;
@@ -573,7 +587,7 @@ input:focus {
     position: relative;
     left: 39px;
     bottom: 123px;
-}
+}*/
 
 /*Le prossime 4 regole si riferiscono al link visualizza altre offerte delle relative sezioni*/
 #offerteDelGiorno a{
@@ -625,7 +639,7 @@ input:focus {
     width:40px;
     height: 40px;
     position: relative;
-    bottom: 93px;
+    bottom: 115px;
     left: 40px;
     background-image: url(../images/icons/print.png);
     background-size: contain;
@@ -637,11 +651,11 @@ input:focus {
     filter: grayscale(100%);
 }
 #stampaofferta2 {
-    width:40px;
+    width: 40px;
     height: 40px;
     position: relative;
-    bottom: 118px;
-    left: 40px;
+    bottom: 117px;
+    left: 35px;
     background-image: url(../images/icons/print.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -657,7 +671,7 @@ input:focus {
     width:40px;
     height: 40px;
     position: relative;
-    bottom: 93px;
+    bottom: 115px;
     right: 50px;
     background-image: url(../images/icons/info.png);
     background-size: contain;
@@ -672,8 +686,8 @@ input:focus {
     width:40px;
     height: 40px;
     position: relative;
-    bottom: 118px;
-    right: 50px;
+    bottom: 617px;
+    right: 210px;
     background-image: url(../images/icons/info.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -796,14 +810,12 @@ input:focus {
 #FAQsection {
     position: relative;
     top:10px;
-    color:blue;
-   
+
 }
 #FAQsection h1 {
     text-align: center;
     font-size: 22px;
     font-weight: 700;
-    /* line-height: 1px; */
 }
 #FAQsection h2 {
     text-align: center;
@@ -811,15 +823,25 @@ input:focus {
     font-weight: 400;
     
 }
-#FAQsection h3 { 
+#FAQsubsection{
+    position: relative;
+    top:10px;
+    height: 800px;
+    overflow: scroll;
+}
+#FAQsubsection h3 { 
     text-align: justify;
     font-size: 16px;
     font-weight: 600;
+    line-height: 1px;
+    color: #266abd;
 }
-#FAQsection h4 { 
+#FAQsubsection h4 { 
     text-align: justify;
     font-size: 14px;
     font-weight: 400;
+    line-height: 1px;
+    color: black;
 }
 
 /* Sezione My Accont */
@@ -1020,19 +1042,21 @@ input:focus {
 }
 
 #pagination {
-    
+    width:400px;
     border: black;
     color: black;
-    position:relative;
-    left:40%;
+    position: relative;
+    bottom: 0px;
+    left:37.5%;
+    height: 20px;
 }
 
 
 #offertaCategoria {
     
     position:relative;
-    left:35%;
-    top: -200px;
+    left:0;
+    bottom: 90px;
     background-size: contain;
     background-repeat: no-repeat;
     width: 360px;
@@ -1041,8 +1065,9 @@ input:focus {
     border: double 2px;
     border-style: inset;
     border-color: rgb(179, 0, 0);
+    margin-right: 45px;
+    margin-top: 45px;
     float: left;
-    margin-right: 10px;
     
 }
 #offertaCategoria a{
@@ -1212,6 +1237,8 @@ input:focus {
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     font-size: 16px;
     color: black;
+    overflow: auto;
+    height: 200px;
 }
 .button #filtra{
     font-family: 'Titillium Web';
@@ -1584,36 +1611,37 @@ li.title a span {
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     position:relative;
-    left:30%;
-    bottom:8%;
-    color: white;
+    left:400px;
+    bottom:10px;
+    color: #266abd;
     cursor: pointer;
     width:220px;
+    font-size: 22px;
     
 }
 .espandi4{
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     position:relative;
-    left:50%;
-    bottom:12.8%;
-    color: white;
+    left:800px;
+    bottom:40px;
+    color: #266abd;
     cursor: pointer;
-    width:220px;
+    width:240px;
+    font-size: 22px;
 }
 .filtraForm3 {
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     font-size: small;
-    width:191px !important;  width /**/:200px;
+    width:220px !important;  width /**/:200px;
     height:190px !important; height /**/: 200px;
     padding: 4px;
-    background:url(gradient.png) repeat-x fixed top left;
     overflow:auto;
     position:relative;
-    left:28.5%;
-    bottom:8%;
-    display:none;
+    left:400px;
+    top:10px;
+    
     z-index:10; 
     border: 2px solid;
     border-color: #266abd;
@@ -1628,13 +1656,13 @@ li.title a span {
     font-family: 'Titillium Web';
     src: url(../fonts/TitilliumWeb-Regular.ttf);
     font-size: small;
-    width:191px !important;  width /**/:200px;
+    width:220px !important;  width /**/:200px;
     height:190px !important; height /**/: 200px;
     padding: 4px;
     overflow:auto;
     position:relative;
-    left:48%;
-    bottom:12.9%;
+    left:800px;
+    bottom:30px;
     display:none;
     z-index:10;
     border: 2px solid;
@@ -1677,14 +1705,14 @@ li.title a span {
 
 /* pagina che contiene la tabella per modificare/eliminare le aziende */
 #ModificaEliminaAzienda table {
-    position:relative;
-    left: 24%;
+    position: relative;
+    left: 14.1%;
     display: table;
     width: 30%;
     border-collapse: collapse; 
     border-spacing: 20px;
     border-color: grey;
-    bottom: 50px;
+    bottom: 0px;
 }
 #ModificaEliminaAzienda h2 {
 
@@ -1746,7 +1774,7 @@ tr.border_bottom td {
     width: 30%;
     border-collapse: separate; 
     border-spacing: 0px;
-    bottom: 50px;
+    bottom: 0px;
 }
 #ModificaEliminaTipologia h2 {
 
@@ -1801,12 +1829,12 @@ tr.border_bottom td {
 /* pagina che contiene la tabella per modificare/eliminare i membri dello staff */
 #ModificaEliminaStaff table {
     position:relative;
-    left: 220px;
+    left: 460px;
     display: table;
     width: 30%;
     border-collapse: separate; 
     border-spacing: 0px;
-    bottom: 50px;
+    bottom: 0px;
 }
 #ModificaEliminaStaff h2 {
 
@@ -1866,7 +1894,7 @@ tr.border_bottom td {
     width: 30%;
     border-collapse: separate; 
     border-spacing: 0px;
-    bottom: 50px;
+    bottom: 0px;
 }
 #ModificaEliminaDomandaRisposta h2 {
   
@@ -1920,13 +1948,13 @@ tr.border_bottom td {
 
 /* pagina che contiene la tabella per modificare/eliminare gli utenti */
 #ModificaEliminaUtente table {
-    position:relative;
-    left: 220px;
+    position: relative;
+    left: 318px;
     display: table;
     width: 30%;
     border-collapse: separate; 
     border-spacing: 0px;
-    bottom: 50px;
+    bottom: 0px;
 }
 #ModificaEliminaUtente h2 {
 
@@ -2092,7 +2120,7 @@ tr.border_bottom td {
 }
 .immagineOfferta{
     position:relative;
-    left:250px;
+    left:150px;
 }
 #StampaOfferta h1 {
     font-family: 'Titillium Web';
@@ -2175,6 +2203,56 @@ tr.border_bottom td {
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
+
+/* Lo snackbar riferito al click della frase "offerte aggiornate 24h su 24" */
+#snackbartwo {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 19px;
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: 35px; 
+    background-color: #666666; 
+    color: white; 
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px;
+    position: fixed;
+    z-index: 1; 
+    left: 10.7%; 
+    bottom: 30px; 
+}
+#snackbartwo.show {
+    visibility: visible; 
+
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Lo snackbar riferito al click della frase "offerte aggiornate 24h su 24" */
+#snackbarthree {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 19px;
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: 35px; 
+    background-color: #666666; 
+    color: white; 
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px;
+    position: fixed;
+    z-index: 1; 
+    left: 10.7%; 
+    bottom: 30px; 
+}
+#snackbarthree.show {
+    visibility: visible; 
+
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
 @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;} 
     to {bottom: 30px; opacity: 1;}
@@ -2183,66 +2261,106 @@ tr.border_bottom td {
     from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
 }
-/*Form modifica in sezione admin*/
-#ModificaForm h2 {
-    
-    text-align: center;
-}
-
-#ModificaForm form{
-    position:relative;
-    top:5%;
-    left:40%;
-}
-
-/*pagina statistiche in sezione admin*/
-/*pagina statistiche in sezione admin*/
-#StatistichePromozioni h3{
-    
-    text-align: center;
-}
 
 
-#StatistichePromozioni h2 {
-    text-align: center;
+
+
+/* pagina dei brands generale */
+#PaginaDeiBrands{
+    width: 300px;
+    height: 1000px;
+    overflow-y: scroll;
+    position: relative;
+    top: 40px;
+    left: 10px;
+    border: 1px solid red; 
+}
+#myInput {
+    width: 300px; 
+    font-size: 16px; 
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid red; 
+    margin-bottom: 12px; 
+    position: relative;
+    top: 40px;
+    left: 10px;
 }
 
-#StatistichePromozioni table{
-    
-   
-    position:relative;
-    left:25em;
-    margin-bottom:15%;
-}
-#StatisticheUtenti caption{
-    
-    margin-bottom:4%;
+#myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-#StatisticheUtenti table {
-    
-    position:relative;
-    left:33em;
+#myUL li a {
+    border: 1px solid #ddd; 
+    margin-top: -1px; 
+    background-color: #f6f6f6; 
+    padding: 12px; 
+    text-decoration: none; 
+    font-size: 16px; 
+    color: black; 
+    display: block; 
+}
+
+#myUL li a.header {
+    background-color: #e2e2e2; 
+    cursor: default; 
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee; 
+    color: #266abd;
+}
+
+/* Profilo Brands Due */
+#ProfiloBrandsDue {
+    position: relative;
+    width: 450px;
+    left:650px;
+    bottom: 1000px;
+    visibility: hidden;
+}
+#ProfiloBrandsDue  h1 {
+
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    font-weight: 600;
+}
+#ProfiloBrandsDue  h2 {
+ 
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    font-weight: 600;
+}
+#ProfiloBrandsDue  h3 {
+
+    font-size: 27px;
+    color: #266abd;
+    background-color: white;
+    text-align: left;
+    font-weight: 700;
+}
+#ProfiloBrandsDue p{
   
+    font-size: 16px;
+    color: black;
+    text-align: justify;
+    text-align: left;
+    word-wrap: break-word; /* manda a capo se supera la lunghezza max nel suo spazio*/
 }
 
-/*Sezione modifica profilo staff*/
-.FormModificaProfiloStaff h3 {
+#containerDelleOfferte{
+    position: relative;
+    background-color: white;
+    width: 840px;
+    height: 700px;
+    left: 600px;
+    bottom: 200px;
+    overflow-y: no-content;
     
-    text-align: center;
-}
-
-.FormModificaProfiloStaff img {
-    
-    position:relative;
-    left:45em;
-    
-}
-
-.FormModificaProfiloStaff form {
-    
-    width:40%;
-    position:relative;
-    left:50em;
-   
 }

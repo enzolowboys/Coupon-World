@@ -49,10 +49,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
         
 
     public function updatePromozione($idpromozione,$info){
-                
-        $adapter = $this->getAdapter();
-        $where = $adapter->quoteInto("iduser = ?", $id);
-        $this->update($info,$where);
+        $this->update($idpromozione,$info);
     }
         
     /*elimina promozione*/
@@ -60,45 +57,24 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
         $this->delete($idpromozione);
     }
 
-
-        
-
-    
+     
+   
     /* */    
-    public function getAllPromozione($paged=null,$order=null){
-        
-        
-      $select= $this->select('promozione.*')
-                  ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
-                  ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia'))
-                    ->setIntegrityCheck(false); 
-        if(true === is_array($order)){
-            $select->order($order);
-        }
-            if(null !=$paged){
-                $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
-			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
-		          	  ->setCurrentPageNumber((int) $paged);
-			return $paginator;
-                            
-                            
-            }
-
+    public function getAllPromozione(){
+        $select= $this->select();
         return $this->fetchAll($select);
-      
     }
     
     /*estrae le promozioni in base  id */  
     public function getPromozioneById($id){
-             
         $select= $this->select('promozione.*')
                   ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
-                  ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia'))
-                  ->where('idpromozione=?',$id)
-                  ->setIntegrityCheck(false); 
-    
-        return $this->fetchRow($select);
+                   ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
+
+                       
+                ->where('promozione.idpromozione = ?',$id) ->setIntegrityCheck(false); ;
+                    
+        return $this->fetchAll($select);
 
                
 
@@ -155,8 +131,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
         $select= $this->select('promozione.*')
                    ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
                    ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
-                ->where('promozione.datafine-CURDATE() < 2') 
-                ->where('promozione.datafine >= CURDATE()')
+                ->where('promozione.datainizio = CURDATE()') 
                 ->where( 'azienda.nome = ?',$nomeAzienda) ->setIntegrityCheck(false);
          if(true === is_array($order)){
             $select->order($order);
@@ -292,7 +267,6 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             
     }
     
-    
     /*estrae le promozioni in base alla tipologia*/
     public function getPromozioneByTipologiaAzienda($tipologia,$nome,$paged=null,$order=null){
            $select= $this->select('promozione.*')
@@ -360,6 +334,6 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
            return $this->fetchAll($select);
                
     }
-    
+        
         
 }
