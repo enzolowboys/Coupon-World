@@ -3,10 +3,20 @@
     <!-- SUBHEADER CONTENTENTE INFORMAZIONIA AGGIUNTIVE AL SITO -->
     <div id="subheader">
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <a ><img src="<?php echo $this->baseURL();?>/images/icons/h24.png" class="icons"></img><h4>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-        <a ><img src="<?php echo $this->baseURL();?>/images/icons/brands.png" class="icons"></img><h4>i migliori brands a portata di click &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-        <a ><img src="<?php echo $this->baseURL();?>/images/icons/risparmio.png" class="icons"></img><h4>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-        <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'faq','default',true));?>"><img src="<?php echo $this->baseURL();?>/images/icons/FAQ.png" class="icons"></img><h4>dubbi? FAQ semplice e intuitiva!</h4></a>
+        <a onClick="myFunctionThree()"><img src="<?php echo $this->baseURL();?>/images/icons/h24.png" class="icons"></img><h4>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        
+        <div id="snackbartwo">
+        il Team di Coupon World si assicura di non lasciare i propri clienti privi di offerte e per questo motivo il sito è sempre aggiornato.
+        Visitalo ogni giorno!
+        </div>
+        
+        <div id="snackbarthree">
+        secondo recenti statistiche fare shopping con l'utilizzo dei coupon riduce il costo complessivo pro capite fino ad un totale di 25% !
+        </div>
+        
+        <a href="<?= $this->url(array('controller'=>'public','action'=>'paginadeibrands','default',true));?>"><img src="<?php echo $this->baseURL();?>/images/icons/brands.png" class="icons"></img><h4>clicca qui per vedere tutti i brands! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        <a onClick="myFunctionFour()"><img src="<?php echo $this->baseURL();?>/images/icons/risparmio.png" class="icons"></img><h4>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        <a href="<?= $this->url(array('controller'=>'public','action'=>'paginafaq','default',true));?>"><img src="<?php echo $this->baseURL();?>/images/icons/FAQ.png" class="icons"></img><h4>dubbi? FAQ semplice e intuitiva!</h4></a>
     </div>	
     <div id="navMenu">
         <ul id="categorie">
@@ -22,34 +32,23 @@
             <?php echo $this->filtraAziendaTipologia; ?>
         </div>
     </div>
-            
+<div id="containerDelleOfferte">   
     <!--Sezione dinamica che in base al click sulla categoria apre la pagina della categoria giusta --> 
         <?php echo '<h1 class="titolocategoria">'.$this->categoria.'</h1>'; ?>
         <?php foreach ($this->offertaPerCategoria as $offertaCategoria) :?>
     <div id="offertaCategoria">
-                     <?php echo $this->offertaImg($offertaCategoria->immagine,array('class' => 'immagineOfferta'));?>
+        <?php echo $this->offertaImg($offertaCategoria->immagine,array('class' => 'immagineOfferta'));?>
         <div id="infoOfferta"> 
-            
-                                <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
+            <?php echo '<h5>'. $offertaCategoria->nomeprodotto.'</h5>'?>
             <br>
-                                <?php echo '<h6>'. $offertaCategoria->localita.'</h6>'?>
-                                    
+            <?php echo '<h6>'. $offertaCategoria->localita.'</h6>'?>
             <br>
-                                    
             <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaCategoria->nome,'default',true));?>">
                       <?php echo '<h7>'. $offertaCategoria->nome.'</h7>'?></a>
             <br>
-                                    
-                                    
-				<?php echo '<h8>'. $offertaCategoria->tipo.'</h8>'?>
-
-                                    
+                <?php echo '<h8>'. $offertaCategoria->tipo.'</h8>'?>             
             <br>
-                                <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.
-
-                                        $offertaCategoria->datafine.'</b>'.'</h8>'?>
-                                            
-           
+                <?php echo '<h8>dal '.'<b>'.$offertaCategoria->datainizio.'</b> al <b>'.$offertaCategoria->datafine.'</b>'.'</h8>'?>
             <button id="stampaofferta" onClick="<?php 
                     if($this->authInfo('role')=='user'){
                        $indirizzo = "window.location.href='".$this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid' => $offertaCategoria->idpromozione ,'default',true))."'"; 
@@ -62,14 +61,14 @@
             
             <a href="<?= $this->url(array('controller'=>'public','action'=>'informazioneofferta','offertaid' => $offertaCategoria->idpromozione ,'default',true));?>"><button id="visualizzaofferta"></button></a>
         </div>
-    </div>
-                    
+        </div>
+                 
                 <?php endforeach ?>
           <?php if($this->offertaPerCategoria instanceof Zend_Paginator) {
                 echo $this->paginationControl($this->offertaPerCategoria,'Sliding','public/_paginatorCategoria.phtml');
 	  } 
 	  ?>
-              
+ </div>              
               
 </div>        
    

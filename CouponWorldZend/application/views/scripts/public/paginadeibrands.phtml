@@ -1,0 +1,41 @@
+<input type="text" id="myInput" onkeyup="myFunctionTwo()" placeholder="Cerca per nome azienda..">
+<div id="PaginaDeiBrands">
+    <ul id="myUL">
+        <?php foreach($this->paginadeibrands as $brands) :?>
+            
+        
+        <li><a href="#" onclick="document.getElementById('ProfiloBrandsDue').style.visibility ='visible';"><?php echo $brands->nome?></a></li>
+        
+        <?php endforeach;?>
+    </ul>
+</div>
+
+
+<!-- sezione dedicata al profilo del Brands selezionato -->
+<div id="ProfiloBrandsDue">
+  <?php foreach($this->paginadeibrands as $brands) :?>
+  <?php endforeach ?>
+  <h1>Ecco le informazioni dell'azienda <?php echo '<h3>'. $brands->nome.'</h3>'?></h1>
+  <img><?php echo  $this->offertaImg($brands->logo,array('class' => 'immagineOfferta'));?></img>
+  <br>
+  <br>
+  <h2>Nome: </h2><?php echo '<h7>'. $brands->nome.'</h7>'?>
+  <br>
+  <h2>Settore: </h2><?php echo '<h7>'. $brands->settore.'</h7>'?>
+  <br>
+  <h2>Descrizione: </h2><?php echo '<h7>'. $brands->descrizione.'</h7>'?>
+  <br>
+  <h2>Indirizzo: </h2><?php echo '<h7>'. $brands->indirizzo.'</h7>'?>
+  <br>
+  <h2>Cittá: </h2><?php echo '<h7>'. $brands->citta.'</h7>'?>
+  <br>
+  <h2>Paese: </h2><?php echo '<h7>'. $brands->paese.'</h7>'?>
+  <br>
+  <h2>Telefono: </h2><?php echo '<h7>'. $brands->telefono.'</h7>'?>
+  <br>
+
+  <h2>Email: </h2><?php echo '<h7>'. $brands->email.'</h7>'?>
+
+  <br>
+  
+</div>

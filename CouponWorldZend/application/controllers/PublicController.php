@@ -69,19 +69,51 @@ class PublicController extends Zend_Controller_Action {
 
     }
     
-    
 
-     public function profilobrandsAction(){
-         
-      $this->_logger->info('Attivato ' . __METHOD__ . ' ');
-        
+    public function profilobrandsAction(){
+        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+          
+
         $param= $this->_getParam('nomeazienda');
+            
+        $this->_logger->info($param);
+            
+        $infoazienda = $this->_PublicModel->getAziendaByNome($param);
+        $this->view->assign(array('infoazienda'=>$infoazienda));
+            
+    }
+    
+    public function paginadeibrandsAction(){
+          //log
+        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+        $this->_helper->layout->setLayout('main');
+        $brands = $this->_PublicModel->getAzienda();
+       
+        $this->view->assign(array('paginadeibrands'=>$brands));
         
-         $this->_logger->info($param);
+    }
+    
+    
+    public function paginafaqAction(){
+        //log
+        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+        $this->_helper->layout->setLayout('main');
+        $faq = $this->_PublicModel->getFaq();
+       
+        $this->view->assign(array('paginafaq'=>$faq));
         
-         $infoazienda = $this->_PublicModel->getAziendaByNome($param);
-     $this->view->assign(array('infoazienda'=>$infoazienda));
-
+    }
+    
+    /*Azione sulle pagine statiche*/
+    public function viewstaticAction() {
+        
+        //log
+       
+        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+        $this->_helper->layout->setLayout('layoutstatic');
+        $page = $this->_getParam('staticPage');
+        $this->render($page);
+    
     }
 
 
@@ -160,17 +192,7 @@ class PublicController extends Zend_Controller_Action {
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
     }
     
-    /*Azione sulle pagine statiche*/
-    public function viewstaticAction() {
-        
-        //log
-       
-        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
-        $this->_helper->layout->setLayout('layoutstatic');
-        $page = $this->_getParam('staticPage');
-        $this->render($page);
     
-    }
     
     /* Azione che attiva il profilo del brands selezionato*/
     

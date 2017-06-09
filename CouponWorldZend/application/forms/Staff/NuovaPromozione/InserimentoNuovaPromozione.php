@@ -14,6 +14,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
         //per la gestione degli elementi di tipo file
         $this->setAttrib('enctype', 'multipart/form-data');
         
+
         //elemento grafico relativo al nome del prodotto
         $this->addElement('text', 'nomeprodotto', array(
             'label' => 'Nome Prodotto',
@@ -24,33 +25,54 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'decorators' => $this ->elementDecorators,
         ));
         
-        //carico dal database tutte le categorie     
+
         $listaTipologie = array();
         $tipologie = $this->_staffModel->getTipologie();
         foreach ($tipologie as $tipologia) {
         	$listaTipologie[$tipologia -> nometipologia] = $tipologia->nometipologia;       
         }
-        //elemento grafico relativo alla categoria del prodotto sotto promozione    
+        //elemento grafico relativo alla lista delle tipologie   
         $this->addElement('select', 'selezionetipologie', array(
-            'label' => 'Categoria',
+            'label' => 'Tipologia',
             'required'=>true,
             'multiOptions' =>$listaTipologie,
             'decorators' => $this->elementDecorators,
 	));
         
-        //carico dal database tutte le categorie     
+        //carico dal database tutti i brands    
         $listaBrands = array();
         $brands = $this->_staffModel->getAziende();
         foreach ($brands as $brand) {
         	$listaBrands[$brand -> nome] = $brand->nome;       
         }
-        //elemento grafico relativo all'azienda del prodotto sotto promozione    
+        //elemento grafico relativo alla lista dei brands    
         $this->addElement('select', 'selezionebrands', array(
             'label' => 'Brands',
             'required'=>true,
             'multiOptions' =>$listaBrands,
             'decorators' => $this->elementDecorators,
 	));
+        
+        //elemento grafico relativo ai giorni di validità della promozione
+        $this->addElement('text', 'validita', array(
+            'label' => 'Validità della promozione',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            //'validators' => array(array('StringLenght', true, array(1,20))),
+            'description' => 'Inserisci i giorni di validità della promozione',
+            'decorators' => $this ->elementDecorators,
+        ));
+        
+        //elemento grafico relativo al nome del prodotto
+        $this->addElement('text', 'nomeprodotto', array(
+            'label' => 'Nome Prodotto',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            //'validators' => array(array('StringLenght', true, array(1,20))),
+            'description' => 'Inserisci il nome del prodotto',
+            'decorators' => $this ->elementDecorators,
+        ));
+        
         
         //elemento grafico relativo al tipo di promozione (3x2,50%,..)
         $this->addElement('text', 'tipo', array(
@@ -61,6 +83,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'description' => 'Inserisci la tipologia dell`offerta (3x2, 50%,..)',
             'decorators' => $this ->elementDecorators,
         ));
+        
         
         //elemento grafico relativo alla descrizione dell'offerta
         $this->addElement('textarea', 'descrizione', array(
@@ -81,11 +104,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'description' => 'Inserisci la modalità di fruizione',
             'decorators' => $this ->elementDecorators,
         ));
-        
-        //DATA INIZIO
-        
-        //DATA FINE
-        
+      
         //elemento grafico relativo alla foto profilo
         $this->addElement('file', 'immagine', array(
             'label' => 'Immagine Prodotto',
@@ -99,7 +118,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
         
         //elemento grafico relativo alla localitá interessata della promozione
         $this->addElement('text', 'localita', array(
-            'label' => 'Locaitá',
+            'label' => 'Localitá',
             'filters' => array('StringTrim'),
             'required' => true,
             'validators' => array(array('StringLength', true, array(1,20))),

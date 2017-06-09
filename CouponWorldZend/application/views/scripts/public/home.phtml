@@ -2,10 +2,22 @@
     <!-- SUBHEADER CONTENTENTE INFORMAZIONIA AGGIUNTIVE AL SITO -->
     <div id="subheader">
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <a ><img src="<?php echo $this->baseURL();?>/images/icons/h24.png" class="icons"></img><h4>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-        <a><img src="<?php echo $this->baseURL();?>/images/icons/brands.png" class="icons"></img><h4>i migliori brands a portata di click &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-        <a ><img src="<?php echo $this->baseURL();?>/images/icons/risparmio.png" class="icons"></img><h4>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-        <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'faq','default',true));?>"><img src="<?php echo $this->baseURL();?>/images/icons/FAQ.png" class="icons"></img><h4>dubbi? FAQ semplice e intuitiva!</h4></a>
+        <a onClick="myFunctionThree()"><img src="<?php echo $this->baseURL();?>/images/icons/h24.png" class="icons"></img><h4>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        
+        <div id="snackbartwo">
+        il Team di Coupon World si assicura di non lasciare i propri clienti privi di offerte e per questo motivo il sito è sempre aggiornato.
+        Visitalo ogni giorno!
+        </div>
+        
+        <div id="snackbarthree">
+        secondo recenti statistiche fare shopping con l'utilizzo dei coupon riduce il costo complessivo pro capite fino ad un totale di 25% !
+        </div>
+        
+        
+        <a href="<?= $this->url(array('controller'=>'public','action'=>'paginadeibrands','default',true));?>"><img src="<?php echo $this->baseURL();?>/images/icons/brands.png" class="icons"></img><h4>clicca qui per vedere tutti i brands! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        <a onClick="myFunctionFour()"><img src="<?php echo $this->baseURL();?>/images/icons/risparmio.png" class="icons"></img><h4>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        <a href="<?= $this->url(array('controller'=>'public','action'=>'paginafaq','default',true));?>"><img src="<?php echo $this->baseURL();?>/images/icons/FAQ.png" class="icons"></img><h4>dubbi? FAQ semplice e intuitiva!</h4></a>
+       
     </div>	
     <div id="navMenu">
         <ul id="categorie">
@@ -104,11 +116,11 @@
     <br>
     <div id="offerteInScadenza">
         <h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ❕ OFFERTE IN SCADENZA ❕</h1>
-        <div class="espandi3"><span>Filtra per azienda +</span></div>
+        <div class="espandi3"><span>FILTRA PER AZIENDA +</span></div>
         <div class="filtraForm3">
             <?php echo $this->filtraAziendaFormS ?>
         </div>
-        <div class="espandi4"><span>Filtra per tipologia +</span></div>
+        <div class="espandi4"><span>FILTRA PER TIPOLOGIA +</span></div>
         <div class="filtraForm4">
             <?php echo $this->filtraTipologiaFormS ?>   
         </div>
@@ -118,12 +130,12 @@
             <?php echo $this->offertaImg($offertaInScadenza->immagine,array('class' => 'immagineOfferta'));?>
             <div id="infoOfferta"> 
                 <?php echo '<h5>'. $offertaInScadenza->nomeprodotto.'</h5>'?>                
-                <br>
+                
                 <br>
                     <?php echo '<h6>'. $offertaInScadenza->tipo.'</h6>'?>
                 <br>
                 <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaInScadenza->nome,'default',true));?>">
-				<?php echo '<h7>'. $offertaInScadenza->nome.'</h7>'?></a>
+				<?php echo '<h9>'. $offertaInScadenza->nome.'</h9>'?></a>
                     <br>
                                 <?php echo '<h7>'. $offertaInScadenza->nometipologia.'</h7>'?>
                     <br>
@@ -131,7 +143,15 @@
                                         $offertaInScadenza->datafine.'</b>'.'</h8>'?>
                                             
                                             
-                    <a href="<?php echo $this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid' => $offertaInScadenza->idpromozione ,'default',true));?>"><button id="stampaofferta2"></button></a>
+                    <button id="stampaofferta2" onClick="<?php 
+                    if($this->authInfo('role')=='user'){
+                       $indirizzo = "window.location.href='".$this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid' => $offertaCategoria->idpromozione ,'default',true))."'"; 
+                      echo $indirizzo;
+                    }
+                    else
+                        echo 'myFunction()';?>"></button>
+                    
+                    <div id="snackbar">Per accedere al codice coupon della promozione occorre registrarsi come utente!</div>
                     <a href="<?php echo $this->url(array('controller'=>'public','action'=>'informazioneofferta','offertaid' => $offertaInScadenza->idpromozione ,'default',true));?>"><button id="visualizzaofferta2"></button></a>
             </div>
         </div>

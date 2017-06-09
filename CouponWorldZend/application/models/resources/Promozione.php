@@ -21,7 +21,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
                    ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
                        
                 ->where("nomeprodotto = $ricerca" || "azienda.nome=$ricerca "|| "tipo=$ricerca")
-                ->where('nometipologia = ?',$tipologia)
+                //->where('nometipologia = ?',$tipologia)
                 ->setIntegrityCheck(false);
                     
          if(true === is_array($order)){
@@ -60,6 +60,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
         $this->delete($idpromozione);
     }
 
+
         
 
     
@@ -83,6 +84,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
                             
                             
             }
+
         return $this->fetchAll($select);
       
     }
@@ -116,7 +118,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
+			$paginator->setItemCountPerPage(6)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             
@@ -208,7 +210,7 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
             if(null !=$paged){
                 $adapter = new Zend_Paginator_Adapter_DbTableSelect($select);
 			$paginator = new Zend_Paginator($adapter);
-			$paginator->setItemCountPerPage(10)
+			$paginator->setItemCountPerPage(12)
 		          	  ->setCurrentPageNumber((int) $paged);
 			return $paginator;
                             
