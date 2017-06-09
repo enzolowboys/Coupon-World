@@ -1,0 +1,40 @@
+
+<div id="content">
+    <div id="VisualizzaCoupon">
+     <h2>qui puoi modificare o eliminare una promozione.</h2>
+        <table>
+            <caption>
+                <p>Lista delle promozioni</p>
+            </caption>
+            <thead>
+                <tr>
+                    <th>Codice Coupon</th><th>Nome Prodotto</th><th>Descrizione</th>
+                    <th>Luogo Fruizione</th><th>Modalità</th><th>Tipo Offerta</th><th>Nome Azienda</th>
+                    <th>Tipologia</th>
+                </tr>
+            </thead>
+            <?php foreach($this->coupon as $coupon): ?>
+            <tr class='border_bottom'>
+                <td><?php echo $coupon->codicecoupon;?></td>
+                <td><?php echo $coupon->nomeprodotto;?></td>
+                <td><?php echo $coupon->descrizione;?></td>
+                <td><?php echo $coupon->localita;?></td>
+                <td><?php echo $coupon->modalita;?></td>
+                <td><?php echo $coupon->tipo;?></td>
+                 <td><button 
+                    onClick="window.location.href='<?=
+                    $this->url(array('controller'=>'user','action'=>'stampaofferta','offertaId'=>$coupon->idpromozione,'default',true));
+                    ?>';"
+                            >Stampa</button></td>
+                    <td>
+            <br>
+            </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+         <?php if($this->coupon instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->coupon,'Sliding','user/paginator/_paginatorcoupon.phtml');
+	  } 
+	  ?>
+    </div>
+</div>
