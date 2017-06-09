@@ -43,6 +43,14 @@ class Application_Resource_Faq extends Zend_Db_Table_Abstract
         $this->delete(Array("idfaq = ?" => $id));
             
     }
+    
+    /*estrae le aziende in base all'id*/
+    public function getFaqById($id){
         
+      
+        $rowset = $this->find($id);
+        $row = $rowset->current();
+        return $row;
+    }
         
 }

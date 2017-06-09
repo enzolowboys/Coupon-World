@@ -32,6 +32,8 @@ class Application_Model_Staff extends App_Model_Abstract
              return $this->getResource('Promozione')->insertPromozione($info);
         }
         
+        
+        
        /*modifica utente*/
          public function updateUser($info,$username){
         return $this->getResource('User')->updateUser($info, $username);
@@ -52,6 +54,12 @@ class Application_Model_Staff extends App_Model_Abstract
      public function getIdAziendaByNome($nome){
         
         return $this->getResource('Azienda')->getIdAziendaByNome($nome);
+        
+    }
+    
+         public function getIdTipologiaByNome($nome){
+        
+        return $this->getResource('Tipologia')->getIdTipologiaByNome($nome);
         
     }
     

@@ -50,5 +50,10 @@ class Application_Resource_Tipologia extends Zend_Db_Table_Abstract {
             
     }
         
-        
+     /* prende lid dell'azienda dal nome */
+    public function getIdTipologiaByNome($nome){
+        //$tipologia='Tecnologia';
+        return $this->fetchRow ($this->select()->where( 'nometipologia = ?',$nome));
+            
+    }   
 }
