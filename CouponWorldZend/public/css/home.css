@@ -493,8 +493,6 @@ input:focus {
     margin-right: 12px;
     margin-bottom: 40px;
 
-  
-
 }
 #offerta #visualizzaofferta{
     width:40px;
@@ -2404,6 +2402,7 @@ tr.border_bottom td {
     text-align: center;
 }
 
+
 #StatistichePromozioni table{
     
    
@@ -2411,6 +2410,7 @@ tr.border_bottom td {
     left:25em;
     margin-bottom:15%;
 }
+
 #StatisticheUtenti caption{
     
     margin-bottom:4%;
@@ -2419,7 +2419,9 @@ tr.border_bottom td {
 #StatisticheUtenti table {
     
     position:relative;
+
     left:33em;
+
   
 }
 
@@ -2458,7 +2460,9 @@ tr.border_bottom td {
     
     text-align: center;
     position:relative;
+
     left:32em;
+
     
 }
 
@@ -2475,6 +2479,9 @@ tr.border_bottom td {
     position:relative;
     left:2%;
     bottom:7em;
+
+}
+
 }
 
 #categoriefiltrate{
@@ -2664,6 +2671,7 @@ tr.border_bottom td {
     top: 4em;
     left: 260px; 
 }
+
 
 
 

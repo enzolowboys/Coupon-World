@@ -17,6 +17,7 @@
 	<!-- UPHEADER CONTENTENTE MENU -->
 	<div id="upheader">
 		<div id="upHeaderMenu">
+
                     <?php if($this->authInfo('role')===null): ?>
                     <a href="<?= $this->url(array('controller'=>'public','action'=>'login','default',true));?>"><h3><b>M</b>y Account</h3></a>
 		    <a href="<?= $this->url(array('controller'=>'public','action'=>'registrazione','default',true));?>"><h3><b>R</b>egistrazione</h3></a>
@@ -26,6 +27,7 @@
 		    <a href="<?= $this->url(array('controller'=>$this->authInfo('role'),'action'=>'logout','default',true));?>"><h3><b>L</b>ogout</h3></a>
                     <a href="<?= $this->url(array('controller'=>'public','action'=>'home','default',true));?>"><h3><b>H</b>ome</h3></a>
                     <?php endif ?>
+
 		</div>
 	</div>
 	<!-- HEADER CONTENTENTE BARRA DI RICERCA E BOTTONE -->

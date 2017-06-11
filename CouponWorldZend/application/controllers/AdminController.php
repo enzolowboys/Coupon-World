@@ -75,7 +75,9 @@ class AdminController extends Zend_Controller_Action {
         $promozioni = $this->_AdminModel->getAllPromozione($paged1);
         $utenti = $this->_AdminModel->getAllUser($paged2);
         $numeroCoupon = $this->_AdminModel->getNumeroCoupon();
+
         /*Calcolo il numero di coupon per promozione*/
+
         foreach ($promozioni as $promozione) {
             
              $result1 = $this->_AdminModel->getNumeroCouponPromozione($promozione->idpromozione);
@@ -83,7 +85,9 @@ class AdminController extends Zend_Controller_Action {
              
              
         }
+
         /*Calcolo il numero di coupon per utente*/
+
         foreach ($utenti as $utente) {
             
              $result2 = $this->_AdminModel->getNumeroCouponUtente($utente->iduser);

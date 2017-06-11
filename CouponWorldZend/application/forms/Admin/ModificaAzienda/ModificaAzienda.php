@@ -8,7 +8,9 @@ class Application_Form_Admin_ModificaAzienda_ModificaAzienda extends App_Form_Ab
     public function init(){
         $this->_adminModel = new Application_Model_Admin();
         $this->setMethod('post');
+
         $this->setName('modificaazienda');
+
         $this->setAction(''); //vuota in quanto si genera nel Controller
             
         //per la gestione degli elementi di tipo file
