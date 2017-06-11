@@ -25,9 +25,11 @@ class Application_Resource_Promozione extends Zend_Db_Table_Abstract
         $select = $this->select('promozione.*')
                    ->joinLeft('azienda','promozione.azienda_idazienda = azienda.idazienda',array('azienda.nome'))
                    ->joinLeft('tipologia','promozione.tipologia_idtipologia = tipologia.idtipologia',array('tipologia.nometipologia') )
+
                 ->where('tipologia.nometipologia IN (?)',$tipologia)  
                 ->where(implode(" OR ", $sql))
                 ->where('promozione.datafine > CURDATE()')
+
                 ->setIntegrityCheck(false);
                   $this->_logger->info('ricerca e'.print_r($select,true)); 
          if(true === is_array($order)){

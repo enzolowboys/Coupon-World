@@ -492,7 +492,9 @@ input:focus {
     float: left;
     margin-right: 12px;
     margin-bottom: 40px;
+
   
+
 }
 #offerta #visualizzaofferta{
     width:40px;
@@ -1046,7 +1048,9 @@ input:focus {
     border: black;
     color: black;
     position: relative;
+
     bottom: 100px;
+
     left:37.5%;
     height: 20px;
 }
@@ -1608,6 +1612,7 @@ li.title a span {
 
 /* Form per i filtri */
 .espandi3 {
+
       position:relative;
     left:450px;
     bottom:47px;
@@ -1616,15 +1621,18 @@ li.title a span {
     width:220px;
     font-size: 18px;
 
+
 }
 .espandi4{
       color: white;
     position:relative;
     left:800px;
+
     bottom:75px;
     cursor: pointer;
     width:240px;
     font-size: 18px;
+
 }
 .filtraForm3 {
     font-size: small;
@@ -1633,11 +1641,13 @@ li.title a span {
     padding: 4px;
     overflow:auto;
     position:relative;
+
     left:413px;
     bottom:277px;
     position:absolute;
     z-index: 1;
     display:none;
+
     border: 2px solid;
     border-color: #266abd;
     border-radius: 2px 2px 2px 2px;
@@ -1656,8 +1666,10 @@ li.title a span {
     padding: 4px;
     overflow:auto;
     position:relative;
+
     left:790px;
     bottom:275px;
+
     display:none;
     position:absolute;
     z-index: 1;
@@ -1772,7 +1784,9 @@ tr.border_bottom td {
     width: 30%;
     border-collapse: separate; 
     border-spacing: 0px;
+
     bottom: 40px;
+
 }
 #ModificaEliminaTipologia h2 {
 
@@ -1947,7 +1961,9 @@ tr.border_bottom td {
 /* pagina che contiene la tabella per modificare/eliminare gli utenti */
 #ModificaEliminaUtente table {
     position: relative;
+
     left: 30%;
+
     display: table;
     width: 30%;
     border-collapse: separate; 

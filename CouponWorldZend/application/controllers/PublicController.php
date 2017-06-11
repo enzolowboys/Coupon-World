@@ -71,7 +71,9 @@ class PublicController extends Zend_Controller_Action {
     
     
 
+
     /*Pagina dell'azienda*/
+
      public function profilobrandsAction(){
          
       $this->_logger->info('Attivato ' . __METHOD__ . ' ');
@@ -85,7 +87,9 @@ class PublicController extends Zend_Controller_Action {
             
     }
     
+
     /*Pagina con tutte le aziende*/
+
     public function paginadeibrandsAction(){
           //log
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
@@ -93,6 +97,7 @@ class PublicController extends Zend_Controller_Action {
         $brands = $this->_PublicModel->getAzienda();
        
         $this->view->assign(array('paginadeibrands'=>$brands));
+
         
     }
     
@@ -111,6 +116,7 @@ class PublicController extends Zend_Controller_Action {
     /*Azione sulle pagine statiche*/
     public function viewstaticAction() {
         
+
         //log
        
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
