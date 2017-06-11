@@ -18,6 +18,7 @@ class Application_Form_Public_Search_Searchofferta extends App_Form_Abstract {
         $this->addElement('text','cercaOfferta',array(
             'label'=>'',
             'filters'=>array('StringTrim'),
+            'validators' => array(array('StringLength', false, array(1,20))),
             'required'=>true,
             'description'=>'ricerca un offerta per categoria e tipologia',
             'decorators'=>$this->elementDecorators,

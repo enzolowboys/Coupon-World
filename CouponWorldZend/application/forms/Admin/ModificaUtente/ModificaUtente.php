@@ -10,7 +10,7 @@ class Application_Form_Admin_ModificaUtente_ModificaUtente extends App_Form_Abst
         
         
         $this->setMethod('post');
-        $this->setName('registra');
+        $this->setName('modificautente');
         $this->setAction(''); //vuota in quanto si genera nel Controller
         
         //per la gestione degli elementi di tipo file

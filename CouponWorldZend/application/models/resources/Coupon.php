@@ -70,11 +70,12 @@ class Application_Resource_Coupon extends Zend_Db_Table_Abstract
     }
     
     public function getCouponByUser($id,$paged=null,$order=null){
-          $select= $this->select()
-                
+          $select= $this->select('coupon.*')
                 ->joinLeft('promozione','coupon.promozione_idpromozione = promozione.idpromozione',array('promozione.*'))
-                ->joinLeft('user','coupon.user_iduser = user.iduser',array('user.iduser'))
-                  ->where('user_iduser = ?',$id)
+                ->joinLeft('azienda', 'promozione.azienda_idazienda=azienda.idazienda',array('azienda.nome'))
+                  ->joinLeft('tipologia', 'promozione.tipologia_idtipologia=tipologia.idtipologia',array('tipologia.nometipologia'))
+                ->joinLeft('user','coupon.user_iduser = user.iduser',array('iduser'))
+                ->where('user_iduser = ?',$id)
                 
                    ->setIntegrityCheck(false); 
         if(true === is_array($order)){

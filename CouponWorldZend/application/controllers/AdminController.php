@@ -75,6 +75,7 @@ class AdminController extends Zend_Controller_Action {
         $promozioni = $this->_AdminModel->getAllPromozione($paged1);
         $utenti = $this->_AdminModel->getAllUser($paged2);
         $numeroCoupon = $this->_AdminModel->getNumeroCoupon();
+        /*Calcolo il numero di coupon per promozione*/
         foreach ($promozioni as $promozione) {
             
              $result1 = $this->_AdminModel->getNumeroCouponPromozione($promozione->idpromozione);
@@ -82,6 +83,7 @@ class AdminController extends Zend_Controller_Action {
              
              
         }
+        /*Calcolo il numero di coupon per utente*/
         foreach ($utenti as $utente) {
             
              $result2 = $this->_AdminModel->getNumeroCouponUtente($utente->iduser);
@@ -173,7 +175,7 @@ class AdminController extends Zend_Controller_Action {
                 
         $id = $this->_getParam('idfaq');
         $urlHelper = $this->_helper->getHelper('url');
-        $this->modificaFaqForm->setAction($urlHelper->url(array(
+        $this->_modificaFaqForm->setAction($urlHelper->url(array(
 				'controller' => 'admin',
 				'action' => 'modificafaq',
                                 'id'=>$id),
@@ -472,11 +474,10 @@ class AdminController extends Zend_Controller_Action {
         
         if (!$formInserimentoTipologia->isValid($_POST)){
             
-            $formInserimentoTipologia->setDescription('ATTENZIONE! dati inseriti non validi!');
-            $this->_logger->info('Attivato If della form registrazione');
+
             $formInserimentoTipologia->setDescription('Attenzione: alcuni dati inseriti sono errati.');
             $this->_logger->debug(print_r($formInserimentoTipologia->getErrors(), true));
-            return $this->render('nuovaazienda');
+            return $this->render('nuovatipologia');
             
         
         }
@@ -487,6 +488,7 @@ class AdminController extends Zend_Controller_Action {
     
      //funzione per l'inserimento di un nuovo utente staff
     public function inserimentostaffAction(){
+        
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
        
      

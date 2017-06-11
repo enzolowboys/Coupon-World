@@ -17,6 +17,7 @@
         </ul>
     </div>
      <?php echo '<h1 class="titolocategoria">Filtra '.$this->categoria.'per '.$this->nomecercato.'</h1>'; ?>
+    <div id="categoriefiltrate">
      <?php foreach ($this->offertaPerCategoria as $offertaCategoria) :?>
 		<div id="offertaCategoria">
                      <?php echo $this->offertaImg($offertaCategoria->immagine,array('class' => 'immagineOfferta'));?>
@@ -39,9 +40,11 @@
                                 <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
 			</div>
 		</div>
+    
                 <?php endforeach ?>
+        </div>
           <?php if($this->offertaPerCategoria instanceof Zend_Paginator) {
-                echo $this->paginationControl($this->offertaPerCategoria,'Sliding','public/_paginatorCategorieFiltrate.phtml');
+                echo $this->paginationControl($this->offertaPerCategoria,'Sliding','public/paginator/_paginatorCategorieFiltrate.phtml');
 	  } 
 	  ?>
 
