@@ -492,7 +492,7 @@ input:focus {
     float: left;
     margin-right: 12px;
     margin-bottom: 40px;
-    z-index:1; 
+  
 }
 #offerta #visualizzaofferta{
     width:40px;
@@ -1608,44 +1608,40 @@ li.title a span {
 
 /* Form per i filtri */
 .espandi3 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
-    position:relative;
-    left:400px;
-    bottom:10px;
-    color: #266abd;
+      position:relative;
+    left:450px;
+    bottom:47px;
+    color: white;
     cursor: pointer;
     width:220px;
-    font-size: 22px;
-    
+    font-size: 18px;
+
 }
 .espandi4{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+      color: white;
     position:relative;
     left:800px;
-    bottom:40px;
-    color: #266abd;
+    bottom:75px;
     cursor: pointer;
     width:240px;
-    font-size: 22px;
+    font-size: 18px;
 }
 .filtraForm3 {
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
     font-size: small;
     width:220px !important;  width /**/:200px;
     height:190px !important; height /**/: 200px;
     padding: 4px;
     overflow:auto;
     position:relative;
-    left:400px;
-    top:10px;
-    
-    z-index:10; 
+    left:413px;
+    bottom:277px;
+    position:absolute;
+    z-index: 1;
+    display:none;
     border: 2px solid;
     border-color: #266abd;
     border-radius: 2px 2px 2px 2px;
+    background-color: white;
     
 }
 .filtraForm3 table{
@@ -1653,21 +1649,22 @@ li.title a span {
     right: 20px;
 }
 .filtraForm4{
-    font-family: 'Titillium Web';
-    src: url(../fonts/TitilliumWeb-Regular.ttf);
+
     font-size: small;
     width:220px !important;  width /**/:200px;
     height:190px !important; height /**/: 200px;
     padding: 4px;
     overflow:auto;
     position:relative;
-    left:800px;
-    bottom:30px;
+    left:790px;
+    bottom:275px;
     display:none;
-    z-index:10;
+    position:absolute;
+    z-index: 1;
     border: 2px solid;
     border-color: #266abd;
     border-radius: 2px 2px 2px 2px;
+    background-color: white;
 }
 .filtraForm4 table{
     position:relative;
@@ -2265,6 +2262,7 @@ tr.border_bottom td {
 
 
 
+
 /* pagina dei brands generale */
 #PaginaDeiBrands{
     width: 300px;
@@ -2363,4 +2361,100 @@ tr.border_bottom td {
     bottom: 200px;
     overflow-y: no-content;
     
+}
+
+/*Form modifica in sezione admin*/
+#ModificaForm h2 {
+    
+    text-align: center;
+}
+
+#ModificaForm form{
+    position:relative;
+    top:5%;
+    left:40%;
+}
+
+
+/*pagina statistiche in sezione admin*/
+#StatistichePromozioni h3{
+    
+    text-align: center;
+}
+
+
+#StatistichePromozioni h2 {
+    text-align: center;
+}
+
+#StatistichePromozioni table {
+    position: relative;
+    left: 15em;
+    margin-bottom: 15%;
+}
+
+#StatisticheUtenti caption{
+    
+    margin-bottom:4%;
+}
+
+#StatisticheUtenti table {
+    
+    position:relative;
+    left:20em;
+  
+}
+
+/*Sezione modifica profilo staff*/
+.FormModificaProfiloStaff h3 {
+    
+    text-align: center;
+}
+
+.FormModificaProfiloStaff img {
+    
+    position:relative;
+    left:45em;
+    
+}
+
+.FormModificaProfiloStaff form {
+    
+    width:40%;
+    position:relative;
+    left:50em;
+   
+}
+
+
+/*Pagina relativa ai coupon in user*/
+
+#VisualizzaCoupon h2{
+    
+    text-align: center;
+    
+}
+
+
+#VisualizzaCoupon table{
+    
+    text-align: center;
+    position:relative;
+    left: 21em;
+    
+}
+
+/*Offerte della pagina del filtro azienda*/
+#offertefiltroazienda {
+    
+    position:relative;
+    left:2%;
+    bottom:7em;
+}
+
+#filtracategoria{
+    
+    position:relative;
+    left:2%;
+    bottom:7em;
 }
