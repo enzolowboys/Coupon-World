@@ -530,6 +530,23 @@ input:focus {
  
 }
 
+
+/* rappresenta la sezione a dx che contiene tutte le informazioni (nome prodotto, tipologia, categoria, ecc..) */
+#infoOfferta {
+    width: 75%;
+    height: 85%;
+    position: relative;
+    left: 90px;
+    text-align: right;
+    background-color: rgba(155,0,0,0.7);
+    border-radius: 0px 0px 0px 15px;
+    color: white;
+    bottom: 29px;
+    position:absolute;
+    z-index: 1;
+ 
+}
+
 /* sta ad indicare il nome del prodotto o una particolare sottocategoria (tecnologia > smartphones) */
 #infoOfferta h5 {
 
@@ -537,6 +554,7 @@ input:focus {
     font-weight: 500;
     position: relative;
     right: 3px;
+    bottom:30px;
 }
 
 /* sta ad indicare la categoria del prodotto */
@@ -545,7 +563,7 @@ input:focus {
     font-size: 13px;
     position: relative;
     right: 6px;
-    bottom: 80px;
+    bottom: 110px;
 }
 
 
@@ -554,7 +572,7 @@ input:focus {
     font-size: 13px;
     font-weight: 500;
     position: relative;
-    bottom: 127px;
+    bottom: 162px;
     right: 2px;
 }
 
@@ -564,8 +582,8 @@ input:focus {
     font-size: 15px;
     font-weight: 200;
     position: relative;
-    right: 155px;
-    bottom: 630px;
+    right: 165px;
+    bottom: 640px;
     color: white;
 }
 
@@ -575,7 +593,7 @@ input:focus {
     font-size: 18px;
     font-weight: 500;
     position: relative;
-    bottom: 130px;
+    bottom: 165px;
     right: 1px;
 }
 
