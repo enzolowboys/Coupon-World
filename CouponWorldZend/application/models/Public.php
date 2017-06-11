@@ -90,7 +90,7 @@ class Application_Model_Public extends App_Model_Abstract
 
         public function getPromozioneByDateAzienda($nome) {
             
-            return $this->getResource('Promozione')->getPromozioniInscadenzaTipologia($nome);
+            return $this->getResource('Promozione')->getPromozioneByDateAzienda($nome);
         }
         
          public function getPromozioneByDateTipologia($nome) {
@@ -107,6 +107,7 @@ class Application_Model_Public extends App_Model_Abstract
              
              return $this->getResource('Promozione')->getPromozioneByTipologiaAzienda($tipologia,$nome,$paged);
          }
+      
 
         public function getFaq(){
         

@@ -57,8 +57,8 @@ class Application_Model_User extends App_Model_Abstract
 
         /*inserisci  il coupon nella tabella */
         
-        public function insertCoupuon($info){
-            return $this->getResource('Coupon')->insertCoupuon($info);
+        public function insertCoupon($info){
+            return $this->getResource('Coupon')->insertCoupon($info);
         }
         
         /*modifica utente*/
@@ -82,8 +82,14 @@ class Application_Model_User extends App_Model_Abstract
         
         return $this->getResource('User')->getStaff($paged);
     }
-
+    
+    public function getCouponByUser($id,$paged){
         
-        
+        return $this->getResource('Coupon')->getCouponByUser($id,$paged);
+    }
+    
+    public function searchCouponByIdPromozione($idpromozione, $iduser){
+        return $this->getResource('Coupon')->searchCouponByIdPromozione($idpromozione, $iduser);
+    }
         
 }

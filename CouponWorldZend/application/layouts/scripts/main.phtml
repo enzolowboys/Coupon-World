@@ -8,7 +8,7 @@
         <!-- imposto i placeholders -->
         <?= $this->headMeta(); ?>
         <?= $this->headLink(); ?>
-         <?= $this->headScript(); ?>
+        <?= $this->headScript(); ?>
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet"> 
 	<title>Homepage</title>
 </head>
@@ -17,8 +17,28 @@
 	<!-- UPHEADER CONTENTENTE MENU -->
 	<div id="upheader">
 		<div id="upHeaderMenu">
-                    <a href="<?= $this->url(array('controller'=>'public','action'=>'login','default',true));?>"><h3><b>M</b>y Account</h3></a>
-		    <a href="<?= $this->url(array('controller'=>'public','action'=>'registrazione','default',true));?>"><h3><b>R</b>egistrazione</h3></a>
+                    <?php 
+                       
+                            echo'<a href="'. $this->url(array('controller'=>'public','action'=>'login','default',true)) .'"><h3><b>M</b>y Account</h3></a>';
+                            echo'<a href="'.$this->url(array('controller'=>'public','action'=>'registrazione','default',true)).'"><h3><b>R</b>egistrazione</h3></a> ';
+                      
+                      if ($this->authInfo('role') == 'admin'){
+                            echo '<h3>Benvenuto,' . $this->authInfo('username').'</h3>';
+                            echo'<a href="'. $this->url(array('controller'=>'admin','action'=>'index','default',true)) .'"><h3><b>M</b>y Account</h3></a>';
+                            echo'<a href="'.  $this->url(array('controller'=>'admin','action'=>'logout','default',true)) .'"><h3><b>L</b>ogout</h3></a>';
+                      }
+                      else if ($this->authInfo('role') == 'staff'){
+                            echo '<h3>Benvenuto,' . $this->authInfo('username').'</h3>';
+                            echo'<a href="'. $this->url(array('controller'=>'staff','action'=>'index','default',true)) .'"><h3><b>M</b>y Account</h3></a>';
+                            echo'<a href="'.  $this->url(array('controller'=>'staff','action'=>'logout','default',true)) .'"><h3><b>L</b>ogout</h3></a>';
+                      }
+                      else if ($this->authInfo('role') == 'user'){
+                            echo '<h3>Benvenuto,' . $this->authInfo('username').'</h3>';
+                            echo'<a href="'. $this->url(array('controller'=>'user','action'=>'index','default',true)) .'"><h3><b>M</b>y Account</h3></a>';
+                            echo'<a href="'.  $this->url(array('controller'=>'user','action'=>'logout','default',true)) .'"><h3><b>L</b>ogout</h3></a>';
+                      }
+      
+                    ?>
 		</div>
 	</div>
 	<!-- HEADER CONTENTENTE BARRA DI RICERCA E BOTTONE -->

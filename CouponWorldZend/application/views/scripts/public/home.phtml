@@ -144,8 +144,18 @@
                                             
                                             
                     <button id="stampaofferta2" onClick="<?php 
+                    
+                    $_UserModel = new Application_Model_User();
+                    
                     if($this->authInfo('role')=='user'){
-                       $indirizzo = "window.location.href='".$this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid' => $offertaCategoria->idpromozione ,'default',true))."'"; 
+                       
+                        /*
+                       if($contariga = $this->_UserModel->searchCouponByIdPromozione($offertaInScadenza->idpromozione, 1) >=1){
+                           echo 'myFunctionThree()';
+                       }
+                       */
+                        
+                       $indirizzo = "window.location.href='".$this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid' => $offertaInScadenza->idpromozione ,'default',true))."'"; 
                       echo $indirizzo;
                     }
                     else

@@ -3,41 +3,35 @@
 class Application_Model_Staff extends App_Model_Abstract
 { 
 
-	public function __construct()
-    {
+    public function __construct(){
 		$this->_logger = Zend_Registry::get('log');  	
 	}
         
         
         
         /*funzione per estrarre tutte le promozioni*/
-        public function getALlPromozione(){
-             return $this->getResource('Promozione')->getAllPromozione();
+    public function getAllPromozione(){
+            return $this->getResource('Promozione')->getAllPromozione();
         }
         
         
        /*funzione per eliminare le promozioni*/
-        public function deletePromozione($id){
-             return $this->getResource('Promozione')->deletePromozione($id);
+    public function deletePromozione($id){
+           
+            return $this->getResource('Promozione')->deletePromozione($id);
         }
         
         
         /*funzione per modificare le promozioni */
-        public function updatePromozione($idpromozione,$info){
+    public function updatePromozione($idpromozione,$info){
              return $this->getResource('Promozione')->updatePromozione($idpromozione,$info);
         }
         
         /*funzione per iserire promozioni*/
-        public function insertPromozione($info){
+    public function insertPromozione($info){
              return $this->getResource('Promozione')->insertPromozione($info);
         }
-        
-        
-        
-       /*modifica utente*/
-         public function updateUser($info,$username){
-        return $this->getResource('User')->updateUser($info, $username);
-    }
+
     
     
     /*estrae i dati dell'utente */
@@ -45,10 +39,15 @@ class Application_Model_Staff extends App_Model_Abstract
     {
         return $this->getResource('User')->getUserById($id);
     }
+    
+    public function updateUser($value,$id) {
+        
+        return $this->getResource('User')->updateUser($value,$id);
+    }
 
      public function getTipologie() {
-            
-            return $this->getResource('Tipologia')->getAllTipologie();
+        
+         return $this->getResource('Tipologia')->getAllTipologie();
      }
      
      public function getIdAziendaByNome($nome){
@@ -67,5 +66,12 @@ class Application_Model_Staff extends App_Model_Abstract
         
         return $this->getResource('Azienda')->getAzienda();
     }
+    
+    public function getPromozioneById($id){
+        
+        return $this->getResource('Promozione')->getPromozioneById($id);
+    }
+    
+
         
 }
