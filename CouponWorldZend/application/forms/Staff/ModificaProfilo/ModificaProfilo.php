@@ -10,7 +10,7 @@ class Application_Form_Staff_ModificaProfilo_ModificaProfilo extends App_Form_Ab
         
         
         $this->setMethod('post');
-        $this->setName('registra');
+        $this->setName('modificaprofilostaff');
         $this->setAction(''); //vuota in quanto si genera nel Controller
         
         //per la gestione degli elementi di tipo file

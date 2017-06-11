@@ -69,7 +69,9 @@ class Application_Model_Staff extends App_Model_Abstract
     
     public function getPromozioneById($id){
         
-        return $this->getResource('Promozione')->getPromozioneById($id);
+
+        return $this->getResource('Promozione')->getPromozioneByIdRow($id);
+
     }
     
 

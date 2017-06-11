@@ -22,7 +22,7 @@
             <div class="containerCoupon">
                 <?php foreach($this->stampaofferta as $offerta) :?>
                 <?php endforeach ?>
-                <img><?php echo  $this->offertaImg($offerta->immagine,array('class' => 'immagineOfferta'));?></img>
+                <?php echo  $this->offertaImg($offerta->immagine,array('class' => 'immagineOfferta'));?>
                 <?php echo '<p>'. $offerta->nomeprodotto.'</p>'?>
                 <?php echo '<p>'. $offerta->nome.'</p>'?>
                 <?php echo '<p>'. $offerta->tipo.'</p>'?>

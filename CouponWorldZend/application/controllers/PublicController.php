@@ -71,7 +71,9 @@ class PublicController extends Zend_Controller_Action {
     
     
 
+
     /*Pagina dell'azienda*/
+
      public function profilobrandsAction(){
          
       $this->_logger->info('Attivato ' . __METHOD__ . ' ');
@@ -85,7 +87,9 @@ class PublicController extends Zend_Controller_Action {
             
     }
     
+
     /*Pagina con tutte le aziende*/
+
     public function paginadeibrandsAction(){
           //log
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
@@ -93,6 +97,7 @@ class PublicController extends Zend_Controller_Action {
         $brands = $this->_PublicModel->getAzienda();
        
         $this->view->assign(array('paginadeibrands'=>$brands));
+
         
     }
     
@@ -111,6 +116,7 @@ class PublicController extends Zend_Controller_Action {
     /*Azione sulle pagine statiche*/
     public function viewstaticAction() {
         
+
         //log
        
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
@@ -243,18 +249,20 @@ class PublicController extends Zend_Controller_Action {
         
         if (!$formRicerca->isValid($_POST)) {
 		$formRicerca->setDescription('Attenzione! dati inseriti non validi');
-		return $this->render('home');
+		return $this->_helper->redirector('home');
         }
         $this->_helper->layout->setLayout('main');
         $tipologie = $this->_PublicModel->getTipologie();
         $pagedRicerca = $this->_getParam('pageRicerca',1);
         $nomeDaCercare = $formRicerca->getValue('cercaOfferta');
         $scelta = $formRicerca->getValue('selezione');
-        $this->_logger->info($scelta);
-        $this->_logger->info($nomeDaCercare);
-        $offertaRicercata = null;
-        $offertaRicercata = $this->_PublicModel->cercaPromozione($scelta, $nomeDaCercare, $pagedRicerca);
-        $this->view->assign(array('offertaRicercata'=>$offertaRicercata,'tipologie'=>$tipologie));
+        $parole = preg_split("/[\s,]+/", $nomeDaCercare);
+        $this->_logger->info(print_r($parole,true));
+        if(count($parole)<3){
+            $offertaRicercata = null;
+            $offertaRicercata = $this->_PublicModel->cercaPromozione($scelta, $parole, $pagedRicerca);
+            $this->view->assign(array('offertaRicercata'=>$offertaRicercata,'tipologie'=>$tipologie));
+        }
  }
  
     //funzione per ottenere la form registra

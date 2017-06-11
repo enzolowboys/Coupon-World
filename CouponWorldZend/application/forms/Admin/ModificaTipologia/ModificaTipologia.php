@@ -8,7 +8,7 @@ class Application_Form_Admin_ModificaTipologia_ModificaTipologia extends App_For
     public function init(){
 
         $this->setMethod('post');
-        $this->setName('nuovatipologia');
+        $this->setName('modificatipologia');
         $this->setAction(''); //vuota in quanto si genera nel Controller
             
         //per la gestione degli elementi di tipo file

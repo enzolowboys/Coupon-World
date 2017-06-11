@@ -148,14 +148,10 @@
                     $_UserModel = new Application_Model_User();
                     
                     if($this->authInfo('role')=='user'){
-                       
-                        /*
-                       if($contariga = $this->_UserModel->searchCouponByIdPromozione($offertaInScadenza->idpromozione, 1) >=1){
-                           echo 'myFunctionThree()';
-                       }
-                       */
-                        
+
+
                        $indirizzo = "window.location.href='".$this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid' => $offertaInScadenza->idpromozione ,'default',true))."'"; 
+
                       echo $indirizzo;
                     }
                     else
@@ -169,9 +165,11 @@
         
         
                 <?php endforeach ?>
-                <?php if($this->offerta instanceof Zend_Paginator) {
-	  		echo $this->paginationControl($this->offerta,'Sliding','public/_paginatorOffertaInScadenza.phtml');
+        <div id="paginatorOfferteScadenza">
+                <?php if($this->offerteInScadenza instanceof Zend_Paginator) {
+	  		echo $this->paginationControl($this->offerteInScadenza,'Sliding','public/paginator/_paginatorOffertaInScadenza.phtml');
                    } 
                  ?>
+        </div>
     </div>
 </div>

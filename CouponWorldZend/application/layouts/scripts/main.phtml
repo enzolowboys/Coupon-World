@@ -17,28 +17,17 @@
 	<!-- UPHEADER CONTENTENTE MENU -->
 	<div id="upheader">
 		<div id="upHeaderMenu">
-                    <?php 
-                       
-                            echo'<a href="'. $this->url(array('controller'=>'public','action'=>'login','default',true)) .'"><h3><b>M</b>y Account</h3></a>';
-                            echo'<a href="'.$this->url(array('controller'=>'public','action'=>'registrazione','default',true)).'"><h3><b>R</b>egistrazione</h3></a> ';
-                      
-                      if ($this->authInfo('role') == 'admin'){
-                            echo '<h3>Benvenuto,' . $this->authInfo('username').'</h3>';
-                            echo'<a href="'. $this->url(array('controller'=>'admin','action'=>'index','default',true)) .'"><h3><b>M</b>y Account</h3></a>';
-                            echo'<a href="'.  $this->url(array('controller'=>'admin','action'=>'logout','default',true)) .'"><h3><b>L</b>ogout</h3></a>';
-                      }
-                      else if ($this->authInfo('role') == 'staff'){
-                            echo '<h3>Benvenuto,' . $this->authInfo('username').'</h3>';
-                            echo'<a href="'. $this->url(array('controller'=>'staff','action'=>'index','default',true)) .'"><h3><b>M</b>y Account</h3></a>';
-                            echo'<a href="'.  $this->url(array('controller'=>'staff','action'=>'logout','default',true)) .'"><h3><b>L</b>ogout</h3></a>';
-                      }
-                      else if ($this->authInfo('role') == 'user'){
-                            echo '<h3>Benvenuto,' . $this->authInfo('username').'</h3>';
-                            echo'<a href="'. $this->url(array('controller'=>'user','action'=>'index','default',true)) .'"><h3><b>M</b>y Account</h3></a>';
-                            echo'<a href="'.  $this->url(array('controller'=>'user','action'=>'logout','default',true)) .'"><h3><b>L</b>ogout</h3></a>';
-                      }
-      
-                    ?>
+
+                    <?php if($this->authInfo('role')===null): ?>
+                    <a href="<?= $this->url(array('controller'=>'public','action'=>'login','default',true));?>"><h3><b>M</b>y Account</h3></a>
+		    <a href="<?= $this->url(array('controller'=>'public','action'=>'registrazione','default',true));?>"><h3><b>R</b>egistrazione</h3></a>
+                    <a href="<?= $this->url(array('controller'=>'public','action'=>'home','default',true));?>"><h3><b>H</b>ome</h3></a>
+                    <?php else:?>
+                    <a href="<?= $this->url(array('controller'=>$this->authInfo('role'),'action'=>'index','default',true));?>"><h3><b>M</b>y Account</h3></a>
+		    <a href="<?= $this->url(array('controller'=>$this->authInfo('role'),'action'=>'logout','default',true));?>"><h3><b>L</b>ogout</h3></a>
+                    <a href="<?= $this->url(array('controller'=>'public','action'=>'home','default',true));?>"><h3><b>H</b>ome</h3></a>
+                    <?php endif ?>
+
 		</div>
 	</div>
 	<!-- HEADER CONTENTENTE BARRA DI RICERCA E BOTTONE -->

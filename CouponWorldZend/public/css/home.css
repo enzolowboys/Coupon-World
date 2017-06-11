@@ -492,7 +492,7 @@ input:focus {
     float: left;
     margin-right: 12px;
     margin-bottom: 40px;
-  
+
 }
 #offerta #visualizzaofferta{
     width:40px;
@@ -1046,7 +1046,9 @@ input:focus {
     border: black;
     color: black;
     position: relative;
-    bottom: 0px;
+
+    bottom: 100px;
+
     left:37.5%;
     height: 20px;
 }
@@ -1608,6 +1610,7 @@ li.title a span {
 
 /* Form per i filtri */
 .espandi3 {
+
       position:relative;
     left:450px;
     bottom:47px;
@@ -1616,15 +1619,18 @@ li.title a span {
     width:220px;
     font-size: 18px;
 
+
 }
 .espandi4{
       color: white;
     position:relative;
     left:800px;
+
     bottom:75px;
     cursor: pointer;
     width:240px;
     font-size: 18px;
+
 }
 .filtraForm3 {
     font-size: small;
@@ -1633,11 +1639,13 @@ li.title a span {
     padding: 4px;
     overflow:auto;
     position:relative;
+
     left:413px;
     bottom:277px;
     position:absolute;
     z-index: 1;
     display:none;
+
     border: 2px solid;
     border-color: #266abd;
     border-radius: 2px 2px 2px 2px;
@@ -1656,8 +1664,10 @@ li.title a span {
     padding: 4px;
     overflow:auto;
     position:relative;
+
     left:790px;
     bottom:275px;
+
     display:none;
     position:absolute;
     z-index: 1;
@@ -1766,12 +1776,15 @@ tr.border_bottom td {
 /* pagina che contiene la tabella per modificare/eliminare le tipologie */
 #ModificaEliminaTipologia table {
     position:relative;
-    left: 500px;
+    left: 35%;
+    
     display: table;
     width: 30%;
     border-collapse: separate; 
     border-spacing: 0px;
-    bottom: 0px;
+
+    bottom: 40px;
+
 }
 #ModificaEliminaTipologia h2 {
 
@@ -1946,7 +1959,9 @@ tr.border_bottom td {
 /* pagina che contiene la tabella per modificare/eliminare gli utenti */
 #ModificaEliminaUtente table {
     position: relative;
-    left: 318px;
+
+    left: 30%;
+
     display: table;
     width: 30%;
     border-collapse: separate; 
@@ -2387,10 +2402,13 @@ tr.border_bottom td {
     text-align: center;
 }
 
-#StatistichePromozioni table {
-    position: relative;
-    left: 15em;
-    margin-bottom: 15%;
+
+#StatistichePromozioni table{
+    
+   
+    position:relative;
+    left:25em;
+    margin-bottom:15%;
 }
 
 #StatisticheUtenti caption{
@@ -2401,7 +2419,9 @@ tr.border_bottom td {
 #StatisticheUtenti table {
     
     position:relative;
-    left:20em;
+
+    left:33em;
+
   
 }
 
@@ -2440,7 +2460,9 @@ tr.border_bottom td {
     
     text-align: center;
     position:relative;
-    left: 21em;
+
+    left:32em;
+
     
 }
 
@@ -2457,4 +2479,199 @@ tr.border_bottom td {
     position:relative;
     left:2%;
     bottom:7em;
+
 }
+
+}
+
+#categoriefiltrate{
+    
+    position:relative;
+    left:33%;
+    bottom:10em;
+}
+/*Paginator offerte in scadenza nella home*/
+#paginatorOfferteScadenza{
+    
+    position:relative;
+    top:50px;
+}
+
+
+/*form modifica azienda in admin*/
+#modificaazienda td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificaazienda td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificaazienda td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificaazienda td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+
+/*form modifica utente in admin*/
+#modificautente td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificautente td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificautente td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificautente td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+/*form modifica tipologia*/
+#modificatipologia td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificatipologia td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificatipologia td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificatipologia td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+
+/*modifica faq in admin*/
+#modificafaq td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificafaq td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificafaq td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificafaq td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+
+/*modifica offerta in pagina staff*/
+#modificaofferta td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificaofferta td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificaofferta td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificaofferta td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+
+
+/*modifica profilo in pagina staff*/
+#modificaprofilostaff td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificaprofilostaff td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificaprofilostaff td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificaprofilostaff td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+
+
+
+
