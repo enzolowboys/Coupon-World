@@ -2,33 +2,35 @@
     <div id="navMenu">
     </div>
     <?php echo '<h1 class="titolocategoria">Offerte'.$this->tipoofferta.' per la tipologia: '.$this->nomecercato.' </h1>';?>
-    <?php foreach ($this->offerte as $offertaGiorno) :?>
+    <div id="filtracategoria">
+    <?php foreach ($this->offerte as $offerta) :?>
 		<div id="offertaCategoria">
-                     <?php echo $this->offertaImg($offertaGiorno->immagine,array('class' => 'immagineOfferta'));?>
+                     <?php echo $this->offertaImg($offerta->immagine,array('class' => 'immagineOfferta'));?>
 			<div id="infoOfferta"> 
                                
-                                <?php echo '<h5>'. $offertaGiorno->nomeprodotto.'</h5>'?>
+                                <?php echo '<h5>'. $offerta->nomeprodotto.'</h5>'?>
 				<br>
-                                <?php echo '<h6>'. $offertaGiorno->localita.'</h6>'?>
+                                <?php echo '<h6>'. $offerta->localita.'</h6>'?>
                                 <br>
-                     <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaGiorno->nome,'default',true));?>">
+                     <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offerta->nome,'default',true));?>">
                                    
-                           <?php echo '<h7>'. $offertaGiorno->nome.'</h7>'?></a>
+                           <?php echo '<h7>'. $offerta->nome.'</h7>'?></a>
 				<br>
 
-				<?php echo '<h8>'. $offertaGiorno->tipo.'</h8>'?>
->
+				<?php echo '<h8>'. $offerta->tipo.'</h8>'?>
+
 				<br>
-                                <?php echo '<h8>dal '.'<b>'.$offertaGiorno->datainizio.'</b> al <b>'.
-                                        $offertaGiorno->datafine.'</b>'.'</h8>'?>
+                                <?php echo '<h8>dal '.'<b>'.$offerta->datainizio.'</b> al <b>'.
+                                        $offerta->datafine.'</b>'.'</h8>'?>
 				<button id="stampaofferta"></button>
                                 <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
 			</div>
 		</div>
                 <?php endforeach ?>
           <?php if($this->offerte instanceof Zend_Paginator) {
-                echo $this->paginationControl($this->offerte,'Sliding','public/_paginatorFiltraAzienda.phtml');
+                echo $this->paginationControl($this->offerte,'Sliding','public/paginator/_paginatorFiltraTipologia.phtml');
 	  } 
 	  ?>
+    </div>
     
 </div>

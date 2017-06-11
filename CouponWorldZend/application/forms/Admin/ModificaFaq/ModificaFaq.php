@@ -8,7 +8,7 @@ class Application_Form_Admin_ModificaFaq_ModificaFaq extends App_Form_Abstract {
     public function init(){
 
         $this->setMethod('post');
-        $this->setName('nuovadomandarisposta');
+        $this->setName('modificafaq');
         $this->setAction(''); //vuota in quanto si genera nel Controller
             
         //per la gestione degli elementi di tipo file

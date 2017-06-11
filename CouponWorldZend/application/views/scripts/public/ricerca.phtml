@@ -21,20 +21,20 @@
         <?php  if(!empty($this->offertaRicercata)) :?>
             <?php echo '<h1 class="titolocategoria">Risultati trovati per '.$this->nomeDaCercare.'</h1>';?>
         <?php endif ?>
-     
+<div id="containerDelleOfferte">      
         <?php foreach ($this->offertaRicercata as $offertaRicercata) :?>
 		<div id="offertaCategoria">
                      <?php echo $this->offertaImg($offertaRicercata->immagine,array('class' => 'immagineOfferta'));?>
 			<div id="infoOfferta"> 
                                
-                                <?php echo '<h5>Nome Prodotto: '. $offertaRicercata->nomeprodotto.'</h5>'?>
+                                <?php echo '<h5>'. $offertaRicercata->nomeprodotto.'</h5>'?>
                                 <br>
-				<?php echo '<h6>Categoria: '. $offertaRicercata->nometipologia.'</h6>'?>
+				<?php echo '<h6>'. $offertaRicercata->nometipologia.'</h6>'?>
 				<br>
-				<?php echo '<h7>Azienda: '. $offertaRicercata->tipo.'</h7>'?>
+				<?php echo '<h7>'. $offertaRicercata->tipo.'</h7>'?>
 				<br>
        <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaRicercata->nome,'default',true));?>">
-                 	<?php echo '<h8>Offerta: '. $offertaRicercata->nome.'</h8>'?>
+                 	<?php echo '<h8>'. $offertaRicercata->nome.'</h8>'?>
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaRicercata->datainizio.'</b> al <b>'.
                                         $offertaRicercata->datafine.'</b>'.'</h8>'?>
@@ -43,14 +43,14 @@
 		</div>
                 <?php endforeach ?>
           <?php if($this->offertaRicercata instanceof Zend_Paginator) {
-                echo $this->paginationControl($this->offertaRicercata,'Sliding','public/_paginatorRicerca.phtml');
+                echo $this->paginationControl($this->offertaRicercata,'Sliding','public/paginator/_paginatorRicerca.phtml');
 	  } 
 	  ?>
         
         <?php if(empty($this->offertaRicercata)) :?>
             <?php echo '<h1 class="titolocategoria">Nessun Risultato trovato</h1>';?>
         <?php endif ?>
-      
+ </div>      
  
    
 </div>

@@ -41,10 +41,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         
         $this->_view->headScript()->appendFile($this->_view->baseUrl().'/js/jquery.min.js');
         $this->_view->headScript()->appendFile($this->_view->baseUrl().'/js/functions.js');
-
         $this->_view->headScript()->appendFile($this->_view->baseUrl().'/js/jquery.js');
-
-
+        
+        $this->_view->headScript()->appendFile($this->_view->baseUrl().'/js/jquery-listnav.js');
+        $this->_view->headScript()->appendFile($this->_view->baseUrl().'/js/jquery-listnav.min.js');
         
     }
     protected function _initDefaultModuleAutoloader()

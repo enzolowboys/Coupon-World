@@ -28,14 +28,14 @@ class UserController extends Zend_Controller_Action {
     }
     
     public function stampaoffertaAction(){
-      /*Disabilito il layout perchè viene caricata la pagina di Benvenuto*/
+     
       $this->_helper->layout->disableLayout();
     
       $this->_logger->info('Attivato ' . __METHOD__ . ' ');
         
-        $param= $this->_getParam('offertaid');
+      $param= $this->_getParam('offertaid');
         
-         $this->_logger->info($param);
+      $this->_logger->info($param);
         
          $stampafferta = $this->_UserModel->getPromozioneById($param);
          $this->_logger->debug(print_r($stampafferta, true));

@@ -8,7 +8,7 @@ class Application_Form_Staff_ModificaOfferta_ModificaOfferta extends App_Form_Ab
     public function init(){
         $this->_staffModel = new Application_Model_Staff();
         $this->setMethod('post');
-        $this->setName('nuovapromozione');
+        $this->setName('modificaofferta');
         $this->setAction(''); //vuota in quanto si genera nel Controller
             
         //per la gestione degli elementi di tipo file

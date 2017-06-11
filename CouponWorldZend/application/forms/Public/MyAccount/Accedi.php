@@ -19,7 +19,7 @@ class Application_Form_Public_MyAccount_Accedi extends App_Form_Abstract {
             'label' => 'Username',
             'filters' => array('StringTrim'),
             'required' => true,
-            'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
+            'validators' => array(array('StringLength', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
             'description' => 'Inserisci l`username scelto durante la registrazione',
             'decorators' => $this ->elementDecorators,
         ));
@@ -29,7 +29,7 @@ class Application_Form_Public_MyAccount_Accedi extends App_Form_Abstract {
             'label' => 'Password',
             'filters' => array('StringTrim'),
             'required' => true,
-            'validators' => array(array('StringLenght', false, array(1,20))),
+            'validators' => array(array('StringLength', false, array(1,20))),
             'description' => 'Inserisci la password scelta durante la registrazione',
             'decorators' => $this ->elementDecorators,
             
