@@ -59,7 +59,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'label' => 'Validità della promozione',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', true, array(1,20))),
+            'validators' => array(array('StringLength', true, array(1,20))),
             'description' => 'Inserisci i giorni di validità della promozione',
             'decorators' => $this ->elementDecorators,
         ));
@@ -69,7 +69,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'label' => 'Nome Prodotto',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', true, array(1,20))),
+            'validators' => array(array('StringLength', true, array(1,20))),
             'description' => 'Inserisci il nome del prodotto',
             'decorators' => $this ->elementDecorators,
         ));
@@ -105,15 +105,14 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'description' => 'Inserisci la modalità di fruizione',
             'decorators' => $this ->elementDecorators,
         ));
-      
-        //elemento grafico relativo alla foto profilo
+   
         $this->addElement('file', 'immagine', array(
             'label' => 'Immagine Prodotto',
-            'destination' => APPLICATION_PATH . '/../public/images/fotoutenti',
+            'destination' => APPLICATION_PATH . '/../public/images/offerte',
             'validators' => array( 
           array('Count', false, 1),
-          array('Size', false, 202400), //9 mb per l'img
-         array('Extension', false, array('jpg', 'gif'))),
+          array('Size', false, 202400), //2 mb per l'img
+         array('Extension', false, array('jpg', 'gif','png'))),
            'decorators' => $this->fileDecorators,
 	));
         
@@ -122,7 +121,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'label' => 'Localitá',
             'filters' => array('StringTrim'),
             'required' => true,
-            'validators' => array(array('StringLength', true, array(1,20))),
+            'validators' => array(array('StringLength', true, array(1,50))),
             'description' => 'Inserisci la localitá interessata della promozione',
             'decorators' => $this ->elementDecorators,
         ));

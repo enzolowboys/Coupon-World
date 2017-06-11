@@ -120,7 +120,7 @@ class StaffController extends Zend_Controller_Action {
         $this->_logger->info('Attivato ' . METHOD . ' ');
             
         if (!$this->getRequest()->isPost()) {
-            $this->_helper->redirector('home');
+            $this->_helper->redirector('nuovapromozione');
         }
 
         $formInserimentoNuovaPromozione = $this->_formInserimentoNuovaPromozione;
@@ -130,7 +130,7 @@ class StaffController extends Zend_Controller_Action {
             
             $formInserimentoNuovaPromozione->setDescription('ATTENZIONE! dati inseriti non validi!');
             $this->_logger->debug(print_r($formInserimentoNuovaPromozione->getErrors(), true));
-            return $this->render('nuovaazienda');
+            return $this->render('nuovapromozione');
                 
                 
         }
