@@ -1,56 +1,64 @@
 <div id="content">	
-	<!-- SUBHEADER CONTENTENTE INFORMAZIONIA AGGIUNTIVE AL SITO -->
-	<div id="subheader">
-		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-		<a ><img src="<?php echo $this->baseURL();?>/images/icons/h24.png" class="icons"></img><h4>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-		<a ><img src="<?php echo $this->baseURL();?>/images/icons/brands.png" class="icons"></img><h4>i migliori brands a portata di click &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-		<a ><img src="<?php echo $this->baseURL();?>/images/icons/risparmio.png" class="icons"></img><h4>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
-		<a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'faq','default',true));?>"><img src="<?php echo $this->baseURL();?>/images/icons/FAQ.png" class="icons"></img><h4>dubbi? FAQ semplice e intuitiva!</h4></a>
-	</div>	
-	<div id="navMenu">
-            <ul id="categorie">
+    <!-- SUBHEADER CONTENTENTE INFORMAZIONIA AGGIUNTIVE AL SITO -->
+    <div id="subheader">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <a ><img src="<?php echo $this->baseURL();?>/images/icons/h24.png" class="icons"></img><h4>offerte aggiornate 24 ore su 24 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        <a ><img src="<?php echo $this->baseURL();?>/images/icons/brands.png" class="icons"></img><h4>i migliori brands a portata di click &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        <a ><img src="<?php echo $this->baseURL();?>/images/icons/risparmio.png" class="icons"></img><h4>risparmio garantito &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4></a>
+        <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'faq','default',true));?>"><img src="<?php echo $this->baseURL();?>/images/icons/FAQ.png" class="icons"></img><h4>dubbi? FAQ semplice e intuitiva!</h4></a>
+    </div>	
+    <div id="navMenu">
+        <ul id="categorie">
             <h1>&nbsp; &nbsp; ≡ CATEGORIE</h1>
             <!-- lista delle categorie dei prodotti presenti nel sito -->
             <?php foreach ($this->tipologie as $tipologia) :?>
-                <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>$tipologia->nometipologia,'default',true));?>">&nbsp; &nbsp;<?php echo $tipologia->nometipologia ?></a></li>
+            <li><a href="<?= $this->url(array('controller'=>'public','action'=>'categorie','catId'=>$tipologia->nometipologia,'default',true));?>">&nbsp; &nbsp;<?php echo $tipologia->nometipologia ?></a></li>
             <?php endforeach;?>
-            </ul>
-	</div>
-        
-        <!--Sezione dinamica che in base al click sulla categoria apre la pagina della categoria giusta --> 
-        <?php  if(!empty($this->offertaRicercata)) :?>
-            <?php echo '<h1 class="titolocategoria">Risultati trovati per '.$this->nomeDaCercare.'</h1>';?>
-        <?php endif ?>
-<div id="containerDelleOfferte">      
+        </ul>
+    </div>
+    
+    <!--Sezione dinamica che in base al click sulla categoria apre la pagina della categoria giusta --> 
+    
+            <?php echo '<h1 class="titolocategoria">Risultati trovati per '.$this->nomedacercare.'</h1>';?>
+    
+    <div id="containerDelleOfferte">      
         <?php foreach ($this->offertaRicercata as $offertaRicercata) :?>
-		<div id="offertaCategoria">
+        <div id="offertaCategoria">
                      <?php echo $this->offertaImg($offertaRicercata->immagine,array('class' => 'immagineOfferta'));?>
-			<div id="infoOfferta"> 
-                               
+            <div id="infoOfferta"> 
+                
                                 <?php echo '<h5>'. $offertaRicercata->nomeprodotto.'</h5>'?>
-                                <br>
+                <br>
 				<?php echo '<h6>'. $offertaRicercata->nometipologia.'</h6>'?>
-				<br>
+                <br>
 				<?php echo '<h7>'. $offertaRicercata->tipo.'</h7>'?>
-				<br>
-       <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaRicercata->nome,'default',true));?>">
+                <br>
+                <a href="<?= $this->url(array('controller'=>'public','action'=>'profilobrands','nomeazienda' => $offertaRicercata->nome,'default',true));?>"></a>
                  	<?php echo '<h8>'. $offertaRicercata->nome.'</h8>'?>
-				<br>
+                <br>
                                 <?php echo '<h8>dal '.'<b>'.$offertaRicercata->datainizio.'</b> al <b>'.
                                         $offertaRicercata->datafine.'</b>'.'</h8>'?>
-				<button id="stampaofferta"></button>
-			</div>
-		</div>
+                <button id="stampaofferta" onClick="<?php 
+                    if($this->authInfo('role')=='user'){
+                       $indirizzo = "window.location.href='".$this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid' => $offertaRicercata->idpromozione ,'default',true))."'"; 
+                      echo $indirizzo;
+                    }
+                    else
+                        echo 'myFunction()';?>"></button>
+                
+                <div id="snackbar">Per accedere al codice coupon della promozione occorre registrarsi come utente!</div>
+                
+                <a href="<?= $this->url(array('controller'=>'public','action'=>'informazioneofferta','offertaid' => $offertaRicercata->idpromozione ,'default',true));?>"><button id="visualizzaofferta"></button></a>
+            </div>
+        </div>
                 <?php endforeach ?>
           <?php if($this->offertaRicercata instanceof Zend_Paginator) {
                 echo $this->paginationControl($this->offertaRicercata,'Sliding','public/paginator/_paginatorRicerca.phtml');
 	  } 
 	  ?>
         
-        <?php if(empty($this->offertaRicercata)) :?>
-            <?php echo '<h1 class="titolocategoria">Nessun Risultato trovato</h1>';?>
-        <?php endif ?>
- </div>      
- 
-   
+        
+    </div>      
+    
+    
 </div>

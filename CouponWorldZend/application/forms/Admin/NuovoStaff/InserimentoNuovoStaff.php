@@ -19,7 +19,7 @@ class Application_Form_Admin_NuovoStaff_InserimentoNuovoStaff extends App_Form_A
             'label' => 'Nome',
             'filters' => array('StringTrim'),
             'required' => true,
-            //'validators' => array(array('StringLenght', true, array(1,20))),
+            'validators' => array(array('StringLength', true, array(1,20))),
             'description' => 'Inserisci il suo nome',
             'decorators' => $this ->elementDecorators,
         ));
@@ -29,7 +29,7 @@ class Application_Form_Admin_NuovoStaff_InserimentoNuovoStaff extends App_Form_A
             'label' => 'Cognome',
             'filters' => array('StringTrim'),
             'required' => true,
-           // 'validators' => array(array('StringLenght', true, array(1,20))), 
+            'validators' => array(array('StringLength', true, array(1,20))), 
             'description' => 'Inserisci il suo cognome',
             'decorators' => $this ->elementDecorators,
         ));
@@ -46,7 +46,7 @@ class Application_Form_Admin_NuovoStaff_InserimentoNuovoStaff extends App_Form_A
             'label' => 'Etá',
             'filters' => array('StringTrim'),
             'required' => true,
-           // 'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
+            'validators' => array(array('StringLength', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
             'description' => 'Inserisci il tuo cognome',
             'decorators' => $this ->elementDecorators,
         ));
@@ -56,7 +56,7 @@ class Application_Form_Admin_NuovoStaff_InserimentoNuovoStaff extends App_Form_A
             'label' => 'Telefono',
             'filters' => array('StringTrim'),
             'required' => true,
-          //  'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
+            'validators' => array(array('StringLength', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
             'description' => 'Inserisci il suo numero di telefono',
             'decorators' => $this ->elementDecorators,
         ));
@@ -66,7 +66,7 @@ class Application_Form_Admin_NuovoStaff_InserimentoNuovoStaff extends App_Form_A
             'label' => 'Indirizzo',
             'filters' => array('StringTrim'),
             'required' => true,
-           // 'validators' => array(array('StringLenght', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
+            'validators' => array(array('StringLength', false, array(1,20))), //false perché non deve proseguire se non é soddisfatto
             'description' => 'Inserisci il suo indirizzo',
             'decorators' => $this ->elementDecorators,
         ));
@@ -76,7 +76,7 @@ class Application_Form_Admin_NuovoStaff_InserimentoNuovoStaff extends App_Form_A
             'label' => 'Città',
             'filters' => array('StringTrim'),
             'required' => true,
-           // 'validators' => array(array('StringLenght', false, array(1,20))), 
+            'validators' => array(array('StringLength', false, array(1,20))), 
             'description' => 'Inserisci la sua città',
             'decorators' => $this ->elementDecorators,
         ));
@@ -87,9 +87,9 @@ class Application_Form_Admin_NuovoStaff_InserimentoNuovoStaff extends App_Form_A
             'required'   => true,
             'filters'    => array('StringTrim'),
             'decorators' => $this ->elementDecorators,
-           // 'validators' => array(
-             //  'EmailAddress',
-          //  )
+            'validators' => array(
+              'EmailAddress',
+           )
         ));
         
         //elemento grafico relativo all'username
@@ -97,7 +97,7 @@ class Application_Form_Admin_NuovoStaff_InserimentoNuovoStaff extends App_Form_A
             'label' => 'Username',
             'filters' => array('StringTrim'),
             'required' => true,
-           // 'validators' => array(array('StringLenght', true, array(1,20))), 
+            'validators' => array(array('StringLength', true, array(1,20))), 
             'description' => 'Inserisci il tuo username scelto',
             'decorators' => $this ->elementDecorators,
         ));
@@ -107,7 +107,7 @@ class Application_Form_Admin_NuovoStaff_InserimentoNuovoStaff extends App_Form_A
             'label' => 'Password',
             'filters' => array('StringTrim'),
             'required' => true,
-           // 'validators' => array(array('StringLenght', true, array(1,20))), 
+            'validators' => array(array('StringLength', true, array(1,20))), 
             'description' => 'Inserisci la tua password scelta',
             'decorators' => $this ->elementDecorators,
         ));
@@ -116,10 +116,10 @@ class Application_Form_Admin_NuovoStaff_InserimentoNuovoStaff extends App_Form_A
         $this->addElement('file', 'foto', array(
             'label' => 'Immagine',
             'destination' => APPLICATION_PATH . '/../public/images/fotoutenti',
-          //  'validators' => array( 
-          // array('Count', false, 1),
-          //  array('Size', false, 202400), //9 mb per l'img
-         //  array('Extension', false, array('jpg', 'gif'))),
+            'validators' => array( 
+            array('Count', false, 1),
+            array('Size', false, 202400), //9 mb per l'img
+            array('Extension', false, array('jpg', 'gif'))),
            'decorators' => $this->fileDecorators,
 	));
         

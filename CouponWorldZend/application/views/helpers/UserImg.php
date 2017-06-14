@@ -2,7 +2,7 @@
 
 class Zend_View_Helper_UserImg extends Zend_View_Helper_HtmlElement {
     
-    public function userimg ($imgFile, $_attrs=false) {
+    public function userImg ($imgFile, $_attrs=false) {
         
       if (empty($imgFile)) {
 			$imgFile = 'default.jpg';

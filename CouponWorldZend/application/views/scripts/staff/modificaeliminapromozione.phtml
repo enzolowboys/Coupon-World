@@ -25,21 +25,21 @@
                 <td><?php echo $promozione->nometipologia?></td>
                  <td><button 
                     onClick="window.location.href='<?=
-                    $this->url(array('controller'=>'staff','action'=>'modificapromozione','idpromo'=>$promozione->idpromozione,'default',true));
+                    $this->url(array('controller'=>'staff','action'=>'modificapromozionepage','idpromo'=>$promozione->idpromozione,'default',true));
                     ?>';"
                             >Modifica</button></td>
                     <td>
                 <td><button 
                     onClick="window.location.href='<?=
-                    $this->url(array('controller'=>'admin','action'=>'eliminautente','idpromo'=>$promozione->idpromozione,'default',true));
+                    $this->url(array('controller'=>'staff','action'=>'eliminapromozione','idpromo'=>$promozione->idpromozione,'default',true));
                     ?>';">Elimina</button></td>
             <br>
             </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
-         <?php if($this->utenti instanceof Zend_Paginator) {
-                echo $this->paginationControl($this->utenti,'Sliding','staff/paginator/_paginatormodificpromozione.phtml');
+         <?php if($this->promozione  instanceof Zend_Paginator) {
+                echo $this->paginationControl($this->promozione,'Sliding','staff/paginator/_paginatormodificapromozione.phtml');
 	  } 
 	  ?>
     </div>

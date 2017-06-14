@@ -22,7 +22,7 @@ class AdminController extends Zend_Controller_Action {
         
         $this->_AdminModel = new Application_Model_Admin(); //model
         
-        /* azioni sulle form di inserimento */
+        /*Inizializzazione delle form*/
         $this->view->nuovaaziendaForm = $this->getInserisciAziendaForm();
         $this->view->nuovatipologiaForm = $this->getInserisciTipologiaForm();
         $this->view->nuovostaffForm = $this->getInserisciStaffForm();
@@ -118,6 +118,7 @@ class AdminController extends Zend_Controller_Action {
 				));
          $azienda = $this->_AdminModel->getAziendaById($id);
          $azienda = $azienda->toArray();
+         
          $this->_modificaAziendaForm->populate($azienda);
        
     }
@@ -135,6 +136,7 @@ class AdminController extends Zend_Controller_Action {
 				));
         $utente = $this->_AdminModel->getUserById($id);
         $utente = $utente->toArray();
+        
         $this->_modificaUtenteForm->populate($utente);
              
     }
@@ -153,6 +155,7 @@ class AdminController extends Zend_Controller_Action {
 				));
         $tipologia = $this->_AdminModel->getTipologiaById($id);
         $tipologia = $tipologia->toArray();
+        
         $this->_modificaTipologiaForm->populate($tipologia);
         
     }
@@ -170,10 +173,12 @@ class AdminController extends Zend_Controller_Action {
 				));
         $utente = $this->_AdminModel->getUserById($id);
         $utente = $utente->toArray();
+        
         $this->_modificaStaffForm->populate($utente);
         
     }
     
+    /*pagina per la modifica della faq*/
     public function modificafaqpageAction(){
         
                 
@@ -187,6 +192,7 @@ class AdminController extends Zend_Controller_Action {
 				));
         $faq = $this->_AdminModel->getFaqById($id);
         $faq = $faq->toArray();
+        
         $this->_modificaFaqForm->populate($faq);
         
     }
@@ -277,7 +283,7 @@ class AdminController extends Zend_Controller_Action {
     /*Azione che modifica una azienda*/  
     public function modificaaziendaAction() {
         
-         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
        
      
         if (!$this->getRequest()->isPost()) {
@@ -302,8 +308,18 @@ class AdminController extends Zend_Controller_Action {
 
         $values = $form->getValues();
         $id = $this->_getParam('id');
-        $this->_AdminModel->updateAzienda($values,$id);
-        $this->_helper->redirector('modificaeliminaazienda');
+        //try-catch per la gestione dell'eccezione sull'unicità del campo partita IVA
+        
+        try {
+            $this->_AdminModel->updateAzienda($values,$id);
+            $this->_helper->redirector('modificaeliminaazienda');
+        }
+        catch(Exception $e){
+            
+            $form->setDescription('Partita IVA già presente nel sito!');
+            $this->render('modificaaziendapage');
+            
+        }
     }
     
     /*Azione che modifica un utente*/
@@ -324,8 +340,7 @@ class AdminController extends Zend_Controller_Action {
   
         if (!$form->isValid($_POST)){
             
-            $form->setDescription('ATTENZIONE! dati inseriti non validi!');
-            $this->_logger->info('Attivato If della form registrazione');
+
             $form->setDescription('Attenzione: alcuni dati inseriti sono errati.');
             $this->_logger->debug(print_r($form->getErrors(), true));
             return $this->render('modificautentepage');
@@ -335,16 +350,23 @@ class AdminController extends Zend_Controller_Action {
 
         $values = $form->getValues();
         $id = $this->_getParam('id');
-        
-        $this->_AdminModel->updateUser($values,$id);
-        $this->_helper->redirector('modificaeliminautente');
+        //try-catch per la gestione dell'eccezione sull'unicità dell'username
+        try{
+            $this->_AdminModel->updateUser($values,$id);
+            $this->_helper->redirector('modificaeliminautente');
+        }
+        catch(Exception $e){
+            
+            $form->setDescription('Username già presente!');
+            $this->render('modificautentepage');
+        }
         
     }
     
     /*Azione che modifica una tipologia*/
     public function modificatipologiaAction(){
         
-         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
        
      
         if (!$this->getRequest()->isPost()) {
@@ -403,8 +425,16 @@ class AdminController extends Zend_Controller_Action {
         $values = $form->getValues();
         $id = $this->_getParam('id');
         
-        $this->_AdminModel->updateUser($values,$id);
-        $this->_helper->redirector('modificaeliminastaff');
+        //Eccezione sull'unicitá dell'username
+        try {
+            $this->_AdminModel->updateUser($values,$id);
+            $this->_helper->redirector('modificaeliminastaff');
+        }
+        catch(Exception $e){
+            $form->setDescription('Username già presente!');
+            $this->render('modificastaffpage');
+        }
+        
         
         
     }
@@ -461,8 +491,16 @@ class AdminController extends Zend_Controller_Action {
         
         }
         $values = $formInserimentoNuovaAzienda->getValues();
-        $this->_AdminModel->insertAzienda($values);
-        $this->_helper->redirector('index');
+        //eccezione sull'unicità della partita iva
+        try {
+            $this->_AdminModel->insertAzienda($values);
+            $this->_helper->redirector('index');
+        }
+            catch(Exception $e){
+                $formInserimentoNuovaAzienda->setDescription('Partita Iva già presente nel DB');
+                $this->render('nuovaazienda');
+            
+        }
     }
     
     //funzione per l'inserimento di una nuova tipologia
@@ -485,6 +523,7 @@ class AdminController extends Zend_Controller_Action {
             
         
         }
+        
         $values = $formInserimentoTipologia->getValues();
         $this->_AdminModel->insertTipologia($values);
         $this->_helper->redirector('index');
@@ -502,9 +541,7 @@ class AdminController extends Zend_Controller_Action {
         $formInserimentoStaff =  $this->_formInserimentoStaff;
         
         if (!$formInserimentoStaff->isValid($_POST)){
-            
-            $formInserimentoStaff->setDescription('ATTENZIONE! dati inseriti non validi!');
-            $this->_logger->info('Attivato If della form registrazione');
+
             $formInserimentoStaff->setDescription('Attenzione: alcuni dati inseriti sono errati.');
             $this->_logger->debug(print_r($formInserimentoStaff->getErrors(), true));
             return $this->render('nuovostaff');
@@ -513,8 +550,16 @@ class AdminController extends Zend_Controller_Action {
         }
         $values = $formInserimentoStaff->getValues();
         $values['role']="staff"; 
-        $this->_AdminModel->insertUser($values);
-        $this->_helper->redirector('index');
+        //eccezione sull'unicità dell'username
+        try{
+            $this->_AdminModel->insertUser($values);
+            $this->_helper->redirector('index');
+        }
+        catch(Exception $e){
+            
+            $formInserimentoStaff->setDescription('Attenzione: username già presente');
+            $this->render('nuovostaff');
+        }
     }
     
     //funzione per l'inserimento di un nuovo utente staff
@@ -529,9 +574,8 @@ class AdminController extends Zend_Controller_Action {
         $formInserimentoDomandaRisposta =  $this->_formInserimentoDomandaRisposta;
         
         if (!$formInserimentoDomandaRisposta->isValid($_POST)){
-            
-            $formInserimentoDomandaRisposta->setDescription('ATTENZIONE! dati inseriti non validi!');
-            $this->_logger->info('Attivato If della form registrazione');
+           
+  
             $formInserimentoDomandaRisposta->setDescription('Attenzione: alcuni dati inseriti sono errati.');
             $this->_logger->debug(print_r($formInserimentoDomandaRisposta->getErrors(), true));
             return $this->render('nuovadomandarisposta');
@@ -633,7 +677,7 @@ class AdminController extends Zend_Controller_Action {
     }
     
     
-        
+    //azione del logout   
     public function logoutAction() {
         
         $this->_authService->clear();

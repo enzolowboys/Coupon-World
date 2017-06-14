@@ -52,6 +52,16 @@ class Application_Form_Staff_ModificaOfferta_ModificaOfferta extends App_Form_Ab
             'decorators' => $this->elementDecorators,
 	));
         
+                //elemento grafico relativo ai giorni di validità della promozione
+        $this->addElement('text', 'validita', array(
+            'label' => 'Validità della promozione (in giorni) ',
+            'filters' => array('StringTrim'),
+            'required' => true,
+            'validators' => array(array('StringLength', true, array(1,3))),
+            'description' => 'Inserisci i giorni di validità della promozione',
+            'decorators' => $this ->elementDecorators,
+        ));
+        
         //elemento grafico relativo al tipo di promozione (3x2,50%,..)
         $this->addElement('text', 'tipo', array(
             'label' => 'Tipo (3x2, 50%,..)',
@@ -89,11 +99,12 @@ class Application_Form_Staff_ModificaOfferta_ModificaOfferta extends App_Form_Ab
         //elemento grafico relativo alla foto profilo
         $this->addElement('file', 'immagine', array(
             'label' => 'Immagine Prodotto',
-            'destination' => APPLICATION_PATH . '/../public/images/fotoutenti',
+            'destination' => APPLICATION_PATH . '/../public/images/offerte',
+		'required' => true,
           'validators' => array( 
           array('Count', false, 1),
-          array('Size', false, 202400), //9 mb per l'img
-         array('Extension', false, array('jpg', 'gif'))),
+          array('Size', false, 2024000), 
+         array('Extension', false, array('jpg', 'gif','png'))),
            'decorators' => $this->fileDecorators,
 	));
         

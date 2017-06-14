@@ -20,7 +20,7 @@ class Application_Form_Admin_NuovaDomandaRisposta_InserimentoNuovaDomandaRispost
             'filters' => array('StringTrim'),
             'required' => true,
             'validators' => array(
-                array('StringLength', true, array(3, 25))
+                array('StringLength', true, array(3, 50))
             ),
             'description' => 'Inserisci la nuova tipologia',
             'decorators' => $this ->elementDecorators,

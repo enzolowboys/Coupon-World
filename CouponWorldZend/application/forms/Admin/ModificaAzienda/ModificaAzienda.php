@@ -22,7 +22,7 @@ class Application_Form_Admin_ModificaAzienda_ModificaAzienda extends App_Form_Ab
             'filters' => array('StringTrim'),
             'required' => true,
             'validators' => array(
-                array('StringLength', true, array(3, 25))
+                array('StringLength', true, array(1, 25))
             ),
             'description' => 'Inserisci il nome dell`azienda',
             'decorators' => $this ->elementDecorators,
@@ -133,6 +133,19 @@ class Application_Form_Admin_ModificaAzienda_ModificaAzienda extends App_Form_Ab
             'EmailAddress',
             )
         ));
+        
+                //elemento grafico relativo alla foto profilo
+        $this->addElement('file', 'foto', array(
+            'label' => 'Immagine',
+	     'required'   => true,
+            'destination' => APPLICATION_PATH . '/../public/images/brands',
+            'validators' => array( 
+            array('Count', false, 1),
+            array('Size', false, 2024000), 
+            array('Extension', false, array('jpg', 'gif','png'))),
+           'decorators' => $this->fileDecorators,
+	));
+        
         
         //elemento grafico relativo al bottone conferma
         $this->addElement('submit', 'inserisci', array(

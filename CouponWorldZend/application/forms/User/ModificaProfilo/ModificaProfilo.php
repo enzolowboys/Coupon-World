@@ -58,7 +58,7 @@ class Application_Form_User_ModificaProfilo_ModificaProfilo extends App_Form_Abs
             'label' => 'Telefono',
             'filters' => array('StringTrim'),
             'validators' => array(array('StringLength', false, array(3,10))), //false perché non deve proseguire se non é soddisfatto
-            'required' => true,
+            'required' => false,
             'description' => 'Inserisci il tuo numero di telefono',
             'decorators' => $this ->elementDecorators,
         ));
@@ -68,7 +68,7 @@ class Application_Form_User_ModificaProfilo_ModificaProfilo extends App_Form_Abs
             'label' => 'Indirizzo',
             'filters' => array('StringTrim'),
             'validators' => array(array('StringLength', false, array(3,20))), //false perché non deve proseguire se non é soddisfatto
-            'required' => true,
+            'required' => false,
             'description' => 'Inserisci il tuo indirizzo',
             'decorators' => $this ->elementDecorators,
         ));
@@ -78,7 +78,7 @@ class Application_Form_User_ModificaProfilo_ModificaProfilo extends App_Form_Abs
             'label' => 'Città',
             'filters' => array('StringTrim'),
             'validators' => array(array('StringLength', false, array(3,20))), 
-            'required' => true,
+            'required' => false,
             'description' => 'Inserisci la tua città',
             'decorators' => $this ->elementDecorators,
         ));

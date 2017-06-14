@@ -20,6 +20,8 @@ class Application_Form_Public_Filtro_FiltroTipologia extends App_Form_Abstract {
         foreach ($tipologie as $tipologia) {
         	$listaTipologie[$tipologia -> nometipologia] = $tipologia->nometipologia;       
         }
+        
+      
         $this->addElement ( 
     'radio', 'Filtro', 
     array (

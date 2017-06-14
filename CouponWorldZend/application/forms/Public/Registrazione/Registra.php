@@ -120,8 +120,8 @@ class Application_Form_Public_Registrazione_Registra extends App_Form_Abstract {
             'destination' => APPLICATION_PATH . '/../public/images/fotoutenti',
                 'validators' => array( 
           array('Count', false, 1),
-           array('Size', false, 202400), //9 mb per l'img
-         array('Extension', false, array('jpg', 'gif'))),
+           array('Size', false, 2024000), //9 mb per l'img
+         array('Extension', false, array('jpg', 'gif','png'))),
            'decorators' => $this->fileDecorators,
 	));
         

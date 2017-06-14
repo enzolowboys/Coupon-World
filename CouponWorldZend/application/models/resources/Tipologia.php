@@ -11,10 +11,7 @@ class Application_Resource_Tipologia extends Zend_Db_Table_Abstract {
         
     }
     
-    public function getTipologiaByName($tipologia) {
-       return $this->fetchRow($this->select()->where('nometipologia = ?', $tipologia));
-    }
-    
+ 
     /*Senza Paginator*/
     public function getAllTipologie() {
          $select= $this->select();

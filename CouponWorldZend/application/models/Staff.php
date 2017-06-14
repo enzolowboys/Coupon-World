@@ -10,8 +10,8 @@ class Application_Model_Staff extends App_Model_Abstract
         
         
         /*funzione per estrarre tutte le promozioni*/
-    public function getAllPromozione(){
-            return $this->getResource('Promozione')->getAllPromozione();
+    public function getAllPromozione($paged){
+            return $this->getResource('Promozione')->getAllPromozione($paged);
         }
         
         

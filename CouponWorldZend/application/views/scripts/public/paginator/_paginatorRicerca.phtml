@@ -5,14 +5,14 @@
 
 <!-- Link alla prima pagina -->
 <?php if (isset($this->previous)): ?>
-  <a href="<?= $this->url(array('controller' => 'public', 'action' => 'ricerca', 'pageRicerca' => $this->first)); ?>">Inizio</a> |
+<a href="<?= $this->url(array('controller' => 'public', 'action' => 'ricerca', 'pageRicerca' => $this->first));?>">Inizio</a> |
 <?php else: ?>
   Inizio |
 <?php endif; ?>
 
 <!-- Link alla pagina precedente -->
 <?php if (isset($this->previous)): ?>
-  <a href="<?= $this->url(array('controller' => 'public', 'action' => 'ricerca', 'pageRicerca' => $this->previous)); ?>">&lt; Precedente</a> |
+<a href="<?= $this->url(array('controller' => 'public', 'action' => 'ricerca', 'pageRicerca' => $this->previous)); ?>">&lt; Precedente</a> |
 <?php else: ?>
   &lt; Precedente |
 <?php endif; ?>
@@ -26,7 +26,7 @@
 
 <!-- Link all'ultima pagina -->
 <?php if (isset($this->next)): ?>
-  <a href="<?= $this->url(array('controller' => 'public', 'action' => 'ricerca', 'pageRicerca' => $this->last)); ?>">Fine</a>
+  <a href="<?= $this->url(array('controller' => 'public', 'action' => 'ricerca', 'pageRicerca' => $this->last));?>">Fine</a>
 <?php else: ?>
   Fine
 <?php endif; ?>

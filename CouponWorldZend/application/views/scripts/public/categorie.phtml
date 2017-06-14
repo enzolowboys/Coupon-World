@@ -35,6 +35,7 @@
 <div id="containerDelleOfferte">   
     <!--Sezione dinamica che in base al click sulla categoria apre la pagina della categoria giusta --> 
         <?php echo '<h1 class="titolocategoria">'.$this->categoria.'</h1>'; ?>
+    <div id="snackbar">Per accedere al codice coupon della promozione occorre registrarsi come utente!</div>
         <?php foreach ($this->offertaPerCategoria as $offertaCategoria) :?>
     <div id="offertaCategoria">
         <?php echo $this->offertaImg($offertaCategoria->immagine,array('class' => 'immagineOfferta'));?>
@@ -57,7 +58,7 @@
                     else
                         echo 'myFunction()';?>"></button>
             
-            <div id="snackbar">Per accedere al codice coupon della promozione occorre registrarsi come utente!</div>
+            
             
             <a href="<?= $this->url(array('controller'=>'public','action'=>'informazioneofferta','offertaid' => $offertaCategoria->idpromozione ,'default',true));?>"><button id="visualizzaofferta"></button></a>
         </div>

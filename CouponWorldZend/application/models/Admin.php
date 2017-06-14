@@ -17,23 +17,9 @@ class Application_Model_Admin extends App_Model_Abstract
         public function deletePromozione($id){
              return $this->getResource('Promozione')->deletePromozione($id);
         }
-            
-            
-        /*funzione per modificare le promozioni */
-        public function updatePromozione($idpromozione,$info){
-             return $this->getResource('Promozione')->updatePromozione($idpromozione,$info);
-        }
-            
-        /*funzione per iserire promozioni*/
-        public function insertPromozione($info){
-             return $this->getResource('Promozione')->insertPromozione($info);
-        }
+              
         
-        public function getPromozioneById($id){
-            
-            return $this->getResource('Promozione')->getPromozioneById($id);
-        }
-            
+
        /*modifica utente*/
     public function updateUser($info,$id){
         return $this->getResource('User')->updateUser($info, $id);
@@ -63,8 +49,8 @@ class Application_Model_Admin extends App_Model_Abstract
      }
          
      /*visualizza tutte le faq*/
-      public function getFaq($paged){
-            return $this->getResource('Faq')->getFaq($paged);
+      public function getFaq(){
+            return $this->getResource('Faq')->getFaq();
                 
         }
             

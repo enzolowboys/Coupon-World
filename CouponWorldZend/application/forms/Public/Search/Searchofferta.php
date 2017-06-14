@@ -9,7 +9,7 @@ class Application_Form_Public_Search_Searchofferta extends App_Form_Abstract {
         
         $this->_PublicModel = new Application_Model_Public();
         //Setto le impostazioni della form
-        $this->setMethod('post');
+        $this->setMethod('get');
         $this->setName('ricercaOfferta');
         $this->setAction('');
         $this->setAttrib('enctype', 'multipart/form-data');
@@ -18,7 +18,7 @@ class Application_Form_Public_Search_Searchofferta extends App_Form_Abstract {
         $this->addElement('text','cercaOfferta',array(
             'label'=>'',
             'filters'=>array('StringTrim'),
-            'validators' => array(array('StringLength', false, array(1,20))),
+            'validators' => array(array('StringLength', false, array(1,100))),
             'required'=>true,
             'description'=>'ricerca un offerta per categoria e tipologia',
             'decorators'=>$this->elementDecorators,
@@ -31,6 +31,8 @@ class Application_Form_Public_Search_Searchofferta extends App_Form_Abstract {
         foreach ($tipologie as $tipologia) {
         	$listaTipologie[$tipologia -> nometipologia] = $tipologia->nometipologia;       
         }
+        
+        $listaTipologie['tuttetipologie']= 'Tutte le tipologie';
             
         $this->addElement('select', 'selezione', array(
             'label' => 'Ricerca',

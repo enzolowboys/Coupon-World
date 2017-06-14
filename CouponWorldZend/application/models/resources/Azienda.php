@@ -17,30 +17,20 @@ class Application_Resource_Azienda extends Zend_Db_Table_Abstract
         $row = $rowset->current();
         return $row;
     }
-    /*estrae le aziende in base la partita iva*/
-    public function getAziendaBypartitaiva($partitaiva){
-        $select=$this->select('')->where( 'partitaiva='.$partitaiva);
-        return $this->fetchAll($select);
-            
-    }
+
     /*estrae le aziende in base al nome*/
     public function getAziendaByNome($nome){
         $select=$this->select('azienda.*')->where( 'nome = ?',$nome);
         return $this->fetchAll($select);
             
     }
-    /* prende lid dell'azienda dal nome */
+    /* prende l'id dell'azienda dal nome */
     public function getIdAziendaByNome($nome){
         //$azienda='Adidas';
-        return $this->fetchRow($this->select()->where( 'nome =?',$nome));
+        return $this->fetchRow($this->select()->where('nome =?',$nome));
             
     }
-    /*resctituisce id dellazienda con quel nome */
-    public function getIdAzienda($nome){
-        
-        return $this->fetchAll($this->select('idazienda')->where( 'nome'.$nome));
-            
-    }
+
     /*Senza paginator*/
     public function getAzienda() {
         $select= $this->select();

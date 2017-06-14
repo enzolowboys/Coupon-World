@@ -3,7 +3,7 @@
   <?php foreach($this->infoazienda as $azienda) :?>
   <?php endforeach ?>
   <h1>Benvenuto nel profilo dell'azienda <?php echo '<h3>'. $azienda->nome.'</h3>'?></h1>
-  <img><?php echo  $this->offertaImg($azienda->logo,array('class' => 'immagineOfferta'));?></img>
+  <img><?php echo  $this->offertaImg($azienda->foto,array('class' => 'immagineOfferta'));?></img>
   <br>
   <br>
   <h2>Nome: </h2><?php echo '<h7>'. $azienda->nome.'</h7>'?>

@@ -6,25 +6,8 @@ class Application_Resource_Coupon extends Zend_Db_Table_Abstract
     protected $_primary  = 'idcoupon';
     protected $_rowClass = 'Application_Resource_Coupon_Item';
     
-	public function init()
-    {
+	public function init() {
         $this->_logger = Zend_Registry::get("log"); //file log
-    }
-    /*estrai tutti i coupon di un user */
-    public function searchCouponByIdUser($id){
-       return $this->fetchAll($this->select()->where('coupon.user_iduser = ?',$id));
-    }
-    /*ricerca i coupon tramite il suo di */
-    public function searchCouponById($id){
-        return $this->find($id);
-    }
-    
-
-    
-    public function searchCouponByIdPromozione($idpromozione, $iduser){
-        $select = $this->select('COUNT(*)')->where('coupon.promozione_idpromozione = ?',$idpromozione)->where('coupon.user_iduser = ?', $iduser);
-        return $this->fetchRow($select);
-        
     }
 
     /*elimina coupon*/
@@ -58,9 +41,6 @@ class Application_Resource_Coupon extends Zend_Db_Table_Abstract
         return($rows[0]->amount);    
     }
     
-
-    
-
     
     /*Funzione che ritorna il numero totale di coupon emessi*/
     public function getNumeroCoupon() {
@@ -106,6 +86,21 @@ class Application_Resource_Coupon extends Zend_Db_Table_Abstract
             }
         return $this->fetchAll($select);
         
+        
+    }
+    
+    public function verificaCoupon($iduser,$idpromozione) {
+        
+        $select = $this->select();
+        $select->from($this, array('count(*) as amount'))
+                ->where('promozione_idpromozione=?',$idpromozione)
+                ->where('user_iduser=?',$iduser);
+        $rows = $this->fetchAll($select);
+        
+        if($rows[0]->amount > 0)
+            return true;
+        else
+            return false;
         
     }
 

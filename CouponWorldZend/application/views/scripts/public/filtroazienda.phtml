@@ -18,19 +18,28 @@
 				<br>
 
 				<?php echo '<h8>'. $offerta->tipo.'</h8>'?>
->
+
 				<br>
                                 <?php echo '<h8>dal '.'<b>'.$offerta->datainizio.'</b> al <b>'.
                                         $offerta->datafine.'</b>'.'</h8>'?>
-				<button id="stampaofferta"></button>
-                                <a href="<?= $this->url(array('controller'=>'public','action'=>'viewstatic','staticPage' => 'informazioneofferta','default',true));?>"><button id="visualizzaofferta"></button></a>
-			</div>
+				<button id="stampaofferta" onClick="<?php 
+                    if($this->authInfo('role')=='user'){
+                       $indirizzo = "window.location.href='".$this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid' => $offertaCategoria->idpromozione ,'default',true))."'"; 
+                      echo $indirizzo;
+                    }
+                    else
+                        echo 'myFunction()';?>"></button>
+                                <a href="<?= $this->url(array('controller'=>'public','action'=>'informazioneofferta','offertaid'=>$offerta->idpromozione,'default',true));?>"><button id="visualizzaofferta"></button></a>
+			
+                        <div id="snackbar">Per accedere al codice coupon della promozione occorre registrarsi come utente!</div>
+                        </div>
 		</div>
                 <?php endforeach ?>
     </div>
+	<div id="paginatorFiltroAziendaOfferteScadenza">
           <?php if($this->offerte instanceof Zend_Paginator) {
                 echo $this->paginationControl($this->offerte,'Sliding','public/paginator/_paginatorFiltraAzienda.phtml');
 	  } 
 	  ?>
- 
+ 	</div>
 </div>

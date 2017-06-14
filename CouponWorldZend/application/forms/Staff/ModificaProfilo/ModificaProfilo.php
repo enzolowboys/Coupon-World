@@ -120,8 +120,8 @@ class Application_Form_Staff_ModificaProfilo_ModificaProfilo extends App_Form_Ab
             'destination' => APPLICATION_PATH . '/../public/images/fotoutenti',
                 'validators' => array( 
           array('Count', false, 1),
-           array('Size', false, 202400), //9 mb per l'img
-         array('Extension', false, array('jpg', 'gif'))),
+           array('Size', false, 2024000), 
+         array('Extension', false, array('jpg', 'gif','png'))),
            'decorators' => $this->fileDecorators,
 	));
         

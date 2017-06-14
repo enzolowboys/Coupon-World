@@ -1,8 +1,7 @@
 <div id="InformazioneOfferta">
-  <?php foreach($this->infofferta as $offerta) :?>
+  <?php foreach ($this->offerta as $offerta): ?>
   <?php endforeach ?>
   <h1>Informazioni sulla promozione del prodotto: <?php echo '<h3>'. $offerta->nomeprodotto.'</h3>'?></h1>
-  
   <img><?php echo  $this->offertaImg($offerta->immagine,array('class' => 'immagineOfferta'));?></img>
   <br>
   <br>

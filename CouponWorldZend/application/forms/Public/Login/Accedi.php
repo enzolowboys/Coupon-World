@@ -18,9 +18,8 @@ class Application_Form_Public_Login_Accedi extends App_Form_Abstract {
         $this->addElement('text', 'username', array(
             'label' => 'Username',
             'filters' => array('StringTrim'),
-            
             'validators' => array(
-                array('StringLength', true, array(3, 25))
+                array('StringLength', true, array(3, 15))
             ),
             'required' => true,
             'description' => 'Inserisci l`username scelto durante la registrazione',
@@ -28,12 +27,11 @@ class Application_Form_Public_Login_Accedi extends App_Form_Abstract {
         ));
         
         //elemento grafico relativo alla password
-        $this->addElement('text', 'password', array(
+        $this->addElement('password', 'password', array(
             'label' => 'Password',
             'filters' => array('StringTrim'),
-            
             'validators' => array(
-                array('StringLength', true, array(3, 25))
+                array('StringLength', true, array(3, 15))
             ),
             'required' => true,
             'description' => 'Inserisci la password scelta durante la registrazione',

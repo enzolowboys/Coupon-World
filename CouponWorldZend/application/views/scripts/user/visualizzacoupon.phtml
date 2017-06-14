@@ -23,12 +23,7 @@
                 <td><?php echo $coupon->tipo;?></td>
                 <td><?php echo $coupon->nome;?></td>
                 <td><?php echo $coupon->nometipologia;?></td>
-                 <td><button 
-                    onClick="window.location.href='<?=
-                    $this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid'=>$coupon->idpromozione,'default',true));
-                    ?>';"
-                            >Stampa</button></td>
-                    <td>
+       
             <br>
             </tr>
                 <?php endforeach ?>

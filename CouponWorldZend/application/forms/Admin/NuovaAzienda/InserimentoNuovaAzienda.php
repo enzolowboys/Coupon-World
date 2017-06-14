@@ -4,7 +4,7 @@ class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Fo
     
     //definisco la variabile per la connessione al database
     protected $_adminModel;
-        
+         
     public function init(){
         $this->_adminModel = new Application_Model_Admin();
         $this->setMethod('post');
@@ -20,7 +20,7 @@ class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Fo
             'filters' => array('StringTrim'),
             'required' => true,
             'validators' => array(
-                array('StringLength', true, array(3, 25))
+                array('StringLength', true, array(2, 25))
             ),
             'description' => 'Inserisci il nome dell`azienda',
             'decorators' => $this ->elementDecorators,
@@ -130,6 +130,16 @@ class Application_Form_Admin_NuovaAzienda_InserimentoNuovaAzienda extends App_Fo
             'EmailAddress',
             )
         ));
+        
+        $this->addElement('file', 'foto', array(
+            'label' => 'Immagine',
+            'destination' => APPLICATION_PATH . '/../public/images/brands',
+            'validators' => array( 
+            array('Count', false, 1),
+            array('Size', false, 2024000), 
+            array('Extension', false, array('jpg', 'gif','png'))),
+           'decorators' => $this->fileDecorators,
+	));
         
         //elemento grafico relativo al bottone conferma
         $this->addElement('submit', 'inserisci', array(

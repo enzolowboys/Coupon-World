@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link rel="stylesheet" type="text/css" href="<?php echo $this->baseURL();?>/css/print.css" media="print">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
      
         <!-- imposto i placeholders -->
         <?= $this->headLink(); ?>
@@ -22,7 +23,7 @@
             <div class="containerCoupon">
                 <?php foreach($this->stampaofferta as $offerta) :?>
                 <?php endforeach ?>
-                <?php echo  $this->offertaImg($offerta->immagine,array('class' => 'immagineOfferta'));?>
+                <?php echo  $this->offertaImg($offerta->immagine,array('class' => 'immagineOffertaStampa'));?>
                 <?php echo '<p>'. $offerta->nomeprodotto.'</p>'?>
                 <?php echo '<p>'. $offerta->nome.'</p>'?>
                 <?php echo '<p>'. $offerta->tipo.'</p>'?>
@@ -31,8 +32,10 @@
                 <p>dal </h2><?php echo '<p>'. $offerta->datainizio .'</p>'?><p> al </p><?php echo '<p>'. $offerta->datafine.'</p>'?>
                 
                 <h2>codice coupon</h2>
-                <p2>C0D1C3PR0V4</p2>
-                <br>
+                 <br>
+        
+                <p2><?= $this->stringacoupon ?></p2>
+
                 <h2>per il cliente</h2>
                 <?php echo '<p>'. $nome=$this->authInfo('nome').'</p>'?>
                 <?php echo '<p>'. $nome=$this->authInfo('cognome').'</p>'?>

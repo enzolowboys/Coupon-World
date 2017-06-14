@@ -18,7 +18,7 @@ class PublicController extends Zend_Controller_Action {
 
     
     
-    
+    //funzione che si avvia alla creazione dell'oggetto controller
     public function init() {
         
 
@@ -27,25 +27,21 @@ class PublicController extends Zend_Controller_Action {
 
         
         $this->_PublicModel = new Application_Model_Public(); //model
-       /* istanzio le form */
+        
+        /*istanzio le form */
         $this->view->accediForm = $this->getAccediForm();
-        
         $this->view->registraForm = $this->getRegistraForm();
-        
-        //Inizializzazione form
         $this->view->filtraAziendaFormS = $this->getFiltraAziendaFormS();
         $this->view->filtraTipologiaFormS = $this->getFiltraTipologiaFormS();
-        
-
-        
         $this->view->searchForm = $this->getSearchForm();
+        $this->view->filtraAziendaTipologia = $this->getFiltraAziendaFormTipologia();
         
         //Creo l'oggetto Auth
         $this->_authService = new Application_Service_Auth();
         
     }
     
-    /*Override del metodo di IndexController*/
+    
     public function indexAction() {
         
         /*Disabilito il layout perchè viene caricata la pagina di Benvenuto*/
@@ -53,19 +49,16 @@ class PublicController extends Zend_Controller_Action {
         
     }
     
-    
-    public function informazioneoffertaAction(){
+    /*azione sul click di info sull'offerta*/
+    public function informazioneoffertaAction() {
       
         
       $this->_logger->info('Attivato ' . __METHOD__ . ' ');
         
-      $param= $this->_getParam('offertaid');
-        
-      $this->_logger->info($param);
-        
+      $param = $this->_getParam('offertaid');
       $infofferta = $this->_PublicModel->getPromozioneById($param);
       $this->_logger->debug(print_r($infofferta, true));
-      $this->view->assign(array('infofferta'=>$infofferta));
+      $this->view->assign(array('offerta'=>$infofferta));
 
     }
     
@@ -74,14 +67,11 @@ class PublicController extends Zend_Controller_Action {
 
     /*Pagina dell'azienda*/
 
-     public function profilobrandsAction(){
+     public function profilobrandsAction() {
          
-      $this->_logger->info('Attivato ' . __METHOD__ . ' ');
-        
-        $param= $this->_getParam('nomeazienda');
-            
-        $this->_logger->info($param);
-            
+        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+          
+        $param= $this->_getParam('nomeazienda');   
         $infoazienda = $this->_PublicModel->getAziendaByNome($param);
         $this->view->assign(array('infoazienda'=>$infoazienda));
             
@@ -91,12 +81,17 @@ class PublicController extends Zend_Controller_Action {
     /*Pagina con tutte le aziende*/
 
     public function paginadeibrandsAction(){
-          //log
+        
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+        
         $this->_helper->layout->setLayout('main');
-        $brands = $this->_PublicModel->getAzienda();
-       
-        $this->view->assign(array('paginadeibrands'=>$brands));
+        $id = $this->_getParam('idazienda',1);
+        $paged = $this->_getParam('page',1);
+        $listaazienda = $this->_PublicModel->getAzienda();
+        $brands = $this->_PublicModel->getAziendaById($id)->toArray();
+        $offerte = $this->_PublicModel->getPromozioneByIdAzienda($id, $paged);
+        
+        $this->view->assign(array('paginadeibrands'=>$listaazienda,'brands'=>$brands,'offerte'=>$offerte));
 
         
     }
@@ -106,6 +101,7 @@ class PublicController extends Zend_Controller_Action {
     public function paginafaqAction(){
         //log
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+        
         $this->_helper->layout->setLayout('main');
         $faq = $this->_PublicModel->getFaq();
        
@@ -134,10 +130,11 @@ class PublicController extends Zend_Controller_Action {
         //log
         $this->_logger->info('Attivato ' . __METHOD__ . ' ');
         $this->_helper->layout->setLayout('main');
+        
         /*Prendo la pagina da offerte del giorno e offerte in scadenza*/
         $pagedScadenza = $this->_getParam('pageScadenza',1);
-        //Estraggo dal DB la promozione per data odierna e in scadenza
-      
+        
+        //Estraggo dal DB la promozione in scadenza
         $offertaInScadenza = $this->_PublicModel->getPromozioniInscadenza($pagedScadenza,null);
 
         //Estraggo le tipologi
@@ -148,7 +145,7 @@ class PublicController extends Zend_Controller_Action {
 
       
     }
-    
+    /*pagina categorie*/
    public function categorieAction () {
        
         //log
@@ -156,39 +153,43 @@ class PublicController extends Zend_Controller_Action {
         $this->_helper->layout->setLayout('main');
         $tipologie = $this->_PublicModel->getTipologie();
         $catId = $this->_getParam('catId', null);        
-        
-
         /*Prendo pagina e la categoria selezionata dal database*/
         $pagedCategoria = $this->_getParam('pageCategoria',1);
         $offertaPerCategoria = $this->_PublicModel->getPromozioneByCategoria($catId,$pagedCategoria);
-        $this->view->filtraAziendaTipologia =$this->getFiltraAziendaFormTipologia($catId);
+        
         $this->view->assign(array('offertaPerCategoria'=>$offertaPerCategoria,'tipologie'=>$tipologie,'tipologiaselezionata'=>$catId));
       
              
       
         
    }
-   
+   /*pagina categorie + filtro sull'azienda*/
    public function categoriefiltrateAction() {
        
        
-       if (!$this->getRequest()->isPost()) {
-          
-	}
-
-        $formFiltro=new Application_Form_Public_Filtro_FiltroAzienda();
+       if ($this->getRequest()->isPost()) {
+            
+           $formFiltro = $this->_filtraformaziendaform;
+           $_SESSION['azienda'] = null;
+           $_SESSION['cat'] = null;
+            if (!$formFiltro->isValid($_POST)) {
+                
+                return $this->render('categoriefiltrate');
+            }
+       }
         
-        if (!$formFiltro->isValid($_POST)) {
-		$formRicerca->setDescription('Attenzione! dati inseriti non validi');
-		return $this->render('categoriefiltrate');
+        $pagedCategoria = $this->_getParam('pageCategoria',1);  
+        if(!isset($_SESSION['azienda'])){
+            
+            $_SESSION['azienda'] = $formFiltro->getValue('Filtro');
+            $_SESSION['cat'] = $this->_getParam('catId', null);  
+          
         }
-        $pagedCategoria = $this->_getParam('pageCategoria',1);
-        $nomeDaCercare = $formFiltro->getValue('Filtro');
-        $catId=$this->_getParam('nomecategoria');
+        
         $tipologie = $this->_PublicModel->getTipologie();
-        $offertaPerCategoria = $this->_PublicModel->getPromozioneByTipologiaAzienda($catId,$nomeDaCercare,$pagedCategoria);
-        $this->view->assign(array('offertaPerCategoria'=>$offertaPerCategoria,'tipologie'=>$tipologie,'tipologiaselezionata'=>$catId,
-        'nomecercato'=>$nomeDaCercare));
+        $offertaPerCategoria = $this->_PublicModel->getPromozioneByTipologiaAzienda($_SESSION['cat'],$_SESSION['azienda'],$pagedCategoria);
+        $this->view->assign(array('offertaPerCategoria'=>$offertaPerCategoria,'tipologie'=>$tipologie,'tipologiaselezionata'=>$_SESSION['cat'],
+                                  'nomecercato'=>$_SESSION['azienda']));
        
         
    }
@@ -196,15 +197,10 @@ class PublicController extends Zend_Controller_Action {
     /*Azione sulle offerte*/
     public function offerteAction() {
         
-        //log
-        $this->_logger->info('Attivato ' . __METHOD__ . ' ');
+        
+  
     }
-    
-    
-    
-    /* Azione che attiva il profilo del brands selezionato*/
-    
-    
+
     /*Collegato alla pagina registrazione*/
     public function registrazioneAction(){
         
@@ -221,11 +217,11 @@ class PublicController extends Zend_Controller_Action {
         if (!$this->getRequest()->isPost()) {
             $this->_helper->redirector('home');
         }
+        
         $formRegistrazione = $this->_formRegistrazione;
         
         if (!$formRegistrazione->isValid($request->getPost())){
             
-            $formRegistrazione->setDescription('ATTENZIONE! dati inseriti non validi!');
             $this->_logger->info('Attivato If della form registrazione');
             $formRegistrazione->setDescription('Attenzione: alcuni dati inseriti sono errati.');
             $this->_logger->debug(print_r($formRegistrazione->getErrors(), true));
@@ -233,40 +229,64 @@ class PublicController extends Zend_Controller_Action {
             
         
         }
+        
         $values = $formRegistrazione->getValues();
         $values['role']="user"; 
-        $this->_PublicModel->insertUser($values);     
-        $this->_helper->redirector('home');
+
+        /*Blocco Try-Catch che cattura l'eccezione riguardante un username già presente*/
+        try{
+            $this->_PublicModel->insertUser($values);
+            $formRegistrazione->setDescription('Registrazione effettuata con successo!');
+            $this->_helper->redirector('home');
+            
+        }
+        catch(Exception $e){
+            $formRegistrazione->setDescription('ATTENZIONE! Username già presente!');
+            $this->render('registrazione');
+        }
+        
+        
+        
     }
     
+
+        
     //funzione per la ricerca
     public function ricercaAction() {
         
-        if (!$this->getRequest()->isPost()) {
-            $this->_helper->redirector('home');
-	}
-        $formRicerca = $this->_searchform;
-        
-        if (!$formRicerca->isValid($_POST)) {
-		$formRicerca->setDescription('Attenzione! dati inseriti non validi');
-		return $this->_helper->redirector('home');
+    /*variabile session usata per memorizzare i dati*/
+        if ($this->getRequest()->isGet()) {
+             $formRicerca = $this->_searchform;
+             $_SESSION['nomedacercare'] = null;
+             $_SESSION['scelta'] = null;
+             if (!$formRicerca->isValid($_GET)) {
+                    return $this->render('home');
+            }
         }
         $this->_helper->layout->setLayout('main');
         $tipologie = $this->_PublicModel->getTipologie();
         $pagedRicerca = $this->_getParam('pageRicerca',1);
-        $nomeDaCercare = $formRicerca->getValue('cercaOfferta');
-        $scelta = $formRicerca->getValue('selezione');
-        $parole = preg_split("/[\s,]+/", $nomeDaCercare);
-        $this->_logger->info(print_r($parole,true));
-        if(count($parole)<3){
-            $offertaRicercata = null;
-            $offertaRicercata = $this->_PublicModel->cercaPromozione($scelta, $parole, $pagedRicerca);
-            $this->view->assign(array('offertaRicercata'=>$offertaRicercata,'tipologie'=>$tipologie));
+        //se non sono impostati, viene settata per la prima volta
+        if(!isset($_SESSION['nomedacercare'])){
+            
+            $_SESSION['nomedacercare'] = $_GET['cercaOfferta'];
+            $_SESSION['scelta'] = $_GET['selezione'];
         }
- }
+        $this->_logger->info('SESSIONE '.print_r($_SESSION,true));
+
+        //splitto le parole in un array
+        $parole = preg_split("/[\s,]+/", $_SESSION['nomedacercare']);
+        $offertaRicercata = $this->_PublicModel->cercaPromozione($_SESSION['scelta'], $parole, $pagedRicerca);
+
+        $this->view->assign(array('offertaRicercata'=>$offertaRicercata,'tipologie'=>$tipologie,'nomedacercare'=>$_SESSION['nomedacercare']));
+        
+    }
+    
+    
  
     //funzione per ottenere la form registra
-    public function getRegistraForm() {
+    private function getRegistraForm() {
+        
 	$urlHelper = $this->_helper->getHelper('url');
 	$this->_formRegistrazione = new Application_Form_Public_Registrazione_Registra();
         $this->_formRegistrazione->setAction($urlHelper->url(array(
@@ -304,21 +324,50 @@ class PublicController extends Zend_Controller_Action {
         if (!$request->isPost()) {
             return $this->_helper->redirector('login');
         }
-        $formLogin =  $this->_loginform;
-        $formaData= $this->getRequest()->getPost();
+        $formLogin = $this->_loginform;
+        $formaData = $this->getRequest()->getPost();
+        
         if (!$formLogin->isValid($formaData)) {
+            
             $this->_logger->info('Attivato If della form login');
             $this->_logger->info($formLogin->getValues());
             $formLogin->setDescription('Attenzione: alcuni dati inseriti sono errati.');
-        	    return $this->render('login');
+            return $this->render('login');
         }
         if (false === $this->_authService->authenticate($formLogin->getValues())) {
+            
             $formLogin->setDescription('Autenticazione fallita. Riprova');
             return $this->render('login');
         }
         //reindirizza all'index del controller del tipo di utente che ha fatto login
         return $this->_helper->redirector('index', $this->_authService->getIdentity()->role);
-	}
+        
+     }
+    /*Ajax Validator per il login*/ 
+    public function validaloginAction() {
+        
+        $this->_helper->getHelper('layout')->disableLayout();
+    		$this->_helper->viewRenderer->setNoRender();
+
+        $accediform = new Applicazion_Form_Public_Login_Accedi();
+        $response = $accediform->processAjax($_POST); 
+        if ($response !== null) {
+            
+        	$this->getResponse()->setHeader('Content-type','application/json')->setBody($response);        	
+        }
+    }
+    /*Ajax Validator per la registrazione*/
+    public function validaregistrazioneAction() {
+        $this->_helper->getHelper('layout')->disableLayout();
+    	$this->_helper->viewRenderer->setNoRender();
+            
+        $registrazioneform = new Application_Form_Public_Registrazione_Registra();
+        $response = $registrazioneform->processAjax($_POST);
+        
+        if ($response !== null) {
+        	$this->getResponse()->setHeader('Content-type','application/json')->setBody($response);        	
+        }
+    }
 	
 
     /*Metodo che ritorna la form*/    
@@ -336,22 +385,29 @@ class PublicController extends Zend_Controller_Action {
     /*Azione della form filtra per azienda offerte scadute*/
     public function filtroaziendaAction() {
 
+        //utilizzo la variabile session per memorizzare i dati temporaneamente
+        if ($this->getRequest()->isPost()) {
+      
+            $formFiltro=$this->_filtraAziendaFormS;
+            $_SESSION['filtro']=null;
         
-        if (!$this->getRequest()->isPost()) {
-            $this->_helper->redirector('home');
-	}
-
-        $formFiltro=$this->_filtraAziendaFormS;
-        
-        if (!$formFiltro->isValid($_POST)) {
+            if (!$formFiltro->isValid($_POST)) {
 		
 		return $this->render('home');
+            }
         }
-        $nomeDaCercare = $formFiltro->getValue('Filtro');
-        $this->_logger->info($nomeDaCercare);
+        //la imposto per la prima volta
+        if(!isset($_SESSION['filtro'])){
+            
+            $_SESSION['filtro'] = $formFiltro->getValue('Filtro');
+           
+        }
+       
+     
         $paged = $this->_getParam('page',1);
-        $offerte = $this->_PublicModel->getPromozioneByDateAzienda($nomeDaCercare,$paged);
-        $this->view->assign(array('offerte'=>$offerte,'nomecercato'=>$nomeDaCercare));
+        $offerte = $this->_PublicModel->getPromozioneByDateAzienda($_SESSION['filtro'],$paged);
+        $this->view->assign(array('offerte'=>$offerte,'nomecercato'=>$_SESSION['filtro']));
+        
     }
         
         
@@ -360,22 +416,30 @@ class PublicController extends Zend_Controller_Action {
     /*Azione della form filtra per tipologia le offerte in scadenza*/
     public function filtrotipologiaAction() {
         
+        //session usata per memorizzare i dati        
+        if ($this->getRequest()->isPost()) {
+         
+            $formFiltro=$this->_filtratipologiaformS;
+            $_SESSION['filtroAzienda']=null;
+        
+            if (!$formFiltro->isValid($_POST)) {
                 
-        if (!$this->getRequest()->isPost()) {
-            $this->_helper->redirector('home');
-	}
-        
-        $formFiltro=$this->_filtratipologiaformS;
-        
-        if (!$formFiltro->isValid($_POST)) {
 		$formFiltro->setDescription('Attenzione! dati inseriti non validi');
 		return $this->render('home');
+            }
         }
-        $nomeDaCercare = $formFiltro->getValue('Filtro');
-        $this->_logger->info($nomeDaCercare);
+        //la imposto per la prima volta
+        if(!isset($_SESSION['filtroAzienda'])){
+            
+            $_SESSION['filtroAzienda'] = $formFiltro->getValue('Filtro');
+           
+        }
+       
+   
         $paged = $this->_getParam('page',1);
-        $offerte = $this->_PublicModel->getPromozioniInscadenzaTipologia($nomeDaCercare,$paged,null);
-        $this->view->assign(array('offerte'=>$offerte,'nomecercato'=>$nomeDaCercare));
+        $offerte = $this->_PublicModel->getPromozioniInscadenzaTipologia($_SESSION['filtroAzienda'],$paged,null);
+        $this->view->assign(array('offerte'=>$offerte,'nomecercato'=>$_SESSION['filtroAzienda']));
+        
 
         
         
@@ -409,7 +473,7 @@ class PublicController extends Zend_Controller_Action {
     }
     
     /*form per il filtra azienda in tipologia*/
-    private function getFiltraAziendaFormTipologia($catId) {
+    private function getFiltraAziendaFormTipologia() {
         
 
         $urlHelper = $this->_helper->getHelper('url');
@@ -417,8 +481,7 @@ class PublicController extends Zend_Controller_Action {
 
         $this->_filtraformaziendaform->setAction($urlHelper->url(array(
 				'controller' => 'public',
-				'action' => 'categoriefiltrate',
-                                'nomecategoria'=>$catId),
+				'action' => 'categoriefiltrate'),
 				'default'
 				));
         

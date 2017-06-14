@@ -114,6 +114,7 @@
     <!-- div che contiene un banner con foto, posizionato sul banner -->
     <div id="upfooter"></div>
     <br>
+     <div id="snackbar">Per accedere al codice coupon della promozione occorre registrarsi come utente!</div>
     <div id="offerteInScadenza">
         <h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ❕ OFFERTE IN SCADENZA ❕</h1>
         <div class="espandi3"><span>FILTRA PER AZIENDA +</span></div>
@@ -145,7 +146,7 @@
                                             
                     <button id="stampaofferta2" onClick="<?php 
                     
-                    $_UserModel = new Application_Model_User();
+                 
                     
                     if($this->authInfo('role')=='user'){
 
@@ -157,7 +158,7 @@
                     else
                         echo 'myFunction()';?>"></button>
                     
-                    <div id="snackbar">Per accedere al codice coupon della promozione occorre registrarsi come utente!</div>
+            
                     <a href="<?php echo $this->url(array('controller'=>'public','action'=>'informazioneofferta','offertaid' => $offertaInScadenza->idpromozione ,'default',true));?>"><button id="visualizzaofferta2"></button></a>
             </div>
         </div>

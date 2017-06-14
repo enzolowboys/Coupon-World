@@ -4,23 +4,29 @@
         <!-- compatibilitá per browser come Internet Explorer -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
         <!-- fa sì che il sito web venga visualizzato a tutto schermo, senza ridimensionare nulla --> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=0.9,maximum-scale=0.9">
         <!-- imposto i placeholders -->
         <?= $this->headMeta(); ?>
         <?= $this->headLink(); ?>
         <?= $this->headScript(); ?>
-
+            
         <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet"> 
-	<title>Homepage</title>
-</head>
-<body>
-<header>
-	<!-- UPHEADER CONTENTENTE MENU -->
-	<div id="upheader">
-		<div id="upHeaderMenu">
-
+        <title>Coupon World</title>
+    </head>
+    <body>
+        <header>
+            <!-- UPHEADER CONTENTENTE MENU -->
+            <div id="upheader">
+                <div id="upHeaderMenu">
+                    <?php if($this->authInfo('role')===null): ?>
                     <a href="<?= $this->url(array('controller'=>'public','action'=>'login','default',true));?>"><h3><b>M</b>y Account</h3></a>
                     <a href="<?= $this->url(array('controller'=>'public','action'=>'registrazione','default',true));?>"><h3><b>R</b>egistrazione</h3></a>
+                    <a href="<?= $this->url(array('controller'=>'public','action'=>'home','default',true));?>"><h3><b>H</b>ome</h3></a>
+                    <?php else:?>
+                    <a href="<?= $this->url(array('controller'=>$this->authInfo('role'),'action'=>'index','default',true));?>"><h3><b>M</b>y Account</h3></a>
+                    <a href="<?= $this->url(array('controller'=>$this->authInfo('role'),'action'=>'logout','default',true));?>"><h3><b>L</b>ogout</h3></a>
+                    <a href="<?= $this->url(array('controller'=>'public','action'=>'home','default',true));?>"><h3><b>H</b>ome</h3></a>
+                    <?php endif ?>
                 </div>
             </div>
             <!-- HEADER CONTENTENTE BARRA DI RICERCA E BOTTONE -->
@@ -48,8 +54,8 @@
                 <img class="footericon" src="<?php echo $this->baseURL();?>/images/icons/twitter.png" width="30px" height="30px">
             </div>
             <div id="footerdx">
-                <h10><b>Documentazione</b></h10>
-                <br>
+                <a href="<?php echo $this->baseUrl('../docs/Gruppo 11-Coupon World.pdf');?>"><h10><b>Documentazione</b></h10></a>
+<br>
                 <h10><b>Chi siamo</b>&nbsp; &nbsp; &nbsp; &nbsp;Piattaforma che offre i coupon da Aprile 2017</h10>
                 <br>
                 <h10><b>Dove siamo</b>&nbsp; &nbsp;Via Brecce Bianche, 32, Ancona, IT</h10>

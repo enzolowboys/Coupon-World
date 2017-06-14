@@ -1,3 +1,20 @@
+<?php $this->headScript()
+	->appendFile('https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+	->appendFile($this->baseUrl('js/functions.js'))
+	->captureStart() ?>
+
+// codice jQuery inserito da view-script nella sezione head della pagina
+$(function()
+{
+	var actionUrl='<?= $this->url(array('controller' => 'public', 'action' => 'validaregistrazione',), 'default'); ?>';
+	var formName='<?= $this->registraForm->getName() ?>';
+	$(":input").on('blur', function(event) {
+        var formElementId = $(this).attr('id');
+        doValidation(formElementId, actionUrl, formName);
+    });
+});
+
+<?php $this->headScript()->captureEnd() ?>
 <div id="content">
 <div id="Registrazione">
     <h1>Grazie per aver scelto Coupon World!</h1>

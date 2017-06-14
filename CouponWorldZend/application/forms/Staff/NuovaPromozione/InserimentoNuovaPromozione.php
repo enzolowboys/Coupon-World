@@ -20,7 +20,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'label' => 'Nome Prodotto',
             'filters' => array('StringTrim'),
             'required' => true,
-            'validators' => array(array('StringLength', true, array(1,20))),
+            'validators' => array(array('StringLength', true, array(1,40))),
             'description' => 'Inserisci il nome del prodotto',
             'decorators' => $this ->elementDecorators,
         ));
@@ -56,10 +56,10 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
         
         //elemento grafico relativo ai giorni di validità della promozione
         $this->addElement('text', 'validita', array(
-            'label' => 'Validità della promozione',
+            'label' => 'Validità della promozione (in giorni) ',
             'filters' => array('StringTrim'),
             'required' => true,
-            'validators' => array(array('StringLength', true, array(1,20))),
+            'validators' => array(array('StringLength', true, array(1,3))),
             'description' => 'Inserisci i giorni di validità della promozione',
             'decorators' => $this ->elementDecorators,
         ));
@@ -111,7 +111,7 @@ class Application_Form_Staff_NuovaPromozione_InserimentoNuovaPromozione extends 
             'destination' => APPLICATION_PATH . '/../public/images/offerte',
             'validators' => array( 
           array('Count', false, 1),
-          array('Size', false, 202400), //2 mb per l'img
+          array('Size', false, 2024000), //2 mb per l'img
          array('Extension', false, array('jpg', 'gif','png'))),
            'decorators' => $this->fileDecorators,
 	));

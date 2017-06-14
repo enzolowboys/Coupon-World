@@ -3,10 +3,10 @@
 class Application_Model_Public extends App_Model_Abstract
 { 
 
-	public function __construct()
-    {
+	public function __construct(){
 		$this->_logger = Zend_Registry::get('log');  	
 	}
+        
         
        
         /*prende la promozione in base al nome */
@@ -27,37 +27,21 @@ class Application_Model_Public extends App_Model_Abstract
             return $this->getResource('Promozione')->Searchpromozione($tipologia,$categoria,$paged,$order);
         }
         
-        /*estrae gli elementi in base alla data odierna*/
-        
-        public function getPromozioneByDate($paged=null,$order=null){
-           return $this->getResource('Promozione')->getPromozioneByDate($paged,$order);
-         }
-         /*promozioni che scadono in base alla data odierna */
-      public function getPromozioneByLastDate($paged=null,$order=null){
-            return $this->getResource('Promozione')->getPromozioneByLastDate($paged,$order);
-      }  
-      /*promozioni che scadono   entro un giorno partendo dalla data odierna */
-      public function getPromozioniInscadenza($paged=null,$order=null){
+
+        /*promozioni che scadono   entro un giorno partendo dalla data odierna */
+        public function getPromozioniInscadenza($paged=null,$order=null){
             return $this->getResource('Promozione')->getPromozioniInscadenza($paged,$order);
-      }
-      /*promozione inserite di recente cioè la differenza tra la data odierna e la data di inzio è maggiore= 0 */
-      public function getPromozioniInsRecenti($paged=null,$order=null){
-            return $this->getResource('Promozione')->getPromozioniInsRecenti($paged,$order);
-      }
-              
+        }
+  
 
         /*una volta inserito il nome del brand carica l'id di quest'ultimo nella variabile idazienda 
- poi usa la funzione getpromobyazienda per estrarre tutte le promozioni  di quell'azienda       */
+        poi usa la funzione getpromobyazienda per estrarre tutte le promozioni  di quell'azienda       */
         public function SearchPromozioneByAzienda($nome, $paged=null, $order=null){
    
             return $this->getResource('Promozione')->getPromozioneByAzienda($nome,$paged,$order);
 
         }
         
-        public function searchPromozioneByNome($nome,$paged=null,$order=null) {
-            
-            return $this->getResource('Promozione')->getPromozioneByName($nome,$paged,$order);
-        }
         
         public function getAziendaById($id){
         
@@ -79,7 +63,7 @@ class Application_Model_Public extends App_Model_Abstract
            return $this->getResource('User')->insertUser($info);
         }
         
-        public function cercaPromozione($tipologia,$ricerca,$paged=null,$order=null){
+        public function cercaPromozione($tipologia,$ricerca,$paged,$order=null){
             return $this->getResource('Promozione')->Searchpromozione($tipologia,$ricerca,$paged,$order);
         }   
         
@@ -88,29 +72,29 @@ class Application_Model_Public extends App_Model_Abstract
             return $this->getResource('Tipologia')->getAllTipologie();
         }
 
-        public function getPromozioneByDateAzienda($nome) {
+        public function getPromozioneByDateAzienda($nome,$paged) {
             
-            return $this->getResource('Promozione')->getPromozioneByDateAzienda($nome);
+            return $this->getResource('Promozione')->getPromozioneByDateAzienda($nome,$paged);
         }
         
-         public function getPromozioneByDateTipologia($nome) {
+        public function getPromozioniInscadenzaTipologia($nome,$paged){
             
-            return $this->getResource('Promozione')->getPromozioneByDateTipologia($nome);
+            return $this->getResource('Promozione')->getPromozioniInscadenzaTipologia($nome,$paged);
         }
         
-        public function getPromozioniInscadenzaTipologia($nome){
-            
-            return $this->getResource('Promozione')->getPromozioniInscadenzaTipologia($nome);
-        }
-        
-         public function getPromozioneByTipologiaAzienda($tipologia,$nome,$paged){
+        public function getPromozioneByTipologiaAzienda($tipologia,$nome,$paged){
              
              return $this->getResource('Promozione')->getPromozioneByTipologiaAzienda($tipologia,$nome,$paged);
-         }
+        }
       
 
         public function getFaq(){
         
             return $this->getResource('Faq')->getFaq();
+        }
+        
+        public function getPromozioneByIdAzienda($id,$paged){
+            
+            return $this->getResource('Promozione')->getPromozioniByIdAzienda($id,$paged);
         }
 }
