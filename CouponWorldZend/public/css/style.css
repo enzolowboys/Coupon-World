@@ -1,0 +1,2911 @@
+body {
+    /* disabilita la selezione del testo */
+    -ms-user-select: none; /* IE 10+ */
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 100%;
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+.titolocategoria{
+    
+    font-size: 30px;
+    font-weight: 100;
+    width: 500px;
+    color: red;
+    text-align: center;
+    background-color: white;
+    font-weight: 400;
+    position: relative;
+    left: 580px;
+    bottom: 225px;
+    
+    
+}
+
+#mainWrapper {
+    height: auto;
+    min-height: 100%;
+    position: relative;
+    margin: 0 auto -60px;
+  
+}	
+
+/* Header che contiene up header e middle header*/
+header {
+    width: auto;
+    height: auto;
+    position: relative;
+    min-width: 80em;
+}
+
+/* h1 usato per tutti i titoli */
+h1 {
+
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    background-color: #266abd;
+    font-weight: 400;
+}
+
+/* h2 usato per le scritte nei banner laterali */
+h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: right;
+    background-color: #266abd;
+    font-weight: 400;
+}
+
+/* h12 usato per la scritta del coupon gia preso */
+#content h12 {
+    position: relative;
+    top: 2em;
+    left: 20%;
+    color: red;
+    font-size: 3em;
+    font-weight: 600;
+}
+/* h12 usato per la scritta del coupon gia preso */
+#content h13 {
+    position: relative;
+    top: 6em;
+    right: 4.5%;
+    color: red;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+/* h14 usato per la scritta di benvenuto nel profilo dell user */
+#content h14 {
+    position: relative;
+    bottom: 4.8em;
+    left: 32.5%;
+    color: red;
+    font-size: 1.8em;
+    font-weight: 600;
+    background-color: white;
+    width: 520px;
+}
+/* h15 usato per la scritta di benvenuto nel profilo dell user */
+#content h15 {
+    position: relative;
+    bottom: 12em;
+    left: 32.5%;
+    color: red;
+    font-size: 1.8em;
+    font-weight: 600;
+    background-color: white;
+    width: 520px;
+}
+
+
+
+/* footer a fine pagina */
+footer{
+    width: 100%;
+    background-color: rgb(179, 0, 0);
+    border-radius: 15px 15px 0px 0px;
+    position:relative;
+    top:600px;
+    
+    
+    
+}
+
+/* Ancore */
+a {
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
+footer a {
+    color: #FFFFFF;
+}
+
+/* effetti sul menu (al passaggio del mouse) */
+a:hover{
+    font-weight: 600;
+}
+
+
+/* tutte le icone del sito */
+.icons {
+    width: 27px;
+    height: 27px;
+    position: relative;
+    top: 12px;
+    right: 1em;
+    
+}
+
+/* logo di Coupon World*/
+#logo {
+    width: auto;
+    height: 70px;
+    position: relative;
+    right: 285px;
+    top: 18px;
+}
+
+/* la header secondaria che contiene il menu */
+#upheader {
+    background-color: rgb(155, 0, 0);
+    border-bottom: inset;
+    border-bottom-color: white;
+    border-bottom-width: thin;
+    width: 100%;
+    height: 40px;
+    
+    min-width: 80em;
+}
+
+/* Menu sul upHeaderMenu*/
+#upHeaderMenu h3 {
+    float:left;
+    
+    font-size: 1.25em;
+    font-weight: 200;
+    color: white;
+    text-align: center;
+    position: relative;
+    left: 70%;
+    bottom: 15px;
+    width: auto;
+    margin-right: 3%;
+    
+}
+
+/* header della homepage contenente login/registrazione e il carrello */
+#middleheader {
+    background-color: rgb(179, 0, 0);
+    height: 104px;
+ 
+    border-radius: 0px 0px 15px 15px;
+    width: 100%;
+    min-width: 80em;
+    
+}
+
+/*Barra di Ricerca*/
+#ricercaOfferta {
+    
+    position:relative;
+    width:30%;
+    left:70%;
+    bottom:40%;
+
+
+    
+    
+    
+}
+
+
+/* barra di ricerca */
+#ricercaOfferta input{
+    width: 150%;
+    height: 30px;
+ 
+    max-width: 45em;
+}
+#ricercaOfferta tr td .required{
+    position:relative;
+    right:22%;
+    bottom: 3.3em;
+    font-size:medium; 
+   
+    color: white;
+    
+    
+}
+
+#ricercaOfferta select {
+    
+     width:70%;
+    position:relative;
+
+    bottom:2.2em;
+    right:9.4em;
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
+}
+
+
+/* effetti sulla barra di ricerca (quando si inseriscono le parole) */
+input:focus {
+    border: 2px solid #FFFFFF;
+}
+
+/* bottone cerca */
+#ricercaOfferta tr td #cerca {
+    background-image: url(../images/icons/iconsearch.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    left:23em;
+    top:-63px;
+    background-color: rgb(179, 0, 0);
+    border:none;
+    width:61%;
+}
+/* subheader che contiene delle informazioni aggiuntive del sito */
+#subheader {
+    background-color: #FFFFFF;
+    width: 100%;
+    min-width: 80em;
+    height: 55px;
+}
+
+/* descrizioni di approfondimento del sito */
+#subheader h4 {
+    
+
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 500;
+    color: black;
+    position: relative;
+    top: 5px;
+    display:inline-block;
+}
+
+/* barra di navigazione contenente le categorie*/
+#navMenu {
+    background-color: white;
+    width: 28.125%;
+    height: 215px;
+    position: relative;
+    left: 30px;
+    min-width: 20em;
+}
+#navMenu #categorie h1{
+    position: relative;
+    left: -10px;
+    width: 427px;
+}
+#navMenu h1{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    background-color: #266abd;
+    font-weight: 400;
+    position: relative;
+    top:10px;
+    left:30px;
+}
+
+/* nav che contiene le categorie */
+#categorie {
+    position: relative;
+    top: 10px;
+    height: auto;
+    min-width: 10em;
+}
+
+/* le varie categorie elencate in una lista */
+#categorie li {
+
+    font-size: 20px;
+    font-weight: 400;
+    color: black;
+    list-style-type: none;
+    width: 95%;
+    height: auto;
+    border-bottom: inset;
+    border-bottom-color: darkgrey;
+    border-bottom-width: 1px; 
+}
+
+/* effetti al passaggio del mouse sulle categorie */
+#categorie > li a:hover{
+    background-color: rgb(179, 0, 0);
+    color: white;
+}
+
+
+* {box-sizing:border-box}
+/* Slideshow container */
+.slideshow-container {
+    
+    max-width:45.5%;
+    height: auto;
+    position: relative;
+    top:-200px;
+    left:36%;
+    min-width: 10em;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* animazioni con sfumature */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* banner che contiene l'immagine di promozione 1*/
+#promotion_banner_one{
+    background-image: url(../images/banners/man.png);
+    background-size: cover;
+    border-radius: 0px 10px 10px 0px;
+    max-width: 18.12%;
+    height: 172px;
+    position: relative;
+    bottom: 650px;
+    left: 82%;
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    max-width: 14em;
+}
+
+/* effetti al passaggio del mouse sul banner promozione 1*/
+#promotion_banner_one:hover{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    
+}
+
+
+/* banner che contiene l'immagine di promozione 2*/
+#promotion_banner_two{
+    background-image: url(../images/banners/woman.png);
+    background-size: cover;
+    position: relative;
+    bottom: 608px;
+    left: 82%;
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    max-width: 18.12%;
+    height: 172px;
+    border-radius: 0px 10px 10px 0px;
+    max-width: 14em;
+}
+
+/* effetti al passaggio del mouse sul banner promozione 2*/
+#promotion_banner_two:hover{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+}
+
+/*Campo di ricerca del brand*/
+#campoCercaAzienda {
+    
+    width: 100%;
+    position: relative;
+    top:300px;
+}
+
+#campoCercaAzienda h2 {
+    position:relative;
+    width: 24.9%;
+    text-align: left;
+    left: 5.2%;
+}
+
+#campoCercaAzienda input{
+    position: relative;
+    width: 21%;
+    height: 33px;
+
+    left: 5.2%;
+}
+
+#campoCercaAzienda button {
+    
+    background-image: url(../images/icons/iconsearch.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 33px;
+    width: 1.9%;
+    background-color: #266abd;
+    bottom:4px;
+    left: 6.9%;
+    border: none;
+    
+}
+
+#listaTipologie {
+    width:27%;
+    position:relative;
+    left:5%;
+    top:200px;
+    
+}
+
+#listaTipologie fieldset {
+    
+   
+    font-size: 20px;
+    font-weight: 400;
+    color: #266abd;
+    list-style-type: none;
+    width: 93%;
+    height: auto;
+    border-bottom: inset;
+    border-bottom-color: darkgrey;
+    border-bottom-width: 1px; 
+}
+
+#listaTipologie h1 {
+    width: 382px;
+}
+
+/* Bottone conferma nei filtri delle tipologie */
+#bottoneConferma {
+
+    width: auto;
+    height: auto;
+    position: relative;
+    bottom: 0px;
+    left: 200px;
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 8px 8px 8px 8px;
+    
+}
+
+/* div che contiene un pattern immagine sopra il footer */
+#upfooter {
+    background-image: url(../images/banners/eshop_one.gif);
+    background-size: 25%;
+    background-color: red;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    bottom: 550px;
+}
+
+/* Sezione che contiene lo slideshow e i promotion banner (che diventa poi dinamica al click sulle categorie) */
+#mainContent{
+    position: relative;
+    width:100%;
+    
+}
+
+/* sezione che contiene le offerte del giorno */
+#offerteInScadenza {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    background-color: white;
+    margin-top: -460px;
+
+}
+
+/* offerta rappresenta il singolo spazio dedicato */
+#offerta {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 360px;
+    height: 180px;
+    position: relative;
+    background-color: white;
+    border: double 2px;
+    border-style: inset;
+    border-color: rgb(179, 0, 0);
+    left: 10px;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 40px;
+
+}
+#offerta #visualizzaofferta{
+    width:40px;
+    height: 40px;
+    position: relative;
+    bottom: 593px;
+    right: 210px;
+    background-image: url(../images/icons/info.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+/* effetti al passaggio del mouse sul bottone */
+#offerta #visualizzaofferta:hover{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    -webkit-filter: drop-shadow(2px 2px 2px red);
+}
+
+/* rappresenta la sezione a dx che contiene tutte le informazioni (nome prodotto, tipologia, categoria, ecc..) */
+#infoOfferta {
+    width: 75%;
+    height: 85%;
+    position: relative;
+    left: 90px;
+    text-align: right;
+    background-color: rgba(155,0,0,0.5);
+    border-radius: 0px 0px 0px 15px;
+    color: white;
+    bottom: 29px;
+    position:absolute;
+    z-index: 1;
+ 
+}
+
+
+
+
+
+/* sta ad indicare il nome del prodotto o una particolare sottocategoria (tecnologia > smartphones) */
+#infoOfferta h5 {
+
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    right: 3px;
+    bottom:30px;
+}
+
+/* sta ad indicare la categoria del prodotto */
+#infoOfferta h6 {
+
+    font-size: 13px;
+    position: relative;
+    right: 6px;
+    bottom: 110px;
+}
+
+
+#infoOfferta h7 {
+
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    bottom: 162px;
+    right: 2px;
+}
+
+/* sta ad indicare il marchio del prodotto */
+#infoOfferta h9 {
+    
+    font-size: 15px;
+    font-weight: 200;
+    position: relative;
+    right: 5px;
+    bottom: 160px;
+    color: white;
+}
+
+/* sta ad indicare la tipologia di offerta sul prodotto (2*1, 50% di sconto, ecc..) */
+#infoOfferta h8 {
+
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    bottom: 165px;
+    right: 1px;
+}
+
+
+/*Le prossime 4 regole si riferiscono al link visualizza altre offerte delle relative sezioni*/
+#offerteDelGiorno a{
+    
+    position:relative;
+    left:57%;
+    top:500px;
+    color: black;
+    
+    
+}
+
+#offerteDelGiorno a:visited{
+    
+    position:relative;
+    left:57%;
+    top:500px;
+    color: red;
+    
+}
+
+#offerteInScadenza{
+    
+    position:relative;
+    top:-100px;
+}
+
+#offerteInScadenza a {
+    
+    position:relative;
+    color: black;
+
+    
+}
+
+#offerteInScadenza a:hoover {
+    
+    position:relative;
+    left:57%;
+    top:500px;
+    color: red;
+    
+}
+/* bottone che permette la generazione del coupon legato all'offerta e la sua stampa
+(la versione due è di quelle in scadenza)*/
+#stampaofferta {
+    width:40px;
+    height: 40px;
+    position: relative;
+    bottom: 150px;
+    left: 40px;
+    background-image: url(../images/icons/print.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+#stampaofferta2 {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    bottom: 144px;
+    left: 35px;
+    background-image: url(../images/icons/print.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+/* bottone che permette la visualizzazione del coupon legato all'offerta 
+(la versione due è di quelle in scadenza) */
+#visualizzaofferta {
+    width:40px;
+    height: 40px;
+    position: relative;
+    bottom: 150px;
+    right: 50px;
+    background-image: url(../images/icons/info.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+#visualizzaofferta2 {
+    width:40px;
+    height: 40px;
+    position: relative;
+    bottom: 144px;
+    right: 55px;
+    background-image: url(../images/icons/info.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+/* effetti al passaggio del mouse sul bottone */
+#stampaofferta:hover{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    -webkit-filter: drop-shadow(2px 2px 2px red);
+}
+#stampaofferta2:hover{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    -webkit-filter: drop-shadow(2px 2px 2px red);
+}
+/* effetti al passaggio del mouse sul bottone */
+#visualizzaofferta:hover{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    -webkit-filter: drop-shadow(2px 2px 2px red);
+}
+#visualizzaofferta2:hover{
+    -webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+    -webkit-filter: drop-shadow(2px 2px 2px red);
+}
+
+
+/* informazioni sull'offerta selezionata premendo il bottone info offerta */
+#InformazioneOfferta {
+    position: relative;
+    width: 450px;
+    left:550px;
+}
+#InformazioneOfferta h1 {
+
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    font-weight: 600;
+}
+#InformazioneOfferta h2 {
+
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    font-weight: 600;
+}
+#InformazioneOfferta h3 {
+
+    font-size: 27px;
+    color: #266abd;
+    background-color: white;
+    text-align: left;
+    font-weight: 700;
+}
+#InformazioneOfferta p{
+ 
+    font-size: 16px;
+    color: black;
+    text-align: justify;
+    text-align: left;
+    word-wrap: break-word; /* manda a capo se supera la lunghezza max nel suo spazio*/
+}
+
+/* parte sinistra del footer*/
+#footersx{
+    width: 35%;
+    height: 75%;
+    position: relative;
+    border-right: double 1px;
+    border-right-style: inset;
+    border-right-color: rgb(255, 255, 255);
+    left: 8%;
+    top: 3em;
+}
+
+/* testo nel footer */
+#footer h10{
+
+    font-size: 15px;
+    font-weight: 100;
+    color: white;
+    text-align: left;
+    background-color: transparent;
+    font-weight: 200;
+    position: relative;
+}
+
+/* classe che gestisce tutte le icone nel footer */
+.footericon{
+    position: relative;
+    top: 5px;
+}
+
+/* effetto al passaggio del mouse */
+.footericon:hover{
+    -webkit-filter: drop-shadow(5px 5px 5px red);
+}
+
+#footerdx {
+    width: 35%;
+    height: 75%;
+    position: relative;
+    border-right: double 1px;
+    border-right-style: inset;
+    border-right-color: rgb(255, 255, 255);
+    left: 48%;
+    bottom:4em;
+}
+
+/* Sezione FAQ: Frequently Asked Question */
+#FAQsection {
+    position: relative;
+    top:10px;
+
+}
+#FAQsection h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+#FAQsection h2 {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 400;
+    
+}
+#FAQsubsection{
+    position: relative;
+    top:10px;
+    height: 800px;
+    overflow: scroll;
+}
+#FAQsubsection h3 { 
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1px;
+    color: #266abd;
+}
+#FAQsubsection h4 { 
+    text-align: justify;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1px;
+    color: black;
+}
+
+/* Sezione My Accont */
+#MyAccount {
+    position: relative;
+    top:10px;
+    color:blue;
+
+}
+#MyAccount h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    /* line-height: 1px; */
+}
+#MyAccount h2 {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 400;
+    
+}
+/* Form accedi contenuto in My Account*/
+#MyAccount Form {
+    position: relative;
+    top: 40px;
+    left: 39%;
+    width: 525px;
+    height: 180px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    border-radius: 10px;
+    background-color: white;
+    
+}
+#MyAccount form#accedi{
+    position:relative;
+    height: 500px;
+    
+}
+#MyAccount p.formerror{
+    position: relative;
+    left: 7.5%;
+}
+/* div che contiene tutto il form */
+#FormAccedi{
+    position: relative;
+    left:-40px;
+}
+/* bottone di conferma nel form*/
+#accedi {
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    left: 105px;
+    width: 200px;
+    height: 30px;
+    top: 10px;
+    
+}
+/* campi di input */
+#accedi td input{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+
+/* campo inserimento dell username */
+#username{
+    border-radius: 5px;
+    border-color: #266abd;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: -30px;
+    
+}
+/* campo inserimento della password */
+#password{
+    border-radius: 5px;
+    border-color: #266abd;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: -30px;
+}
+/* tutte le label della form */
+#accedi tr label{
+    margin-left: 80px;
+    position: relative;
+    color: black;
+}
+/* tutto il contenuto della form centrato */
+#accedi td {
+    position: relative;
+    top: 35px;
+    left: 5px;
+}
+
+/* Sezione Registrazione */
+#Registrazione {
+    position: relative;
+    top:10px;
+    color:blue;
+
+}
+#Registrazione h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    /* line-height: 1px; */
+}
+#Registrazione h2 {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 400;
+    
+}
+#Registrazione form{
+    background-color:white;
+    position: relative;
+    left:12%;
+    position: left;
+    width: 100px;
+    color: black;
+    height:20px;
+    
+}
+#Registrazione p.formerror{
+    position: relative;
+    left: 7em;
+}
+/* campi di input */
+#registra input{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+/* menu a tendina sesso */
+#sesso{
+    border-radius: 5px;
+    border-color: #266abd;
+    
+}
+/* tasto per caricare immagine*/
+#image{
+    color: black;
+    font-style: italic;
+    border-radius: 5px;
+    border-color: #266abd;
+
+}
+/* tabella generata da Zend che contiene tutti gli elementi (campi, label, ecc.)*/
+.Forms table{
+    position: relative;
+    bottom: 150px;
+    left: 10px;
+    top:3em;
+}
+/* tasto di conferma per la registrazione*/
+#registrati   {
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 190px; 
+}
+/* campo di inserimento dell'username */
+#username{
+    position: relative;
+    left: 30px;
+}
+/* campo di inserimento della password */
+#password{
+    position: relative;
+    left: 30px;
+}
+/* div che contiene tutto il form*/
+.Forms{
+
+    width: 800px;
+    height: 1300px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    border-radius: 10px;
+    background-color: white;
+    position: relative;
+    left: 350px;
+}
+/* gestione grafica della schermata di errore */
+.Forms li{
+    width: 240px;
+    position: relative;
+    top: 10px;
+    list-style-type: none;
+    color:red;
+    
+}
+.formerror {
+    width: 400px;
+    height: 1px;
+    font-weight: 700;
+    font-size:20px;
+    position: relative;
+    right: 50px;
+    color: red;
+}
+
+#pagination {
+    width:400px;
+    border: black;
+    color: black;
+    position: relative;
+
+    bottom: 0px;
+
+    left:26%;
+    height: 20px;
+}
+
+
+#offertaCategoria {
+    
+    position:relative;
+    left:0;
+    bottom: 90px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 360px;
+    height: 180px;
+    background-color: white;
+    border: double 2px;
+    border-style: inset;
+    border-color: rgb(179, 0, 0);
+    margin-right: 45px;
+    margin-top: 45px;
+    float: left;
+    
+}
+#offertaCategoria a{
+    color: white;
+}
+
+
+/* Sezione My Accont */
+#MyAccount {
+    position: relative;
+    top:10px;
+    color:blue;
+
+}
+#MyAccount h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    /* line-height: 1px; */
+}
+#MyAccount h2 {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 400;
+    
+}
+/* Form accedi contenuto in My Account*/
+#MyAccount Form {
+    position: relative;
+    top: 40px;
+    left: 39%;
+    width: 425px;
+    height: 200px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    border-radius: 10px;
+}
+/* bottone di conferma nel form*/
+#accedi {
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    left: 105px;
+    width: 200px;
+    height: 30px;
+    top: 10px;
+}
+
+
+
+/* campi di input */
+#accedi td input{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+/* campo inserimento dell username */
+#username{
+    border-radius: 5px;
+    border-color: #266abd;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: -30px;
+    
+}
+/* campo inserimento della password */
+#password{
+    border-radius: 5px;
+    border-color: #266abd;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: -30px;
+}
+/* tutte le label della form */
+#accedi tr label{
+    margin-left: 80px;
+    position: relative;
+    color: black;
+}
+/* tutto il contenuto della form centrato */
+#accedi td {
+    position: relative;
+    top: 35px;
+    left: 5px;
+}
+
+/* Sezione Registrazione */
+#Registrazione {
+    position: relative;
+    top:10px;
+    color:blue;
+
+}
+#Registrazione h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    /* line-height: 1px; */
+}
+#Registrazione h2 {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 400;
+    
+}
+
+#pagination {
+    
+    margin-top:10%;
+}
+
+.immagineOfferta {
+    
+    background-repeat: none;
+    width: 160px;
+    height:160px;
+    position:relative;
+    left:2px;
+}
+
+.immagineOffertaStampa{
+    position:relative;
+    left:250px;
+    width: 150px;
+    height: 150px;
+}
+
+#pagination {
+    
+    margin-top:10%;
+}
+
+/* Profilo Brands */
+#ProfiloBrands {
+    position: relative;
+    width: 450px;
+    left:550px;
+}
+#ProfiloBrands  h1 {
+
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    font-weight: 600;
+}
+#ProfiloBrands  h2 {
+ 
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    font-weight: 600;
+}
+#ProfiloBrands  h3 {
+
+    font-size: 27px;
+    color: #266abd;
+    background-color: white;
+    text-align: left;
+    font-weight: 700;
+}
+#ProfiloBrands p{
+  
+    font-size: 16px;
+    color: black;
+    text-align: justify;
+    text-align: left;
+    word-wrap: break-word; /* manda a capo se supera la lunghezza max nel suo spazio*/
+}
+
+#filtraazienda{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 16px;
+    color: black;
+    overflow: auto;
+    height: 200px;
+}
+.button #filtra{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+    width: auto;
+    height: auto;
+    position: relative;
+    top: 18px;
+    left: 89px;
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 8px 8px 8px 8px;
+    font-size: 16px;
+}
+
+#filtraForm {
+    float:left;
+}
+#filtraForm .optional {
+ 
+    float:left;
+    position:relative;
+    right:5em;
+    top:-2em;
+    color: white;
+    
+    
+}
+
+#filtraForm select {
+
+    float:left;
+    position: relative;
+    top: -0.2 em;
+    right: 9.1em;
+}
+
+#filtraForm .button {
+    positio:relative;
+    left:8em;
+}
+
+/* Gestione navbar della pagina amministratore*/
+#navMenuAdmin {
+
+    list-style-type: none;
+    position:relative;
+    left:30px;
+}
+#navMenuAdmin h1{
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    background-color: #266abd;
+    font-weight: 400;
+    width: 300px;
+}
+#navMenuAdmin ul {
+    list-style-type: none;
+}
+.menu {
+    position:relative;
+    bottom:10px;
+    right:40px;
+}
+li.menu {
+    /* Voci dell'elenco principale */
+    width: 100%;
+    padding: 0px 0;
+    list-style-type: none;
+}
+li.title a {
+    /* Voce del menu principale */
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 34px;
+    text-align: left;
+    border-radius: 0px 0px 10px 0px;
+    background-color: white;
+    color: #266abd;
+    font-size: 18px;
+    font-weight: 600;
+    overflow: hidden;
+    list-style-type: none;
+}
+li.title a:hover {
+    background-color: red;
+    color: white;
+}
+li.title a span {
+    /* Questo span agisce come parte finale della sezione title */
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 44px;
+    list-style-type: none;
+}
+.sub-menu {
+    /* Sotto menu */
+    display: none;
+    width: 300px;
+    padding-top: 5px;
+    list-style-type: none;
+}
+.sub-menu li {
+    /* Voci del sotto menu */
+    margin: 5px 0;
+    padding: 4px 18px;
+    border-radius: 0px 0px 10px 0px;
+    background-color: white;
+    color: #266abd;
+    list-style-type: none;
+}
+.sub-menu li:hover{
+    background-color: red;
+    color: white;
+} 
+.sub-menu a:hover{
+    background-color: red;
+    color: white;
+}
+
+
+/* pagina che contiene il form della nuova azienda */
+#NuovaAzienda h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#NuovaAzienda td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#NuovaAzienda td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#NuovaAzienda td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+    width: 328px;
+    height: 328px;
+    max-height: 428px;
+    max-width: 328px;
+}
+#NuovaAzienda td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+#NuovaAzienda p.formerror{
+    position: relative;
+    left: 220px;
+}
+#NuovaAzienda formerror li {
+    position:relative;
+    right: 20px;
+}
+
+/* pagina che contiene il form della nuova tipologia */
+#NuovaTipologia h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#NuovaTipologia td {
+
+    font-size: 16px;
+    color: black;  
+}
+#NuovaTipologia td input{
+
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#NuovaTipologia td #descrizionetipologia{
+    border-radius: 5px;
+    border-color: #266abd;
+    width: 310px;
+    max-width:310px;
+    height: 400px;
+    max-height: 500px;
+    
+}
+#NuovaTipologia td #inserisci {
+  
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+    
+}
+#NuovaTipologia p.formerror{
+    position: relative;
+    left: 250px;
+}
+
+
+/* pagina che contiene il form del nuovo membro staff */
+#NuovoStaff h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#NuovoStaff table{
+    position: relative;
+    left: 100px;
+}
+#NuovoStaff td {
+
+    font-size: 16px;
+    color: black;  
+}
+#NuovoStaff td input{
+
+    border-radius: 5px;
+    border-color: #266abd;
+}
+
+#NuovoStaff td #descrizionetipologia{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#NuovoStaff p.formerror{
+    position:relative;
+    left:250px;
+}
+#NuovoStaff #registrati{
+    position:relative;
+    left: 190px;
+}
+#NuovoStaff td #inserisci {
+    
+}
+
+
+/* pagina che contiene il form delle nuove domande e risposte */
+#NuovaDomandaRisposta h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#NuovaDomandaRisposta table{
+    position: relative;
+    left: 20px;
+}
+#NuovaDomandaRisposta td {
+
+    font-size: 16px;
+    color: black;  
+}
+#NuovaDomandaRisposta td input{
+
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#NuovaDomandaRisposta td #risposta{
+    border-radius: 5px;
+    border-color: #266abd;
+    width: 310px;
+    max-width: 310px;
+    height: 400px;
+    max-height: 500px;
+ 
+}
+#NuovaDomandaRisposta td #inserisci {
+   
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+    
+}
+#NuovaDomandaRisposta p.formerror{
+    position:relative;
+    left: 27.7%;
+}
+
+
+/* Gestione navbar della pagina staff*/
+#navMenuStaff {
+
+    list-style-type: none;
+    position:relative;
+    left:30px;
+}
+#navMenuStaff h1{
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    background-color: #266abd;
+    font-weight: 400;
+    width: 300px;
+}
+#navMenuStaff ul {
+    list-style-type: none;
+}
+
+
+/* pagina che contiene il form delle nuove promozioni */
+#NuovaPromozione h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#NuovaPromozione table{
+    position: relative;
+    left: 20px;
+}
+#NuovaPromozione td {
+
+    font-size: 16px;
+    color: black;  
+}
+#NuovaPromozione td input{
+
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#NuovaPromozione td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+    width: 310px;
+    max-width: 310px;
+    height: 250px;
+    max-height: 500px;
+
+}
+#NuovaPromozione td #selezionetipologie{
+    border-radius: 5px;
+    border-color: #266abd;
+
+}
+#NuovaPromozione td #selezionebrands{
+    border-radius: 5px;
+    border-color: #266abd;
+
+}
+#NuovaPromozione td #inserisci {
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+#NuovaPromozione p.formerror{
+    position: relative;
+    left: 35%;
+}
+
+/* Form per i filtri */
+.espandi3 {
+
+      position:relative;
+    left:450px;
+    bottom:47px;
+    color: white;
+    cursor: pointer;
+    width:220px;
+    font-size: 18px;
+
+
+}
+.espandi4{
+      color: white;
+    position:relative;
+    left:800px;
+
+    bottom:75px;
+    cursor: pointer;
+    width:240px;
+    font-size: 18px;
+
+}
+.filtraForm3 {
+    font-size: small;
+    width:220px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    overflow:auto;
+    position:relative;
+    
+    left: 427px;
+    bottom: 681px;
+    
+    position:absolute;
+    z-index: 5;
+    display:none;
+    
+    border: 2px solid;
+    border-color: #266abd;
+    border-radius: 2px 2px 2px 2px;
+    background-color: white;
+    
+}
+.filtraForm3 table{
+    position:relative;
+    right: 20px;
+}
+.filtraForm4{
+
+    font-size: small;
+    width:220px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    overflow:auto;
+    position:relative;
+
+    left:790px;
+    bottom:681px;
+
+    display:none;
+    position:absolute;
+    z-index: 5;
+    border: 2px solid;
+    border-color: #266abd;
+    border-radius: 2px 2px 2px 2px;
+    background-color: white;
+}
+.filtraForm4 table{
+    position:relative;
+    right: 20px;
+}
+#filtroazienda{
+    font-size: small;
+    width:191px !important;  width /**/:200px;
+    height:190px !important; height /**/: 200px;
+    padding: 4px;
+    background:url(gradient.png) repeat-x fixed top left;
+    overflow:auto;
+
+}
+
+/* Gestione navbar della pagina amministratore*/
+#navMenuUser {
+
+    list-style-type: none;
+    position:relative;
+    left:30px;
+}
+#navMenuUser h1{
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    background-color: #266abd;
+    font-weight: 400;
+    width: 300px;
+}
+#navMenuUser ul {
+    list-style-type: none;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare le aziende */
+#ModificaEliminaAzienda table {
+    position: relative;
+    left: 14.1%;
+    display: table;
+    width: 30%;
+    border-collapse: collapse; 
+    border-spacing: 20px;
+    border-color: grey;
+    bottom: 0px;
+}
+#ModificaEliminaAzienda h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaAzienda p {
+  
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaAzienda th {
+
+    font-size: 18px;
+    font-weight: 600;
+    width:150px;
+    height : 40px;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaAzienda td {
+
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    width: 150px;
+    height : 40px; 
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaAzienda button{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+#ModificaEliminaAzienda #pagination{
+    position:relative;
+    left: 35%;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare le tipologie */
+#ModificaEliminaTipologia table {
+    position:relative;
+    left: 35%;
+    
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+
+    bottom: 40px;
+
+}
+#ModificaEliminaTipologia h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaTipologia p {
+  
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaTipologia th {
+
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaTipologia td {
+
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaTipologia button{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+#ModificaEliminaTipologia #pagination{
+    position:relative;
+    left: 37.5%;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare i membri dello staff */
+#ModificaEliminaStaff table {
+    position:relative;
+    left: 460px;
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+    bottom: 0px;
+}
+#ModificaEliminaStaff h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaStaff p {
+
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaStaff th {
+
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaStaff td {
+
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaStaff button{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare domande e risposte della FAQ */
+#ModificaEliminaDomandaRisposta table {
+    position:relative;
+    left: 510px;
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+    bottom: 0px;
+}
+#ModificaEliminaDomandaRisposta h2 {
+  
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaDomandaRisposta p {
+
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaDomandaRisposta th {
+
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaDomandaRisposta td {
+
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaDomandaRisposta button{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+#ModificaEliminaDomandaRisposta #pagination{
+    position: relative;
+    left:37%;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare gli utenti */
+#ModificaEliminaUtente table {
+    position: relative;
+
+    left: 19.5%;
+
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+    bottom: 0px;
+}
+#ModificaEliminaUtente #pagination{
+    position:relative;
+    left:35.5%;
+}
+#ModificaEliminaUtente h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaUtente p {
+
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaUtente th {
+   
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaUtente td {
+    
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaUtente button{
+  
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene la tabella per modificare/eliminare le promozioni */
+#ModificaEliminaPromozione table {
+    position:relative;
+    left: 17.5%;
+    display: table;
+    width: 30%;
+    border-collapse: separate; 
+    border-spacing: 0px;
+    bottom: 155px;
+}
+#ModificaEliminaPromozione h2 {
+   
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaEliminaPromozione p {
+   
+    font-size: 18px;
+    position:relative;
+    left: 20px;
+    color: black;
+}
+#ModificaEliminaPromozione th {
+
+    font-size: 18px;
+    font-weight: 600;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+}
+#ModificaEliminaPromozione td {
+  
+    font-size: 15px;
+    font-weight: 300;
+    vertical-align: top;
+    padding: 2px;
+    text-align: left;
+    
+    max-width: 130px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    
+}
+#ModificaEliminaPromozione button{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+}
+#ModificaEliminaPromozione #pagination{
+    position:relative;
+    left: 39%;
+}
+tr.border_bottom td {
+    border-bottom:1pt solid black;
+}
+
+
+/* pagina che contiene il form della modifca profilo staff */
+#ModificaProfiloStaff h2 {
+
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+}
+#ModificaProfiloStaff td {
+ 
+    font-size: 16px;
+    color: black;  
+}
+#ModificaProfiloStaff td input{
+  
+  
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#ModificaProfiloStaff td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#ModificaProfiloStaff td #inserisci{
+  
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+
+    left:47%;
+    bottom:8%;
+    display:none;
+    z-index:10;  
+}
+
+
+/*Pagina della stampa del Coupon relativo all'offerta'*/
+#StampaOfferta{
+    position:relative;
+    left: 400px;
+    width: 500px;
+    height: auto;
+}
+
+
+#StampaOfferta h1 {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    background-color: #266abd;
+    font-weight: 400;
+    width: 650px;
+}
+#StampaOfferta p {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 20px;
+    color: black;
+    text-align: left;
+    background-color: white;
+    font-weight: 400;
+    width: 640px;
+    text-align: center;
+    margin: 0px;
+}
+.containerCoupon {
+    border: 2px dashed black;
+    width: 650px;
+    height: 750px;
+    background-color: white;
+}
+.containerCoupon h2{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 17px;
+    color: #266abd;
+    text-align: left;
+    background-color: white;
+    font-weight: 400;
+    position:relative;
+    left:43%;
+    width: 200px;
+}
+.containerCoupon p2{
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 40px;
+    color: white;
+    text-align: left;
+    background-color: red;
+    font-weight: 600;
+    position: relative;
+    left:30%;
+}
+.containerCoupon img{
+    width: 145px;
+    height: 145px;
+}
+
+
+/* Lo snackbar di errore in caso di accesso alla pagina della generazione del coupon */
+#snackbar {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 15px;
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: -125px; 
+    background-color: #666666; 
+    color: white; 
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px;
+    position: fixed;
+    z-index: 10; 
+    left: 50%; 
+    bottom: 30px; 
+}
+#snackbar.show {
+    visibility: visible; 
+
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Lo snackbar riferito al click della frase "offerte aggiornate 24h su 24" */
+#snackbartwo {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 19px;
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: 35px; 
+    background-color: #666666; 
+    color: white; 
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px;
+    position: fixed;
+    z-index: 10; 
+    left: 10.7%; 
+    bottom: 30px; 
+}
+#snackbartwo.show {
+    visibility: visible; 
+
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Lo snackbar riferito al click della frase "offerte aggiornate 24h su 24" */
+#snackbarthree {
+    font-family: 'Titillium Web';
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+    font-size: 19px;
+    visibility: hidden; 
+    min-width: 250px; 
+    margin-left: 35px; 
+    background-color: #666666; 
+    color: white; 
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px;
+    position: fixed;
+    z-index: 10; 
+    left: 10.7%; 
+    bottom: 30px; 
+}
+#snackbarthree.show {
+    visibility: visible; 
+
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+
+
+
+
+/* pagina dei brands generale */
+#PaginaDeiBrands{
+    width: 300px;
+    height: 1000px;
+    overflow-y: scroll;
+    position: relative;
+    top: 40px;
+    left: 10px;
+    border: 1px solid red; 
+}
+#myInput {
+    width: 300px; 
+    font-size: 16px; 
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid red; 
+    margin-bottom: 12px; 
+    position: relative;
+    top: 40px;
+    left: 10px;
+}
+
+#myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#myUL li a {
+    border: 1px solid #ddd; 
+    margin-top: -1px; 
+    background-color: #f6f6f6; 
+    padding: 12px; 
+    text-decoration: none; 
+    font-size: 16px; 
+    color: black; 
+    display: block; 
+}
+
+#myUL li a.header {
+    background-color: #e2e2e2; 
+    cursor: default; 
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee; 
+    color: #266abd;
+}
+
+/* Profilo Brands Due */
+#ProfiloBrandsDue {
+    position: relative;
+    width: 450px;
+    left:650px;
+    bottom: 1000px;
+  
+}
+#ProfiloBrandsDue  h1 {
+
+    font-size: 20px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    font-weight: 600;
+}
+#ProfiloBrandsDue  h2 {
+ 
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    text-align: left;
+    font-weight: 600;
+}
+#ProfiloBrandsDue  h3 {
+
+    font-size: 27px;
+    color: #266abd;
+    background-color: white;
+    text-align: left;
+    font-weight: 700;
+}
+#ProfiloBrandsDue p{
+  
+    font-size: 16px;
+    color: black;
+    text-align: justify;
+    text-align: left;
+    word-wrap: break-word; /* manda a capo se supera la lunghezza max nel suo spazio*/
+}
+
+#containerDelleOfferte{
+    position: relative;
+    background-color: white;
+    width: 840px;
+    height: 1200px;
+    left: 660px;
+    bottom: 170px;
+    overflow-y: no-content;
+    
+}
+
+/*Form modifica in sezione admin*/
+#ModificaForm h2 {
+    
+    text-align: center;
+}
+
+#ModificaForm form{
+    position:relative;
+    top:5%;
+    left:40%;
+}
+#ModificaForm table{
+    position: relative;
+    right: 8%;
+}
+#ModificaForm #descrizionetipologia{
+    border-radius: 5px;
+    border-color: #266abd;
+    border: 1.9px solid #266abd;
+}
+
+
+/*pagina statistiche in sezione admin*/
+#StatistichePromozioni h3{
+    
+    text-align: center;
+}
+#StatistichePromozioni h2 {
+    text-align: center;
+}
+#StatistichePromozioni table{
+    
+   
+    position:relative;
+    left: 0em;
+    margin-bottom:15%;
+}
+#StatistichePromozioni #pagination{
+    position:relative;
+    left:37.5%;
+}
+#StatisticheUtenti caption{
+    
+    margin-bottom:4%;
+}
+#StatisticheUtenti table {
+    position:relative;
+    left:26em;
+
+}
+#StatisticheUtenti #pagination{
+    position:relative;
+    left:37.5%;
+}
+
+/*Sezione modifica profilo staff*/
+.FormModificaProfiloStaff h3 {
+    
+    text-align: center;
+}
+
+.FormModificaProfiloStaff img {
+    
+    position:relative;
+    left:41em;
+    width: 245px;
+    height: 245px;
+    
+}
+
+.FormModificaProfiloStaff form {
+    
+    width:40%;
+    position:relative;
+    left:40em;
+   
+}
+
+
+/*Pagina relativa ai coupon in user*/
+
+#VisualizzaCoupon h2{
+    
+    text-align: center;
+    
+}
+#VisualizzaCoupon table{
+    
+    text-align: center;
+    position:relative;
+
+    left:0em;
+
+    
+}
+
+
+/*Offerte della pagina del filtro azienda*/
+#offertefiltroazienda {
+    
+    position:relative;
+    left:2%;
+    bottom:7em;
+    height:1200px;
+}
+
+#filtracategoria{
+    
+    position:relative;
+    left:2%;
+    bottom:19em;
+    height:1200px;
+
+}
+
+
+
+#categoriefiltrate{
+    
+    position:relative;
+    left:33%;
+    bottom:10em;
+    width: 900px;
+    height:1200px;
+}
+/*Paginator offerte in scadenza nella home*/
+#paginatorOfferteScadenza{
+    
+    position: relative;
+    top: 50px;
+    width: 50px;
+    left: 500px;
+    
+    
+}
+#paginatorFiltroAziendaOfferteScadenza{
+   position:relative;
+   bottom: 340px;
+   width: 150px;
+   left: 500px;
+}
+
+
+/*form modifica azienda in admin*/
+#modificaazienda td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificaazienda td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificaazienda td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+    border: 1.8px solid #266abd;
+}
+#modificaazienda td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+
+/*form modifica utente in admin*/
+#modificautente td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificautente td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificautente td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificautente td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+/*form modifica tipologia*/
+#modificatipologia td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificatipologia td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificatipologia td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificatipologia td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+
+/*modifica faq in admin*/
+#modificafaq td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificafaq #risposta{
+    border-radius: 5px;
+    border-color: #266abd;
+    border: 1.9px solid #266abd;
+}
+#modificafaq td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificafaq td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificafaq td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+
+/*modifica offerta in pagina staff*/
+#modificaofferta td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificaofferta td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificaofferta td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+    border: 1.9px solid #266abd;
+}
+#modificaofferta #selezionetipologie{
+    border-radius: 5px;
+    border-color: #266abd;
+    border: 1.6px solid #266abd;
+}
+#modificaofferta #selezionebrands{
+    border-radius: 5px;
+    border-color: #266abd;
+    border: 1.6px solid #266abd;
+}
+#modificaofferta td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+
+
+/*modifica profilo in pagina staff*/
+#modificaprofilostaff td {
+  
+    font-size: 16px;
+    color: black;  
+}
+#modificaprofilostaff td input{
+   
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificaprofilostaff #modifica{
+    position:relative;
+    top: 35px;
+    left: 85px;
+    background-color: #266abd;
+    color: white;
+    font-size: 17px;
+}
+#modificaprofilostaff td #descrizione{
+    border-radius: 5px;
+    border-color: #266abd;
+}
+#modificaprofilostaff td #inserisci{
+
+    border: 2px;
+    border-color: #266abd;
+    background-color: #266abd;
+    color: white;
+    border-radius: 2px 2px 2px 2px;
+    position:relative;
+    width: 200px;
+    height: 30px;
+    top: 4em;
+    left: 260px; 
+}
+
+.errors {
+	color: #f93d00;
+}
+
+.errors ul {
+	line-height: 100%;
+}
+
+
+#offerteDeiBrands{
+    width: 100%;
+    height: 900px;
+    position: relative;
+    background-color: white;
+    margin-top: -460px;
+
+}
+#offerteDeiBrands{
+    
+    position:relative;
+    top:-450px;
+}
+#offerteDeiBrands a {
+    
+    position:relative;
+    color: black;
+
+    
+}
+#offerteDeiBrands a:hoover {
+    
+    position:relative;
+    left:57%;
+    top:500px;
+    color: red;
+    
+}
+#offerteDeiBrands #offerta{
+    position: relative;
+    top: 20px;
+}
+
+#immaginepromozionestaff{
+
+	position:relative;
+	left:49em;
+	border-style:outset;
+	margin-top:5em;
+	margin-bottom:5em;
+	width:240px;
+}
+
+#immaginepromozionestaff img{
+
+	height:auto;
+	width:230px;
+}
+
+#paginationCategorieFiltrate{
+       position: relative;
+       left: 250px;
+       bottom: 850px;
+}
+
+
+
+#paginatorOfferteBrands #pagination {
+	position:relative;
+	top:400px;
+	width:1200px;
+	height:300px;
+	left:-300px;
+	
+
+}

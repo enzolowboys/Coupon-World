@@ -194,6 +194,7 @@ class StaffController extends Zend_Controller_Action {
         $offerta = $offerta->toArray();
         $this->_logger->debug('array: ');
         $this->_logger->debug(print_r($offerta, true));
+	$this->view->assign(array('promozione'=>$offerta));
         $this->_modificaPromozioneForm->populate($offerta);
         $this->_modificaPromozioneForm->getElement('selezionetipologie')->setValue($offerta['nometipologia']);
         $this->_modificaPromozioneForm->getElement('selezionebrands')->setValue($offerta['nome']);

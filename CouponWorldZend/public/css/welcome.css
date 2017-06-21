@@ -10,6 +10,7 @@ body {
 	font-style: normal;
 	font-weight: 200;
 	height: 4500px;
+        font-family: 'Titillium Web', sans-serif;
 }
 
 /* header del sito che contiene il logo */
@@ -36,17 +37,13 @@ footer {
 }
 
 footer > h3{
-	font-family: 'Titillium Web';
-   	src: url(../fonts/TitilliumWeb-Regular.ttf);
-   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 	color:white;
 	font-size: 15px;
 }
 
 footer > div {
-	font-family: 'Titillium Web';
-   	src: url(../fonts/TitilliumWeb-Regular.ttf);
-   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 	color:white;
 	font-size: 15px;
 	position: absolute;
@@ -88,9 +85,7 @@ footer > div {
 	min-width: 1200px;
 	margin: 0 auto; 
 	
-	font-family: 'Titillium Web';
-   	src: url(../fonts/TitilliumWeb-Regular.ttf);
-   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 }
 
 /* container che contiene il messaggio */
@@ -110,9 +105,7 @@ footer > div {
 
 /* messaggi per i titoli delle categorie */
 .title_messages {
-	font-family: 'Titillium Web';
-   	src: url(../fonts/TitilliumWeb-Regular.ttf);
-   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 	color: #FF0004;
 	font-size: 35px;
 	text-align: center;
@@ -122,9 +115,7 @@ footer > div {
 
 /* messaggi per i sottotitoli delle categorie */
 .subtitle_messages {
-	font-family: 'Titillium Web';
-   	src: url(../fonts/TitilliumWeb-Regular.ttf);
-   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 	color: #FF0004;
 	font-size: 20px;
 	text-align: center;
@@ -147,9 +138,7 @@ footer > div {
 	border-radius: 10px;
 	font-size: 20px;
 	overflow: hidden;
-	font-family: 'Titillium Web';
-   	src: url(../fonts/TitilliumWeb-Regular.ttf);
-   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 	
 }
 
@@ -444,9 +433,7 @@ li:hover {
 
 /* rappresenta il testo delle categorie*/
 .categories_message {
-	font-family: 'Titillium Web';
-   	src: url(../fonts/TitilliumWeb-Regular.ttf);
-   	src: local('Titillium Web'), url(../fonts/TitilliumWeb-Regular.ttf) format('truetype');
+
 	color: #FF0004;
 	font-size: 35px;
 	text-align: right;
@@ -455,7 +442,12 @@ li:hover {
 	min-width: 1200px;
 }
 
+#immaginepromozionestaff img {
 
+	position:relative;
+	left:12em;
+
+}
 
 
 

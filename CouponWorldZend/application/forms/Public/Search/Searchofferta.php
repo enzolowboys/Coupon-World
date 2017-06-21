@@ -9,7 +9,7 @@ class Application_Form_Public_Search_Searchofferta extends App_Form_Abstract {
         
         $this->_PublicModel = new Application_Model_Public();
         //Setto le impostazioni della form
-        $this->setMethod('get');
+        $this->setMethod('post');
         $this->setName('ricercaOfferta');
         $this->setAction('');
         $this->setAttrib('enctype', 'multipart/form-data');
@@ -19,6 +19,7 @@ class Application_Form_Public_Search_Searchofferta extends App_Form_Abstract {
             'label'=>'',
             'filters'=>array('StringTrim'),
             'validators' => array(array('StringLength', false, array(1,100))),
+	    'placeholder'=>'3x2 adidas tecnologia smartphone',
             'required'=>true,
             'description'=>'ricerca un offerta per categoria e tipologia',
             'decorators'=>$this->elementDecorators,

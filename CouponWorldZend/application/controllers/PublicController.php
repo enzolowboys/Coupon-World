@@ -255,12 +255,13 @@ class PublicController extends Zend_Controller_Action {
     public function ricercaAction() {
         
     /*variabile session usata per memorizzare i dati*/
-        if ($this->getRequest()->isGet()) {
+        if ($this->getRequest()->isPost()) {
+		$this->_logger->info('sono entrato in questo if');
              $formRicerca = $this->_searchform;
              $_SESSION['nomedacercare'] = null;
              $_SESSION['scelta'] = null;
-             if (!$formRicerca->isValid($_GET)) {
-                    return $this->render('home');
+             if (!$formRicerca->isValid($_POST)) {
+                    return $this->_helper->redirector('home');
             }
         }
         $this->_helper->layout->setLayout('main');
@@ -269,8 +270,8 @@ class PublicController extends Zend_Controller_Action {
         //se non sono impostati, viene settata per la prima volta
         if(!isset($_SESSION['nomedacercare'])){
             
-            $_SESSION['nomedacercare'] = $_GET['cercaOfferta'];
-            $_SESSION['scelta'] = $_GET['selezione'];
+            $_SESSION['nomedacercare'] = $_POST['cercaOfferta'];
+            $_SESSION['scelta'] = $_POST['selezione'];
         }
         $this->_logger->info('SESSIONE '.print_r($_SESSION,true));
 

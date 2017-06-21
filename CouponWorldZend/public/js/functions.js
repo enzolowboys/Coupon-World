@@ -21,46 +21,6 @@ $(document).ready(function(){
 
 $(document).ready(function() {
     
-    $(".espandi").click(function () {
-        
-        $espandi = $(this);
-        //getting the next element
-        $filtraForm = $(".filtraForm");
-        //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-        $filtraForm.slideToggle(500, function () {
-            //execute this after slideToggle is done
-            //change text of header based on visibility of content div
-            $espandi.text(function () {
-                //change text based on condition
-                return $filtraForm.is(":visible") ? "Filtra per azienda -" : "Filtra per azienda +";
-            });
-        });
-        
-    });
-});
-
-$(document).ready(function() {
-    
-    $(".espandi2").click(function () {
-        
-        $espandi = $(this);
-        //getting the next element
-        $filtraForm = $(".filtraForm2");
-        //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-        $filtraForm.slideToggle(500, function () {
-            //execute this after slideToggle is done
-            //change text of header based on visibility of content div
-            $espandi.text(function () {
-                //change text based on condition
-                return $filtraForm.is(":visible") ? "Filtra per tipologia -" : "Filtra per tipologia +";
-            });
-        });
-        
-    });
-});
-
-$(document).ready(function() {
-    
     $(".espandi3").click(function () {
         
         $espandi = $(this);
@@ -109,7 +69,7 @@ function myFunction() {
     x.className = "show";
 
     // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
 }
 
 /* funzione per la pagina dei brands generale */
@@ -141,7 +101,7 @@ function myFunctionThree() {
     x.className = "show";
 
     // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
 }
 
 /* Snackbar per gestione della funzionalità stampa (fa comparire il messaggio idoneo)*/
@@ -153,5 +113,56 @@ function myFunctionFour() {
     x.className = "show";
 
     // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000);
 }
+
+//validazione ajax
+function doValidation(id, actionUrl, formName) {
+
+	function showErrors(resp) {
+                $("#" + id).parent().parent().find('.errors').html(' ');
+		$("#" + id).parent().parent().parent().find('.errors').html(getErrorHtml(resp[id]));
+               
+                
+	}
+
+	$.ajax({
+		type : 'POST',
+		url : actionUrl,
+		data : $("#" + formName).serialize(),
+		dataType : 'json',
+		success : showErrors
+	});
+}
+
+//errori ajax
+function getErrorHtml(formErrors) {
+	if (( typeof (formErrors) === 'undefined') || (formErrors.length < 1))
+		return;
+
+	var out = '<ul>';
+	for (errorKey in formErrors) {
+		out += '<li>' + formErrors[errorKey] + '</li>';
+	}
+	out += '</ul>';
+	return out;
+}
+
+var slideIndex = 0;
+function showSlides() {
+   var i;
+   var slides = document.getElementsByClassName("mySlides");
+   for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none"; 
+        }
+   slideIndex++;
+   if (slideIndex> slides.length) {slideIndex = 1} 
+   slides[slideIndex-1].style.display = "block"; 
+   setTimeout(showSlides, 3500); // Change image every 3.5 seconds
+}
+
+
+
+
+
+

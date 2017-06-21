@@ -40,7 +40,7 @@
   <br>
   <?php endif ?>
 </div>
- <div id="offerteInScadenza">
+ <div id="offerteDeiBrands">
         <h1>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ❕ OFFERTE DELL'AZIENDA ❕</h1>
 <?php if(!empty($this->offerte)): ?>
         
@@ -84,7 +84,7 @@
         
         
                 <?php endforeach ?>
-        <div id="paginatorOfferteScadenza">
+        <div id="paginatorOfferteBrands">
                 <?php if($this->offerte instanceof Zend_Paginator) {
 	  		echo $this->paginationControl($this->offerte,'Sliding','public/paginator/_paginatorOffertaBrands.phtml');
                    } 

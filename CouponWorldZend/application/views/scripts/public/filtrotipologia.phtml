@@ -24,7 +24,7 @@
                                         $offerta->datafine.'</b>'.'</h8>'?>
 				<button id="stampaofferta" onClick="<?php 
                     if($this->authInfo('role')=='user'){
-                       $indirizzo = "window.location.href='".$this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid' => $offertaCategoria->idpromozione ,'default',true))."'"; 
+                       $indirizzo = "window.location.href='".$this->url(array('controller'=>'user','action'=>'stampaofferta','offertaid' => $offerta->idpromozione ,'default',true))."'"; 
                       echo $indirizzo;
                     }
                     else

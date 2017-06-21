@@ -70,6 +70,7 @@ class Application_Resource_Coupon extends Zend_Db_Table_Abstract
                   ->joinLeft('tipologia', 'promozione.tipologia_idtipologia=tipologia.idtipologia',array('tipologia.nometipologia'))
                 ->joinLeft('user','coupon.user_iduser = user.iduser',array('iduser'))
                 ->where('user_iduser = ?',$id)
+		->where('promozione.datafine > CURDATE()')
                 
                    ->setIntegrityCheck(false); 
         if(true === is_array($order)){
